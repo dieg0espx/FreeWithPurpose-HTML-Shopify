@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meaning of Symbols — Mayte B Jewelry</title>
+    <meta name="description" content="Symbols are the language of the soul — timeless expressions that speak directly to the heart. Discover the sacred meanings behind each Mayte B Jewelry piece." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-rust: #973A2F;
+        --primary-terracotta: #D58257;
+        --primary-peach: #ECB984;
+        --primary-cream: #FFFCEB;
+        --primary-sage: #A7A676;
+        --primary-espresso: #2B1E1A;
+        --primary-brown: #643F1C;
+        --secondary-porcelain: #F8F5ED;
+        --secondary-ivory: #FEFBF3;
+        --secondary-muted: #6B5D52;
+        --secondary-soft: #A69B8F;
+
+        --font-heading: "Raleway", sans-serif;
+        --font-body: "Belleza", sans-serif;
+
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--primary-espresso);
+        background: var(--secondary-ivory);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.2rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-terracotta);
+      }
+
+      .nav-cta {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.75rem;
+        background: var(--primary-brown);
+        color: #fff;
+        border-radius: 999px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-cta:hover {
+        background: var(--primary-rust);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(100, 63, 28, 0.25);
+      }
+
+      /* Hero Section */
+      .page-hero {
+        position: relative;
+        padding: clamp(8rem, 15vw, 12rem) 2rem clamp(4rem, 8vw, 6rem);
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .page-hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      .page-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 252, 235, 0.85) 0%, rgba(248, 245, 237, 0.85) 100%);
+        z-index: 2;
+      }
+
+      .page-hero-content {
+        position: relative;
+        z-index: 3;
+      }
+
+      .page-hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        color: var(--primary-espresso);
+      }
+
+      .page-hero-intro {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.3rem;
+        line-height: 1.9;
+        color: var(--secondary-muted);
+        font-style: italic;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        padding: clamp(4rem, 10vw, 7rem) 0;
+      }
+
+      /* Symbol Detail Card */
+      .symbol-detail {
+        margin-bottom: clamp(4rem, 8vw, 6rem);
+        padding: clamp(2.5rem, 5vw, 4rem);
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      .symbol-detail-header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .symbol-icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-terracotta);
+        flex-shrink: 0;
+      }
+
+      .symbol-icon svg {
+        width: 70px;
+        height: 70px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+      }
+
+      .symbol-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+      }
+
+      .symbol-subtitle {
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        color: var(--primary-terracotta);
+        margin-top: 0.5rem;
+      }
+
+      .symbol-description {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: var(--secondary-muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .symbol-energy {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .energy-tag {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.6rem 1.5rem;
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        border-radius: 999px;
+      }
+
+      /* Symbol Jewelry Showcase */
+      .symbol-jewelry {
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(213, 130, 87, 0.2);
+      }
+
+      .symbol-jewelry-title {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-bottom: 1.5rem;
+      }
+
+      .jewelry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .jewelry-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--secondary-porcelain);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .jewelry-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .jewelry-image {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+
+      .jewelry-info {
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .jewelry-name {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        color: var(--primary-espresso);
+        margin-bottom: 0.5rem;
+      }
+
+      .jewelry-price {
+        font-size: 0.9rem;
+        color: var(--primary-terracotta);
+      }
+
+      .see-more-btn {
+        display: inline-block;
+        margin-top: 2rem;
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.9rem 2.5rem;
+        background: transparent;
+        color: var(--primary-brown);
+        border: 2px solid var(--primary-brown);
+        border-radius: 999px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .see-more-btn:hover {
+        background: var(--primary-brown);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* Closing Section */
+      .closing-section {
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        text-align: center;
+        padding: clamp(4rem, 8vw, 6rem) 2rem;
+      }
+
+      .closing-text {
+        max-width: 900px;
+        margin: 0 auto;
+        font-size: 1.3rem;
+        line-height: 1.9;
+        font-style: italic;
+        color: var(--secondary-muted);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary-espresso);
+        padding: clamp(4rem, 8vw, 6rem) 0 2rem;
+        color: #fff;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        color: var(--primary-peach);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-link {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--primary-terracotta);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+        text-align: center;
+      }
+
+      .footer-socials {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        color: var(--primary-peach);
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--primary-terracotta);
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      .footer-copyright {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .nav-links {
+          display: none;
+        }
+
+        .symbol-detail-header {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">Mayte B</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#collections" class="nav-link">Collections</a>
+          <a href="symbols.html" class="nav-link">Symbols</a>
+          <a href="ritual-care.html" class="nav-link">Ritual & Care</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-cta">Shop Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <video class="page-hero-video" autoplay muted loop playsinline>
+        <source src="../images/video9.mp4" type="video/mp4">
+      </video>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">Meaning of Symbols</h1>
+        <p class="page-hero-intro">
+          Symbols are the language of the soul, timeless expressions that speak directly to the heart and subconscious. Each Mayte B Jewelry piece carries an ancient meaning, connecting you with your inner wisdom, Mother Earth, and the Universe itself. When you wear these symbols, you invite energy, memory, and intention to flow through you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Symbols Details -->
+    <section class="section">
+      <div class="container">
+        <!-- The Sun -->
+        <div class="symbol-detail">
+          <div class="symbol-detail-header">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="2"/>
+                <line x1="32" y1="6" x2="32" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="32" y1="50" x2="32" y2="58" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="10.92" y1="10.92" x2="16.68" y2="16.68" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="47.32" y1="47.32" x2="53.08" y2="53.08" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="6" y1="32" x2="14" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="50" y1="32" x2="58" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="10.92" y1="53.08" x2="16.68" y2="47.32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="47.32" y1="16.68" x2="53.08" y2="10.92" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="symbol-title">The Sun</h2>
+              <p class="symbol-subtitle">The sacred flame of life.</p>
+            </div>
+          </div>
+          <p class="symbol-description">
+            The Sun represents creation, vitality, and divine light. It is the eternal source of warmth and inspiration, a reminder of the fire within us all. Wearing the Sun invites clarity, strength, and joy, illuminating your path and awakening your creative energy.
+          </p>
+          <div class="symbol-energy">
+            <span class="energy-tag">Power</span>
+            <span class="energy-tag">Illumination</span>
+            <span class="energy-tag">Renewal</span>
+            <span class="energy-tag">Purpose</span>
+          </div>
+
+          <!-- Sun Jewelry Showcase -->
+          <div class="symbol-jewelry">
+            <h3 class="symbol-jewelry-title">Shop The Sun Collection</h3>
+            <div class="jewelry-grid">
+              <a href="#" class="jewelry-item">
+                <img src="../images/image1.jpg" alt="Sun Pendant Necklace" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Sun Pendant Necklace</p>
+                  <p class="jewelry-price">$145</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image2.jpg" alt="Solar Ring" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Solar Ring</p>
+                  <p class="jewelry-price">$98</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image3.jpg" alt="Sun Charm Bracelet" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Sun Charm Bracelet</p>
+                  <p class="jewelry-price">$125</p>
+                </div>
+              </a>
+            </div>
+            <div style="text-align: center;">
+              <a href="#" class="see-more-btn">See More Sun Jewelry</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Snake -->
+        <div class="symbol-detail">
+          <div class="symbol-detail-header">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 32 8 Q 20 15, 18 25 Q 16 35, 22 42 Q 28 49, 32 52 Q 36 49, 42 42 Q 48 35, 46 25 Q 44 15, 32 8 Z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="26" cy="22" r="2" fill="currentColor"/>
+                <circle cx="38" cy="22" r="2" fill="currentColor"/>
+                <path d="M 28 28 Q 32 26, 36 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M 32 52 Q 28 54, 26 58 M 32 52 Q 36 54, 38 58" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="symbol-title">The Snake</h2>
+              <p class="symbol-subtitle">Shakti and transformation.</p>
+            </div>
+          </div>
+          <p class="symbol-description">
+            The Snake embodies Kundalini, the life force that rises from the base of the spine to awaken consciousness. It symbolizes rebirth, power, and the cyclical nature of life. As it sheds its skin, it teaches us the beauty of change and regeneration.
+          </p>
+          <div class="symbol-energy">
+            <span class="energy-tag">Awakening</span>
+            <span class="energy-tag">Healing</span>
+            <span class="energy-tag">Renewal</span>
+            <span class="energy-tag">Feminine Power</span>
+          </div>
+
+          <!-- Snake Jewelry Showcase -->
+          <div class="symbol-jewelry">
+            <h3 class="symbol-jewelry-title">Shop The Snake Collection</h3>
+            <div class="jewelry-grid">
+              <a href="#" class="jewelry-item">
+                <img src="../images/image4.jpg" alt="Serpent Necklace" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Serpent Necklace</p>
+                  <p class="jewelry-price">$165</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image5.jpg" alt="Kundalini Ring" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Kundalini Ring</p>
+                  <p class="jewelry-price">$110</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image6.jpg" alt="Snake Earrings" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Snake Earrings</p>
+                  <p class="jewelry-price">$88</p>
+                </div>
+              </a>
+            </div>
+            <div style="text-align: center;">
+              <a href="#" class="see-more-btn">See More Snake Jewelry</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yin & Yang -->
+        <div class="symbol-detail">
+          <div class="symbol-detail-header">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2"/>
+                <path d="M 32 6 Q 45 32, 32 58 Q 19 32, 32 6 Z" fill="currentColor" stroke="none"/>
+                <circle cx="32" cy="22" r="4" fill="var(--primary-cream)" stroke="none"/>
+                <circle cx="32" cy="42" r="4" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="symbol-title">Yin & Yang</h2>
+              <p class="symbol-subtitle">Harmony and unity of opposites.</p>
+            </div>
+          </div>
+          <p class="symbol-description">
+            The ancient symbol of Yin & Yang reminds us that light and shadow, action and rest, feminine and masculine, are in constant dance. It represents the balance we seek within ourselves and the world, harmony that creates wholeness.
+          </p>
+          <div class="symbol-energy">
+            <span class="energy-tag">Balance</span>
+            <span class="energy-tag">Duality</span>
+            <span class="energy-tag">Harmony</span>
+            <span class="energy-tag">Integration</span>
+          </div>
+
+          <!-- Yin Yang Jewelry Showcase -->
+          <div class="symbol-jewelry">
+            <h3 class="symbol-jewelry-title">Shop The Yin & Yang Collection</h3>
+            <div class="jewelry-grid">
+              <a href="#" class="jewelry-item">
+                <img src="../images/image7.jpg" alt="Balance Pendant" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Balance Pendant</p>
+                  <p class="jewelry-price">$138</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image8.jpg" alt="Yin Yang Ring" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Yin Yang Ring</p>
+                  <p class="jewelry-price">$95</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image9.jpg" alt="Harmony Bracelet" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Harmony Bracelet</p>
+                  <p class="jewelry-price">$118</p>
+                </div>
+              </a>
+            </div>
+            <div style="text-align: center;">
+              <a href="#" class="see-more-btn">See More Yin & Yang Jewelry</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Throat Chakra -->
+        <div class="symbol-detail">
+          <div class="symbol-detail-header">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="32" r="15" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="2" fill="currentColor"/>
+                <line x1="32" y1="12" x2="32" y2="52" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="12" y1="32" x2="52" y2="32" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="symbol-title">Throat Chakra</h2>
+              <p class="symbol-subtitle">Expression and creation.</p>
+            </div>
+          </div>
+          <p class="symbol-description">
+            The Throat Chakra is the center of authentic voice, while the Womb symbolizes creation and intuition. Together, they represent truth expressed through love, the divine feminine energy that gives life to words, art, and emotion.
+          </p>
+          <div class="symbol-energy">
+            <span class="energy-tag">Expression</span>
+            <span class="energy-tag">Creation</span>
+            <span class="energy-tag">Intuition</span>
+            <span class="energy-tag">Truth</span>
+          </div>
+
+          <!-- Throat Chakra Jewelry Showcase -->
+          <div class="symbol-jewelry">
+            <h3 class="symbol-jewelry-title">Shop The Chakra Collection</h3>
+            <div class="jewelry-grid">
+              <a href="#" class="jewelry-item">
+                <img src="../images/image10.jpg" alt="Chakra Necklace" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Chakra Necklace</p>
+                  <p class="jewelry-price">$155</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image1.jpg" alt="Expression Ring" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Expression Ring</p>
+                  <p class="jewelry-price">$105</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image2.jpg" alt="Truth Earrings" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Truth Earrings</p>
+                  <p class="jewelry-price">$92</p>
+                </div>
+              </a>
+            </div>
+            <div style="text-align: center;">
+              <a href="#" class="see-more-btn">See More Chakra Jewelry</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Circle -->
+        <div class="symbol-detail">
+          <div class="symbol-detail-header">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="32" r="18" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="symbol-title">The Circle</h2>
+              <p class="symbol-subtitle">Eternity and sacred connection.</p>
+            </div>
+          </div>
+          <p class="symbol-description">
+            The circle is the shape of life itself, no beginning, no end. It symbolizes unity, continuity, and the cycle of existence. Within Mayte B's designs, the circle holds all other symbols together, representing harmony between the human and the divine.
+          </p>
+          <div class="symbol-energy">
+            <span class="energy-tag">Wholeness</span>
+            <span class="energy-tag">Protection</span>
+            <span class="energy-tag">Infinity</span>
+            <span class="energy-tag">Unity</span>
+          </div>
+
+          <!-- Circle Jewelry Showcase -->
+          <div class="symbol-jewelry">
+            <h3 class="symbol-jewelry-title">Shop The Circle Collection</h3>
+            <div class="jewelry-grid">
+              <a href="#" class="jewelry-item">
+                <img src="../images/image3.jpg" alt="Eternal Circle Necklace" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Eternal Circle Necklace</p>
+                  <p class="jewelry-price">$142</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image4.jpg" alt="Unity Ring" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Unity Ring</p>
+                  <p class="jewelry-price">$102</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image5.jpg" alt="Infinity Bracelet" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Infinity Bracelet</p>
+                  <p class="jewelry-price">$128</p>
+                </div>
+              </a>
+            </div>
+            <div style="text-align: center;">
+              <a href="#" class="see-more-btn">See More Circle Jewelry</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sacred Geometry -->
+        <div class="symbol-detail">
+          <div class="symbol-detail-header">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="1.5"/>
+                <polygon points="32,8 54,44 10,44" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <circle cx="32" cy="32" r="12" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="32" y1="20" x2="32" y2="44" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="symbol-title">Sacred Geometry</h2>
+              <p class="symbol-subtitle">The blueprint of the Universe.</p>
+            </div>
+          </div>
+          <p class="symbol-description">
+            Sacred geometry reveals the patterns of creation found in nature, from the spiral of a shell to the petals of a flower. Each geometric form carries frequency and wisdom, a reminder that beauty and structure coexist in every aspect of life.
+          </p>
+          <div class="symbol-energy">
+            <span class="energy-tag">Alignment</span>
+            <span class="energy-tag">Divine Order</span>
+            <span class="energy-tag">Universal Harmony</span>
+          </div>
+
+          <!-- Sacred Geometry Jewelry Showcase -->
+          <div class="symbol-jewelry">
+            <h3 class="symbol-jewelry-title">Shop The Sacred Geometry Collection</h3>
+            <div class="jewelry-grid">
+              <a href="#" class="jewelry-item">
+                <img src="../images/image6.jpg" alt="Flower of Life Pendant" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Flower of Life Pendant</p>
+                  <p class="jewelry-price">$175</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image7.jpg" alt="Metatron Ring" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Metatron Ring</p>
+                  <p class="jewelry-price">$120</p>
+                </div>
+              </a>
+              <a href="#" class="jewelry-item">
+                <img src="../images/image8.jpg" alt="Sacred Triangle Earrings" class="jewelry-image">
+                <div class="jewelry-info">
+                  <p class="jewelry-name">Sacred Triangle Earrings</p>
+                  <p class="jewelry-price">$98</p>
+                </div>
+              </a>
+            </div>
+            <div style="text-align: center;">
+              <a href="#" class="see-more-btn">See More Sacred Geometry Jewelry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="closing-section">
+      <p class="closing-text">
+        These symbols are more than designs, they are living languages of energy. When you choose your piece, you're not just selecting jewelry, you're inviting a sacred companion into your journey of remembrance, intention, and transformation.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Shop</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">All Collections</a>
+              <a href="#" class="footer-link">New Arrivals</a>
+              <a href="#" class="footer-link">Best Sellers</a>
+              <a href="#" class="footer-link">Gift Sets</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <div class="footer-links">
+              <a href="symbols.html" class="footer-link">Meaning of Symbols</a>
+              <a href="ritual-care.html" class="footer-link">Ritual & Care</a>
+              <a href="index.html#about" class="footer-link">Our Story</a>
+              <a href="#" class="footer-link">Sustainability</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Contact Us</a>
+              <a href="#" class="footer-link">Instagram</a>
+              <a href="#" class="footer-link">Newsletter</a>
+              <a href="#" class="footer-link">Wholesale</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Support</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Shipping & Returns</a>
+              <a href="#" class="footer-link">Size Guide</a>
+              <a href="#" class="footer-link">FAQ</a>
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="social-link" aria-label="Facebook">FB</a>
+            <a href="#" class="social-link" aria-label="Pinterest">PI</a>
+            <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          </div>
+          <p class="footer-copyright">
+            © 2025 Mayte B Jewelry | Free with Purpose | Crafted with reverence for Mother Earth
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

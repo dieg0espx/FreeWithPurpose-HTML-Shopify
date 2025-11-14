@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us · Free With Purpose · Mayte B Jewelry</title>
+    <meta name="description" content="Discover the story behind Free With Purpose and Mayte B Jewelry - a movement honoring Earth, ancestral wisdom, and conscious living through sacred artistry." />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap");
+      @import url("https://fonts.cdnfonts.com/css/chetta-vissto");
+      @import url("https://fonts.cdnfonts.com/css/belleza");
+      @import url("https://fonts.cdnfonts.com/css/rosarivo");
+      @import url("https://fonts.cdnfonts.com/css/oxygen");
+      @import url("https://fonts.cdnfonts.com/css/fondamento");
+      @import url("https://fonts.cdnfonts.com/css/bellerose");
+
+      :root {
+        /* Color Palette */
+        --primary-rust: #973A2F;
+        --primary-terracotta: #D58257;
+        --primary-peach: #ECB984;
+        --primary-cream: #FFFCEB;
+        --primary-sage: #A7A676;
+
+        /* Core Neutrals */
+        --cream: #FFFCEB;
+        --ivory: #fcf9f6;
+        --porcelain: #f9f5ed;
+        --sand: #ede8dc;
+
+        /* Text Colors */
+        --espresso: #2b1e1a;
+        --cocoa: #3f2d27;
+        --muted: rgba(63, 45, 39, 0.70);
+        --soft-text: rgba(63, 45, 39, 0.55);
+
+        /* Brand Accent Colors */
+        --rust: #973A2F;
+        --terracotta: #D58257;
+        --peach: #ECB984;
+        --sage: #A7A676;
+        --antique-gold: #c9a86a;
+
+        /* Accent Tones */
+        --accent: #D58257;
+        --accent-light: rgba(213, 130, 87, 0.15);
+        --accent-dark: #973A2F;
+
+        /* Effects */
+        --shadow-sm: 0 4px 12px rgba(47, 31, 26, 0.08);
+        --shadow-md: 0 12px 28px rgba(47, 31, 26, 0.12);
+        --shadow-lg: 0 24px 48px rgba(47, 31, 26, 0.16);
+        --shadow-xl: 0 32px 64px rgba(47, 31, 26, 0.20);
+
+        --radius-sm: 8px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --radius-xl: 32px;
+
+        /* Typography */
+        --font-decorative: "Cinzel Decorative", serif;
+        --font-heading: "Cinzel", serif;
+        --font-display: "Playfair Display", serif;
+        --font-body: "Cormorant Garamond", serif;
+        --font-sans: "Montserrat", sans-serif;
+
+        /* Custom Fonts */
+        --font-chetta: "Chetta Vissto", cursive;
+        --font-belleza: "Belleza", sans-serif;
+        --font-rosarivo: "Rosarivo", serif;
+        --font-oxygen: "Oxygen", sans-serif;
+        --font-fondamento: "Fondamento", cursive;
+        --font-bellerose: "BelleRose", serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-belleza);
+        background: var(--cream);
+        color: var(--espresso);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      img, video {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Navigation */
+      .nav-wrapper {
+        background: var(--ivory);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 12px rgba(43, 30, 26, 0.06);
+      }
+
+      .navigation {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .brand-logo {
+        font-family: var(--font-chetta);
+        font-size: 1.15rem;
+        letter-spacing: 0.15em;
+        text-transform: none;
+        color: var(--espresso);
+        font-weight: 400;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--cocoa);
+        position: relative;
+        padding-bottom: 0.25rem;
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--terracotta);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .nav-action {
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      /* Hero Section */
+      .about-hero {
+        position: relative;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        height: clamp(500px, 60vh, 700px);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('images/image3.jpg');
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+      }
+
+      .about-hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(167, 166, 118, 0.75) 0%, rgba(43, 30, 26, 0.65) 100%);
+        z-index: 1;
+      }
+
+      .about-hero-content {
+        position: relative;
+        text-align: center;
+        color: #fff;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 clamp(2rem, 5vw, 4rem);
+      }
+
+      .about-hero-label {
+        display: inline-block;
+        padding: 0.65rem 1.5rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(12px);
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 2rem;
+      }
+
+      .about-hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .about-hero-subtitle {
+        font-family: var(--font-display);
+        font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+        font-style: italic;
+        line-height: 1.8;
+        opacity: 0.95;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .section {
+        padding: clamp(4rem, 10vw, 8rem) 0;
+      }
+
+      /* Story Section */
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-bottom: 4rem;
+      }
+
+      .story-content h2 {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1.5rem;
+      }
+
+      .story-content .label {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        margin-bottom: 1rem;
+      }
+
+      .story-content p {
+        font-size: 1.1rem;
+        line-height: 1.85;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .story-image {
+        width: 100%;
+        height: 500px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .story-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Values Section */
+      .values-section {
+        background: var(--ivory);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+      }
+
+      .section-label {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--soft-text);
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.25rem, 5vw, 3.5rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1.5rem;
+      }
+
+      .section-subtitle {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        line-height: 1.75;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
+
+      .value-card {
+        background: var(--cream);
+        border-radius: var(--radius-lg);
+        padding: 3rem 2.5rem;
+        box-shadow: var(--shadow-md);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .value-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .value-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--terracotta), var(--peach));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(213, 130, 87, 0.25);
+      }
+
+      .value-icon svg {
+        width: 32px;
+        height: 32px;
+        stroke: currentColor;
+        fill: none;
+      }
+
+      .value-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1rem;
+        min-height: 3.2em;
+        line-height: 1.6;
+      }
+
+      .value-card p {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--muted);
+      }
+
+      /* Timeline Section */
+      .timeline-section {
+        background: var(--cream);
+      }
+
+      .timeline {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        padding-left: 3rem;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--terracotta), var(--peach));
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 3rem;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -3.5rem;
+        top: 0.5rem;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--terracotta);
+        border: 3px solid var(--cream);
+        box-shadow: 0 0 0 3px var(--terracotta);
+      }
+
+      .timeline-year {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        letter-spacing: 0.15em;
+        color: var(--terracotta);
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-title {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 0.75rem;
+      }
+
+      .timeline-description {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--muted);
+      }
+
+      /* Founder Section */
+      .founder-section {
+        background: var(--ivory);
+      }
+
+      .founder-grid {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .founder-image-wrapper {
+        position: relative;
+      }
+
+      .founder-image {
+        width: 100%;
+        height: 500px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .founder-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .founder-content .label {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        margin-bottom: 1rem;
+      }
+
+      .founder-content h2 {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1rem;
+      }
+
+      .founder-content .role {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--muted);
+        margin-bottom: 2rem;
+      }
+
+      .founder-content p {
+        font-size: 1.1rem;
+        line-height: 1.85;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--cream);
+        text-align: center;
+      }
+
+      .cta-box {
+        background: var(--ivory);
+        border-radius: var(--radius-xl);
+        padding: clamp(3rem, 8vw, 5rem);
+        box-shadow: var(--shadow-md);
+        border: 1px solid rgba(213, 130, 87, 0.2);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .cta-box h2 {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: var(--espresso);
+      }
+
+      .cta-box p {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-style: italic;
+        margin-bottom: 2.5rem;
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem 2.25rem;
+        border-radius: 999px;
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        border: 1.5px solid transparent;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .btn-primary {
+        background: var(--terracotta);
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(213, 130, 87, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: var(--rust);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(151, 58, 47, 0.4);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--porcelain);
+        padding: clamp(4rem, 8vw, 6rem) 0 2rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h4 {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1.25rem;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-links a {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .footer-links a:hover {
+        color: var(--terracotta);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(63, 45, 39, 0.12);
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      .footer-social a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(63, 45, 39, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        border-color: var(--terracotta);
+        color: var(--terracotta);
+        transform: translateY(-2px);
+      }
+
+      .footer-copyright {
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        color: var(--soft-text);
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .navigation {
+          grid-template-columns: 1fr;
+          justify-items: center;
+          text-align: center;
+          gap: 1.5rem;
+        }
+
+        .nav-links {
+          gap: 1.5rem;
+        }
+
+        .story-grid,
+        .founder-grid {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+
+        .timeline {
+          padding-left: 2rem;
+        }
+
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div class="nav-wrapper">
+      <nav class="navigation">
+        <a href="index.html" class="brand-logo">Free With Purpose</a>
+        <div class="nav-links">
+          <a href="index.html#jewelry">Jewelry</a>
+          <a href="index.html#pillars">Our Pillars</a>
+          <a href="index.html#sustainability">Sustainability</a>
+          <a href="index.html#artisans">Artisans</a>
+          <a href="about.html" class="active">About</a>
+        </div>
+        <div class="nav-actions">
+          <a href="index.html#newsletter" class="nav-action">Journal</a>
+          <a href="#" class="nav-action">Account</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="about-hero-content">
+        <span class="about-hero-label">Our Story</span>
+        <h1 class="about-hero-title">The Journey</h1>
+        <p class="about-hero-subtitle">
+          Born from decades of seeking ancestral wisdom across 60+ countries, Free with Purpose is a sacred portal connecting Earth's treasures with conscious souls.
+        </p>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="section">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-content">
+            <span class="label">Our Beginning</span>
+            <h2>A Movement for Conscious Living</h2>
+            <p>
+              Free with Purpose began as a whisper—a call to honor Mother Earth, celebrate artisanal traditions, and create jewelry infused with meaning. What started as a personal journey of healing and transformation has blossomed into a global movement.
+            </p>
+            <p>
+              Every piece we create carries the essence of ancient wisdom, sustainable practices, and sacred symbolism. We believe jewelry should be more than decoration—it should be a talisman, a companion, a reflection of your authentic self.
+            </p>
+          </div>
+          <div class="story-image">
+            <img src="images/image4.jpg" alt="Sacred jewelry craftsmanship">
+          </div>
+        </div>
+
+        <div class="story-grid" style="direction: rtl;">
+          <div class="story-content" style="direction: ltr;">
+            <span class="label">Our Philosophy</span>
+            <h2>Earth-Honoring Excellence</h2>
+            <p>
+              We source recycled metals, ethical gemstones, and work with artisans who preserve ancestral techniques. Each creation honors the planet and the hands that craft it, ensuring fair wages and sustainable practices throughout our supply chain.
+            </p>
+            <p>
+              From the mines to your hands, we trace every step, ensuring our jewelry carries not just beauty, but integrity. This is conscious luxury—where style meets soul, and adornment becomes activism.
+            </p>
+          </div>
+          <div class="story-image" style="direction: ltr;">
+            <img src="images/image10.jpg" alt="Artisan craftsmanship">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section values-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Core Values</span>
+          <h2 class="section-title">What We Stand For</h2>
+          <p class="section-subtitle">
+            Our commitment to Earth, artistry, and authentic self-expression guides every decision we make.
+          </p>
+        </div>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M6 20c0 0 2-6 6-8 1-0.5 2-1 3-1M34 20c0 0-2-6-6-8-1-0.5-2-1-3-1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M6 20c0 0 2 6 6 8 1 0.5 2 1 3 1M34 20c0 0-2 6-6 8-1 0.5-2 1-3 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M20 6v28M6 20h28" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="20" cy="20" r="3" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h3>Earth<br>First</h3>
+            <p>
+              Sustainable sourcing, regenerative practices, and zero-waste initiatives. We honor Pachamama in every creation, ensuring our legacy protects future generations.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="20" y1="4" x2="20" y2="9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="20" y1="31" x2="20" y2="36" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="7.76" y1="7.76" x2="11.3" y2="11.3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="28.7" y1="28.7" x2="32.24" y2="32.24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="4" y1="20" x2="9" y2="20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="31" y1="20" x2="36" y2="20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="7.76" y1="32.24" x2="11.3" y2="28.7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="28.7" y1="11.3" x2="32.24" y2="7.76" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Sacred<br>Symbolism</h3>
+            <p>
+              Ancient wisdom woven into modern design. Each symbol—sun, serpent, wings, yin-yang—carries intention, transforming jewelry into living talismans.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 8c-2 0-3.5 1-4.5 2.5-1 1.5-1.5 3.5-1.5 5.5 0 1.5 0.3 3 1 4.5l-3 3c-1.5 0.5-3 2-3 4 0 2.5 2 4.5 4.5 4.5 2 0 3.5-1.5 4-3l3-3c1.5 0.7 3 1 4.5 1 2 0 4-0.5 5.5-1.5 1.5-1 2.5-2.5 2.5-4.5s-1-3.5-2.5-4.5c-1.5-1-3.5-1.5-5.5-1.5-1.5 0-3 0.3-4.5 1l-3-3c-0.5-1.5-2-3-4-3z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="15" cy="15" r="2" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="25" cy="25" r="2" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h3>Ethical<br>Artistry</h3>
+            <p>
+              Fair trade partnerships with global artisans. We celebrate cultural heritage, preserve ancestral techniques, and ensure dignified livelihoods for all makers.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 8L12 12L20 16L28 12L20 8Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 16L20 20L28 16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 20L20 24L28 20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 24L20 28L28 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="20" cy="30" r="2" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h3>Conscious<br>Luxury</h3>
+            <p>
+              High quality meets high values. Mid-range to luxury pieces designed to be cherished across lifetimes, passed down through generations with stories intact.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28 12.79A12 12 0 1 1 11.21 5 9 9 0 0 0 28 12.79z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="23" cy="15" r="1.5" fill="currentColor"/>
+                <circle cx="18" cy="22" r="1.5" fill="currentColor"/>
+                <path d="M12 8l2 2M10 15l2 1M15 10l1 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Ritual &<br>Intention</h3>
+            <p>
+              Jewelry as ceremony. We invite you to set intentions, honor transitions, and mark life's sacred moments with adornments that hold meaning.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="13" cy="18" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="27" cy="18" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="20" cy="25" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M13 18l7 7M27 18l-7 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M20 10v5M15 12l2 3M25 12l-2 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Community &<br>Connection</h3>
+            <p>
+              Building a soul tribe of conscious seekers. Together, we amplify voices, share resources, and create ripples of positive impact across the globe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section timeline-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Our Journey</span>
+          <h2 class="section-title">Milestones & Magic</h2>
+          <p class="section-subtitle">
+            Every chapter has shaped who we are and deepened our commitment to Earth and soul.
+          </p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1990s</div>
+            <div class="timeline-title">Seeds of Wanderlust</div>
+            <p class="timeline-description">
+              Mayte's journey begins—traveling through 60+ countries, learning from indigenous wisdom keepers, artisans, and healers. Each experience plants seeds for what would become Free with Purpose.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2010</div>
+            <div class="timeline-title">Mayte B Jewelry is Born</div>
+            <p class="timeline-description">
+              The first collection launches, blending sacred symbols with ethical materials. Jewelry as ritual, as intention, as art—a new paradigm emerges.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-title">Portal to Artisans Opens</div>
+            <p class="timeline-description">
+              Partnerships with global makers deepen. Fair trade, cultural preservation, and artisan empowerment become core pillars of the brand.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-title">Sustainability Commitment</div>
+            <p class="timeline-description">
+              Full transition to recycled metals and ethically sourced gemstones. The Portal to Sustainability launches, curating conscious brands across beauty, fashion, and home.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">Free with Purpose Movement</div>
+            <p class="timeline-description">
+              The three portals unite under one vision—Mayte B Jewelry, Sustainability & Well-Being, and Artists & Artisans Market. A global community of conscious seekers gathers.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Today</div>
+            <div class="timeline-title">Expanding the Circle</div>
+            <p class="timeline-description">
+              Building partnerships, launching new collections, and deepening our impact. The journey continues—and we invite you to walk with us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="section founder-section">
+      <div class="container">
+        <div class="founder-grid">
+          <div class="founder-image-wrapper">
+            <div class="founder-image">
+              <img src="images/image1.jpg" alt="Mayte Bluestein, Founder">
+            </div>
+          </div>
+          <div class="founder-content">
+            <span class="label">Meet the Founder</span>
+            <h2>Mayte Bluestein</h2>
+            <p class="role">Visionary · Seeker · Sacred Artist</p>
+            <p>
+              "I've spent decades traveling the world, learning from indigenous elders, master artisans, and wisdom keepers. Every piece of jewelry I create carries the essence of those teachings—symbols that speak to the subconscious, materials that honor Mother Earth, and intentions that awaken the soul."
+            </p>
+            <p>
+              "Free with Purpose is my offering to a world hungry for meaning. It's an invitation to remember who we are, to celebrate beauty without harming the planet, and to adorn ourselves with purpose. If not now, when? If not us, who?"
+            </p>
+            <p>
+              "This movement is for the seekers, the healers, the conscious creators. For those who refuse to choose between luxury and integrity. Welcome to the tribe—let's walk this path together."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Join the Soul Tribe</h2>
+          <p>
+            Discover jewelry that honors Earth, celebrates artistry, and carries the wisdom of ancient symbols into modern life.
+          </p>
+          <a href="index.html#jewelry" class="btn btn-primary">Explore Our Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>Help & Support</h4>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Sizing Guide</a></li>
+              <li><a href="#">Cleaning & Care</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Our Brand</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="index.html#artisans">Artisans & Artists</a></li>
+              <li><a href="index.html#sustainability">Sustainability</a></li>
+              <li><a href="index.html#pillars">Our Pillars</a></li>
+              <li><a href="#">Wholesale</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Portals</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#jewelry">Mayte B Jewelry</a></li>
+              <li><a href="index.html#sustainability">Sustainable Living</a></li>
+              <li><a href="index.html#artisans">Global Artisans</a></li>
+              <li><a href="#">Journal & Blog</a></li>
+              <li><a href="#">Moon Phase Calculator</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Accessibility</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">Fb</a>
+            <a href="#" aria-label="Instagram">Ig</a>
+            <a href="#" aria-label="Pinterest">Pi</a>
+            <a href="#" aria-label="YouTube">Yt</a>
+          </div>
+          <p class="footer-copyright">© 2025 Free with Purpose · Crafted with reverence for Mother Earth</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
