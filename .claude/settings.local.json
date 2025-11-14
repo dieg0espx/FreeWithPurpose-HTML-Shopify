@@ -7,7 +7,17 @@
       "Bash(npx:*)",
       "Bash(test:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Free With Purpose landing page with elegant hero section\n\nCreated a sophisticated landing page featuring:\n- Editorial-style hero section with asymmetric layout\n- Three portal cards (Jewelry, Sustainability, Artisans) with distinct color schemes\n- Values section with custom SVG icons\n- Story section with founder information\n- Newsletter signup section\n- Responsive design across all breakpoints\n- Custom typography system (Belleza, Raleway, Arapey, Chetta Vissto)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
