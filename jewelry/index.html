@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mayte B Jewelry — Jewelry for the Soul and the Earth</title>
+    <meta name="description" content="Each creation is a symbol, a sacred reminder of our connection with Mother Earth, the Divine, and ourselves. Ethically crafted and consciously designed jewelry." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-rust: #973A2F;
+        --primary-terracotta: #D58257;
+        --primary-peach: #ECB984;
+        --primary-cream: #FFFCEB;
+        --primary-sage: #A7A676;
+        --primary-espresso: #2B1E1A;
+        --primary-brown: #643F1C;
+        --secondary-porcelain: #F8F5ED;
+        --secondary-ivory: #FEFBF3;
+        --secondary-muted: #6B5D52;
+        --secondary-soft: #A69B8F;
+
+        --font-heading: "Raleway", sans-serif;
+        --font-body: "Belleza", sans-serif;
+
+        --shadow-sm: 0 2px 8px rgba(43, 30, 26, 0.06);
+        --shadow-md: 0 4px 16px rgba(43, 30, 26, 0.08);
+        --shadow-lg: 0 8px 32px rgba(43, 30, 26, 0.12);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img, video {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(254, 251, 243, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(213, 130, 87, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .brand-logo {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--secondary-muted);
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--primary-terracotta);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-terracotta);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-cta {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.75rem;
+        background: var(--primary-brown);
+        color: #fff;
+        border-radius: 999px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-cta:hover {
+        background: var(--primary-rust);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(100, 63, 28, 0.25);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: var(--primary-espresso);
+      }
+
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.6;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(43, 30, 26, 0.3), rgba(43, 30, 26, 0.5));
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        max-width: 900px;
+        padding: 2rem;
+        padding-top: 8rem;
+        color: #fff;
+      }
+
+      .hero-headline {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+      }
+
+      .hero-subheadline {
+        font-family: var(--font-body);
+        font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+        line-height: 1.8;
+        margin-bottom: 3rem;
+        color: rgba(255, 255, 255, 0.95);
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-cta-group {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 1.2rem 2.5rem;
+        border-radius: 999px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        border: none;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background: var(--primary-brown);
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(100, 63, 28, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-rust);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(151, 58, 47, 0.4);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #fff;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .section {
+        padding: clamp(4rem, 10vw, 8rem) 0;
+      }
+
+      /* Brand Philosophy Section */
+      .philosophy-section {
+        background: var(--secondary-ivory);
+        text-align: center;
+      }
+
+      .section-label {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-bottom: 1.5rem;
+      }
+
+      .section-heading {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        line-height: 1.3;
+        color: var(--primary-espresso);
+        margin-bottom: 2rem;
+      }
+
+      .section-text {
+        font-size: clamp(1.1rem, 2vw, 1.25rem);
+        line-height: 1.9;
+        color: var(--secondary-muted);
+        max-width: 900px;
+        margin: 0 auto 3rem;
+      }
+
+      /* Symbols Section */
+      .symbols-section {
+        background: var(--primary-cream);
+      }
+
+      .symbols-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3rem;
+        margin-top: 4rem;
+      }
+
+      .symbol-card {
+        text-align: center;
+        padding: 2.5rem 2rem;
+        background: var(--secondary-ivory);
+        border-radius: 16px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .symbol-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .symbol-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-terracotta);
+      }
+
+      .symbol-icon svg {
+        width: 60px;
+        height: 60px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+      }
+
+      .symbol-title {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: var(--primary-espresso);
+      }
+
+      .symbol-description {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--secondary-muted);
+      }
+
+      /* Collections Section */
+      .collections-section {
+        background: var(--secondary-porcelain);
+      }
+
+      .collections-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+        margin-top: 4rem;
+      }
+
+      .collection-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+      }
+
+      .collection-card:hover {
+        transform: scale(1.02);
+      }
+
+      .collection-image-wrapper {
+        position: relative;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        background: var(--secondary-ivory);
+      }
+
+      .collection-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .collection-card:hover .collection-image {
+        transform: scale(1.1);
+      }
+
+      .collection-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2.5rem 2rem;
+        background: linear-gradient(to top, rgba(43, 30, 26, 0.9), transparent);
+        color: #fff;
+      }
+
+      .collection-name {
+        font-family: var(--font-heading);
+        font-size: 1.75rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .collection-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.95;
+      }
+
+      /* Impact Section */
+      .impact-section {
+        background: var(--primary-sage);
+        color: var(--secondary-ivory);
+        text-align: center;
+      }
+
+      .impact-section .section-heading,
+      .impact-section .section-text {
+        color: var(--secondary-ivory);
+      }
+
+      .impact-section .section-label {
+        color: var(--primary-peach);
+      }
+
+      /* Featured Products Grid */
+      .featured-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 4rem;
+      }
+
+      .product-card {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .product-image-wrapper {
+        position: relative;
+        aspect-ratio: 3/4;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+        border-radius: 12px;
+        background: var(--secondary-ivory);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .product-image {
+        transform: scale(1.08);
+      }
+
+      .product-card-info {
+        text-align: center;
+      }
+
+      .product-collection {
+        font-family: var(--font-heading);
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-bottom: 0.5rem;
+      }
+
+      .product-name {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+        margin-bottom: 0.5rem;
+      }
+
+      .product-price {
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--primary-espresso);
+      }
+
+      /* Newsletter Section */
+      .newsletter-section {
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        text-align: center;
+      }
+
+      .newsletter-section .section-heading,
+      .newsletter-section .section-text {
+        color: var(--primary-espresso);
+      }
+
+      .newsletter-section .section-label {
+        color: var(--primary-terracotta);
+      }
+
+      .newsletter-form {
+        max-width: 600px;
+        margin: 3rem auto 0;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        min-width: 280px;
+        padding: 1.2rem 2rem;
+        border: 2px solid var(--primary-terracotta);
+        background: #fff;
+        border-radius: 999px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--primary-espresso);
+        transition: all 0.3s ease;
+      }
+
+      .newsletter-input::placeholder {
+        color: var(--secondary-muted);
+      }
+
+      .newsletter-input:focus {
+        outline: none;
+        border-color: var(--primary-rust);
+        background: #fff;
+      }
+
+      .newsletter-submit {
+        padding: 1.2rem 3rem;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary-espresso);
+        padding: clamp(4rem, 8vw, 6rem) 0 2rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        color: var(--primary-peach);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-link {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--primary-terracotta);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+        text-align: center;
+      }
+
+      .footer-socials {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        color: var(--primary-peach);
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--primary-terracotta);
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      .footer-copyright {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .nav-links {
+          display: none;
+        }
+
+        .nav-container {
+          justify-content: space-between;
+        }
+
+        .hero-headline {
+          font-size: clamp(2.5rem, 6vw, 4rem);
+        }
+
+        .symbols-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .collections-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .featured-products {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-input {
+          min-width: 100%;
+        }
+      }
+
+      /* Scroll animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">Mayte B</a>
+        <div class="nav-links">
+          <a href="#collections" class="nav-link">Collections</a>
+          <a href="#symbols" class="nav-link">Symbols</a>
+          <a href="#about" class="nav-link">Our Story</a>
+          <a href="#impact" class="nav-link">Impact</a>
+        </div>
+        <a href="product.html" class="nav-cta">Shop Now</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="../images/video1.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content fade-in-up">
+        <h1 class="hero-headline">Jewelry for the Soul and the Earth</h1>
+        <p class="hero-subheadline">
+          Each creation is a symbol, a sacred reminder of our connection with Mother Earth, the Divine, and ourselves. Ethically crafted and consciously designed, every piece carries energy, meaning, and timeless beauty.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#collections" class="btn btn-primary">Shop the Collection</a>
+          <a href="#symbols" class="btn btn-secondary">Discover the Meaning of Symbols</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Philosophy Section -->
+    <section class="philosophy-section section" id="about">
+      <div class="container">
+        <p class="section-label">Our Philosophy</p>
+        <h2 class="section-heading">Conscious Luxury Born from Ritual</h2>
+        <p class="section-text">
+          Mayte B Jewelry is a conscious-luxury brand born from ritual and remembrance. We create adornments that bridge the ancient and the modern, elegant pieces that awaken intention and invite you to live with awareness.
+        </p>
+        <p class="section-text">
+          Rooted in sacred artistry and sustainability, each design is handcrafted with care and respect for the planet. Our jewelry honors ancient wisdom, carrying within it the language of symbols, messages that speak directly to the heart and soul.
+        </p>
+      </div>
+    </section>
+
+    <!-- Symbols Section -->
+    <section class="symbols-section section" id="symbols">
+      <div class="container">
+        <p class="section-label">Sacred Language</p>
+        <h2 class="section-heading">The Meaning Behind the Symbols</h2>
+        <p class="section-text">
+          Symbols are the language of the soul. They unlock memory, protect energy, and guide our transformation.
+        </p>
+
+        <div class="symbols-grid">
+          <div class="symbol-card">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="2"/>
+                <line x1="32" y1="6" x2="32" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="32" y1="50" x2="32" y2="58" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="10.92" y1="10.92" x2="16.68" y2="16.68" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="47.32" y1="47.32" x2="53.08" y2="53.08" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="6" y1="32" x2="14" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="50" y1="32" x2="58" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="10.92" y1="53.08" x2="16.68" y2="47.32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="47.32" y1="16.68" x2="53.08" y2="10.92" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="symbol-title">The Sun</h3>
+            <p class="symbol-description">
+              Sacred flame, vitality, warmth. The source of all life, consciousness, and transformation.
+            </p>
+          </div>
+
+          <div class="symbol-card">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 32 8 Q 20 15, 18 25 Q 16 35, 22 42 Q 28 49, 32 52 Q 36 49, 42 42 Q 48 35, 46 25 Q 44 15, 32 8 Z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="26" cy="22" r="2" fill="currentColor"/>
+                <circle cx="38" cy="22" r="2" fill="currentColor"/>
+                <path d="M 28 28 Q 32 26, 36 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M 32 52 Q 28 54, 26 58 M 32 52 Q 36 54, 38 58" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="symbol-title">The Snake</h3>
+            <p class="symbol-description">
+              Shakti, kundalini, rebirth. The serpent energy rising through awakening and renewal.
+            </p>
+          </div>
+
+          <div class="symbol-card">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2"/>
+                <path d="M 32 6 Q 45 32, 32 58 Q 19 32, 32 6 Z" fill="currentColor" stroke="none"/>
+                <circle cx="32" cy="22" r="4" fill="var(--primary-cream)" stroke="none"/>
+                <circle cx="32" cy="42" r="4" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3 class="symbol-title">Yin & Yang</h3>
+            <p class="symbol-description">
+              Harmony and balance. The dance between light and shadow, masculine and feminine.
+            </p>
+          </div>
+
+          <div class="symbol-card">
+            <div class="symbol-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="32" r="15" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="2" fill="currentColor"/>
+                <line x1="32" y1="12" x2="32" y2="52" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="12" y1="32" x2="52" y2="32" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="symbol-title">Throat Chakra</h3>
+            <p class="symbol-description">
+              Expression, truth, creation. The voice of your authentic self speaking into being.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="#collections" class="btn btn-primary">Explore the Symbols</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections-section section" id="collections">
+      <div class="container">
+        <p class="section-label">Our Collections</p>
+        <h2 class="section-heading">Sacred Designs, Timeless Beauty</h2>
+        <p class="section-text">
+          Discover our signature collections: The Sun Series, Kundalini Serpent, and Sacred Geometry. Each piece is ethically handcrafted using recycled metals and sustainable materials, merging luxury with purpose.
+        </p>
+
+        <div class="collections-grid">
+          <div class="collection-card">
+            <div class="collection-image-wrapper">
+              <img src="../images/image2.jpg" alt="The Sun Series" class="collection-image" />
+              <div class="collection-overlay">
+                <h3 class="collection-name">The Sun Series</h3>
+                <p class="collection-description">Radiant designs channeling divine illumination</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection-card">
+            <div class="collection-image-wrapper">
+              <img src="../images/image3.jpg" alt="Kundalini Serpent" class="collection-image" />
+              <div class="collection-overlay">
+                <h3 class="collection-name">Kundalini Serpent</h3>
+                <p class="collection-description">Sacred symbols of transformation and rebirth</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection-card">
+            <div class="collection-image-wrapper">
+              <img src="../images/image7.jpg" alt="Sacred Geometry" class="collection-image" />
+              <div class="collection-overlay">
+                <h3 class="collection-name">Sacred Geometry</h3>
+                <p class="collection-description">Ancient patterns of universal harmony</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="product.html" class="btn btn-primary">Shop with Intention</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section" style="background: var(--secondary-ivory);">
+      <div class="container">
+        <p class="section-label">Featured Pieces</p>
+        <h2 class="section-heading">Adornments for Your Journey</h2>
+
+        <div class="featured-products">
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="../images/image2.jpg" alt="Solar Mandala Necklace" class="product-image" />
+            </div>
+            <div class="product-card-info">
+              <p class="product-collection">Sun Series</p>
+              <h3 class="product-name">Solar Mandala</h3>
+              <p class="product-price">$168.00</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="../images/image3.jpg" alt="Lunar Crescent Ring" class="product-image" />
+            </div>
+            <div class="product-card-info">
+              <p class="product-collection">Moon Series</p>
+              <h3 class="product-name">Lunar Crescent</h3>
+              <p class="product-price">$118.00</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="../images/image8.jpg" alt="Serpent Ring" class="product-image" />
+            </div>
+            <div class="product-card-info">
+              <p class="product-collection">Kundalini</p>
+              <h3 class="product-name">Serpent Ring</h3>
+              <p class="product-price">$158.00</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="../images/image7.jpg" alt="Sacred Geometry Pendant" class="product-image" />
+            </div>
+            <div class="product-card-info">
+              <p class="product-collection">Sacred Geometry</p>
+              <h3 class="product-name">Flower of Life</h3>
+              <p class="product-price">$188.00</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="../images/image1.jpg" alt="Chakra Necklace" class="product-image" />
+            </div>
+            <div class="product-card-info">
+              <p class="product-collection">Chakra Series</p>
+              <h3 class="product-name">Throat Chakra</h3>
+              <p class="product-price">$148.00</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-wrapper">
+              <img src="../images/image4.jpg" alt="Balance Earrings" class="product-image" />
+            </div>
+            <div class="product-card-info">
+              <p class="product-collection">Balance Collection</p>
+              <h3 class="product-name">Yin Yang Hoops</h3>
+              <p class="product-price">$98.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section section" id="impact">
+      <div class="container">
+        <p class="section-label">Our Impact</p>
+        <h2 class="section-heading">Creating Conscious Luxury</h2>
+        <p class="section-text">
+          Each purchase supports artisans, sustainability projects, and creative initiatives that bring beauty, wisdom, and integrity back into the world. Together, we are creating conscious luxury, jewelry that restores harmony between people and the planet.
+        </p>
+        <div style="margin-top: 3rem;">
+          <a href="#about" class="btn btn-primary">Learn More About Our Mission</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section section">
+      <div class="container">
+        <p class="section-label">Join the Movement</p>
+        <h2 class="section-heading">Join Our Circle of Conscious Beauty</h2>
+        <p class="section-text">
+          Receive stories, rituals, and early access to new pieces created with intention.
+        </p>
+
+        <form class="newsletter-form">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="newsletter-input"
+            required
+          />
+          <button type="submit" class="btn btn-primary newsletter-submit">
+            Join the Movement
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Shop</h3>
+            <div class="footer-links">
+              <a href="product.html" class="footer-link">All Jewelry</a>
+              <a href="#collections" class="footer-link">Collections</a>
+              <a href="#" class="footer-link">New Arrivals</a>
+              <a href="#" class="footer-link">Best Sellers</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Learn</h3>
+            <div class="footer-links">
+              <a href="#symbols" class="footer-link">Meaning of Symbols</a>
+              <a href="#" class="footer-link">Ritual & Care</a>
+              <a href="#about" class="footer-link">Our Story</a>
+              <a href="#" class="footer-link">Sustainability</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Support</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Contact Us</a>
+              <a href="#" class="footer-link">Shipping & Returns</a>
+              <a href="#" class="footer-link">Size Guide</a>
+              <a href="#" class="footer-link">FAQ</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Join Soul Tribe</a>
+              <a href="#impact" class="footer-link">Our Impact</a>
+              <a href="#" class="footer-link">Wholesale</a>
+              <a href="#" class="footer-link">Collaborations</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="social-link" aria-label="Facebook">FB</a>
+            <a href="#" class="social-link" aria-label="Pinterest">PI</a>
+            <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          </div>
+          <p class="footer-copyright">
+            © 2025 Mayte B Jewelry | Free with Purpose | Crafted with reverence for Mother Earth
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Navbar background on scroll
+      window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+          navbar.style.background = 'rgba(254, 251, 243, 0.98)';
+          navbar.style.boxShadow = '0 4px 16px rgba(43, 30, 26, 0.08)';
+        } else {
+          navbar.style.background = 'rgba(254, 251, 243, 0.95)';
+          navbar.style.boxShadow = 'none';
+        }
+      });
+
+      // Newsletter form submission
+      document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for joining our circle of conscious beauty!');
+        e.target.reset();
+      });
+    </script>
+  </body>
+</html>

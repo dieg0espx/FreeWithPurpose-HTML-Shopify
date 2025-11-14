@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Collaborate · Free With Purpose</title>
+    <meta name="description" content="Connect with us for custom jewelry, artisan collaborations, wholesale inquiries, or to join our conscious movement." />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap");
+      @import url("https://fonts.cdnfonts.com/css/chetta-vissto");
+      @import url("https://fonts.cdnfonts.com/css/belleza");
+      @import url("https://fonts.cdnfonts.com/css/rosarivo");
+      @import url("https://fonts.cdnfonts.com/css/oxygen");
+      @import url("https://fonts.cdnfonts.com/css/fondamento");
+
+      :root {
+        --primary-rust: #973A2F;
+        --primary-terracotta: #D58257;
+        --primary-peach: #ECB984;
+        --primary-cream: #FFFCEB;
+        --primary-sage: #A7A676;
+        --primary-espresso: #2B1E1A;
+        --secondary-porcelain: #F8F5ED;
+        --secondary-ivory: #FEFBF3;
+        --secondary-muted: #6B5D52;
+        --secondary-soft: #A69B8F;
+
+        --rust: var(--primary-rust);
+        --terracotta: var(--primary-terracotta);
+        --peach: var(--primary-peach);
+        --cream: var(--primary-cream);
+        --sage: var(--primary-sage);
+        --espresso: var(--primary-espresso);
+        --porcelain: var(--secondary-porcelain);
+        --ivory: var(--secondary-ivory);
+        --muted: var(--secondary-muted);
+        --soft-text: var(--secondary-soft);
+
+        --shadow-sm: 0 2px 8px rgba(43, 30, 26, 0.06);
+        --shadow-md: 0 4px 16px rgba(43, 30, 26, 0.08);
+        --shadow-lg: 0 8px 32px rgba(43, 30, 26, 0.12);
+
+        --radius-sm: 8px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --radius-xl: 32px;
+
+        --font-decorative: "Cinzel Decorative", serif;
+        --font-heading: "Cinzel", serif;
+        --font-display: "Playfair Display", serif;
+        --font-body: "Cormorant Garamond", serif;
+        --font-sans: "Montserrat", sans-serif;
+        --font-chetta: "Chetta Vissto", cursive;
+        --font-belleza: "Belleza", sans-serif;
+        --font-rosarivo: "Rosarivo", serif;
+        --font-oxygen: "Oxygen", sans-serif;
+        --font-fondamento: "Fondamento", cursive;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-belleza);
+        background: var(--cream);
+        color: var(--espresso);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: sticky;
+        top: 0;
+        background: var(--ivory);
+        box-shadow: var(--shadow-sm);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(213, 130, 87, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .brand-logo {
+        font-family: var(--font-chetta);
+        font-size: 1.15rem;
+        letter-spacing: 0.15em;
+        text-transform: none;
+        color: var(--espresso);
+        font-weight: 400;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-link {
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--soft-text);
+        transition: color 0.3s ease;
+        font-weight: 400;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--terracotta);
+      }
+
+      .nav-cta {
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.75rem;
+        background: var(--terracotta);
+        color: #fff;
+        border-radius: 999px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .nav-cta:hover {
+        background: var(--rust);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(151, 58, 47, 0.25);
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .section {
+        padding: clamp(4rem, 10vw, 7rem) 0;
+      }
+
+      /* Hero Section */
+      .contact-hero {
+        position: relative;
+        padding: clamp(5rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 5rem);
+        background: linear-gradient(135deg, var(--peach) 0%, var(--sage) 100%);
+        overflow: hidden;
+      }
+
+      .contact-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('images/image5.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.12;
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        color: var(--espresso);
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .hero-label {
+        font-family: var(--font-rosarivo);
+        font-size: 0.85rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        color: var(--rust);
+      }
+
+      .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.75rem, 6vw, 4.5rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        line-height: 1.15;
+      }
+
+      .hero-subtitle {
+        font-family: var(--font-display);
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        font-style: italic;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      /* Main Contact Section */
+      .contact-main {
+        padding: clamp(4rem, 8vw, 6rem) 0;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 5rem);
+        align-items: start;
+      }
+
+      /* Contact Form */
+      .contact-form-wrapper {
+        background: var(--ivory);
+        border-radius: var(--radius-xl);
+        padding: clamp(2.5rem, 5vw, 4rem);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid rgba(213, 130, 87, 0.15);
+      }
+
+      .form-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1rem;
+      }
+
+      .form-subtitle {
+        font-family: var(--font-belleza);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--muted);
+        margin-bottom: 2.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.75rem;
+      }
+
+      .form-label {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 0.6rem;
+        font-weight: 500;
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-radius: var(--radius-md);
+        border: 1.5px solid rgba(213, 130, 87, 0.3);
+        font-family: var(--font-belleza);
+        font-size: 1rem;
+        background: #fff;
+        color: var(--espresso);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        outline: none;
+        border-color: var(--terracotta);
+        box-shadow: 0 0 0 3px rgba(213, 130, 87, 0.1);
+      }
+
+      .form-input::placeholder,
+      .form-textarea::placeholder {
+        color: var(--soft-text);
+      }
+
+      .form-textarea {
+        min-height: 150px;
+        resize: vertical;
+        line-height: 1.7;
+      }
+
+      .form-select {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%236B5D52' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1.25rem center;
+        padding-right: 3rem;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1.1rem 2.5rem;
+        border-radius: 999px;
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .btn-primary {
+        background: var(--terracotta);
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(213, 130, 87, 0.3);
+        width: 100%;
+      }
+
+      .btn-primary:hover {
+        background: var(--rust);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(151, 58, 47, 0.4);
+      }
+
+      /* Contact Info Sidebar */
+      .contact-info {
+        position: sticky;
+        top: 120px;
+      }
+
+      .info-section {
+        background: var(--ivory);
+        border-radius: var(--radius-lg);
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow-md);
+        border: 1px solid rgba(213, 130, 87, 0.15);
+      }
+
+      .info-section-title {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .info-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terracotta);
+      }
+
+      .info-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        fill: none;
+      }
+
+      .info-item {
+        margin-bottom: 1.25rem;
+      }
+
+      .info-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-label {
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--soft-text);
+        margin-bottom: 0.4rem;
+      }
+
+      .info-value {
+        font-family: var(--font-belleza);
+        font-size: 1.05rem;
+        color: var(--espresso);
+        line-height: 1.6;
+      }
+
+      .info-value a {
+        color: var(--terracotta);
+        transition: color 0.3s ease;
+      }
+
+      .info-value a:hover {
+        color: var(--rust);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-link {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--porcelain);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        color: var(--terracotta);
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .social-link:hover {
+        background: var(--terracotta);
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      /* Collaboration Opportunities */
+      .collaboration-section {
+        padding: clamp(4rem, 8vw, 6rem) 0;
+        background: var(--porcelain);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .section-label {
+        font-family: var(--font-rosarivo);
+        font-size: 0.85rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .section-subtitle {
+        font-family: var(--font-display);
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        font-style: italic;
+        color: var(--muted);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .opportunities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .opportunity-card {
+        background: var(--ivory);
+        border-radius: var(--radius-lg);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-md);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .opportunity-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--terracotta);
+      }
+
+      .opportunity-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terracotta);
+      }
+
+      .opportunity-icon svg {
+        width: 44px;
+        height: 44px;
+        stroke: currentColor;
+        fill: none;
+      }
+
+      .opportunity-title {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--espresso);
+        margin-bottom: 1rem;
+      }
+
+      .opportunity-description {
+        font-family: var(--font-belleza);
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .opportunity-link {
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: gap 0.3s ease;
+      }
+
+      .opportunity-card:hover .opportunity-link {
+        gap: 0.75rem;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        padding: clamp(4rem, 8vw, 6rem) 0;
+      }
+
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: var(--ivory);
+        border-radius: var(--radius-lg);
+        padding: 2rem 2.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(213, 130, 87, 0.1);
+      }
+
+      .faq-question {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        letter-spacing: 0.05em;
+        color: var(--espresso);
+        margin-bottom: 1rem;
+      }
+
+      .faq-answer {
+        font-family: var(--font-belleza);
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--muted);
+      }
+
+      .faq-answer a {
+        color: var(--terracotta);
+        transition: color 0.3s ease;
+      }
+
+      .faq-answer a:hover {
+        color: var(--rust);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--porcelain);
+        padding: clamp(4rem, 8vw, 6rem) 0 2rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        color: var(--espresso);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-link {
+        font-family: var(--font-belleza);
+        font-size: 0.95rem;
+        color: var(--muted);
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--terracotta);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(213, 130, 87, 0.2);
+        padding-top: 2rem;
+        text-align: center;
+      }
+
+      .footer-socials {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-copyright {
+        font-family: var(--font-belleza);
+        font-size: 0.9rem;
+        color: var(--soft-text);
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-info {
+          position: static;
+          top: auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 1.5rem;
+        }
+
+        .nav-links {
+          gap: 1.5rem;
+        }
+
+        .opportunities-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">Free With Purpose</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="jewelry.html" class="nav-link">Jewelry</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="journal.html" class="nav-link">Journal</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+        <a href="jewelry.html" class="nav-cta">Shop Now</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="hero-content">
+        <p class="hero-label">Let's Connect</p>
+        <h1 class="hero-title">Contact & Collaborate</h1>
+        <p class="hero-subtitle">
+          Whether you're seeking custom jewelry, exploring artisan partnerships, or joining our conscious movement—we'd love to hear from you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <h2 class="form-title">Send a Message</h2>
+            <p class="form-subtitle">
+              Share your vision, inquiry, or collaboration idea. We typically respond within 24-48 hours.
+            </p>
+            <form>
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name *</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-type" class="form-label">Inquiry Type *</label>
+                <select id="inquiry-type" name="inquiry-type" class="form-select" required>
+                  <option value="">Select an option...</option>
+                  <option value="custom">Custom Jewelry Design</option>
+                  <option value="wholesale">Wholesale Inquiry</option>
+                  <option value="collaboration">Artisan Collaboration</option>
+                  <option value="press">Press & Media</option>
+                  <option value="order">Order Support</option>
+                  <option value="general">General Question</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-input" placeholder="Brief description">
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Your Message *</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your inquiry, vision, or collaboration idea..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Info Sidebar -->
+          <div class="contact-info">
+            <!-- Email Contact -->
+            <div class="info-section">
+              <h3 class="info-section-title">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 7 L12 13 L21 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                Email Us
+              </h3>
+              <div class="info-item">
+                <p class="info-label">General Inquiries</p>
+                <p class="info-value"><a href="mailto:hello@freewithpurpose.com">hello@freewithpurpose.com</a></p>
+              </div>
+              <div class="info-item">
+                <p class="info-label">Custom Orders</p>
+                <p class="info-value"><a href="mailto:custom@freewithpurpose.com">custom@freewithpurpose.com</a></p>
+              </div>
+              <div class="info-item">
+                <p class="info-label">Collaborations</p>
+                <p class="info-value"><a href="mailto:collaborate@freewithpurpose.com">collaborate@freewithpurpose.com</a></p>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="info-section">
+              <h3 class="info-section-title">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 6 V12 L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                Response Time
+              </h3>
+              <div class="info-item">
+                <p class="info-value">
+                  We respond to all inquiries within 24-48 hours during business days. For urgent custom orders or wholesale requests, please mention "urgent" in your subject line.
+                </p>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="info-section">
+              <h3 class="info-section-title">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 2 L7 2 C4.23858 2 2 4.23858 2 7 L2 17 C2 19.7614 4.23858 22 7 22 L17 22 C19.7614 22 22 19.7614 22 17 L22 7 C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+                  </svg>
+                </div>
+                Follow Our Journey
+              </h3>
+              <div class="info-item">
+                <p class="info-value">
+                  Connect with our community, see behind-the-scenes artisan work, and stay inspired daily.
+                </p>
+              </div>
+              <div class="social-links">
+                <a href="#" class="social-link" aria-label="Instagram">Ig</a>
+                <a href="#" class="social-link" aria-label="Facebook">Fb</a>
+                <a href="#" class="social-link" aria-label="Pinterest">Pi</a>
+                <a href="#" class="social-link" aria-label="YouTube">Yt</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Opportunities -->
+    <section class="collaboration-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Partnership Opportunities</p>
+          <h2 class="section-title">Ways to Collaborate</h2>
+          <p class="section-subtitle">
+            We're always seeking meaningful partnerships with aligned brands, artisans, and conscious creators.
+          </p>
+        </div>
+        <div class="opportunities-grid">
+          <!-- Artisan Collaboration -->
+          <div class="opportunity-card">
+            <div class="opportunity-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 4 L28 16 L40 16 L30 24 L34 36 L24 28 L14 36 L18 24 L8 16 L20 16 Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="opportunity-title">Artisan Partners</h3>
+            <p class="opportunity-description">
+              Are you a maker, metalsmith, or craftsperson working with sustainable materials? We collaborate with artisans who share our earth-honoring values.
+            </p>
+            <a href="#" class="opportunity-link">Learn More →</a>
+          </div>
+
+          <!-- Wholesale -->
+          <div class="opportunity-card">
+            <div class="opportunity-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="12" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 12 V8 C16 6.89543 16.8954 6 18 6 L30 6 C31.1046 6 32 6.89543 32 8 V12" stroke="currentColor" stroke-width="2"/>
+                <line x1="8" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="opportunity-title">Wholesale Inquiry</h3>
+            <p class="opportunity-description">
+              Boutiques, yoga studios, and conscious retailers—bring Mayte B Jewelry to your community. Request our wholesale catalog and terms.
+            </p>
+            <a href="#" class="opportunity-link">Get Wholesale Info →</a>
+          </div>
+
+          <!-- Custom Design -->
+          <div class="opportunity-card">
+            <div class="opportunity-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 26 L20 38 L24 36 L28 38 Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 15 L14 8 L11 10 L15 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30 15 L34 8 L37 10 L33 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="opportunity-title">Custom Commissions</h3>
+            <p class="opportunity-description">
+              Transform your vision into wearable art. We create bespoke pieces for weddings, milestones, and sacred ceremonies.
+            </p>
+            <a href="#" class="opportunity-link">Start Your Custom Journey →</a>
+          </div>
+
+          <!-- Brand Collaboration -->
+          <div class="opportunity-card">
+            <div class="opportunity-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 24 L32 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="opportunity-title">Brand Partnerships</h3>
+            <p class="opportunity-description">
+              Conscious brands, wellness spaces, and sustainable businesses—let's co-create something meaningful for your community.
+            </p>
+            <a href="#" class="opportunity-link">Explore Partnership →</a>
+          </div>
+
+          <!-- Press & Media -->
+          <div class="opportunity-card">
+            <div class="opportunity-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="14" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 20 L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 25 L28 25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 30 L24 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="opportunity-title">Press & Media</h3>
+            <p class="opportunity-description">
+              Journalists, bloggers, and content creators—request our press kit, high-res images, and founder interviews.
+            </p>
+            <a href="#" class="opportunity-link">Media Resources →</a>
+          </div>
+
+          <!-- Ambassador Program -->
+          <div class="opportunity-card">
+            <div class="opportunity-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8 L26 16 L34 16 L28 21 L30 29 L24 24 L18 29 L20 21 L14 16 L22 16 Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="opportunity-title">Soul Tribe Ambassadors</h3>
+            <p class="opportunity-description">
+              Yoga teachers, wellness practitioners, and conscious influencers—join our ambassador program and share sacred adornment.
+            </p>
+            <a href="#" class="opportunity-link">Apply Now →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Common Questions</p>
+          <h2 class="section-title">Frequently Asked</h2>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <h3 class="faq-question">How long does custom jewelry take?</h3>
+            <p class="faq-answer">
+              Custom pieces typically take 4-6 weeks from design approval to completion. This includes consultation, design refinement, handcrafting, and quality inspection. Rush orders may be available—please inquire.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Do you offer international shipping?</h3>
+            <p class="faq-answer">
+              Yes! We ship worldwide with tracked, insured shipping. International orders typically arrive within 7-14 business days. Visit our <a href="#">Shipping Policy</a> for details.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">What materials do you work with?</h3>
+            <p class="faq-answer">
+              We exclusively use recycled precious metals (gold, silver, brass), ethically-sourced gemstones, and sustainable materials. All pieces are handcrafted by artisan partners who practice fair-trade principles.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Can I visit your studio or workshop?</h3>
+            <p class="faq-answer">
+              Our artisans work in studios across Bali, Guatemala, and Mexico. While we don't have a public showroom, we occasionally host virtual studio tours and artisan meet-and-greets. <a href="#">Join our mailing list</a> for announcements.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">How do I care for my jewelry?</h3>
+            <p class="faq-answer">
+              Each piece comes with specific care instructions. Generally, store in a dry place, avoid harsh chemicals, and cleanse energetically during moon phases. Read our <a href="#">Care & Ritual Guide</a> for detailed practices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Shop</h3>
+            <div class="footer-links">
+              <a href="jewelry.html" class="footer-link">All Jewelry</a>
+              <a href="#" class="footer-link">Collections</a>
+              <a href="#" class="footer-link">By Symbol</a>
+              <a href="#" class="footer-link">Gift Guide</a>
+              <a href="#" class="footer-link">Custom Orders</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <div class="footer-links">
+              <a href="about.html" class="footer-link">Our Story</a>
+              <a href="journal.html" class="footer-link">Journal</a>
+              <a href="#" class="footer-link">Sustainability</a>
+              <a href="#" class="footer-link">Artisans</a>
+              <a href="#" class="footer-link">Symbols Guide</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Support</h3>
+            <div class="footer-links">
+              <a href="contact.html" class="footer-link">Contact Us</a>
+              <a href="#" class="footer-link">Shipping & Returns</a>
+              <a href="#" class="footer-link">Care Instructions</a>
+              <a href="#" class="footer-link">Size Guide</a>
+              <a href="#" class="footer-link">FAQ</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Collaborate</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Wholesale Inquiry</a>
+              <a href="#" class="footer-link">Artisan Partnerships</a>
+              <a href="#" class="footer-link">Brand Collaborations</a>
+              <a href="#" class="footer-link">Ambassador Program</a>
+              <a href="#" class="footer-link">Press & Media</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram">Ig</a>
+            <a href="#" class="social-link" aria-label="Facebook">Fb</a>
+            <a href="#" class="social-link" aria-label="Pinterest">Pi</a>
+            <a href="#" class="social-link" aria-label="YouTube">Yt</a>
+          </div>
+          <p class="footer-copyright">© 2025 Free with Purpose · Mayte B Jewelry · Crafted with reverence for Mother Earth</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

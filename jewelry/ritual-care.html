@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ritual & Care — Mayte B Jewelry</title>
+    <meta name="description" content="Learn how to honor your sacred jewelry with intention-setting rituals and conscious care practices. Each piece deserves to be treated as a ritual object." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-rust: #973A2F;
+        --primary-terracotta: #D58257;
+        --primary-peach: #ECB984;
+        --primary-cream: #FFFCEB;
+        --primary-sage: #A7A676;
+        --primary-espresso: #2B1E1A;
+        --primary-brown: #643F1C;
+        --secondary-porcelain: #F8F5ED;
+        --secondary-ivory: #FEFBF3;
+        --secondary-muted: #6B5D52;
+        --secondary-soft: #A69B8F;
+
+        --font-heading: "Raleway", sans-serif;
+        --font-body: "Belleza", sans-serif;
+
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--primary-espresso);
+        background: var(--secondary-ivory);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.2rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-terracotta);
+      }
+
+      .nav-cta {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.75rem;
+        background: var(--primary-brown);
+        color: #fff;
+        border-radius: 999px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-cta:hover {
+        background: var(--primary-rust);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(100, 63, 28, 0.25);
+      }
+
+      /* Hero Section */
+      .page-hero {
+        padding: clamp(8rem, 15vw, 12rem) 2rem clamp(4rem, 8vw, 6rem);
+        background: linear-gradient(135deg, var(--primary-sage) 0%, var(--primary-peach) 100%);
+        text-align: center;
+        color: #fff;
+      }
+
+      .page-hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .page-hero-intro {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.3rem;
+        line-height: 1.9;
+        font-style: italic;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        padding: clamp(4rem, 10vw, 7rem) 0;
+      }
+
+      /* Ritual Step - Alternating Layout */
+      .ritual-step {
+        margin-bottom: clamp(5rem, 10vw, 8rem);
+      }
+
+      .ritual-step:last-child {
+        margin-bottom: 0;
+      }
+
+      .ritual-step-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 5rem);
+        align-items: center;
+      }
+
+      .ritual-step:nth-child(even) .ritual-step-content {
+        direction: rtl;
+      }
+
+      .ritual-step:nth-child(even) .ritual-step-text {
+        direction: ltr;
+      }
+
+      .ritual-step-video {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      .ritual-step-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .ritual-step-text {
+        padding: 2rem;
+      }
+
+      .ritual-step-number {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-bottom: 1rem;
+      }
+
+      .ritual-step-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .ritual-step-icon {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+        color: var(--primary-terracotta);
+      }
+
+      .ritual-step-icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+      }
+
+      .ritual-step-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+        line-height: 1.2;
+      }
+
+      .ritual-step-description {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: var(--secondary-muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .ritual-step-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1.5rem;
+      }
+
+      .ritual-step-list li {
+        font-size: 1.1rem;
+        line-height: 1.9;
+        color: var(--secondary-muted);
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 1rem;
+      }
+
+      .ritual-step-list li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary-terracotta);
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      /* Quote Section */
+      .quote-section {
+        background: var(--primary-cream);
+        padding: clamp(4rem, 8vw, 6rem) 2rem;
+        text-align: center;
+      }
+
+      .quote-text {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        line-height: 1.9;
+        font-style: italic;
+        color: var(--primary-espresso);
+        font-weight: 400;
+      }
+
+      .quote-author {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-top: 2rem;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary-espresso);
+        padding: clamp(4rem, 8vw, 6rem) 0 2rem;
+        color: #fff;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        color: var(--primary-peach);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-link {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--primary-terracotta);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+        text-align: center;
+      }
+
+      .footer-socials {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        color: var(--primary-peach);
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--primary-terracotta);
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      .footer-copyright {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .nav-links {
+          display: none;
+        }
+
+        .ritual-step-content {
+          grid-template-columns: 1fr;
+        }
+
+        .ritual-step:nth-child(even) .ritual-step-content {
+          direction: ltr;
+        }
+
+        .ritual-step-header {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">Mayte B</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#collections" class="nav-link">Collections</a>
+          <a href="symbols.html" class="nav-link">Symbols</a>
+          <a href="ritual-care.html" class="nav-link">Ritual & Care</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-cta">Shop Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <h1 class="page-hero-title">Ritual & Care</h1>
+      <p class="page-hero-intro">
+        Each Mayte B piece is born from sacred intention and deserves to be treated as a ritual object, one that holds energy, memory, and love. Caring for your jewelry is an act of gratitude and awareness. These simple rituals help you honor its spirit and keep its energy alive.
+      </p>
+    </section>
+
+    <!-- Ritual Steps -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Step 1: Setting Your Intention (Video 6) -->
+        <div class="ritual-step">
+          <div class="ritual-step-content">
+            <div class="ritual-step-video">
+              <video autoplay muted loop playsinline>
+                <source src="../images/video6.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="ritual-step-text">
+              <p class="ritual-step-number">Step One</p>
+              <div class="ritual-step-header">
+                <div class="ritual-step-icon">
+                  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 32 8 L 32 32 L 48 24 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2"/>
+                    <path d="M 20 20 Q 32 28, 44 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M 20 44 Q 32 36, 44 44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h2 class="ritual-step-title">Setting Your Intention</h2>
+              </div>
+              <p class="ritual-step-description">
+                Before wearing your piece for the first time, take a quiet moment. Hold it in your hands, close your eyes, and breathe deeply. Whisper an intention, affirmation, or prayer into it, something you wish to remember, embody, or create. The jewelry becomes your ally in carrying that energy throughout your day.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Cleansing the Energy (Video 5) -->
+        <div class="ritual-step">
+          <div class="ritual-step-content">
+            <div class="ritual-step-video">
+              <video autoplay muted loop playsinline>
+                <source src="../images/video5.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="ritual-step-text">
+              <p class="ritual-step-number">Step Two</p>
+              <div class="ritual-step-header">
+                <div class="ritual-step-icon">
+                  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 32 10 Q 28 18, 32 26 Q 36 18, 32 10 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M 26 16 Q 22 24, 26 32 Q 30 24, 26 16 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M 38 16 Q 34 24, 38 32 Q 42 24, 38 16 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <circle cx="32" cy="45" r="10" stroke="currentColor" stroke-width="2"/>
+                    <line x1="32" y1="35" x2="32" y2="32" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+                <h2 class="ritual-step-title">Cleansing the Energy</h2>
+              </div>
+              <p class="ritual-step-description">
+                Like us, jewelry absorbs energy from its surroundings. Cleanse it periodically using one of these gentle methods:
+              </p>
+              <ul class="ritual-step-list">
+                <li>Place it under the light of the full moon overnight.</li>
+                <li>Leave it on a piece of selenite, quartz, or amethyst.</li>
+                <li>Pass it through incense smoke or palo santo with gratitude.</li>
+              </ul>
+              <p class="ritual-step-description" style="margin-top: 1.5rem;">
+                Avoid harsh chemicals or ultrasonic cleaners, they disturb both material and spirit.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Physical Care (Video 7) -->
+        <div class="ritual-step">
+          <div class="ritual-step-content">
+            <div class="ritual-step-video">
+              <video autoplay muted loop playsinline>
+                <source src="../images/video7.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="ritual-step-text">
+              <p class="ritual-step-number">Step Three</p>
+              <div class="ritual-step-header">
+                <div class="ritual-step-icon">
+                  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 32 8 Q 20 20, 20 32 Q 20 44, 32 56 Q 44 44, 44 32 Q 44 20, 32 8 Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M 28 28 L 30 34 L 36 30 L 34 36 L 40 34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h2 class="ritual-step-title">Physical Care</h2>
+              </div>
+              <p class="ritual-step-description">
+                All pieces are handcrafted from sustainable metals such as silver, bronze, and gold vermeil.
+              </p>
+              <ul class="ritual-step-list">
+                <li>Store them in a soft cloth or pouch to prevent scratches.</li>
+                <li>Keep away from perfumes, lotions, and prolonged moisture.</li>
+                <li>Gently polish with a natural jewelry cloth to restore shine.</li>
+              </ul>
+              <p class="ritual-step-description" style="margin-top: 1.5rem;">
+                Treat each piece as a treasure meant to last for generations, timeless, intentional, alive.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Daily Ritual (Video 8) -->
+        <div class="ritual-step">
+          <div class="ritual-step-content">
+            <div class="ritual-step-video">
+              <video autoplay muted loop playsinline>
+                <source src="../images/video8.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="ritual-step-text">
+              <p class="ritual-step-number">Step Four</p>
+              <div class="ritual-step-header">
+                <div class="ritual-step-icon">
+                  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2"/>
+                    <path d="M 32 12 L 32 32 L 44 38" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="32" cy="32" r="3" fill="currentColor"/>
+                    <line x1="32" y1="8" x2="32" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="32" y1="52" x2="32" y2="56" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="8" y1="32" x2="12" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="52" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h2 class="ritual-step-title">Daily Ritual</h2>
+              </div>
+              <p class="ritual-step-description">
+                Wearing your jewelry can become part of your daily ritual. As you put it on, take a breath and reconnect with your intention. Let it remind you of your light, your power, your connection to the sacred.
+              </p>
+              <p class="ritual-step-description">
+                Over time, it becomes more than adornment, it becomes a companion in your spiritual journey.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+      <p class="quote-text">
+        May every piece you wear remind you of beauty, purpose, and harmony with the Earth. When cared for with love, these jewels become living symbols of consciousness, heirlooms of the soul.
+      </p>
+      <p class="quote-author">"There is no compromise between quality and conscience, only beauty with meaning."</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Shop</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">All Collections</a>
+              <a href="#" class="footer-link">New Arrivals</a>
+              <a href="#" class="footer-link">Best Sellers</a>
+              <a href="#" class="footer-link">Gift Sets</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <div class="footer-links">
+              <a href="symbols.html" class="footer-link">Meaning of Symbols</a>
+              <a href="ritual-care.html" class="footer-link">Ritual & Care</a>
+              <a href="index.html#about" class="footer-link">Our Story</a>
+              <a href="#" class="footer-link">Sustainability</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Contact Us</a>
+              <a href="#" class="footer-link">Instagram</a>
+              <a href="#" class="footer-link">Newsletter</a>
+              <a href="#" class="footer-link">Wholesale</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Support</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Shipping & Returns</a>
+              <a href="#" class="footer-link">Size Guide</a>
+              <a href="#" class="footer-link">FAQ</a>
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="social-link" aria-label="Facebook">FB</a>
+            <a href="#" class="social-link" aria-label="Pinterest">PI</a>
+            <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          </div>
+          <p class="footer-copyright">
+            © 2025 Mayte B Jewelry | Free with Purpose | Crafted with reverence for Mother Earth
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

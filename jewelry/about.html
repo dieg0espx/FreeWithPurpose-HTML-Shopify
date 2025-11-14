@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Mayte B — Mayte B Jewelry</title>
+    <meta name="description" content="Discover the journey of Mayte Bluestein, creator of Mayte B Jewelry. A story of beauty, consciousness, and remembrance through sacred design and mindful creation." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-rust: #973A2F;
+        --primary-terracotta: #D58257;
+        --primary-peach: #ECB984;
+        --primary-cream: #FFFCEB;
+        --primary-sage: #A7A676;
+        --primary-espresso: #2B1E1A;
+        --primary-brown: #643F1C;
+        --secondary-porcelain: #F8F5ED;
+        --secondary-ivory: #FEFBF3;
+        --secondary-muted: #6B5D52;
+        --secondary-soft: #A69B8F;
+
+        --font-heading: "Raleway", sans-serif;
+        --font-body: "Belleza", sans-serif;
+
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--primary-espresso);
+        background: var(--secondary-ivory);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.2rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-terracotta);
+      }
+
+      .nav-cta {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.75rem;
+        background: var(--primary-brown);
+        color: #fff;
+        border-radius: 999px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-cta:hover {
+        background: var(--primary-rust);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(100, 63, 28, 0.25);
+      }
+
+      /* Hero Section */
+      .page-hero {
+        position: relative;
+        padding: clamp(10rem, 15vw, 14rem) 2rem clamp(5rem, 8vw, 7rem);
+        text-align: center;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--primary-peach) 0%, var(--primary-sage) 100%);
+      }
+
+      .page-hero-content {
+        position: relative;
+        z-index: 3;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .page-hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        color: #fff;
+      }
+
+      .page-hero-subtitle {
+        font-size: 1.4rem;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.95);
+        font-style: italic;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        padding: clamp(4rem, 10vw, 7rem) 0;
+      }
+
+      /* Story Section */
+      .story-section {
+        background: #fff;
+      }
+
+      .story-content {
+        margin-bottom: 3rem;
+      }
+
+      .story-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-bottom: 2rem;
+      }
+
+      .story-text {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: var(--secondary-muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .story-quote {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        font-style: italic;
+        color: var(--primary-espresso);
+        padding: 2.5rem;
+        background: var(--primary-cream);
+        border-radius: 8px;
+        margin: 3rem 0;
+        text-align: center;
+      }
+
+      /* Image Section */
+      .image-section {
+        background: var(--secondary-porcelain);
+      }
+
+      .about-image {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Image Grid */
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 3rem 0;
+      }
+
+      .image-grid-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        aspect-ratio: 1;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .image-grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .image-grid-item:hover img {
+        transform: scale(1.08);
+      }
+
+      /* Values Section */
+      .values-section {
+        background: var(--primary-cream);
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .value-card {
+        text-align: center;
+      }
+
+      .value-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 1.5rem;
+        color: var(--primary-terracotta);
+      }
+
+      .value-icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+      }
+
+      .value-title {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-espresso);
+        margin-bottom: 1rem;
+      }
+
+      .value-description {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--secondary-muted);
+      }
+
+      /* Closing Section */
+      .closing-section {
+        background: var(--primary-sage);
+        color: #fff;
+        text-align: center;
+      }
+
+      .closing-text {
+        font-size: 1.4rem;
+        line-height: 1.9;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary-espresso);
+        padding: clamp(4rem, 8vw, 6rem) 0 2rem;
+        color: #fff;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        color: var(--primary-peach);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-link {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--primary-terracotta);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+        text-align: center;
+      }
+
+      .footer-socials {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        color: var(--primary-peach);
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--primary-terracotta);
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      .footer-copyright {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">Mayte B</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#collections" class="nav-link">Collections</a>
+          <a href="symbols.html" class="nav-link">Symbols</a>
+          <a href="ritual-care.html" class="nav-link">Ritual & Care</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-cta">Shop Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">About Mayte B</h1>
+        <p class="page-hero-subtitle">
+          A Journey of Beauty, Consciousness, and Remembrance
+        </p>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section section">
+      <div class="container">
+        <div class="story-quote">
+          "Jewelry, for me, is not decoration, it's devotion. It's the way I translate ancient wisdom into something that can be worn close to the heart."
+        </div>
+
+        <div class="story-content">
+          <p class="story-text">
+            Mayte Bluestein is the creator and soul behind Mayte B Jewelry, one of the three portals of Free With Purpose. Her work is the result of a lifelong journey that intertwines spirituality, art, and a deep reverence for nature.
+          </p>
+          <p class="story-text">
+            Through her jewelry, Mayte brings together the sacred and the sustainable, creating adornments that honor the Earth, celebrate ancient wisdom, and inspire meaningful connection.
+          </p>
+        </div>
+
+        <div class="story-content">
+          <h2 class="story-title">Roots & Inspiration</h2>
+          <p class="story-text">
+            Mayte's inspiration flows from the meeting point of cultures, symbols, and sacred traditions. Having always been drawn to art, ritual, and the mysteries of creation, she sees jewelry as a way to carry energy, a bridge between the physical and the divine.
+          </p>
+          <p class="story-text">
+            Each piece is born from her fascination with ancient civilizations like Egypt and their deep understanding of beauty as a spiritual act. She draws from sacred symbology, the Sun, the Snake, Yin & Yang, and the Chakras, using them as living languages that speak to the subconscious and awaken remembrance.
+          </p>
+        </div>
+
+        <div class="story-quote">
+          "Symbols are the language of the soul, they bypass logic and speak directly to the heart."
+        </div>
+
+        <!-- Image Grid -->
+        <div class="image-grid">
+          <div class="image-grid-item">
+            <img src="../images/image1.jpg" alt="Mayte B Jewelry craftsmanship">
+          </div>
+          <div class="image-grid-item">
+            <img src="../images/image2.jpg" alt="Sacred symbols in design">
+          </div>
+          <div class="image-grid-item">
+            <img src="../images/image3.jpg" alt="Artisan collaboration">
+          </div>
+        </div>
+
+        <div class="story-content">
+          <h2 class="story-title">Spiritual Background</h2>
+          <p class="story-text">
+            Mayte's creative process is guided by ritual and meditation. Her pieces are infused with intention, designed to align energy and emotion. She believes that adorning oneself is a sacred act, a moment to reconnect with one's essence and with Mother Earth.
+          </p>
+          <p class="story-text">
+            This spiritual sensitivity is present in every detail: from the ethical sourcing of materials to the mindful collaboration with artisans who share her respect for tradition and craft.
+          </p>
+        </div>
+
+        <div class="story-quote">
+          "There is no true luxury without consciousness. Beauty without awareness is incomplete."
+        </div>
+
+        <!-- Image Grid -->
+        <div class="image-grid">
+          <div class="image-grid-item">
+            <img src="../images/image4.jpg" alt="Conscious luxury jewelry">
+          </div>
+          <div class="image-grid-item">
+            <img src="../images/image5.jpg" alt="Sustainable materials">
+          </div>
+        </div>
+
+        <div class="story-content">
+          <h2 class="story-title">A Vision of Conscious Luxury</h2>
+          <p class="story-text">
+            Mayte's vision extends beyond jewelry. Through her larger platform, Free With Purpose, she seeks to redefine luxury as something purposeful, an expression of integrity, sustainability, and artistry that uplifts both the maker and the wearer.
+          </p>
+          <p class="story-text">
+            Her dream is to create spaces, physical and digital, where beauty, ritual, and community coexist. A place where mothers, daughters, friends, and generations can gather to choose pieces that mark their journeys and celebrate life's transitions with intention.
+          </p>
+        </div>
+
+        <div class="story-content">
+          <h2 class="story-title">Empowerment Through Remembrance</h2>
+          <p class="story-text">
+            Unlike conventional notions of empowerment, Mayte believes we are already powerful, what we need is remembrance. Her work is a call to return to authenticity, to honor the sacred feminine and masculine within, and to live in harmony with nature.
+          </p>
+          <p class="story-text">
+            Every jewel is a whisper of that remembrance, a companion on the path of awareness.
+          </p>
+        </div>
+
+        <div class="story-quote">
+          "Through sacred design and mindful creation, I seek to remind us all that freedom and purpose are not opposites, they are one."
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section section">
+      <div class="container">
+        <h2 class="story-title" style="text-align: center; margin-bottom: 1rem;">Sustainability & Ethics</h2>
+        <p class="story-text" style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          Each Mayte B piece is handcrafted using ethically sourced metals and responsibly produced materials.
+        </p>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2"/>
+                <path d="M 32 12 Q 20 20, 20 32 Q 20 44, 32 52 Q 44 44, 44 32 Q 44 20, 32 12 Z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="32" r="4" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="value-title">Artisan Collaboration</h3>
+            <p class="value-description">
+              Partnerships prioritize small-scale artisans and fair-trade practices, ensuring that every jewel contributes to a cycle of respect and integrity.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 32 8 L 32 32 M 32 32 L 20 44 M 32 32 L 44 44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2"/>
+                <path d="M 16 48 Q 32 40, 48 48" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="value-title">Mother Earth</h3>
+            <p class="value-description">
+              Packaging is minimal and eco-conscious, aligning with devotion to protecting Mother Earth through every detail.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="24" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M 18 44 Q 18 36, 32 36 Q 46 36, 46 44 L 46 54 L 18 54 Z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="24" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="value-title">Ethical Sourcing</h3>
+            <p class="value-description">
+              Every piece uses ethically sourced metals and responsibly produced materials, honoring both people and planet.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="18" y="12" width="28" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M 24 12 L 24 8 Q 24 6, 26 6 L 38 6 Q 40 6, 40 8 L 40 12" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="28" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M 32 28 L 32 34 M 29 31 L 32 34 L 35 31" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="value-title">Eco-Conscious Packaging</h3>
+            <p class="value-description">
+              Minimal and eco-conscious packaging aligns with our devotion to protecting Mother Earth through every detail.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="closing-section section">
+      <div class="container">
+        <p class="closing-text">
+          Mayte B Jewelry is an invitation to adorn yourself with purpose, to carry symbols of light, wisdom, and love that remind you who you are.
+        </p>
+        <p class="closing-text">
+          Every piece tells a story, of rebirth, harmony, and remembrance, a story that continues the moment you choose to wear it.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Shop</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">All Collections</a>
+              <a href="#" class="footer-link">New Arrivals</a>
+              <a href="#" class="footer-link">Best Sellers</a>
+              <a href="#" class="footer-link">Gift Sets</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <div class="footer-links">
+              <a href="symbols.html" class="footer-link">Meaning of Symbols</a>
+              <a href="ritual-care.html" class="footer-link">Ritual & Care</a>
+              <a href="about.html" class="footer-link">About Mayte B</a>
+              <a href="#" class="footer-link">Sustainability</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Contact Us</a>
+              <a href="#" class="footer-link">Instagram</a>
+              <a href="#" class="footer-link">Newsletter</a>
+              <a href="#" class="footer-link">Wholesale</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Support</h3>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Shipping & Returns</a>
+              <a href="#" class="footer-link">Size Guide</a>
+              <a href="#" class="footer-link">FAQ</a>
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="social-link" aria-label="Facebook">FB</a>
+            <a href="#" class="social-link" aria-label="Pinterest">PI</a>
+            <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          </div>
+          <p class="footer-copyright">
+            © 2025 Mayte B Jewelry | Free with Purpose | Crafted with reverence for Mother Earth
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
