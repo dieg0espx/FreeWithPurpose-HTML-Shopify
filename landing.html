@@ -302,17 +302,19 @@
       .hero-content-wrapper {
         position: relative;
         min-height: 75vh;
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        align-items: stretch;
       }
 
       .hero-background-image {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 58%;
+        position: relative;
+        width: 100%;
         height: 100%;
+        min-height: 75vh;
         z-index: 0;
+        order: 2;
       }
 
 
@@ -332,9 +334,12 @@
       .hero-text-content {
         position: relative;
         z-index: 2;
-        max-width: 720px;
         padding: clamp(4rem, 8vw, 6rem) clamp(2.5rem, 6vw, 5rem);
         background: var(--cream);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        order: 1;
       }
 
       .hero-label {
@@ -408,16 +413,17 @@
       .intro-content-wrapper {
         position: relative;
         min-height: 75vh;
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        align-items: stretch;
       }
 
       .intro-background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 58%;
+        position: relative;
+        width: 100%;
         height: 100%;
+        min-height: 75vh;
         z-index: 0;
       }
 
@@ -437,10 +443,11 @@
       .intro-text-content {
         position: relative;
         z-index: 2;
-        max-width: 720px;
         padding: clamp(4rem, 8vw, 6rem) clamp(2.5rem, 6vw, 5rem);
         background: white;
-        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       .intro-text-content p {
@@ -560,7 +567,7 @@
 
       .portal-card.jewelry .portal-label {
         font-family: "Bellefair", serif;
-        color: #000000;
+        color: #ffffff;
       }
 
       .portal-card.jewelry .portal-title,
@@ -579,7 +586,7 @@
 
       .portal-card.sustainability .portal-label {
         font-family: "Cormorant Garamond", serif;
-        color: #000000;
+        color: #ffffff;
       }
 
       .portal-card.sustainability .portal-title,
@@ -593,12 +600,12 @@
       }
 
       .portal-card.artisans .portal-content {
-        background: var(--warm-clay);
+        background: var(--terracotta);
       }
 
       .portal-card.artisans .portal-label {
         font-family: "Rosarivo", serif;
-        color: #000000;
+        color: #ffffff;
       }
 
       .portal-card.artisans .portal-title,
@@ -946,7 +953,7 @@
 
       .essence-item:nth-child(1) .essence-item-title {
         font-family: "Bellefair", serif;
-        color: #000000;
+        color: #ffffff;
       }
 
       .essence-item:nth-child(1) .essence-item-description {
@@ -964,7 +971,7 @@
 
       .essence-item:nth-child(2) .essence-item-title {
         font-family: "Cormorant Garamond", serif;
-        color: #000000;
+        color: #ffffff;
       }
 
       .essence-item:nth-child(2) .essence-item-description {
@@ -973,16 +980,16 @@
 
       /* Artisans Item Colors */
       .essence-item:nth-child(3) .essence-item-content {
-        background: var(--warm-clay);
+        background: var(--terracotta);
       }
 
       .essence-item:nth-child(3) .essence-item-number {
-        color: var(--warm-clay);
+        color: var(--terracotta);
       }
 
       .essence-item:nth-child(3) .essence-item-title {
         font-family: "Rosarivo", serif;
-        color: #000000;
+        color: #ffffff;
       }
 
       .essence-item:nth-child(3) .essence-item-description {
@@ -1430,33 +1437,31 @@
       }
 
       /* Responsive */
-      @media (max-width: 1200px) {
-        .hero-background-image {
-          width: 50%;
-        }
-
-        .intro-background-image {
-          width: 50%;
-        }
-      }
-
       @media (max-width: 1024px) {
+        .hero-content-wrapper {
+          grid-template-columns: 1fr;
+        }
+
         .hero-background-image {
-          opacity: 0.4;
-          width: 100%;
+          min-height: 50vh;
+          order: 1;
         }
 
         .hero-text-content {
-          background: none;
+          order: 2;
+          min-height: auto;
+        }
+
+        .intro-content-wrapper {
+          grid-template-columns: 1fr;
         }
 
         .intro-background-image {
-          opacity: 0.4;
-          width: 100%;
+          min-height: 50vh;
         }
 
         .intro-text-content {
-          background: none;
+          min-height: auto;
         }
 
         .portals-grid {
@@ -1567,7 +1572,7 @@
       <div class="hero-container">
         <div class="hero-content-wrapper">
           <div class="hero-background-image">
-            <img src="images/FreeWith/About Mayte B Jewelry (to ComC)/IMG_3017.jpg" alt="Conscious Living">
+            <img src="/Users/diego/Desktop/FreeWithPurpose-HTML-Shopify/images/three.jpg" alt="Conscious Living">
           </div>
 
           <div class="hero-text-content">
@@ -1681,54 +1686,36 @@
           </div>
           <div class="portal-values-grid">
             <div class="portal-value-card">
-              <div class="portal-value-image">
-                <img src="images/FreeWith/About Mayte B Jewelry (to ComC)/3W3A2870.jpg" alt="Intention & Conscious Living">
-              </div>
               <div class="portal-value-text">
                 <h4>Intention & Conscious Living</h4>
                 <p>Every creation, choice, and collaboration is guided by awareness, presence, and purpose. We choose with intentionality, responsibility, and meaning in how we live, create, consume, and become.</p>
               </div>
             </div>
             <div class="portal-value-card">
-              <div class="portal-value-image">
-                <img src="images/FreeWith/About Mayte B Jewelry (to ComC)/IMG_3017.jpg" alt="Beauty, Artistry & Depth">
-              </div>
               <div class="portal-value-text">
                 <h4>Beauty, Artistry & Depth</h4>
                 <p>Beauty is soulful, symbolic, ethical, and connected to the Earth. We honor creativity, excellence, heritage, and exquisite artistry in every detail.</p>
               </div>
             </div>
             <div class="portal-value-card">
-              <div class="portal-value-image">
-                <img src="images/FreeWith/About me (to ComC)/Photo Nov 13 2025, 9 20 17 AM (2).jpg" alt="Integrity & Inner Alignment">
-              </div>
               <div class="portal-value-text">
                 <h4>Integrity & Inner Alignment</h4>
                 <p>We stand for honesty, authenticity, and alignment in all actions — holding deep awareness of our impact on people, the planet, and ourselves.</p>
               </div>
             </div>
             <div class="portal-value-card">
-              <div class="portal-value-image">
-                <img src="images/FreeWith/About Sustainability and well-being (to ComC)/Yoga in Buthanjpg.jpg" alt="Sustainability & Respect for Mother Earth">
-              </div>
               <div class="portal-value-text">
                 <h4>Sustainability & Respect for Mother Earth</h4>
                 <p>We honor the Earth as a sacred, living Mother. Our choices protect her ecosystems, resources, and the well-being of future generations through mindful and sustainable practices.</p>
               </div>
             </div>
             <div class="portal-value-card">
-              <div class="portal-value-image">
-                <img src="images/FreeWith/About Artists & artisans (to ComC)/Wood artisan.jpg" alt="Cultural Heritage, Ancestral Wisdom & Human Connection">
-              </div>
               <div class="portal-value-text">
                 <h4>Cultural Heritage, Ancestral Wisdom & Human Connection</h4>
                 <p>We uplift artisans, traditions, rituals, and ancient knowledge passed down through lineages. We nurture relationships rooted in presence, respect, reciprocity, and meaningful connection.</p>
               </div>
             </div>
             <div class="portal-value-card">
-              <div class="portal-value-image">
-                <img src="images/FreeWith/About Sustainability and well-being (to ComC)/IMG_9261.jpg" alt="Freedom, Joy, Gratitude & Purposeful Living">
-              </div>
               <div class="portal-value-text">
                 <h4>Freedom, Joy, Gratitude & Purposeful Living</h4>
                 <p>We embrace lives shaped by authentic expression, liberation from conditioning, and the courage to live in truth. We prioritize well-being, aligned action, and appreciation for the beauty of life.</p>
