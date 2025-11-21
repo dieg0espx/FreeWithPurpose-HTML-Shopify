@@ -1362,19 +1362,44 @@
       }
 
       /* Responsive */
+      @media (max-width: 1200px) {
+        .portal-values-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .portal-value-card {
+          grid-column: span 1;
+        }
+
+        .portal-value-card:nth-child(4),
+        .portal-value-card:nth-child(5),
+        .portal-value-card:nth-child(6) {
+          grid-column: span 1;
+        }
+      }
+
       @media (max-width: 1024px) {
+        .navigation {
+          padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+        }
+
+        .nav-links {
+          gap: 2rem;
+        }
+
         .hero-content-wrapper {
           grid-template-columns: 1fr;
         }
 
         .hero-background-image {
           min-height: 50vh;
-          order: 1;
+          order: 2;
         }
 
         .hero-text-content {
-          order: 2;
+          order: 1;
           min-height: auto;
+          padding: clamp(3rem, 6vw, 4rem) clamp(2rem, 5vw, 3rem);
         }
 
         .intro-content-wrapper {
@@ -1387,31 +1412,31 @@
 
         .intro-text-content {
           min-height: auto;
+          padding: clamp(3rem, 6vw, 4rem) clamp(2rem, 5vw, 3rem);
         }
 
         .portals-grid {
           grid-template-columns: 1fr;
-        }
-
-        .essence-items {
-          grid-template-columns: 1fr;
+          gap: 3rem;
         }
 
         .essence-item {
           grid-template-columns: 1fr;
           min-height: auto;
+          height: auto;
         }
 
-        .essence-item:nth-child(1),
-        .essence-item:nth-child(2),
-        .essence-item:nth-child(3) {
-          grid-column: 1;
-          grid-row: auto;
+        .essence-item:nth-child(even) {
           direction: ltr;
         }
 
         .essence-item-image {
-          min-height: 350px;
+          min-height: 300px;
+          height: 300px;
+        }
+
+        .essence-item-image img {
+          height: 300px;
         }
 
         .story-grid {
@@ -1419,7 +1444,12 @@
         }
 
         .portal-values-grid {
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
+        .section {
+          padding: clamp(5rem, 10vw, 8rem) 0;
         }
       }
 
@@ -1427,46 +1457,448 @@
         .navigation {
           flex-direction: column;
           text-align: center;
+          gap: 2rem;
+          padding: 1.5rem clamp(1.5rem, 4vw, 2.5rem);
         }
 
         .nav-links {
           gap: 1.5rem;
           justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .nav-links a {
+          font-size: 0.65rem;
         }
 
         .hero-text-content {
           text-align: center;
+          padding: 3rem 1.5rem;
         }
 
         .hero-title {
           font-size: clamp(2.5rem, 10vw, 3.5rem);
         }
 
+        .hero-subtitle,
+        .hero-description {
+          max-width: 100%;
+        }
+
         .hero-actions {
           justify-content: center;
         }
 
+        .hero-background-image {
+          min-height: 40vh;
+        }
+
+        .intro-content-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .intro-background-image {
+          display: none;
+        }
+
+        .intro-text-content {
+          text-align: center;
+          padding: 3rem 1.5rem;
+        }
+
+        .intro-list {
+          text-align: left;
+        }
+
+        .portal-image {
+          height: 280px;
+        }
+
+        .portal-content {
+          padding: 2rem;
+        }
+
+        .portal-label {
+          font-size: 1.15rem;
+        }
+
+        .portal-title {
+          font-size: 1.1rem;
+        }
+
+        .portal-description {
+          font-size: 0.95rem;
+        }
+
+        .portal-values-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .portal-value-card {
+          grid-column: span 1;
+        }
+
+        .portal-value-image {
+          height: 200px;
+        }
+
+        .portal-value-text {
+          padding: 1.5rem;
+        }
+
+        .essence-item-content {
+          padding: 2.5rem 1.5rem;
+        }
+
+        .essence-item-title {
+          font-size: clamp(2rem, 8vw, 2.5rem);
+        }
+
+        .newsletter-section {
+          padding: 3rem 1.5rem;
+        }
+
         .newsletter-form {
           flex-direction: column;
+          gap: 1rem;
         }
 
         .newsletter-input {
           width: 100%;
+          min-width: 100%;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
         }
       }
 
       @media (max-width: 640px) {
-        .footer-bottom {
-          flex-direction: column;
-          text-align: center;
+        .container {
+          padding: 0 5%;
+        }
+
+        .section {
+          padding: 4rem 0;
+        }
+
+        .portal-card,
+        .portal-value-card,
+        .value-card,
+        .essence-item {
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .navigation {
+          padding: 1.25rem 1.5rem;
+        }
+
+        .brand-logo img {
+          height: 28px;
+        }
+
+        .nav-links {
+          width: 100%;
+        }
+
+        .nav-links a {
+          font-size: 0.6rem;
+          letter-spacing: 0.12em;
         }
 
         .hero-content-wrapper {
-          min-height: 70vh;
+          min-height: auto;
+        }
+
+        .hero-background-image {
+          min-height: 35vh;
+        }
+
+        .hero-text-content {
+          padding: 2.5rem 1.5rem;
+        }
+
+        .hero-label {
+          font-size: 0.6rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .hero-description {
+          font-size: 0.95rem;
+          margin-bottom: 2rem;
         }
 
         .intro-content-wrapper {
-          min-height: 70vh;
+          min-height: auto;
+        }
+
+        .intro-background-image {
+          min-height: 35vh;
+        }
+
+        .intro-text-content {
+          padding: 2.5rem 1.5rem;
+        }
+
+        .intro-text-content p {
+          font-size: 1rem;
+        }
+
+        .intro-list li {
+          font-size: 1rem;
+        }
+
+        .section-header {
+          margin-bottom: 4rem;
+        }
+
+        .section-label {
+          font-size: 0.6rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+          letter-spacing: 0.1em;
+        }
+
+        .section-subtitle {
+          font-size: 1rem;
+        }
+
+        .portals-grid {
+          gap: 2.5rem;
+        }
+
+        .portal-image {
+          height: 250px;
+        }
+
+        .portal-content {
+          padding: 1.75rem;
+        }
+
+        .portal-label {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .portal-title {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .portal-description {
+          font-size: 0.9rem;
+          line-height: 1.7;
+          margin-bottom: 2rem;
+        }
+
+        .btn {
+          padding: 0.8rem 2rem;
+          font-size: 0.65rem;
+        }
+
+        .portal-values-section {
+          padding: 4rem 0;
+        }
+
+        .portal-values-content {
+          padding: 0 1.5rem;
+        }
+
+        .portal-values-header {
+          margin-bottom: 3rem;
+        }
+
+        .portal-value-text h4 {
+          font-size: 1.1rem;
+        }
+
+        .portal-value-text p {
+          font-size: 0.95rem;
+        }
+
+        .values-closing {
+          margin-top: 3rem;
+          padding-top: 2rem;
+        }
+
+        .values-reminder {
+          font-size: 1.1rem;
+        }
+
+        .values-evolution {
+          font-size: 1rem;
+        }
+
+        .in-essence-section {
+          padding: 4rem 0;
+        }
+
+        .essence-text {
+          font-size: 1.05rem;
+          margin-bottom: 3rem;
+        }
+
+        .essence-item-content {
+          padding: 2rem 1.5rem;
+        }
+
+        .essence-item-title {
+          font-size: 1.75rem;
+          margin-bottom: 1rem;
+        }
+
+        .essence-item-description {
+          font-size: 0.9rem;
+        }
+
+        .essence-item-image {
+          height: 250px;
+          min-height: 250px;
+        }
+
+        .essence-item-image img {
+          height: 250px;
+        }
+
+        .visual-story {
+          padding: 4rem 0;
+          min-height: auto;
+        }
+
+        .story-content {
+          padding: 2.5rem 1.5rem;
+        }
+
+        .story-content h3 {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .story-content p {
+          font-size: 0.95rem;
+          line-height: 1.8;
+          margin-bottom: 1.25rem;
+        }
+
+        .story-quote {
+          font-size: 1.05rem;
+        }
+
+        .story-signature {
+          margin-top: 2rem;
+          padding-top: 1.5rem;
+        }
+
+        .signature-name {
+          font-size: 1.05rem;
+        }
+
+        .signature-role {
+          font-size: 0.75rem;
+        }
+
+        #newsletter {
+          padding-top: 4rem;
+          padding-bottom: 4rem;
+        }
+
+        .newsletter-section {
+          padding: 3rem 1.5rem;
+        }
+
+        .newsletter-title {
+          font-size: 1.5rem;
+          letter-spacing: 0.06em;
+        }
+
+        .newsletter-subtitle {
+          font-size: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        .newsletter-input {
+          padding: 0.9rem 1.25rem;
+          font-size: 0.85rem;
+        }
+
+        .footer {
+          padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .footer-column h4 {
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+          font-size: 0.8rem;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+          gap: 1.5rem;
+        }
+
+        .footer-social {
+          order: 1;
+        }
+
+        .footer-copyright {
+          order: 2;
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-title {
+          font-size: 2.25rem;
+        }
+
+        .section-title {
+          font-size: 1.75rem;
+        }
+
+        .essence-item-title {
+          font-size: 1.5rem;
+        }
+
+        .portal-label {
+          font-size: 0.95rem;
+          white-space: normal;
+        }
+
+        .btn {
+          padding: 0.75rem 1.5rem;
+          font-size: 0.6rem;
+          letter-spacing: 0.15em;
         }
       }
     </style>
@@ -1476,7 +1908,7 @@
     <div class="nav-wrapper">
       <nav class="navigation">
         <a href="#" class="brand-logo">
-          <img src="images/7bb624ca-4b93-4b87-9c28-c47634653723.png" alt="Free With Purpose">
+          <img src="imagesLanding/7bb624ca-4b93-4b87-9c28-c47634653723.png" alt="Free With Purpose">
         </a>
         <div class="nav-links">
           <a href="#portals">Our Portals</a>
@@ -1492,7 +1924,7 @@
       <div class="hero-container">
         <div class="hero-content-wrapper">
           <div class="hero-background-image">
-            <img src="/Users/diego/Desktop/FreeWithPurpose-HTML-Shopify/images/three.jpg" alt="Conscious Living">
+            <img src="imagesLanding/three.jpg" alt="Conscious Living">
           </div>
 
           <div class="hero-text-content">
@@ -1516,7 +1948,7 @@
       <div class="intro-container">
         <div class="intro-content-wrapper">
           <div class="intro-background-image">
-            <img src="images/FreeWith/About me (to ComC)/IMG_4853.jpeg" alt="Free With Purpose">
+            <img src="imagesLanding/IMG_4853.jpeg" alt="Free With Purpose">
           </div>
 
           <div class="intro-text-content">
@@ -1543,7 +1975,7 @@
           <!-- Portal 1: Mayte B Jewelry -->
           <div class="portal-card jewelry">
             <div class="portal-image">
-              <img src="images/FreeWith/About Mayte B Jewelry (to ComC)/3W3A3015.jpg" alt="Mayte B Jewelry - Sacred Adornments">
+              <img src="imagesLanding/3W3A3015.jpg" alt="Mayte B Jewelry - Sacred Adornments">
             </div>
             <div class="portal-content">
               <span class="portal-label jewelry">Mayte B Jewelry</span>
@@ -1561,7 +1993,7 @@
           <!-- Portal 2: Sustainability & Well-Being -->
           <div class="portal-card sustainability">
             <div class="portal-image">
-              <img src="images/FreeWith/About Sustainability and well-being (to ComC)/IMG_9261.jpg" alt="Sustainability & Well-Being Portal">
+              <img src="imagesLanding/IMG_9261.jpg" alt="Sustainability & Well-Being Portal">
             </div>
             <div class="portal-content">
               <span class="portal-label sustainability">Sustainability & Well-Being</span>
@@ -1579,7 +2011,7 @@
           <!-- Portal 3: Artisans & Artists -->
           <div class="portal-card artisans">
             <div class="portal-image">
-              <img src="images/FreeWith/About Artists & artisans (to ComC)/Photo Nov 17 2025, 9 12 10 AM.jpg" alt="Artisans & Artists Portal">
+              <img src="imagesLanding/Photo Nov 17 2025, 9 12 10 AM.jpg" alt="Artisans & Artists Portal">
             </div>
             <div class="portal-content">
               <span class="portal-label">Artists & Artisans</span>
@@ -1666,7 +2098,7 @@
                 <p class="essence-item-description">Beauty with meaning through sacred adornment and intentional symbolism</p>
               </div>
               <div class="essence-item-image">
-                <img src="/Users/diego/Desktop/FreeWithPurpose-HTML-Shopify/images/IMG_9320.jpg" alt="Mayte B Jewelry">
+                <img src="imagesLanding/IMG_9320.jpg" alt="Mayte B Jewelry">
               </div>
             </div>
 
@@ -1678,7 +2110,7 @@
                 <p class="essence-item-description">Conscious living through mindful choices and holistic nourishment</p>
               </div>
               <div class="essence-item-image">
-                <img src="images/FreeWith/About Sustainability and well-being (to ComC)/Yoga in Buthanjpg.jpg" alt="Sustainability & Well-Being">
+                <img src="imagesLanding/Yoga in Buthanjpg.jpg" alt="Sustainability & Well-Being">
               </div>
             </div>
 
@@ -1690,7 +2122,7 @@
                 <p class="essence-item-description">Global connection through culture, heritage, and meaningful impact</p>
               </div>
               <div class="essence-item-image">
-                <img src="images/FreeWith/About Artists & artisans (to ComC)/Wood artisan.jpg" alt="Artists & Artisans">
+                <img src="imagesLanding/Wood artisan.jpg" alt="Artists & Artisans">
               </div>
             </div>
           </div>
@@ -1703,7 +2135,7 @@
       <div class="container">
         <div class="story-grid">
           <div class="story-image">
-            <img src="images/FreeWith/About me (to ComC)/Photo Nov 13 2025, 8 57 31 AM (6) (1).jpg" alt="Free With Purpose Movement">
+            <img src="imagesLanding/Photo Nov 13 2025, 8 57 31 AM (6) (1).jpg" alt="Free With Purpose Movement">
           </div>
           <div class="story-content">
             <h3>A Little About Me and Why Now</h3>

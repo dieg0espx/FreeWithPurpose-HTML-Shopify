@@ -20,7 +20,8 @@
       "Bash(curl:*)",
       "Bash(ls:*)",
       "Bash(dir:*)",
-      "Bash(unzip:*)"
+      "Bash(unzip:*)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []
