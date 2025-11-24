@@ -1,0 +1,279 @@
+    <style>
+      /* Font Imports */
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Amethysta&display=swap');
+
+      /* Visual Story Section */
+      .section {
+        padding-top: clamp(7rem, 12vw, 10rem);
+        padding-bottom: clamp(8rem, 14vw, 12rem);
+      }
+
+      .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 clamp(2rem, 5vw, 4rem);
+      }
+
+      .visual-story {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: clamp(5rem, 10vw, 8rem);
+        padding-bottom: clamp(6rem, 12vw, 10rem);
+        background: #FFFCEB;
+      }
+
+      .visual-story::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-10.jpg?v=1763739723');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        opacity: 0.15;
+        z-index: 0;
+      }
+
+      .story-grid {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .story-image {
+        display: none;
+      }
+
+      .story-content {
+        background: white;
+        backdrop-filter: blur(10px);
+        padding: clamp(3rem, 8vw, 6rem) clamp(2.5rem, 6vw, 5rem);
+        box-shadow: 0 20px 60px rgba(13, 77, 79, 0.15);
+        border: 1px solid rgba(223, 191, 106, 0.2);
+        margin-top: clamp(3rem, 6vw, 5rem);
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .story-content h3 {
+        font-family: "Belleza", sans-serif;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #0D4D4F;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        line-height: 1.3;
+      }
+
+      .story-content p {
+        font-family: "Raleway", sans-serif;
+        font-size: clamp(1rem, 1.8vw, 1.1rem);
+        line-height: 2;
+        color: #613738;
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      .story-content p:first-of-type::first-letter {
+        font-family: "Belleza", sans-serif;
+        font-size: 3.5em;
+        line-height: 0.8;
+        float: left;
+        margin: 0.1em 0.1em 0 0;
+        color: #DFBF6A;
+      }
+
+      .story-content p strong {
+        color: #0D4D4F;
+        font-weight: 600;
+      }
+
+      .story-quote {
+        font-family: "Amethysta", serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        line-height: 1.9;
+        color: rgba(63, 45, 39, 0.70);
+        margin-bottom: 1.5rem;
+      }
+
+      .story-signature {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(223, 191, 106, 0.3);
+        text-align: center;
+      }
+
+      .signature-name {
+        font-family: "Belleza", sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        color: #DFBF6A;
+        margin-bottom: 0.5rem;
+      }
+
+      .signature-role {
+        font-family: "Raleway", sans-serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #0D4D4F;
+        opacity: 0.7;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .story-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding-top: clamp(5rem, 10vw, 8rem);
+          padding-bottom: clamp(6rem, 12vw, 10rem);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .visual-story {
+          padding-top: 4rem;
+          padding-bottom: 5rem;
+          min-height: auto;
+        }
+
+        .story-content {
+          padding: 2.5rem 1.5rem;
+        }
+
+        .story-content h3 {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .story-content p {
+          font-size: 0.95rem;
+          line-height: 1.8;
+          margin-bottom: 1.25rem;
+        }
+
+        .story-quote {
+          font-size: 1.05rem;
+        }
+
+        .story-signature {
+          margin-top: 2rem;
+          padding-top: 1.5rem;
+        }
+
+        .signature-name {
+          font-size: 1.05rem;
+        }
+
+        .signature-role {
+          font-size: 0.75rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          padding: 0 5%;
+        }
+
+        .section {
+          padding-top: 4rem;
+          padding-bottom: 5rem;
+        }
+
+        .visual-story {
+          padding-top: 4rem;
+          padding-bottom: 5rem;
+          min-height: auto;
+        }
+
+        .story-content {
+          padding: 2.5rem 1.5rem;
+        }
+
+        .story-content h3 {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .story-content p {
+          font-size: 0.95rem;
+          line-height: 1.8;
+          margin-bottom: 1.25rem;
+        }
+
+        .story-quote {
+          font-size: 1.05rem;
+        }
+
+        .story-signature {
+          margin-top: 2rem;
+          padding-top: 1.5rem;
+        }
+
+        .signature-name {
+          font-size: 1.05rem;
+        }
+
+        .signature-role {
+          font-size: 0.75rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .story-content h3 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+
+    <!-- About Me Section -->
+    <section class="section visual-story" id="story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-image">
+            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-10.jpg?v=1763739723" alt="Free With Purpose Movement">
+          </div>
+          <div class="story-content">
+            <h3>A Little About Me and Why Now</h3>
+            <p>
+              Mayte B is the founder and heart behind Free With Purpose, a platform honoring Mother Earth, beauty with depth, well-being, artistry, ancient wisdom, and meaningful connection. Her work and creations invite people into more conscious, intentional, and soulful ways of living, creating, and relating.
+            </p>
+            <p>Why now? Because if not now, when? For years, I waited for "one more training" or "one more certification" before stepping fully into my purpose. Today, with my daughters leaving the nest and a deeper sense of maturity, groundedness, and aliveness, I feel it's time.
+            </p>
+            <p>
+              I'm doing this because I care deeply about Mother Earth.<br>
+              Because I want to leave a healthier, more connected world for my daughters and future generations.<br>
+              Because I believe in beauty with depth, meaningful living, and honoring ancient wisdom, traditions, and artistry that have brought so much richness to my life.<br>
+              Because I believe in a magnificent, magical, divine force orchestrating life with us, and I want to honor it.
+            </p>
+            <p>I grew up loving simplicity. Nature, animals, rituals, creativity, and the magic of the outdoors. My path has taken me across more than 60 countries, careers, motherhood, spiritual awakenings, deep healing, profound challenges, and extraordinary growth. One of the most transformative moments of my life was a powerful awakening in Peru in 2017, an encounter with a Sacred Energy that called me back to what truly matters. I've supported others for many years, holding space, guiding, listening, and fostering connection. But I realized that part of that came from old patterns of receiving love through giving. So now, I choose a new way, one rooted not in trauma, but in truth, joy, creativity, freedom, and purpose.
+            </p>
+            <p>This is how Free With Purpose was born.<br>
+              To honor Mother Earth.<br>
+              To support artisans preserving ancient wisdom and meaningful traditions.<br>
+              To create space for conscious living, mindful choices, and holistic nourishment.<br>
+              To reconnect with beauty, depth, intention, joy, and soulful presence.<br>
+              To inspire others to remember their own power, self-love, purpose, and freedom.<br>
+              To celebrate quality, artistry, culture, and authentic connection.
+            </p>
+            <p>
+              I am here now because I am choosing to embrace who I am fully. Because it is never too late to begin again. And because I want to co-create a more conscious, compassionate, connected world, starting from within.
+            </p>
+            <p><strong>Thank you for being here.</strong></p>
+            <div class="story-signature">
+              <div class="signature-name">Mayte Bluestein</div>
+              <div class="signature-role">Founder · Free With Purpose</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

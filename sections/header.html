@@ -1,0 +1,470 @@
+<style>
+  /* CSS Variables */
+  :root {
+    --header-height: 80px;
+    --header-padding: 1.5rem;
+    --gap-xl: 2.5rem;
+    --padding-sm: 1rem;
+    --padding-xs: 0.75rem;
+    --padding-2xs: 0.5rem;
+    --padding-3xs: 0.25rem;
+    --page-margin: clamp(1.5rem, 5vw, 4rem);
+    --layer-overlay: 100;
+    --layer-sticky: 99;
+    --animation-speed: 0.3s;
+    --animation-easing: ease;
+    --animation-values-fast: 0.15s ease;
+    --animation-values-slow: 0.3s ease;
+    --opacity-subdued-text: 0.6;
+    --border-bottom-width: 1px;
+    --color-background: #FFFCEB;
+    --color-foreground: #0D4D4F;
+    --color-border: rgba(13, 77, 79, 0.12);
+  }
+
+  /* Font Import */
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+
+  /* Body offset for fixed header */
+  body {
+    padding-top: var(--header-height);
+  }
+
+  /* Base Header Styles */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--layer-overlay);
+    font-family: "Raleway", sans-serif;
+    height: var(--header-height);
+    background-color: #FFFCEB;
+  }
+
+  .header[data-sticky-state] {
+    transition: opacity var(--animation-speed) var(--animation-easing),
+                background-color var(--animation-speed) var(--animation-easing),
+                box-shadow var(--animation-speed) var(--animation-easing);
+    opacity: 1;
+  }
+
+  .header[data-sticky-state="active"] {
+    box-shadow: 0 2px 20px rgba(13, 77, 79, 0.08);
+  }
+
+  /* Header Row */
+  .header__row {
+    position: relative;
+    background-color: var(--color-background);
+    border-bottom: var(--border-bottom-width) solid var(--color-border);
+    transition: color var(--animation-values-slow), border-color var(--animation-values-slow), background-color var(--animation-values-slow);
+    height: 100%;
+  }
+
+  /* Header Columns Layout */
+  .header__columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap-xl);
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 clamp(2rem, 5vw, 4rem);
+    height: 100%;
+  }
+
+  .header__column {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .header__column--left {
+    gap: var(--gap-xl);
+  }
+
+  .header__column--right {
+    gap: var(--gap-xl);
+  }
+
+  /* Logo */
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-logo__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .header-logo__image {
+    height: 40px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+  }
+
+  /* Menu */
+  .header-menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .menu-list {
+    display: flex;
+    gap: var(--gap-xl);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+  }
+
+  .menu-list__list-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-list__link {
+    font-family: "Raleway", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity var(--animation-speed) var(--animation-easing);
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .menu-list__link:hover {
+    opacity: 1;
+  }
+
+  /* Mobile Menu Toggle */
+  .header__icon--menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--color-foreground);
+  }
+
+  .header__icon--menu svg {
+    width: 26px;
+    height: 26px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  /* Hover dimming effect */
+  @media (hover: hover) {
+    .header__column:has(.menu-list__link:hover) .menu-list__link:not(:hover),
+    .header__column:has(.header-actions__action:hover) .header-actions__action:not(:hover) {
+      opacity: var(--opacity-subdued-text);
+    }
+  }
+
+  /* Section Helpers */
+  .section--full-width-margin {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Responsive Styles - Tablet */
+  @media screen and (max-width: 1024px) {
+    .header__columns {
+      gap: 1.5rem;
+      padding: 0 2rem;
+    }
+
+    .menu-list {
+      gap: 1.5rem;
+    }
+
+    .menu-list__link {
+      font-size: 0.65rem;
+    }
+
+    .header-logo__image {
+      height: 35px;
+    }
+  }
+
+  /* Responsive Styles - Mobile */
+  @media screen and (max-width: 749px) {
+    :root {
+      --header-height: 70px;
+    }
+
+    .header__columns {
+      padding: 0 1rem;
+      gap: 0.75rem;
+    }
+
+    .header__column--right {
+      gap: 0.75rem;
+    }
+
+    .header__icon--menu {
+      display: flex;
+    }
+
+    .header-menu {
+      display: none;
+    }
+
+    .header-logo__image {
+      height: 28px;
+      max-width: 150px;
+    }
+  }
+
+  /* Small mobile */
+  @media screen and (max-width: 640px) {
+    .header__columns {
+      padding: 0 5%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    :root {
+      --header-height: 60px;
+    }
+
+    .header-logo__image {
+      height: 24px;
+      max-width: 120px;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .desktop\:hidden {
+      display: none;
+    }
+  }
+
+  /* Mobile Menu Overlay */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-background);
+    z-index: calc(var(--layer-overlay) + 1);
+    padding: 2rem;
+    flex-direction: column;
+  }
+
+  .mobile-menu.is-open {
+    display: flex;
+  }
+
+  .mobile-menu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobile-menu__close {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--color-foreground);
+  }
+
+  .mobile-menu__close svg {
+    width: 26px;
+    height: 26px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  .mobile-menu__nav {
+    flex: 1;
+  }
+
+  .mobile-menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-menu__link {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    text-decoration: none;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: opacity var(--animation-speed) var(--animation-easing);
+  }
+
+  .mobile-menu__link:hover {
+    opacity: 0.7;
+  }
+</style>
+
+<!-- Header Component -->
+<header
+  id="header-component"
+  class="header"
+  data-sticky-state="idle"
+>
+  <div class="header__row section section--full-width-margin">
+    <div class="header__columns">
+      <!-- Left Column: Logo -->
+      <div class="header__column header__column--left">
+        <!-- Logo -->
+        <div class="header-logo">
+          <a href="#" class="header-logo__link">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/FWP_Text.png?v=1764025395"
+              alt="Free With Purpose"
+              class="header-logo__image"
+            >
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Desktop Menu -->
+      <div class="header__column header__column--right">
+        <!-- Mobile Menu Toggle -->
+        <button class="header__icon--menu" aria-label="Open menu" onclick="openMobileMenu()">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <nav class="header-menu">
+          <ul class="menu-list">
+            <li class="menu-list__list-item">
+              <a href="#portals" class="menu-list__link">Our Portals</a>
+            </li>
+            <li class="menu-list__list-item">
+              <a href="#values" class="menu-list__link">Values</a>
+            </li>
+            <li class="menu-list__list-item">
+              <a href="#story" class="menu-list__link">Story</a>
+            </li>
+            <li class="menu-list__list-item">
+              <a href="#newsletter" class="menu-list__link">Join Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu__header">
+    <div class="header-logo">
+      <a href="#" class="header-logo__link">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/FWP_Text.png?v=1764025395"
+          alt="Free With Purpose"
+          class="header-logo__image"
+        >
+      </a>
+    </div>
+    <button class="mobile-menu__close" aria-label="Close menu" onclick="closeMobileMenu()">
+      <svg viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="mobile-menu__nav">
+    <ul class="mobile-menu__list">
+      <li><a href="#portals" class="mobile-menu__link" onclick="closeMobileMenu()">Our Portals</a></li>
+      <li><a href="#values" class="mobile-menu__link" onclick="closeMobileMenu()">Values</a></li>
+      <li><a href="#story" class="mobile-menu__link" onclick="closeMobileMenu()">Story</a></li>
+      <li><a href="#newsletter" class="mobile-menu__link" onclick="closeMobileMenu()">Join Us</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  // Scroll state detection for header effects
+  const header = document.getElementById('header-component');
+  let lastScrollY = window.scrollY;
+
+  function updateStickyState() {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 50) {
+      header.setAttribute('data-sticky-state', 'active');
+    } else {
+      header.setAttribute('data-sticky-state', 'idle');
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  window.addEventListener('scroll', updateStickyState);
+  updateStickyState();
+
+  // Mobile menu functionality
+  function openMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  // Close mobile menu on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+</script>

@@ -1,0 +1,321 @@
+    <style>
+      /* Font Imports */
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Amethysta&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap');
+
+      /* In Essence Section */
+      .section {
+        padding: clamp(7rem, 12vw, 10rem) 0;
+      }
+
+      .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 clamp(2rem, 5vw, 4rem);
+      }
+
+      .in-essence-section {
+        padding-top: clamp(14rem, 20vw, 18rem);
+        padding-bottom: clamp(12rem, 18vw, 16rem);
+        background: #FFFCEB;
+      }
+
+      .in-essence-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .in-essence-content .section-title {
+        font-family: "Belleza", sans-serif;
+        font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0D4D4F;
+        text-align: center;
+        margin-top: clamp(4rem, 8vw, 6rem);
+        margin-bottom: 2rem;
+        line-height: 1.1;
+      }
+
+      .essence-text {
+        font-family: "Raleway", sans-serif;
+        font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+        color: #613738;
+        text-align: center;
+        margin-bottom: 5rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .essence-items {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: clamp(3rem, 6vw, 5rem);
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .essence-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        align-items: stretch;
+        height: 400px;
+      }
+
+      .essence-item:nth-child(even) {
+        direction: rtl;
+      }
+
+      .essence-item:nth-child(even) > * {
+        direction: ltr;
+      }
+
+      .essence-item-content {
+        padding: clamp(3rem, 6vw, 5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .essence-item-number {
+        display: none;
+      }
+
+      .essence-item-title {
+        font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+        letter-spacing: 0.05em;
+        text-transform: none;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        color: #000000;
+      }
+
+      .essence-item-description {
+        font-family: "Amethysta", serif;
+        font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+        line-height: 1.9;
+        font-style: italic;
+      }
+
+      /* Jewelry Item Colors */
+      .essence-item:nth-child(1) .essence-item-content {
+        background: #5A2A41;
+      }
+
+      .essence-item:nth-child(1) .essence-item-number {
+        color: #5A2A41;
+      }
+
+      .essence-item:nth-child(1) .essence-item-title {
+        font-family: "Bellefair", serif;
+        color: #ffffff;
+      }
+
+      .essence-item:nth-child(1) .essence-item-description {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      /* Sustainability Item Colors */
+      .essence-item:nth-child(2) .essence-item-content {
+        background: #7A8F76;
+      }
+
+      .essence-item:nth-child(2) .essence-item-number {
+        color: #7A8F76;
+      }
+
+      .essence-item:nth-child(2) .essence-item-title {
+        font-family: "Cormorant Garamond", serif;
+        color: #ffffff;
+      }
+
+      .essence-item:nth-child(2) .essence-item-description {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      /* Artisans Item Colors */
+      .essence-item:nth-child(3) .essence-item-content {
+        background: #C46B47;
+      }
+
+      .essence-item:nth-child(3) .essence-item-number {
+        color: #C46B47;
+      }
+
+      .essence-item:nth-child(3) .essence-item-title {
+        font-family: "Rosarivo", serif;
+        color: #ffffff;
+      }
+
+      .essence-item:nth-child(3) .essence-item-description {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .essence-item-image {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .essence-item-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.5s ease;
+      }
+
+      .essence-item:hover .essence-item-image img {
+        transform: scale(1.05);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .essence-item {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          height: auto;
+        }
+
+        .essence-item:nth-child(even) {
+          direction: ltr;
+        }
+
+        .essence-item-image {
+          min-height: 300px;
+          height: 300px;
+        }
+
+        .essence-item-image img {
+          height: 300px;
+        }
+
+        .section {
+          padding: clamp(5rem, 10vw, 8rem) 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .essence-item-content {
+          padding: 2.5rem 1.5rem;
+        }
+
+        .essence-item-title {
+          font-size: clamp(2rem, 8vw, 2.5rem);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          padding: 0 5%;
+        }
+
+        .section {
+          padding: 4rem 0;
+        }
+
+        .essence-item {
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .in-essence-section {
+          padding: 4rem 0;
+        }
+
+        .essence-text {
+          font-size: 1.05rem;
+          margin-bottom: 3rem;
+        }
+
+        .essence-item-content {
+          padding: 2rem 1.5rem;
+        }
+
+        .essence-item-title {
+          font-size: 1.75rem;
+          margin-bottom: 1rem;
+        }
+
+        .essence-item-description {
+          font-size: 0.9rem;
+        }
+
+        .essence-item-image {
+          height: 250px;
+          min-height: 250px;
+        }
+
+        .essence-item-image img {
+          height: 250px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-title {
+          font-size: 1.75rem;
+        }
+
+        .essence-item-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+
+    <!-- In Essence Section -->
+    <section class="section in-essence-section">
+      <div class="container">
+        <div class="in-essence-content">
+          <h2 class="section-title">In Essence</h2>
+          <p class="essence-text">Free With Purpose holds space for three interconnected worlds</p>
+
+          <div class="essence-items">
+            <!-- Item 1: Mayte B Jewelry -->
+            <div class="essence-item">
+              <div class="essence-item-content">
+                <div class="essence-item-number">01</div>
+                <h3 class="essence-item-title">Mayte B Jewelry</h3>
+                <p class="essence-item-description">Beauty with meaning through sacred adornment and intentional symbolism</p>
+              </div>
+              <div class="essence-item-image">
+                <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-7.jpg?v=1763739719" alt="Mayte B Jewelry">
+              </div>
+            </div>
+
+            <!-- Item 2: Sustainability & Well-Being -->
+            <div class="essence-item">
+              <div class="essence-item-content">
+                <div class="essence-item-number">02</div>
+                <h3 class="essence-item-title">Sustainability & Well-Being</h3>
+                <p class="essence-item-description">Conscious living through mindful choices and holistic nourishment</p>
+              </div>
+              <div class="essence-item-image">
+                <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-8.jpg?v=1763739726" alt="Sustainability & Well-Being">
+              </div>
+            </div>
+
+            <!-- Item 3: Artists & Artisans -->
+            <div class="essence-item">
+              <div class="essence-item-content">
+                <div class="essence-item-number">03</div>
+                <h3 class="essence-item-title">Artists & Artisans</h3>
+                <p class="essence-item-description">Global connection through culture, heritage, and meaningful impact</p>
+              </div>
+              <div class="essence-item-image">
+                <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-9.jpg?v=1763739723" alt="Artists & Artisans">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

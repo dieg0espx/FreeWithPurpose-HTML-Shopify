@@ -1,0 +1,557 @@
+    <style>
+      /* Font Imports */
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Amethysta&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap');
+
+      /* Ensure cream background on all parent elements */
+      html, body {
+        background-color: #FFFCEB;
+      }
+
+      /* Three Portals Section */
+      #portals,
+      .section#portals,
+      section.section,
+      .shopify-section {
+        padding-top: clamp(4rem, 8vw, 8rem);
+        padding-bottom: clamp(5rem, 10vw, 10rem);
+        background-color: #FFFCEB !important;
+      }
+
+      .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 4rem);
+      }
+
+      /* Remove Shopify wrapper spacing if needed */
+      .shopify-section .section {
+        margin: 0;
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 6rem;
+        padding-top: clamp(2rem, 4vw, 3rem);
+      }
+
+      .section-title {
+        font-family: "Belleza", sans-serif;
+        font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0D4D4F;
+        margin-bottom: 2rem;
+        margin-top: clamp(1.5rem, 3vw, 2.5rem);
+        line-height: 1.1;
+      }
+
+      .portals-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .portal-card {
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(13, 77, 79, 0.08);
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .portal-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 50px rgba(13, 77, 79, 0.12);
+      }
+
+      /* Jewelry Portal - Inspiration & Impact Colors */
+      .portal-card.jewelry {
+        background: #B76E79;
+      }
+
+      .portal-card.jewelry .portal-content {
+        background: #5A2A41;
+      }
+
+      .portal-card.jewelry .portal-label {
+        font-family: "Bellefair", serif;
+        color: #ffffff;
+      }
+
+      .portal-card.jewelry .portal-title,
+      .portal-card.jewelry .portal-description {
+        color: #fff;
+      }
+
+      /* Sustainability Portal - Earthy/Natural Colors */
+      .portal-card.sustainability {
+        background: #4A7C59;
+      }
+
+      .portal-card.sustainability .portal-content {
+        background: #7A8F76;
+      }
+
+      .portal-card.sustainability .portal-label {
+        font-family: "Cormorant Garamond", serif;
+        color: #ffffff;
+      }
+
+      .portal-card.sustainability .portal-title,
+      .portal-card.sustainability .portal-description {
+        color: #fff;
+      }
+
+      /* Artisans Portal - Warm/Vibrant Colors */
+      .portal-card.artisans {
+        background: #C46B47;
+      }
+
+      .portal-card.artisans .portal-content {
+        background: #C46B47;
+      }
+
+      .portal-card.artisans .portal-label {
+        font-family: "Rosarivo", serif;
+        color: #ffffff;
+      }
+
+      .portal-card.artisans .portal-title,
+      .portal-card.artisans .portal-description {
+        color: #fff;
+      }
+
+      .portal-image {
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .portal-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+        opacity: 0.6;
+        transition: opacity 0.5s ease;
+      }
+
+      .portal-card:hover .portal-image::after {
+        opacity: 0.3;
+      }
+
+      .portal-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 20%;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        filter: brightness(1) contrast(1.05);
+      }
+
+      .portal-card:hover .portal-image img {
+        transform: scale(1.12);
+        filter: brightness(1.05) contrast(1.1);
+      }
+
+      .portal-content {
+        padding: 3rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .portal-label {
+        font-size: clamp(1.15rem, 2vw, 1.6rem);
+        letter-spacing: 0.05em;
+        text-transform: none;
+        margin-bottom: 1.25rem;
+        font-weight: 400;
+        color: #000000;
+        line-height: 1.3;
+      }
+
+      .portal-title {
+        font-family: "Amethysta", serif;
+        font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+        letter-spacing: 0.05em;
+        text-transform: none;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+        font-style: italic;
+      }
+
+      .portal-description {
+        font-family: "Raleway", sans-serif;
+        font-size: 1rem;
+        line-height: 1.85;
+        margin-bottom: 2.5rem;
+        flex: 1;
+        font-weight: 300;
+      }
+
+      .portal-cta {
+        margin-top: auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.9rem 2.5rem;
+        border-radius: 2px;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: #0D4D4F;
+        color: #FFFCEB;
+        border-color: #0D4D4F;
+      }
+
+      .btn-primary:hover {
+        background: transparent;
+        color: #0D4D4F;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        border-color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.9);
+        color: #fff;
+      }
+
+      /* Button variations for portals */
+      .portal-card.jewelry .btn-primary {
+        background: #D8C9A9;
+        border-color: #D8C9A9;
+        color: #0A2A3A;
+      }
+
+      .portal-card.jewelry .btn-primary:hover {
+        background: #0D4D4F;
+        border-color: #0D4D4F;
+        color: #FFFCEB;
+      }
+
+      .portal-card.sustainability .btn-secondary {
+        background: #D8C9A9;
+        border-color: #D8C9A9;
+        color: #0D4D4F;
+      }
+
+      .portal-card.sustainability .btn-secondary:hover {
+        background: #0D4D4F;
+        border-color: #0D4D4F;
+        color: #FFFCEB;
+      }
+
+      .portal-card.artisans .btn-primary {
+        background: #D8C9A9;
+        border-color: #D8C9A9;
+        color: #0D4D4F;
+      }
+
+      .portal-card.artisans .btn-primary:hover {
+        background: #0D4D4F;
+        border-color: #0D4D4F;
+        color: #FFFCEB;
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
+        .portals-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 3rem;
+        }
+
+        .section {
+          padding: clamp(4rem, 8vw, 6rem) 0;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .portals-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .section {
+          padding: 4rem 0;
+        }
+
+        .container {
+          padding: 0 2rem;
+        }
+
+        .section-header {
+          margin-bottom: 4rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 3.5rem 0;
+        }
+
+        .container {
+          padding: 0 1.5rem;
+        }
+
+        .section-header {
+          margin-bottom: 3rem;
+        }
+
+        .section-title {
+          font-size: clamp(2rem, 6vw, 2.5rem);
+        }
+
+        .portals-grid {
+          gap: 2.5rem;
+        }
+
+        .portal-image {
+          height: 280px;
+        }
+
+        .portal-content {
+          padding: 2rem;
+        }
+
+        .portal-label {
+          font-size: 1.15rem;
+        }
+
+        .portal-title {
+          font-size: 1.1rem;
+        }
+
+        .portal-description {
+          font-size: 0.95rem;
+        }
+
+        .btn {
+          width: 100%;
+          padding: 1rem 2rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .section {
+          padding: 3rem 0;
+        }
+
+        .container {
+          padding: 0 1.25rem;
+        }
+
+        .section-header {
+          margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 1.85rem;
+          letter-spacing: 0.08em;
+        }
+
+        .portals-grid {
+          gap: 2rem;
+        }
+
+        .portal-image {
+          height: 250px;
+        }
+
+        .portal-content {
+          padding: 1.75rem;
+        }
+
+        .portal-label {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .portal-title {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .portal-description {
+          font-size: 0.9rem;
+          line-height: 1.7;
+          margin-bottom: 2rem;
+        }
+
+        .btn {
+          width: 100%;
+          padding: 0.85rem 1.75rem;
+          font-size: 0.65rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section {
+          padding: 2.5rem 0;
+        }
+
+        .container {
+          padding: 0 1rem;
+        }
+
+        .section-header {
+          margin-bottom: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.6rem;
+          letter-spacing: 0.06em;
+        }
+
+        .portals-grid {
+          gap: 1.75rem;
+        }
+
+        .portal-image {
+          height: 220px;
+        }
+
+        .portal-content {
+          padding: 1.5rem;
+        }
+
+        .portal-label {
+          font-size: 0.95rem;
+          line-height: 1.4;
+          margin-bottom: 0.85rem;
+        }
+
+        .portal-title {
+          font-size: 0.95rem;
+          margin-bottom: 0.85rem;
+        }
+
+        .portal-description {
+          font-size: 0.85rem;
+          line-height: 1.65;
+          margin-bottom: 1.5rem;
+        }
+
+        .btn {
+          width: 100%;
+          padding: 0.75rem 1.5rem;
+          font-size: 0.6rem;
+          letter-spacing: 0.12em;
+        }
+      }
+
+      @media (max-width: 375px) {
+        .section {
+          padding: 2rem 0;
+        }
+
+        .container {
+          padding: 0 0.875rem;
+        }
+
+        .section-title {
+          font-size: 1.4rem;
+        }
+
+        .portal-image {
+          height: 200px;
+        }
+
+        .portal-content {
+          padding: 1.25rem;
+        }
+      }
+    </style>
+
+    <!-- Three Portals Section -->
+    <section class="section" id="portals">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">The Three Portals</h2>
+        </div>
+
+        <div class="portals-grid">
+          <!-- Portal 1: Mayte B Jewelry -->
+          <div class="portal-card jewelry">
+            <div class="portal-image">
+              <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-4.jpg?v=1763739724" alt="Mayte B Jewelry - Sacred Adornments">
+            </div>
+            <div class="portal-content">
+              <span class="portal-label jewelry">Mayte B Jewelry</span>
+              <h3 class="portal-title">"Sacred adornment. Ethical. Intentional creation."</h3>
+              <p class="portal-description">
+                Deeply intentional creations with meaning in every detail. Inspired by nature, symbolism, and the art of sacred adornment.<br><br>
+                Each piece is more than beautiful—it is a reminder, a prayer, a story, a portal. Crafted with sustainable materials and ethically sourced elements.
+              </p>
+              <div class="portal-cta">
+                <a href="jewelry/index.html" class="btn btn-primary">Explore Jewelry</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portal 2: Sustainability & Well-Being -->
+          <div class="portal-card sustainability">
+            <div class="portal-image">
+              <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-5.jpg?v=1763739729" alt="Sustainability & Well-Being Portal">
+            </div>
+            <div class="portal-content">
+              <span class="portal-label sustainability">Sustainability & Well-Being</span>
+              <h3 class="portal-title">"Conscious living. Mindful choices. Holistic nourishment."</h3>
+              <p class="portal-description">
+                Resources, practices, and inspiration supporting conscious, holistic, and sustainable living.<br><br>
+                This portal invites people into lifestyles that honor the Earth, cultivate presence, joy, integrity, meaningful connection, and impact.
+              </p>
+              <div class="portal-cta">
+                <a href="#newsletter" class="btn btn-secondary">Discover Resources</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portal 3: Artisans & Artists -->
+          <div class="portal-card artisans">
+            <div class="portal-image">
+              <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-6.jpg?v=1763739721" alt="Artisans & Artists Portal">
+            </div>
+            <div class="portal-content">
+              <span class="portal-label">Artists & Artisans</span>
+              <h3 class="portal-title">"Ancestral wisdom. Cultural preservation. Human connection."</h3>
+              <p class="portal-description">
+                Honoring global creators who preserve ancient wisdom, artistic traditions, and ritual keeping ancestral traditions alive.<br><br>
+                This space amplifies artisans worldwide, celebrating their cultural heritage, sacred traditions, and unique crafts through ethical collaboration and meaningful exchange.
+              </p>
+              <div class="portal-cta">
+                <a href="#newsletter" class="btn btn-primary">Support Artisans</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

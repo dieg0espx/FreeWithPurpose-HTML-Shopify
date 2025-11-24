@@ -21,7 +21,11 @@
       "Bash(ls:*)",
       "Bash(dir:*)",
       "Bash(unzip:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(sections/portals-section.html)",
+      "Bash(sections/values-section.html)",
+      "Bash(sections/essence-section.html)",
+      "Bash(sections/story-section.html)"
     ],
     "deny": [],
     "ask": []

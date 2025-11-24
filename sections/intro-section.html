@@ -1,0 +1,147 @@
+<style>
+  :root {
+    --deep-teal: #0D4D4F;
+    --soft-gold: #DFBF6A;
+    --raspberry-truffle: #613738;
+    --cream: #FFFCEB;
+    --font-paragraphs: "Raleway", sans-serif;
+  }
+
+  .intro-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    position: relative;
+    background: white;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .intro-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .intro-content-wrapper {
+    position: relative;
+    min-height: 75vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .intro-background-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 75vh;
+    z-index: 0;
+  }
+
+  .intro-background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    filter: brightness(0.95) contrast(1.05);
+    transition: transform 0.5s ease;
+  }
+
+  .intro-section:hover .intro-background-image img {
+    transform: scale(1.02);
+  }
+
+  .intro-text-content {
+    position: relative;
+    z-index: 2;
+    padding: clamp(4rem, 8vw, 6rem) clamp(2.5rem, 6vw, 5rem);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .intro-text-content p {
+    font-family: var(--font-paragraphs);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 2;
+    color: var(--raspberry-truffle);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .intro-list {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .intro-list li {
+    font-family: var(--font-paragraphs);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 2.4;
+    color: var(--deep-teal);
+    font-weight: 500;
+    position: relative;
+  }
+
+  .intro-list li::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 1.1em;
+    width: 6px;
+    height: 6px;
+    background: var(--soft-gold);
+    border-radius: 50%;
+  }
+
+  @media (max-width: 1024px) {
+    .intro-content-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .intro-background-image {
+      min-height: 50vh;
+    }
+    .intro-text-content {
+      min-height: auto;
+      padding: clamp(3rem, 6vw, 4rem) clamp(2rem, 5vw, 3rem);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .intro-background-image {
+      display: none;
+    }
+    .intro-text-content {
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    .intro-list {
+      text-align: left;
+    }
+  }
+</style>
+
+<!-- Introduction Section -->
+<section class="intro-section">
+  <div class="intro-container">
+    <div class="intro-content-wrapper">
+      <div class="intro-background-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-3.jpg?v=1763739725" alt="Free With Purpose">
+      </div>
+
+      <div class="intro-text-content">
+        <p>It unfolds through three portals that honor:</p>
+        <ul class="intro-list">
+          <li>ethical jewelry & intentional creations</li>
+          <li>well-being & sustainable living</li>
+          <li>global artistry, ancient culture & traditions</li>
+        </ul>
+        <p>Through these portals, Free With Purpose weaves consciousness, ancient wisdom, culture, beauty, intention, sustainability, meaning, and meaningful human connection.</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,319 @@
+    <style>
+      /* Font Imports */
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Amethysta&display=swap');
+
+      /* Core Values Section */
+      .section {
+        padding: clamp(7rem, 12vw, 10rem) 0;
+      }
+
+      .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 clamp(2rem, 5vw, 4rem);
+      }
+
+      .portal-values-section {
+        padding-top: clamp(7rem, 12vw, 10rem);
+        padding-bottom: clamp(8rem, 14vw, 12rem);
+        position: relative;
+        overflow: hidden;
+        background: #FFFCEB;
+      }
+
+      .portal-values-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-10.jpg?v=1763739723');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        opacity: 0.08;
+        z-index: 0;
+      }
+
+      .portal-values-content {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 clamp(2rem, 5vw, 4rem);
+        position: relative;
+        z-index: 1;
+      }
+
+      .portal-values-header {
+        text-align: center;
+        margin-bottom: 5rem;
+        padding-top: clamp(2rem, 4vw, 3rem);
+      }
+
+      .portal-values-header .section-title {
+        font-family: "Belleza", sans-serif;
+        font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0D4D4F;
+        margin-bottom: 0;
+        margin-top: clamp(1.5rem, 3vw, 2.5rem);
+        line-height: 1.1;
+      }
+
+      .portal-values-intro {
+        font-family: "Belleza", sans-serif;
+        font-size: clamp(1.85rem, 3.8vw, 2.5rem);
+        letter-spacing: 0.06em;
+        color: #0D4D4F;
+        margin-bottom: 4rem;
+        text-align: center;
+      }
+
+      .portal-values-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: clamp(2rem, 4vw, 3rem);
+        margin-top: clamp(3rem, 6vw, 5rem);
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .portal-value-card {
+        background: white;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(13, 77, 79, 0.06);
+        transition: all 0.4s ease;
+        min-width: 0;
+        grid-column: span 2;
+      }
+
+      .portal-value-card:nth-child(4),
+      .portal-value-card:nth-child(5),
+      .portal-value-card:nth-child(6) {
+        grid-column: span 2;
+      }
+
+      .portal-value-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 40px rgba(13, 77, 79, 0.1);
+      }
+
+      .portal-value-image {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .portal-value-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .portal-value-card:hover .portal-value-image img {
+        transform: scale(1.1);
+      }
+
+      .portal-value-text {
+        padding: 2rem;
+      }
+
+      .portal-value-text h4 {
+        font-family: "Belleza", sans-serif;
+        font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+        letter-spacing: 0.05em;
+        color: #DFBF6A;
+        margin-bottom: 0.75rem;
+        font-weight: 400;
+      }
+
+      .portal-value-text p {
+        font-family: "Raleway", sans-serif;
+        font-size: clamp(1rem, 1.7vw, 1.15rem);
+        line-height: 1.85;
+        color: #613738;
+      }
+
+      .values-closing {
+        text-align: center;
+        margin-top: clamp(4rem, 8vw, 6rem);
+        padding-top: clamp(3rem, 6vw, 4rem);
+        border-top: 1px solid rgba(223, 191, 106, 0.2);
+      }
+
+      .values-reminder {
+        font-family: "Amethysta", serif;
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        font-style: italic;
+        color: #0D4D4F;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      .values-evolution {
+        font-family: "Amethysta", serif;
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        font-style: italic;
+        color: #613738;
+        opacity: 0.85;
+        line-height: 1.7;
+        margin-bottom: clamp(5rem, 8vw, 7rem);
+        padding-bottom: clamp(2rem, 4vw, 3rem);
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
+        .portal-values-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .portal-value-card {
+          grid-column: span 1;
+        }
+
+        .portal-value-card:nth-child(4),
+        .portal-value-card:nth-child(5),
+        .portal-value-card:nth-child(6) {
+          grid-column: span 1;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .portal-values-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
+        .section {
+          padding: clamp(5rem, 10vw, 8rem) 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .portal-values-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .portal-value-card {
+          grid-column: span 1;
+        }
+
+        .portal-value-image {
+          height: 200px;
+        }
+
+        .portal-value-text {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          padding: 0 5%;
+        }
+
+        .section {
+          padding: 4rem 0;
+        }
+
+        .portal-value-card {
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .portal-values-section {
+          padding: 4rem 0;
+        }
+
+        .portal-values-content {
+          padding: 0 1.5rem;
+        }
+
+        .portal-values-header {
+          margin-bottom: 3rem;
+        }
+
+        .portal-value-text h4 {
+          font-size: 1.1rem;
+        }
+
+        .portal-value-text p {
+          font-size: 0.95rem;
+        }
+
+        .values-closing {
+          margin-top: 3rem;
+          padding-top: 2rem;
+        }
+
+        .values-reminder {
+          font-size: 1.1rem;
+        }
+
+        .values-evolution {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-title {
+          font-size: 1.75rem;
+        }
+      }
+    </style>
+
+    <!-- Core Values Section -->
+    <section class="section portal-values-section" id="values">
+      <div class="container">
+        <div class="portal-values-content">
+          <div class="portal-values-header">
+            <h2 class="section-title">Our Values</h2>
+          </div>
+          <div class="portal-values-grid">
+            <div class="portal-value-card">
+              <div class="portal-value-text">
+                <h4>Intention & Conscious Living</h4>
+                <p>Every creation, choice, and collaboration is guided by awareness, presence, and purpose. We choose with intentionality, responsibility, and meaning in how we live, create, consume, and become.</p>
+              </div>
+            </div>
+            <div class="portal-value-card">
+              <div class="portal-value-text">
+                <h4>Beauty, Artistry & Depth</h4>
+                <p>Beauty is soulful, symbolic, ethical, and connected to the Earth. We honor creativity, excellence, heritage, and exquisite artistry in every detail.</p>
+              </div>
+            </div>
+            <div class="portal-value-card">
+              <div class="portal-value-text">
+                <h4>Integrity & Inner Alignment</h4>
+                <p>We stand for honesty, authenticity, and alignment in all actions holding deep awareness of our impact on people, the planet, and ourselves.</p>
+              </div>
+            </div>
+            <div class="portal-value-card">
+              <div class="portal-value-text">
+                <h4>Sustainability & Respect for Mother Earth</h4>
+                <p>We honor the Earth as a sacred, living Mother. Our choices protect her ecosystems, resources, and the well-being of future generations through mindful and sustainable practices.</p>
+              </div>
+            </div>
+            <div class="portal-value-card">
+              <div class="portal-value-text">
+                <h4>Cultural Heritage, Ancestral Wisdom & Human Connection</h4>
+                <p>We uplift artisans, traditions, rituals, and ancient knowledge passed down through lineages. We nurture relationships rooted in presence, respect, reciprocity, and meaningful connection.</p>
+              </div>
+            </div>
+            <div class="portal-value-card">
+              <div class="portal-value-text">
+                <h4>Freedom, Joy, Gratitude & Purposeful Living</h4>
+                <p>We embrace lives shaped by authentic expression, liberation from conditioning, and the courage to live in truth. We prioritize well-being, aligned action, and appreciation for the beauty of life.</p>
+              </div>
+            </div>
+          </div>
+          <div class="values-closing">
+            <p class="values-reminder">"A reminder to notice, appreciate, and celebrate life."</p>
+            <p class="values-evolution">"And I am a work in progress. Continually growing, remembering, and becoming."</p>
+          </div>
+        </div>
+      </div>
+    </section>
