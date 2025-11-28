@@ -57,26 +57,21 @@
         display: block;
       }
 
-      /* Navigation */
+      /* Navigation - Minimal Floating */
       .navbar {
         position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(247, 245, 240, 0.95);
-        backdrop-filter: blur(10px);
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1000;
-        border-bottom: 1px solid rgba(74, 124, 89, 0.15);
-        transition: all 0.3s ease;
-      }
-
-      .nav-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 1.25rem clamp(1.5rem, 4vw, 3rem);
+        background: rgba(245, 243, 238, 0.95);
+        backdrop-filter: blur(15px);
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 30px rgba(74, 124, 89, 0.1);
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        gap: 2rem;
+        gap: 3rem;
       }
 
       .brand-logo {
@@ -85,63 +80,45 @@
       }
 
       .brand-logo img {
-        height: 45px;
+        height: 35px;
         width: auto;
       }
 
       .nav-links {
         display: flex;
-        gap: 2.5rem;
+        gap: 2rem;
         align-items: center;
       }
 
       .nav-link {
         font-family: var(--font-body);
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 400;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--primary-sage);
         transition: color 0.3s ease;
-        position: relative;
-      }
-
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background: var(--primary-sage);
-        transition: width 0.3s ease;
       }
 
       .nav-link:hover {
-        color: var(--primary-sage);
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
+        color: var(--primary-olive);
       }
 
       .nav-cta {
         font-family: var(--font-body);
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-weight: 500;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        padding: 0.75rem 1.75rem;
+        padding: 0.6rem 1.5rem;
         background: var(--primary-sage);
         color: #fff;
-        border-radius: 2px;
+        border-radius: 50px;
         transition: all 0.3s ease;
       }
 
       .nav-cta:hover {
-        background: var(--primary-sage);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(45, 74, 53, 0.25);
+        background: var(--primary-olive);
       }
 
       /* Hero Section */
@@ -153,7 +130,6 @@
         justify-content: center;
         background: var(--primary-olive);
         overflow: hidden;
-        padding-top: 80px;
       }
 
       .hero-content {
@@ -650,23 +626,22 @@
       /* Footer */
       .footer {
         background: var(--primary-espresso);
-        padding: 4rem 0 2rem;
+        padding: 5rem 0 3rem;
       }
 
       .footer-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
+        padding: 0 clamp(2rem, 5vw, 4rem);
       }
 
-      .footer-content {
+      .footer-top {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        align-items: flex-start;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 3rem;
       }
 
       .footer-brand {
@@ -682,14 +657,15 @@
 
       .footer-links {
         display: flex;
-        gap: 2rem;
+        gap: 3rem;
       }
 
       .footer-link {
         font-family: var(--font-body);
-        font-size: 0.85rem;
-        letter-spacing: 0.05em;
-        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
         transition: color 0.3s ease;
       }
 
@@ -698,21 +674,25 @@
       }
 
       .footer-bottom {
-        padding-top: 2rem;
         text-align: center;
       }
 
       .footer-copy {
         font-family: var(--font-body);
-        font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
         letter-spacing: 0.05em;
       }
 
       /* Responsive */
-      @media (max-width: 968px) {
+      @media (max-width: 1024px) {
+        .navbar {
+          padding: 0.75rem 1.5rem;
+          gap: 2rem;
+        }
+
         .nav-links {
-          display: none;
+          gap: 1.5rem;
         }
 
         .content-grid {
@@ -727,6 +707,20 @@
       }
 
       @media (max-width: 768px) {
+        .navbar {
+          top: 1rem;
+          padding: 0.6rem 1.25rem;
+          gap: 1rem;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .brand-logo img {
+          height: 28px;
+        }
+
         .hero {
           min-height: 90vh;
         }
@@ -748,18 +742,26 @@
           align-items: center;
         }
 
-        .footer-content {
+        .footer-top {
           flex-direction: column;
+          gap: 2rem;
+          align-items: center;
           text-align: center;
         }
 
         .footer-links {
           flex-wrap: wrap;
           justify-content: center;
+          gap: 1.5rem;
         }
       }
 
       @media (max-width: 480px) {
+        .navbar {
+          width: calc(100% - 2rem);
+          justify-content: space-between;
+        }
+
         .hero-title {
           font-size: 2rem;
         }
@@ -777,19 +779,17 @@
     </style>
   </head>
   <body>
-    <!-- Navigation -->
+    <!-- Navigation - Floating Pill -->
     <nav class="navbar">
-      <div class="nav-container">
-        <a href="index.html" class="brand-logo">
-          <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Free With Purpose">
-        </a>
-        <div class="nav-links">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="portal1.html" class="nav-link">Jewelry</a>
-          <a href="portal2.html" class="nav-link">Sustainability</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <a href="jewelry/index.html" class="nav-cta">Shop Now</a>
-        </div>
+      <a href="index.html" class="brand-logo">
+        <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Free With Purpose">
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="portal1.html" class="nav-link">Jewelry</a>
+        <a href="portal2.html" class="nav-link">Sustainability</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="jewelry/index.html" class="nav-cta">Shop Now</a>
       </div>
     </nav>
 
@@ -961,7 +961,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
-        <div class="footer-content">
+        <div class="footer-top">
           <a href="index.html" class="footer-brand">
             <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Free With Purpose">
           </a>

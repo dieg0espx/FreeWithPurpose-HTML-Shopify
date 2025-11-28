@@ -319,7 +319,7 @@
 
       /* Manifest Section - Vertical Scroll */
       .manifest-section {
-        background: linear-gradient(180deg, var(--primary-rose) 0%, var(--primary-plum) 100%);
+        background: var(--primary-plum);
         padding: clamp(6rem, 12vw, 10rem) 0;
       }
 
@@ -381,202 +381,224 @@
         letter-spacing: 0.03em;
       }
 
-      /* Impact Grid - Bento Style */
-      .impact-section {
-        padding: clamp(6rem, 12vw, 10rem) clamp(2rem, 5vw, 4rem);
+      /* Crafted Section */
+      .crafted-section {
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
         background: var(--primary-cream);
       }
 
-      .impact-header {
+      .crafted-container {
+        max-width: 1000px;
+        margin: 0 auto;
         text-align: center;
-        max-width: 700px;
-        margin: 0 auto 5rem;
       }
 
-      .impact-label {
-        font-family: var(--font-label);
-        font-size: 0.9rem;
-        letter-spacing: 0.2em;
+      .crafted-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--primary-rose);
+        color: var(--primary-plum);
         margin-bottom: 1rem;
       }
 
-      .impact-title {
-        font-family: var(--font-heading);
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--primary-plum);
-        margin-bottom: 1.5rem;
-      }
-
-      .impact-intro {
+      .crafted-highlight {
         font-family: var(--font-accent);
-        font-size: 1.15rem;
+        font-size: 1.4rem;
         font-style: italic;
-        color: #5a4a45;
-        line-height: 1.7;
-      }
-
-      .bento-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto;
-        gap: 1.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .bento-card {
-        background: #fff;
-        border-radius: 8px;
-        padding: 2.5rem;
-        box-shadow: 0 4px 20px rgba(90, 42, 65, 0.06);
-        transition: all 0.4s ease;
-        border: 1px solid rgba(183, 110, 121, 0.08);
-      }
-
-      .bento-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 40px rgba(90, 42, 65, 0.1);
-      }
-
-      .bento-card.featured {
-        grid-column: span 2;
-        background: var(--primary-plum);
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      .bento-card.featured .bento-title,
-      .bento-card.featured .bento-text {
-        color: #fff;
-      }
-
-      .bento-card.featured .bento-icon {
-        color: var(--primary-gold);
-      }
-
-      .bento-icon {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 1.5rem;
         color: var(--primary-rose);
-      }
-
-      .bento-card.featured .bento-icon {
-        width: 80px;
-        height: 80px;
-        flex-shrink: 0;
-        margin-bottom: 0;
-      }
-
-      .bento-title {
-        font-family: var(--font-heading);
-        font-size: 1.1rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: var(--primary-plum);
-        margin-bottom: 0.75rem;
-      }
-
-      .bento-text {
-        font-family: var(--font-body);
-        font-size: 0.9rem;
-        line-height: 1.8;
-        color: #6a5a55;
-        font-weight: 300;
-      }
-
-      /* CTA Section - Minimal */
-      .cta-section {
-        padding: clamp(8rem, 15vw, 12rem) clamp(2rem, 5vw, 4rem);
-        background: var(--primary-cream);
-        text-align: center;
-        position: relative;
-      }
-
-      .cta-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 1px;
-        height: 80px;
-        background: linear-gradient(to bottom, transparent, var(--primary-rose));
-      }
-
-      .cta-question {
-        font-family: var(--font-accent);
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        font-style: italic;
-        color: var(--primary-plum);
-        margin-bottom: 1.5rem;
-        line-height: 1.3;
-      }
-
-      .cta-answer {
-        font-family: var(--font-body);
-        font-size: 1rem;
-        color: var(--primary-rose);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
         margin-bottom: 3rem;
       }
 
-      .cta-buttons {
-        display: flex;
+      .crafted-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
+        margin-bottom: 4rem;
+      }
+
+      .crafted-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(90, 42, 65, 0.06);
+        border: 1px solid rgba(183, 110, 121, 0.1);
+      }
+
+      .crafted-card p {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #5a4a45;
+        font-weight: 300;
+        margin: 0;
+      }
+
+      .crafted-message {
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        padding: 2rem;
+        background: var(--primary-plum);
+        border-radius: 4px;
+      }
+
+      .crafted-message p {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+        font-weight: 300;
+      }
+
+      .message-greeting {
+        font-family: var(--font-accent);
+        font-size: 1.15rem !important;
+        font-style: italic;
+        color: #fff !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      .crafted-symbols-intro {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .crafted-symbols-intro p {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.9;
+        color: #5a4a45;
+        margin-bottom: 1rem;
+        font-weight: 300;
+      }
+
+      .crafted-symbols-intro strong {
+        color: var(--primary-plum);
+      }
+
+      .intro-highlight {
+        font-family: var(--font-accent);
+        font-size: 1.2rem !important;
+        font-style: italic;
+        color: var(--primary-rose) !important;
+        margin: 1.5rem 0 !important;
+      }
+
+      /* Symbolism Section */
+      .symbolism-section {
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
+        background: #fff;
+      }
+
+      .symbolism-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .symbolism-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-plum);
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .symbols-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .symbol-card {
+        background: var(--primary-cream);
+        padding: 2rem;
+        border-radius: 4px;
+        border-left: 3px solid var(--primary-rose);
+      }
+
+      .symbol-name {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-plum);
+        margin-bottom: 0.25rem;
+      }
+
+      .symbol-subtitle {
+        font-family: var(--font-accent);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--primary-rose);
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .symbol-description {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #5a4a45;
+        font-weight: 300;
+      }
+
+      .symbol-closing {
+        text-align: center;
+        padding: 4rem 2rem;
+        margin-top: 4rem;
+        background: var(--primary-plum);
+        border-radius: 4px;
+      }
+
+      .symbol-closing p {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.75rem;
+        font-weight: 300;
+      }
+
+      .closing-taglines {
+        display: flex;
         justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
         flex-wrap: wrap;
       }
 
-      .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 1.1rem 2.5rem;
-        background: var(--primary-plum);
-        color: #fff;
-        font-family: var(--font-body);
-        font-size: 0.7rem;
-        font-weight: 500;
-        letter-spacing: 0.15em;
+      .closing-taglines span {
+        font-family: var(--font-accent);
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--primary-gold);
+      }
+
+      .closing-final {
+        font-family: var(--font-heading);
+        font-size: 1.3rem !important;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
-        border-radius: 50px;
-        transition: all 0.3s ease;
+        color: #fff !important;
+        margin-top: 1.5rem !important;
       }
 
-      .btn-primary:hover {
-        background: var(--primary-rose);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(90, 42, 65, 0.2);
-      }
+      @media (max-width: 768px) {
+        .crafted-grid {
+          grid-template-columns: 1fr;
+        }
 
-      .btn-secondary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 1.1rem 2.5rem;
-        background: transparent;
-        color: var(--primary-plum);
-        font-family: var(--font-body);
-        font-size: 0.7rem;
-        font-weight: 500;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        border: 1px solid var(--primary-plum);
-        border-radius: 50px;
-        transition: all 0.3s ease;
-      }
+        .symbols-grid {
+          grid-template-columns: 1fr;
+        }
 
-      .btn-secondary:hover {
-        background: var(--primary-plum);
-        color: #fff;
-        transform: translateY(-2px);
+        .closing-taglines {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
       }
 
       /* Footer - Clean */
@@ -680,16 +702,6 @@
         .content-block-image {
           aspect-ratio: 4/3;
         }
-
-        .bento-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .bento-card.featured {
-          grid-column: span 2;
-          flex-direction: column;
-          text-align: center;
-        }
       }
 
       @media (max-width: 768px) {
@@ -724,14 +736,6 @@
           padding: 3rem 1.5rem;
         }
 
-        .bento-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .bento-card.featured {
-          grid-column: span 1;
-        }
-
         .footer-top {
           flex-direction: column;
           gap: 2rem;
@@ -762,21 +766,6 @@
 
         .block-number {
           font-size: 3.5rem;
-        }
-
-        .cta-question {
-          font-size: 1.8rem;
-        }
-
-        .cta-buttons {
-          flex-direction: column;
-          width: 100%;
-        }
-
-        .btn-primary,
-        .btn-secondary {
-          width: 100%;
-          justify-content: center;
         }
       }
     </style>
@@ -828,10 +817,10 @@
         <span class="block-number">01</span>
         <h2 class="block-title">Honoring the Sacred</h2>
         <p class="block-text">
-          Jewelry that honors the Sacred, the Shakti, Divine Source, and the Divine Universe. A carrier of ancient wisdom, mystery, and magnetism.
+          Jewelry as a portable altar, a reconnection to Earth & her elements.
         </p>
         <p class="block-highlight">
-          An anchor of your own intention, guidance, and inner knowing.
+          Embracing the embodiment of true beauty.
         </p>
       </div>
     </section>
@@ -839,16 +828,16 @@
     <!-- Content Block 2 -->
     <section class="content-block reverse">
       <div class="content-block-image">
-        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-6.jpg?v=1763739721" alt="Ritual and beauty">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_0124_1.jpg?v=1764339266" alt="Ritual and beauty">
       </div>
       <div class="content-block-text">
         <span class="block-number">02</span>
         <h2 class="block-title">Ritual & True Beauty</h2>
         <p class="block-text">
-          Jewelry that can be enhanced through ritual, supporting the embodiment of true beauty. A pathway toward a more sustainable, ethical, and conscious way of being.
+          An anchor of your intention, guidance, & inner knowing.
         </p>
         <p class="block-highlight">
-          A reconnection to Earth and her elements. Jewelry that feels good to wear, that feels in resonance and alignment.
+          Jewelry that feels good to wear, in resonance & alignment.
         </p>
       </div>
     </section>
@@ -862,10 +851,10 @@
         <span class="block-number">03</span>
         <h2 class="block-title">Living Art</h2>
         <p class="block-text">
-          A dear companion, a portable altar. Divine decadence. Living art. An investment in beauty with purpose.
+          A precious carrier of memory & meaning.
         </p>
         <p class="block-highlight">
-          A precious carrier of memory and meaning, a timeless treasure for generations to come.
+          A timeless treasure to be cherished & passed on.
         </p>
       </div>
     </section>
@@ -878,85 +867,115 @@
           <p class="manifest-subtitle">An invitation to remember</p>
         </div>
         <div class="manifest-item">
-          <p class="manifest-main"><strong>An invitation</strong> to be present, curious, and connected.</p>
-          <p class="manifest-sub">A remembrance of healthier ways of being and doing.</p>
+          <p class="manifest-main">An invitation to presence, curiosity & connection.</p>
         </div>
         <div class="manifest-item">
-          <p class="manifest-main"><strong>A reclamation</strong> of artistry itself.</p>
-          <p class="manifest-sub">A timeless treasure for generations to come.</p>
+          <p class="manifest-main">A pathway into a collective movement to co-create profound impact.</p>
         </div>
         <div class="manifest-item">
-          <p class="manifest-main"><strong>A key</strong>, a pathway into a collective movement.</p>
-          <p class="manifest-sub">Where together we co-create profound impact in conscious and authentic ways.</p>
+          <p class="manifest-main">Every piece contributes to supporting artists & artisans who preserve ancient traditions & initiatives that protect our shared home, Mother Earth.</p>
         </div>
       </div>
     </section>
 
-    <!-- Impact Section - Bento Grid -->
-    <section class="impact-section">
-      <div class="impact-header">
-        <span class="impact-label">Our Impact</span>
-        <h2 class="impact-title">Purpose in Every Piece</h2>
-        <p class="impact-intro">Every piece contributes to supporting artists & artisans who preserve ancient traditions and to causes that protect our shared home, Mother Earth.</p>
-      </div>
-      <div class="bento-grid">
-        <div class="bento-card featured">
-          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9Z"/>
-            <path d="M12 3c-1.5 3-2 6-2 9s.5 6 2 9"/>
-            <path d="M12 3c1.5 3 2 6 2 9s-.5 6-2 9"/>
-            <path d="M3 12h18"/>
-          </svg>
-          <div>
-            <h3 class="bento-title">Supporting Global Artisans</h3>
-            <p class="bento-text">Honoring creators who preserve ancient wisdom and artistic traditions through ethical collaboration and meaningful exchange.</p>
+    <!-- Crafted Section -->
+    <section class="crafted-section">
+      <div class="crafted-container">
+        <h2 class="crafted-title">Crafted with Love & Intention</h2>
+        <p class="crafted-highlight">It's a whisper of remembrance.</p>
+
+        <div class="crafted-grid">
+          <div class="crafted-card">
+            <p>Crafted with love, care, and intentionality, this centerpiece is made of sustainable, ethically sourced materials.</p>
+          </div>
+          <div class="crafted-card">
+            <p>Rests on a velvet strap dyed and produced using methods safer for both people and the planet.</p>
+          </div>
+          <div class="crafted-card">
+            <p>An invitation to embrace a more conscious, soulful, and sustainable way of living, creating, and relating.</p>
           </div>
         </div>
-        <div class="bento-card">
-          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12Z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-          <h3 class="bento-title">Protecting Earth</h3>
-          <p class="bento-text">Contributing to causes that safeguard our planet through sustainable practices.</p>
+
+        <div class="crafted-message">
+          <p class="message-greeting">My name is Mayte, and I am deeply grateful to meet you in this space.</p>
+          <p>Thank you for taking the time and for being curious.</p>
         </div>
-        <div class="bento-card">
-          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
-          </svg>
-          <h3 class="bento-title">Conscious Creation</h3>
-          <p class="bento-text">Crafted with intention using sustainable and ethically sourced materials.</p>
-        </div>
-        <div class="bento-card">
-          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-          <h3 class="bento-title">Timeless Beauty</h3>
-          <p class="bento-text">Investment pieces becoming treasured heirlooms across generations.</p>
-        </div>
-        <div class="bento-card">
-          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-          <h3 class="bento-title">Ancient Wisdom</h3>
-          <p class="bento-text">Preserving sacred traditions and ancestral knowledge in every design.</p>
+
+        <div class="crafted-symbols-intro">
+          <p>This piece carries <strong>sacred symbols</strong>, timeless languages of the subconscious.</p>
+          <p>The subconscious doesn't speak in words, but in images, sensations, and emotion.</p>
+          <p class="intro-highlight">A single symbol can awaken truth, memory, or deep recognition.</p>
+          <p>Each symbol woven into this piece holds personal meaning in my heart.<br>I invite you to explore what they may awaken in yours.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <h2 class="cta-question">Does it resonate?</h2>
-      <p class="cta-answer">Join the movement</p>
-      <div class="cta-buttons">
-        <a href="jewelry/index.html" class="btn-primary">
-          Explore the Collection
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="contact.html" class="btn-secondary">Connect With Us</a>
+    <!-- Symbolism Section -->
+    <section class="symbolism-section">
+      <div class="symbolism-container">
+        <h2 class="symbolism-title">Symbolism</h2>
+
+        <div class="symbols-grid">
+          <div class="symbol-card">
+            <h3 class="symbol-name">Vishuddha</h3>
+            <span class="symbol-subtitle">Throat Chakra: Purification & Truth</span>
+            <p class="symbol-description">The center of expression, resonance, and integrity. It reminds us to speak what the soul feels. To express truth through voice, art, and creation. When open and balanced, the voice becomes magnetic, clear, and free.</p>
+          </div>
+
+          <div class="symbol-card">
+            <h3 class="symbol-name">Velvet</h3>
+            <span class="symbol-subtitle">Soft Power & Divine Feminine</span>
+            <p class="symbol-description">More than luxurious fabric, velvet carries sacred resonance, softness with strength, sensuality with sovereignty. It invites us into the body, grounding us in presence. Velvet whispers: "Power doesn't need to shout; it emanates."</p>
+          </div>
+
+          <div class="symbol-card">
+            <h3 class="symbol-name">The Sacred Womb Portal</h3>
+            <span class="symbol-subtitle">Creation & Harmony</span>
+            <p class="symbol-description">The union of the velvet and Vishuddha symbol represents the portal to the Womb of Creation. A bridge between voice, heart, and mind. A remembrance of the womb as sacred space, as the source of creation itself.</p>
+          </div>
+
+          <div class="symbol-card">
+            <h3 class="symbol-name">Snake</h3>
+            <span class="symbol-subtitle">Transformation & Awakening</span>
+            <p class="symbol-description">An ancient emblem of rebirth and sacred feminine energy. It embodies release, renewal, and the rising of inner fire. The awakening of our creative life force and sensual power.</p>
+          </div>
+
+          <div class="symbol-card">
+            <h3 class="symbol-name">Open Wings</h3>
+            <span class="symbol-subtitle">Freedom & Ascension</span>
+            <p class="symbol-description">Across cultures, wings symbolize transformation, protection, and divine guardianship, from Isis to the angels. They remind us that we can be both human and divine, grounded and soaring.</p>
+          </div>
+
+          <div class="symbol-card">
+            <h3 class="symbol-name">Sun</h3>
+            <span class="symbol-subtitle">Illumination & Life Force</span>
+            <p class="symbol-description">A radiant reminder of the light within and around us, the eternal rhythm of warmth, creation, and divine order. The heart of the cosmos, and of every sunrise and sunset that moves us.</p>
+          </div>
+
+          <div class="symbol-card">
+            <h3 class="symbol-name">Yin & Yang</h3>
+            <span class="symbol-subtitle">Harmony & Wholeness</span>
+            <p class="symbol-description">The eternal dance of complementary forces. Light and shadow, movement and stillness, creating balance, flow, and unity.</p>
+          </div>
+
+          <div class="symbol-card">
+            <h3 class="symbol-name">Bronze</h3>
+            <span class="symbol-subtitle">Ancient Strength & Alchemy</span>
+            <p class="symbol-description">Forged from recycled materials, bronze unites copper and tin, the masculine and feminine, into enduring beauty. Used in ancient altars and sacred tools, it embodies resilience, grounding, and wisdom.</p>
+          </div>
+        </div>
+
+        <div class="symbol-closing">
+          <p>This piece becomes your own prayer and symbolic altar.</p>
+          <p>A wearable reminder of your inner truth, self-expression, and sacred creative fire.</p>
+          <p>A symbol of voice, heart, mind, and womb in harmony.</p>
+          <div class="closing-taglines">
+            <span>Jewelry as remembrance</span>
+            <span>Jewelry as ritual</span>
+            <span>Jewelry as freedom</span>
+          </div>
+          <p class="closing-final">The art of meaningful adornment.</p>
+        </div>
       </div>
     </section>
 
