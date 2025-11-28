@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sustainability & Well-Being — Free With Purpose</title>
+    <meta name="description" content="A way of living that honors the balance between inner and outer worlds, caring for both the planet and the self, allowing life to flourish." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amethysta&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Your specified colors */
+        --primary-sage: #4A7C59;      /* Sage Green - darkest, used for headings & dark sections */
+        --primary-olive: #7A8F76;     /* Olive Mist - medium accent */
+        --primary-sand: #6B8A73;      /* Earth Sand - secondary accent */
+        --primary-moss: #D8C9A6;      /* Moss Green - highlights, CTAs, gold tones */
+        /* Neutral tones */
+        --primary-cream: #F5F3EE;     /* Light background */
+        --primary-espresso: #2B1E1A;  /* Footer dark */
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+        --font-accent: "Cormorant Garamond", serif;
+        --font-label: "Bellefair", serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(247, 245, 240, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(74, 124, 89, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.25rem clamp(1.5rem, 4vw, 3rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .brand-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .brand-logo img {
+        height: 45px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--primary-sage);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-sage);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-cta {
+        font-family: var(--font-body);
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.75rem;
+        background: var(--primary-sage);
+        color: #fff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-cta:hover {
+        background: var(--primary-sage);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(45, 74, 53, 0.25);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary-olive);
+        overflow: hidden;
+        padding-top: 80px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 900px;
+        padding: 4rem 2rem;
+      }
+
+      .hero-label {
+        font-family: var(--font-label);
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-moss);
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+
+      .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 2rem;
+        line-height: 1.1;
+      }
+
+      .hero-subtitle {
+        font-family: var(--font-accent);
+        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2.5rem;
+        background: var(--primary-moss);
+        color: var(--primary-sage);
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .hero-cta:hover {
+        background: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Main Content Section */
+      .content-section {
+        padding: clamp(4rem, 10vw, 8rem) 0;
+        background: var(--primary-cream);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: stretch;
+      }
+
+      .content-image {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(45, 74, 53, 0.15);
+      }
+
+      .content-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .content-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(74, 124, 89, 0.2);
+        pointer-events: none;
+      }
+
+      .content-text {
+        padding-top: 0;
+      }
+
+      .section-label {
+        font-family: var(--font-label);
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 1.25rem;
+      }
+
+      .section-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+
+      .content-paragraph {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.9;
+        color: #4A5A4D;
+        margin-bottom: 1.75rem;
+        font-weight: 300;
+      }
+
+      .content-paragraph em {
+        font-family: var(--font-accent);
+        font-style: italic;
+        font-size: 1.05em;
+        color: var(--primary-sage);
+      }
+
+      .content-highlight {
+        font-family: var(--font-accent);
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--primary-sage);
+        line-height: 1.7;
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(74, 124, 89, 0.2);
+        border-bottom: 1px solid rgba(74, 124, 89, 0.2);
+        margin: 2rem 0;
+      }
+
+      /* Manifest Section */
+      .manifest-section {
+        padding: clamp(5rem, 12vw, 10rem) 0;
+        background: var(--primary-olive);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .manifest-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+        position: relative;
+        z-index: 2;
+      }
+
+      .manifest-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .manifest-label {
+        font-family: var(--font-label);
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-moss);
+        margin-bottom: 1rem;
+      }
+
+      .manifest-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #fff;
+        line-height: 1.2;
+      }
+
+      .manifest-list {
+        list-style: none;
+      }
+
+      .manifest-item {
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(216, 201, 166, 0.15);
+      }
+
+      .manifest-item:last-child {
+        border-bottom: none;
+      }
+
+      .manifest-text {
+        font-family: var(--font-accent);
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 400;
+      }
+
+      .manifest-text strong {
+        color: var(--primary-moss);
+        font-weight: 500;
+      }
+
+      .manifest-subtext {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 0.75rem;
+        padding-left: 1.5rem;
+        font-weight: 300;
+      }
+
+      /* Gallery Section */
+      .gallery-section {
+        padding: clamp(5rem, 12vw, 8rem) 0;
+        background: var(--primary-cream);
+      }
+
+      .gallery-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .gallery-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .gallery-label {
+        font-family: var(--font-label);
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .gallery-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        line-height: 1.2;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(45, 74, 53, 0.1);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-item::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(74, 124, 89, 0.15);
+        pointer-events: none;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        aspect-ratio: 21/9;
+      }
+
+      .gallery-item:not(:first-child) {
+        aspect-ratio: 4/3;
+      }
+
+      @media (max-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+
+        .gallery-item:first-child {
+          grid-column: auto;
+          aspect-ratio: 16/9;
+        }
+
+        .gallery-item:not(:first-child) {
+          aspect-ratio: 4/3;
+        }
+      }
+
+      /* Impact Section */
+      .impact-section {
+        padding: clamp(5rem, 12vw, 10rem) 0;
+        background: var(--primary-cream);
+      }
+
+      .impact-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .impact-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 4rem;
+      }
+
+      .impact-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .impact-intro {
+        font-family: var(--font-accent);
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--primary-sage);
+        line-height: 1.7;
+      }
+
+      .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+
+      .impact-card {
+        background: #fff;
+        padding: 3rem;
+        border-radius: 4px;
+        box-shadow: 0 8px 30px rgba(45, 74, 53, 0.08);
+        transition: all 0.4s ease;
+        border: 1px solid rgba(74, 124, 89, 0.1);
+      }
+
+      .impact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 50px rgba(45, 74, 53, 0.12);
+      }
+
+      .impact-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.5rem;
+        color: var(--primary-sage);
+      }
+
+      .impact-card-title {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 1rem;
+      }
+
+      .impact-card-text {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #5A6A5D;
+        font-weight: 300;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: clamp(5rem, 12vw, 8rem) 0;
+        background: var(--primary-sage);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .cta-subtitle {
+        font-family: var(--font-accent);
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 3rem;
+        line-height: 1.6;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2.5rem;
+        background: var(--primary-moss);
+        color: var(--primary-sage);
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2.5rem;
+        background: transparent;
+        color: #fff;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary-espresso);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+      }
+
+      .footer-brand img {
+        height: 40px;
+        width: auto;
+        filter: brightness(0) invert(1);
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .footer-link {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--primary-moss);
+      }
+
+      .footer-bottom {
+        padding-top: 2rem;
+        text-align: center;
+      }
+
+      .footer-copy {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.05em;
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .nav-links {
+          display: none;
+        }
+
+        .content-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .impact-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 90vh;
+        }
+
+        .hero-content {
+          padding: 3rem 1.5rem;
+        }
+
+        .manifest-item {
+          padding: 1.5rem 0;
+        }
+
+        .impact-card {
+          padding: 2rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .manifest-text {
+          font-size: 1rem;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+          <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Free With Purpose">
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="portal1.html" class="nav-link">Jewelry</a>
+          <a href="portal2.html" class="nav-link">Sustainability</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="jewelry/index.html" class="nav-cta">Shop Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-label">The Second Portal</span>
+        <h1 class="hero-title">Sustainability & Well-Being</h1>
+        <p class="hero-subtitle">A way of living that honors the balance between inner and outer worlds, caring for both the planet and the self, allowing life to flourish.</p>
+        <a href="#conscious-living" class="hero-cta">
+          Begin the Journey
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Content Section: Conscious Living -->
+    <section id="conscious-living" class="content-section">
+      <div class="container">
+        <div class="content-grid">
+          <div class="content-image">
+            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_0485.heic?v=1764337300" alt="Nature and wellness">
+          </div>
+          <div class="content-text">
+            <span class="section-label">Conscious Living</span>
+            <h2 class="section-title">A Life Guided by Awareness</h2>
+            <p class="content-paragraph">
+              <em>To live consciously is to live awake.</em> Aware of how each action, purchase, and word shapes the world around us.
+            </p>
+            <p class="content-paragraph">
+              To no longer move through life on autopilot. To notice the beauty and interconnectedness in all things. To respond rather than react.
+            </p>
+            <p class="content-highlight">
+              To consume with care and create with purpose. To honor both the seen and unseen—the visible act and the invisible intention behind it.
+            </p>
+            <p class="content-paragraph">
+              A life guided by awareness, presence, and purpose invites us into deeper relationship with ourselves, each other, and the Earth we call home.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifest Section: The Practice -->
+    <section class="manifest-section">
+      <div class="manifest-container">
+        <div class="manifest-header">
+          <span class="manifest-label">Mindful Choices</span>
+          <h2 class="manifest-title">The Art of Pausing</h2>
+        </div>
+        <ul class="manifest-list">
+          <li class="manifest-item">
+            <p class="manifest-text">
+              <strong>Choosing from alignment,</strong> not habit.
+            </p>
+            <p class="manifest-subtext">What we choose to wear, how we nourish, how we spend, and what we support creates ripple effects that reach far beyond us.</p>
+          </li>
+          <li class="manifest-item">
+            <p class="manifest-text">
+              <strong>Living in reciprocity,</strong> creating, consuming, and resting in ways that nurture rather than deplete.
+            </p>
+            <p class="manifest-subtext">Well-being becomes a sacred practice of returning to harmony.</p>
+          </li>
+          <li class="manifest-item">
+            <p class="manifest-text">
+              <strong>Body, mind, heart, and spirit</strong> aligned.
+            </p>
+            <p class="manifest-subtext">A remembrance that true well-being is wholeness.</p>
+          </li>
+          <li class="manifest-item">
+            <p class="manifest-text">
+              <strong>Everything we seek</strong> already lives within.
+            </p>
+            <p class="manifest-subtext">A return to the wisdom that has always been there, waiting to be remembered.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="gallery-container">
+        <div class="gallery-header">
+          <span class="gallery-label">Visual Journey</span>
+          <h2 class="gallery-title">Living in Harmony</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item-large">
+            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9739.jpg?v=1764337298" alt="Sustainability and nature">
+          </div>
+          <div class="gallery-item">
+            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9702.jpg?v=1764337298" alt="Conscious living">
+          </div>
+          <div class="gallery-item">
+            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/image000000.jpg?v=1764337298" alt="Well-being and balance">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Section: Holistic Nourishment -->
+    <section class="impact-section">
+      <div class="impact-container">
+        <div class="impact-header">
+          <h2 class="impact-title">Holistic Nourishment</h2>
+          <p class="impact-intro">True nourishment feeds more than the body. It replenishes the soul, the senses, and the Earth.</p>
+        </div>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/>
+              <path d="M12 22c-4.97 0-9-4.03-9-9 4.97 0 9 4.03 9 9Z"/>
+              <path d="M12 22V12"/>
+              <path d="M12 12c0-4.42 3.58-8 8-8"/>
+              <path d="M12 12c0-4.42-3.58-8-8-8"/>
+            </svg>
+            <h3 class="impact-card-title">Tending to Nature's Rhythms</h3>
+            <p class="impact-card-text">Reconnecting with the cycles of nature, honoring our rhythms, emotions, and seasons as sacred. Living in alignment with the Earth's natural pulse.</p>
+          </div>
+          <div class="impact-card">
+            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <h3 class="impact-card-title">Sacred Rest</h3>
+            <p class="impact-card-text">Understanding that rest is not a reward but a necessity. Honoring the pause, the stillness, and the quiet spaces where restoration happens.</p>
+          </div>
+          <div class="impact-card">
+            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+            </svg>
+            <h3 class="impact-card-title">Inner & Outer Harmony</h3>
+            <p class="impact-card-text">How we care for ourselves mirrors how we care for the Earth. A way of being where the inner and outer worlds reflect one another.</p>
+          </div>
+          <div class="impact-card">
+            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5Z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+            <h3 class="impact-card-title">Grounded & Connected</h3>
+            <p class="impact-card-text">To live this way is to move through life in harmony. Grounded, balanced, and connected to the web of life that sustains us all.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <h2 class="cta-title">Return to Wholeness</h2>
+        <p class="cta-subtitle">We remember that everything we seek already lives within. Join us in creating a more conscious, sustainable way of being.</p>
+        <div class="cta-buttons">
+          <a href="index.html" class="btn-primary">
+            Explore All Portals
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="contact.html" class="btn-secondary">
+            Connect With Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <a href="index.html" class="footer-brand">
+            <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Free With Purpose">
+          </a>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="portal1.html" class="footer-link">Jewelry</a>
+            <a href="portal2.html" class="footer-link">Sustainability</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; 2025 Free With Purpose. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
