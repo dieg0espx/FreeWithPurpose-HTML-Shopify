@@ -25,7 +25,12 @@
       "Bash(sections/portals-section.html)",
       "Bash(sections/values-section.html)",
       "Bash(sections/essence-section.html)",
-      "Bash(sections/story-section.html)"
+      "Bash(sections/story-section.html)",
+      "Bash(cat:*)",
+      "Bash(xxd:*)",
+      "Bash(for f in Screenshot*2025-11-28*)",
+      "Bash(do cp \"$f\" /tmp/colors.png)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

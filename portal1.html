@@ -55,470 +55,476 @@
         display: block;
       }
 
-      /* Navigation */
+      /* Navigation - Minimal Floating */
       .navbar {
         position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(255, 252, 235, 0.95);
-        backdrop-filter: blur(10px);
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1000;
-        border-bottom: 1px solid rgba(183, 110, 121, 0.15);
-        transition: all 0.3s ease;
-      }
-
-      .nav-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 1.25rem clamp(1.5rem, 4vw, 3rem);
+        background: rgba(255, 252, 235, 0.95);
+        backdrop-filter: blur(15px);
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 30px rgba(90, 42, 65, 0.1);
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        gap: 2rem;
+        gap: 3rem;
       }
 
       .brand-logo {
-        font-family: var(--font-heading);
-        font-size: 1.35rem;
-        font-weight: 400;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--primary-teal);
+        display: flex;
+        align-items: center;
+      }
+
+      .brand-logo img {
+        height: 35px;
+        width: auto;
       }
 
       .nav-links {
         display: flex;
-        gap: 2.5rem;
+        gap: 2rem;
         align-items: center;
       }
 
       .nav-link {
         font-family: var(--font-body);
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 400;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--primary-teal);
+        color: var(--primary-plum);
         transition: color 0.3s ease;
-        position: relative;
-      }
-
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background: var(--primary-rose);
-        transition: width 0.3s ease;
       }
 
       .nav-link:hover {
         color: var(--primary-rose);
       }
 
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
       .nav-cta {
         font-family: var(--font-body);
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-weight: 500;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        padding: 0.75rem 1.75rem;
+        padding: 0.6rem 1.5rem;
         background: var(--primary-plum);
         color: #fff;
-        border-radius: 2px;
+        border-radius: 50px;
         transition: all 0.3s ease;
       }
 
       .nav-cta:hover {
         background: var(--primary-rose);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(90, 42, 65, 0.25);
       }
 
-      /* Hero Section */
+      /* Hero - Split Screen */
       .hero {
-        position: relative;
         min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, var(--primary-plum) 0%, var(--primary-rose) 100%);
-        overflow: hidden;
-        padding-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
 
-      .hero::before {
+      .hero-image {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-image::after {
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(ellipse at 30% 20%, rgba(216, 201, 169, 0.15) 0%, transparent 50%),
-                    radial-gradient(ellipse at 70% 80%, rgba(183, 110, 121, 0.2) 0%, transparent 50%);
-        pointer-events: none;
+        background: linear-gradient(to right, transparent 60%, var(--primary-cream) 100%);
       }
 
       .hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 900px;
-        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8rem 6rem 6rem 4rem;
+        background: var(--primary-cream);
       }
 
       .hero-label {
         font-family: var(--font-label);
-        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-        letter-spacing: 0.2em;
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--primary-gold);
-        margin-bottom: 1.5rem;
-        opacity: 0.9;
+        color: var(--primary-rose);
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero-label::before {
+        content: '';
+        width: 40px;
+        height: 1px;
+        background: var(--primary-rose);
       }
 
       .hero-title {
         font-family: var(--font-heading);
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
-        letter-spacing: 0.08em;
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        letter-spacing: 0.04em;
         text-transform: uppercase;
-        color: #fff;
+        color: var(--primary-plum);
         margin-bottom: 2rem;
-        line-height: 1.1;
+        line-height: 1.05;
       }
 
       .hero-subtitle {
         font-family: var(--font-accent);
-        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+        font-size: clamp(1.3rem, 2vw, 1.6rem);
         font-style: italic;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.6;
-        max-width: 700px;
-        margin: 0 auto 3rem;
+        color: var(--primary-rose);
+        line-height: 1.7;
+        margin-bottom: 3rem;
+        max-width: 450px;
       }
 
       .hero-cta {
         display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
-        padding: 1rem 2.5rem;
-        background: var(--primary-gold);
-        color: var(--primary-plum);
+        gap: 1rem;
         font-family: var(--font-body);
         font-size: 0.75rem;
         font-weight: 500;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        border-radius: 2px;
+        color: var(--primary-plum);
         transition: all 0.3s ease;
       }
 
-      .hero-cta:hover {
-        background: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      .hero-cta::after {
+        content: '';
+        width: 50px;
+        height: 1px;
+        background: var(--primary-plum);
+        transition: width 0.3s ease;
       }
 
-      /* Main Content Section */
-      .content-section {
-        padding: clamp(4rem, 10vw, 8rem) 0;
+      .hero-cta:hover {
+        color: var(--primary-rose);
+      }
+
+      .hero-cta:hover::after {
+        width: 80px;
+        background: var(--primary-rose);
+      }
+
+      /* Intro Statement - Full Width */
+      .intro-statement {
+        padding: clamp(3rem, 8vw, 5rem) clamp(2rem, 8vw, 8rem);
+        background: var(--primary-plum);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .intro-text {
+        font-family: var(--font-accent);
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        font-style: italic;
+        color: #fff;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .intro-text span {
+        color: var(--primary-gold);
+      }
+
+      /* Content Blocks - Alternating */
+      .content-block {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        min-height: auto;
+      }
+
+      .content-block.reverse {
+        direction: rtl;
+      }
+
+      .content-block.reverse > * {
+        direction: ltr;
+      }
+
+      .content-block-image {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+      }
+
+      .content-block-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .content-block-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(3rem, 6vw, 6rem);
         background: var(--primary-cream);
       }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
-      }
-
-      .content-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 6rem;
-        align-items: start;
-      }
-
-      .content-image {
-        position: relative;
-        border-radius: 4px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(90, 42, 65, 0.15);
-      }
-
-      .content-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .content-image::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border: 1px solid rgba(183, 110, 121, 0.2);
-        pointer-events: none;
-      }
-
-      .content-text {
-        padding-top: 2rem;
-      }
-
-      .section-label {
-        font-family: var(--font-label);
-        font-size: 1rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--primary-rose);
-        margin-bottom: 1.25rem;
-      }
-
-      .section-title {
+      .block-number {
         font-family: var(--font-heading);
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-size: 5rem;
+        color: rgba(183, 110, 121, 0.15);
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+
+      .block-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
         letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--primary-plum);
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         line-height: 1.2;
       }
 
-      .content-paragraph {
+      .block-text {
         font-family: var(--font-body);
         font-size: 1rem;
-        line-height: 1.9;
-        color: #4a3f3a;
-        margin-bottom: 1.75rem;
+        line-height: 2;
+        color: #5a4a45;
         font-weight: 300;
+        margin-bottom: 1.5rem;
       }
 
-      .content-paragraph em {
+      .block-highlight {
         font-family: var(--font-accent);
-        font-style: italic;
-        font-size: 1.05em;
-        color: var(--primary-plum);
-      }
-
-      .content-highlight {
-        font-family: var(--font-accent);
-        font-size: 1.15rem;
+        font-size: 1.25rem;
         font-style: italic;
         color: var(--primary-rose);
         line-height: 1.7;
-        padding: 1.5rem 0;
-        border-top: 1px solid rgba(183, 110, 121, 0.2);
-        border-bottom: 1px solid rgba(183, 110, 121, 0.2);
-        margin: 2rem 0;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--primary-gold);
       }
 
-      /* Manifest Section */
+      /* Manifest Section - Vertical Scroll */
       .manifest-section {
-        padding: clamp(5rem, 12vw, 10rem) 0;
-        background: var(--primary-plum);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .manifest-section::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse at 20% 30%, rgba(183, 110, 121, 0.2) 0%, transparent 50%),
-                    radial-gradient(ellipse at 80% 70%, rgba(216, 201, 169, 0.1) 0%, transparent 50%);
-        pointer-events: none;
+        background: linear-gradient(180deg, var(--primary-rose) 0%, var(--primary-plum) 100%);
+        padding: clamp(6rem, 12vw, 10rem) 0;
       }
 
       .manifest-container {
-        max-width: 900px;
+        max-width: 800px;
         margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
-        position: relative;
-        z-index: 2;
+        padding: 0 clamp(2rem, 5vw, 4rem);
       }
 
       .manifest-header {
         text-align: center;
-        margin-bottom: 4rem;
-      }
-
-      .manifest-label {
-        font-family: var(--font-label);
-        font-size: 1rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--primary-gold);
-        margin-bottom: 1rem;
+        margin-bottom: 5rem;
       }
 
       .manifest-title {
         font-family: var(--font-heading);
-        font-size: clamp(2rem, 5vw, 3rem);
+        font-size: clamp(2rem, 4vw, 3rem);
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: #fff;
-        line-height: 1.2;
+        margin-bottom: 1rem;
       }
 
-      .manifest-list {
-        list-style: none;
+      .manifest-subtitle {
+        font-family: var(--font-accent);
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--primary-gold);
       }
 
       .manifest-item {
-        padding: 2rem 0;
-        border-bottom: 1px solid rgba(216, 201, 169, 0.15);
+        text-align: center;
+        padding: 3rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .manifest-item:last-child {
         border-bottom: none;
       }
 
-      .manifest-text {
+      .manifest-main {
         font-family: var(--font-accent);
-        font-size: clamp(1.1rem, 2vw, 1.35rem);
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 400;
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        color: #fff;
+        line-height: 1.7;
+        margin-bottom: 0.75rem;
       }
 
-      .manifest-text strong {
+      .manifest-main strong {
         color: var(--primary-gold);
         font-weight: 500;
       }
 
-      .manifest-subtext {
+      .manifest-sub {
         font-family: var(--font-body);
-        font-size: 0.95rem;
-        line-height: 1.8;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
-        margin-top: 0.75rem;
-        padding-left: 1.5rem;
         font-weight: 300;
+        letter-spacing: 0.03em;
       }
 
-      /* Impact Section */
+      /* Impact Grid - Bento Style */
       .impact-section {
-        padding: clamp(5rem, 12vw, 10rem) 0;
+        padding: clamp(6rem, 12vw, 10rem) clamp(2rem, 5vw, 4rem);
         background: var(--primary-cream);
-      }
-
-      .impact-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
       }
 
       .impact-header {
         text-align: center;
         max-width: 700px;
-        margin: 0 auto 4rem;
+        margin: 0 auto 5rem;
+      }
+
+      .impact-label {
+        font-family: var(--font-label);
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-rose);
+        margin-bottom: 1rem;
       }
 
       .impact-title {
         font-family: var(--font-heading);
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-        letter-spacing: 0.08em;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--primary-plum);
         margin-bottom: 1.5rem;
-        line-height: 1.2;
       }
 
       .impact-intro {
         font-family: var(--font-accent);
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         font-style: italic;
-        color: var(--primary-rose);
+        color: #5a4a45;
         line-height: 1.7;
       }
 
-      .impact-grid {
+      .bento-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .bento-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px rgba(90, 42, 65, 0.06);
+        transition: all 0.4s ease;
+        border: 1px solid rgba(183, 110, 121, 0.08);
+      }
+
+      .bento-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(90, 42, 65, 0.1);
+      }
+
+      .bento-card.featured {
+        grid-column: span 2;
+        background: var(--primary-plum);
+        display: flex;
+        align-items: center;
         gap: 3rem;
       }
 
-      .impact-card {
-        background: #fff;
-        padding: 3rem;
-        border-radius: 4px;
-        box-shadow: 0 8px 30px rgba(90, 42, 65, 0.08);
-        transition: all 0.4s ease;
-        border: 1px solid rgba(183, 110, 121, 0.1);
+      .bento-card.featured .bento-title,
+      .bento-card.featured .bento-text {
+        color: #fff;
       }
 
-      .impact-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 16px 50px rgba(90, 42, 65, 0.12);
+      .bento-card.featured .bento-icon {
+        color: var(--primary-gold);
       }
 
-      .impact-icon {
-        width: 60px;
-        height: 60px;
+      .bento-icon {
+        width: 48px;
+        height: 48px;
         margin-bottom: 1.5rem;
         color: var(--primary-rose);
       }
 
-      .impact-card-title {
-        font-family: var(--font-heading);
-        font-size: 1.3rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--primary-plum);
-        margin-bottom: 1rem;
+      .bento-card.featured .bento-icon {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        margin-bottom: 0;
       }
 
-      .impact-card-text {
+      .bento-title {
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-plum);
+        margin-bottom: 0.75rem;
+      }
+
+      .bento-text {
         font-family: var(--font-body);
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.8;
-        color: #5a4a45;
+        color: #6a5a55;
         font-weight: 300;
       }
 
-      /* CTA Section */
+      /* CTA Section - Minimal */
       .cta-section {
-        padding: clamp(5rem, 12vw, 8rem) 0;
-        background: linear-gradient(135deg, var(--primary-rose) 0%, var(--primary-plum) 100%);
+        padding: clamp(8rem, 15vw, 12rem) clamp(2rem, 5vw, 4rem);
+        background: var(--primary-cream);
         text-align: center;
         position: relative;
-        overflow: hidden;
       }
 
       .cta-section::before {
         content: '';
         position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
-        pointer-events: none;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 80px;
+        background: linear-gradient(to bottom, transparent, var(--primary-rose));
       }
 
-      .cta-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
-        position: relative;
-        z-index: 2;
-      }
-
-      .cta-title {
-        font-family: var(--font-heading);
-        font-size: clamp(2rem, 5vw, 3rem);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #fff;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-      }
-
-      .cta-subtitle {
+      .cta-question {
         font-family: var(--font-accent);
-        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        font-size: clamp(2rem, 5vw, 3.5rem);
         font-style: italic;
-        color: rgba(255, 255, 255, 0.9);
+        color: var(--primary-plum);
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+      }
+
+      .cta-answer {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--primary-rose);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         margin-bottom: 3rem;
-        line-height: 1.6;
       }
 
       .cta-buttons {
@@ -532,87 +538,90 @@
         display: inline-flex;
         align-items: center;
         gap: 0.75rem;
-        padding: 1rem 2.5rem;
-        background: var(--primary-gold);
-        color: var(--primary-plum);
+        padding: 1.1rem 2.5rem;
+        background: var(--primary-plum);
+        color: #fff;
         font-family: var(--font-body);
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         font-weight: 500;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        border-radius: 2px;
+        border-radius: 50px;
         transition: all 0.3s ease;
       }
 
       .btn-primary:hover {
-        background: #fff;
+        background: var(--primary-rose);
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 24px rgba(90, 42, 65, 0.2);
       }
 
       .btn-secondary {
         display: inline-flex;
         align-items: center;
         gap: 0.75rem;
-        padding: 1rem 2.5rem;
+        padding: 1.1rem 2.5rem;
         background: transparent;
-        color: #fff;
+        color: var(--primary-plum);
         font-family: var(--font-body);
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         font-weight: 500;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 2px;
+        border: 1px solid var(--primary-plum);
+        border-radius: 50px;
         transition: all 0.3s ease;
       }
 
       .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #fff;
+        background: var(--primary-plum);
+        color: #fff;
         transform: translateY(-2px);
       }
 
-      /* Footer */
+      /* Footer - Clean */
       .footer {
         background: var(--primary-espresso);
-        padding: 4rem 0 2rem;
+        padding: 5rem 0 3rem;
       }
 
       .footer-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
+        padding: 0 clamp(2rem, 5vw, 4rem);
       }
 
-      .footer-content {
+      .footer-top {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        align-items: flex-start;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 3rem;
       }
 
       .footer-brand {
-        font-family: var(--font-heading);
-        font-size: 1.2rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: #fff;
+        display: flex;
+        align-items: center;
+      }
+
+      .footer-brand img {
+        height: 40px;
+        width: auto;
+        filter: brightness(0) invert(1);
       }
 
       .footer-links {
         display: flex;
-        gap: 2rem;
+        gap: 3rem;
       }
 
       .footer-link {
         font-family: var(--font-body);
-        font-size: 0.85rem;
-        letter-spacing: 0.05em;
-        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
         transition: color 0.3s ease;
       }
 
@@ -621,74 +630,147 @@
       }
 
       .footer-bottom {
-        padding-top: 2rem;
         text-align: center;
       }
 
       .footer-copy {
         font-family: var(--font-body);
-        font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
         letter-spacing: 0.05em;
       }
 
       /* Responsive */
-      @media (max-width: 968px) {
-        .nav-links {
-          display: none;
-        }
-
-        .content-grid {
-          grid-template-columns: 1fr;
-          gap: 3rem;
-        }
-
-        .impact-grid {
-          grid-template-columns: 1fr;
+      @media (max-width: 1024px) {
+        .navbar {
+          padding: 0.75rem 1.5rem;
           gap: 2rem;
+        }
+
+        .nav-links {
+          gap: 1.5rem;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .hero-image {
+          height: 50vh;
+        }
+
+        .hero-image::after {
+          background: linear-gradient(to top, var(--primary-cream) 0%, transparent 50%);
+        }
+
+        .hero-content {
+          padding: 4rem 2rem 6rem;
+        }
+
+        .content-block {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .content-block.reverse {
+          direction: ltr;
+        }
+
+        .content-block-image {
+          aspect-ratio: 4/3;
+        }
+
+        .bento-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .bento-card.featured {
+          grid-column: span 2;
+          flex-direction: column;
+          text-align: center;
         }
       }
 
       @media (max-width: 768px) {
-        .hero {
-          min-height: 90vh;
+        .navbar {
+          top: 1rem;
+          padding: 0.6rem 1.25rem;
+          gap: 1rem;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .brand-logo img {
+          height: 28px;
         }
 
         .hero-content {
+          padding: 3rem 1.5rem 5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .intro-statement {
+          padding: 3rem 1.5rem;
+          gap: 1.5rem;
+        }
+
+        .content-block-text {
           padding: 3rem 1.5rem;
         }
 
-        .manifest-item {
-          padding: 1.5rem 0;
+        .bento-grid {
+          grid-template-columns: 1fr;
         }
 
-        .impact-card {
-          padding: 2rem;
+        .bento-card.featured {
+          grid-column: span 1;
         }
 
-        .cta-buttons {
+        .footer-top {
           flex-direction: column;
+          gap: 2rem;
           align-items: center;
-        }
-
-        .footer-content {
-          flex-direction: column;
           text-align: center;
         }
 
         .footer-links {
           flex-wrap: wrap;
           justify-content: center;
+          gap: 1.5rem;
         }
       }
 
       @media (max-width: 480px) {
-        .hero-title {
-          font-size: 2rem;
+        .navbar {
+          width: calc(100% - 2rem);
+          justify-content: space-between;
         }
 
-        .manifest-text {
-          font-size: 1rem;
+        .hero-title {
+          font-size: 2.2rem;
+        }
+
+        .intro-text {
+          font-size: 1.2rem;
+        }
+
+        .block-number {
+          font-size: 3.5rem;
+        }
+
+        .cta-question {
+          font-size: 1.8rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          width: 100%;
         }
 
         .btn-primary,
@@ -700,59 +782,91 @@
     </style>
   </head>
   <body>
-    <!-- Navigation -->
+    <!-- Navigation - Floating Pill -->
     <nav class="navbar">
-      <div class="nav-container">
-        <a href="index.html" class="brand-logo">Free With Purpose</a>
-        <div class="nav-links">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="jewelry/index.html" class="nav-link">Jewelry</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <a href="jewelry/index.html" class="nav-cta">Shop Now</a>
-        </div>
+      <a href="index.html" class="brand-logo">
+        <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Mayte B Jewelry">
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="jewelry/index.html" class="nav-link">Jewelry</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="jewelry/index.html" class="nav-cta">Shop Now</a>
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero - Split Screen -->
     <section class="hero">
+      <div class="hero-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9242.jpg?v=1764338411" alt="Sacred jewelry">
+      </div>
       <div class="hero-content">
         <span class="hero-label">The First Portal</span>
-        <h1 class="hero-title">Jewelry as an Invitation</h1>
-        <p class="hero-subtitle">An exquisite symbol, an invitation, a movement. A call to freedom, self-expression, expansion, purpose, and liberation.</p>
-        <a href="jewelry/index.html" class="hero-cta">
-          Explore the Collection
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
+        <h1 class="hero-title">Jewelry as an<br>Invitation</h1>
+        <p class="hero-subtitle">A call to freedom, self-expression, expansion, purpose & liberation.</p>
+        <p class="hero-subtitle">Jewelry that honors the Sacred, the Shakti, Divine Source & the Universe.</p>
       </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="content-section">
-      <div class="container">
-        <div class="content-grid">
-          <div class="content-image">
-            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-4.jpg?v=1763739724" alt="Sacred jewelry piece">
-          </div>
-          <div class="content-text">
-            <span class="section-label">Sacred Adornment</span>
-            <h2 class="section-title">The Awakener Within</h2>
-            <p class="content-paragraph">
-              <em>The awakener of the disruptor, the visionary, the alchemist, the catalyst.</em> A spark of love, hope, and inspired action.
-            </p>
-            <p class="content-paragraph">
-              Jewelry that honors the Sacred, the Shakti, Divine Source, and the Divine Universe. A carrier of ancient wisdom, mystery, and magnetism. An anchor of your own intention, guidance, and inner knowing.
-            </p>
-            <p class="content-highlight">
-              Jewelry that can be enhanced through ritual, supporting the embodiment of true beauty.
-            </p>
-            <p class="content-paragraph">
-              A pathway toward a more sustainable, ethical, and conscious way of being. A reconnection to Earth and her elements. Jewelry that feels good to wear, that feels in resonance and alignment.
-            </p>
-          </div>
-        </div>
+    <!-- Intro Statement -->
+    <section class="intro-statement">
+      <p class="intro-text">
+        "<span>The awakener</span> of the disruptor, the visionary, the alchemist, the catalyst. A spark of love, hope, and inspired action."
+      </p>
+      <p class="intro-text">
+        "A carrier of ancient wisdom, mystery & magnetism."
+      </p>
+    </section>
+
+    <!-- Content Block 1 -->
+    <section class="content-block">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-5.jpg?v=1763739729" alt="Sacred adornment">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">01</span>
+        <h2 class="block-title">Honoring the Sacred</h2>
+        <p class="block-text">
+          Jewelry that honors the Sacred, the Shakti, Divine Source, and the Divine Universe. A carrier of ancient wisdom, mystery, and magnetism.
+        </p>
+        <p class="block-highlight">
+          An anchor of your own intention, guidance, and inner knowing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Block 2 -->
+    <section class="content-block reverse">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-6.jpg?v=1763739721" alt="Ritual and beauty">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">02</span>
+        <h2 class="block-title">Ritual & True Beauty</h2>
+        <p class="block-text">
+          Jewelry that can be enhanced through ritual, supporting the embodiment of true beauty. A pathway toward a more sustainable, ethical, and conscious way of being.
+        </p>
+        <p class="block-highlight">
+          A reconnection to Earth and her elements. Jewelry that feels good to wear, that feels in resonance and alignment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Block 3 -->
+    <section class="content-block">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-4.jpg?v=1763739724" alt="Living art">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">03</span>
+        <h2 class="block-title">Living Art</h2>
+        <p class="block-text">
+          A dear companion, a portable altar. Divine decadence. Living art. An investment in beauty with purpose.
+        </p>
+        <p class="block-highlight">
+          A precious carrier of memory and meaning, a timeless treasure for generations to come.
+        </p>
       </div>
     </section>
 
@@ -760,106 +874,99 @@
     <section class="manifest-section">
       <div class="manifest-container">
         <div class="manifest-header">
-          <span class="manifest-label">The Essence</span>
           <h2 class="manifest-title">What Jewelry Can Be</h2>
+          <p class="manifest-subtitle">An invitation to remember</p>
         </div>
-        <ul class="manifest-list">
-          <li class="manifest-item">
-            <p class="manifest-text">
-              <strong>An invitation</strong> to be present, curious, and connected.
-            </p>
-            <p class="manifest-subtext">A remembrance of healthier ways of being and doing. A reclamation of artistry itself.</p>
-          </li>
-          <li class="manifest-item">
-            <p class="manifest-text">
-              <strong>A gift.</strong> A precious carrier of memory and meaning.
-            </p>
-            <p class="manifest-subtext">A timeless treasure for generations to come.</p>
-          </li>
-          <li class="manifest-item">
-            <p class="manifest-text">
-              <strong>A dear companion,</strong> a portable altar.
-            </p>
-            <p class="manifest-subtext">Divine decadence. Living art. An investment in beauty with purpose.</p>
-          </li>
-          <li class="manifest-item">
-            <p class="manifest-text">
-              <strong>A key,</strong> a pathway into a collective movement.
-            </p>
-            <p class="manifest-subtext">Where together we co-create profound impact in conscious and authentic ways.</p>
-          </li>
-        </ul>
+        <div class="manifest-item">
+          <p class="manifest-main"><strong>An invitation</strong> to be present, curious, and connected.</p>
+          <p class="manifest-sub">A remembrance of healthier ways of being and doing.</p>
+        </div>
+        <div class="manifest-item">
+          <p class="manifest-main"><strong>A reclamation</strong> of artistry itself.</p>
+          <p class="manifest-sub">A timeless treasure for generations to come.</p>
+        </div>
+        <div class="manifest-item">
+          <p class="manifest-main"><strong>A key</strong>, a pathway into a collective movement.</p>
+          <p class="manifest-sub">Where together we co-create profound impact in conscious and authentic ways.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Impact Section -->
+    <!-- Impact Section - Bento Grid -->
     <section class="impact-section">
-      <div class="impact-container">
-        <div class="impact-header">
-          <h2 class="impact-title">Purpose in Every Piece</h2>
-          <p class="impact-intro">Every piece contributes to supporting artists & artisans who preserve ancient traditions and to causes that protect our shared home, Mother Earth.</p>
+      <div class="impact-header">
+        <span class="impact-label">Our Impact</span>
+        <h2 class="impact-title">Purpose in Every Piece</h2>
+        <p class="impact-intro">Every piece contributes to supporting artists & artisans who preserve ancient traditions and to causes that protect our shared home, Mother Earth.</p>
+      </div>
+      <div class="bento-grid">
+        <div class="bento-card featured">
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9Z"/>
+            <path d="M12 3c-1.5 3-2 6-2 9s.5 6 2 9"/>
+            <path d="M12 3c1.5 3 2 6 2 9s-.5 6-2 9"/>
+            <path d="M3 12h18"/>
+          </svg>
+          <div>
+            <h3 class="bento-title">Supporting Global Artisans</h3>
+            <p class="bento-text">Honoring creators who preserve ancient wisdom and artistic traditions through ethical collaboration and meaningful exchange.</p>
+          </div>
         </div>
-        <div class="impact-grid">
-          <div class="impact-card">
-            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9Z"/>
-              <path d="M12 3c-1.5 3-2 6-2 9s.5 6 2 9"/>
-              <path d="M12 3c1.5 3 2 6 2 9s-.5 6-2 9"/>
-              <path d="M3 12h18"/>
-            </svg>
-            <h3 class="impact-card-title">Supporting Artisans</h3>
-            <p class="impact-card-text">Honoring global creators who preserve ancient wisdom, artistic traditions, and ritual keeping ancestral traditions alive through ethical collaboration and meaningful exchange.</p>
-          </div>
-          <div class="impact-card">
-            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12Z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            <h3 class="impact-card-title">Protecting Mother Earth</h3>
-            <p class="impact-card-text">Contributing to causes that safeguard our planet, embracing sustainable practices and conscious sourcing that honor our shared home.</p>
-          </div>
-          <div class="impact-card">
-            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
-            </svg>
-            <h3 class="impact-card-title">Conscious Creation</h3>
-            <p class="impact-card-text">Each piece is crafted with intention, using sustainable materials and ethically sourced elements that align with values of integrity and care.</p>
-          </div>
-          <div class="impact-card">
-            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-            <h3 class="impact-card-title">Timeless Beauty</h3>
-            <p class="impact-card-text">Investment pieces designed to transcend trends, becoming treasured heirlooms that carry meaning across generations.</p>
-          </div>
+        <div class="bento-card">
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <h3 class="bento-title">Protecting Earth</h3>
+          <p class="bento-text">Contributing to causes that safeguard our planet through sustainable practices.</p>
+        </div>
+        <div class="bento-card">
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+          </svg>
+          <h3 class="bento-title">Conscious Creation</h3>
+          <p class="bento-text">Crafted with intention using sustainable and ethically sourced materials.</p>
+        </div>
+        <div class="bento-card">
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          <h3 class="bento-title">Timeless Beauty</h3>
+          <p class="bento-text">Investment pieces becoming treasured heirlooms across generations.</p>
+        </div>
+        <div class="bento-card">
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+          <h3 class="bento-title">Ancient Wisdom</h3>
+          <p class="bento-text">Preserving sacred traditions and ancestral knowledge in every design.</p>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-      <div class="cta-container">
-        <h2 class="cta-title">Does It Resonate?</h2>
-        <p class="cta-subtitle">Join the movement. Together we co-create profound impact in conscious and authentic ways.</p>
-        <div class="cta-buttons">
-          <a href="jewelry/index.html" class="btn-primary">
-            Explore the Collection
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="contact.html" class="btn-secondary">
-            Connect With Us
-          </a>
-        </div>
+      <h2 class="cta-question">Does it resonate?</h2>
+      <p class="cta-answer">Join the movement</p>
+      <div class="cta-buttons">
+        <a href="jewelry/index.html" class="btn-primary">
+          Explore the Collection
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="contact.html" class="btn-secondary">Connect With Us</a>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
-        <div class="footer-content">
-          <a href="index.html" class="footer-brand">Free With Purpose</a>
+        <div class="footer-top">
+          <a href="index.html" class="footer-brand">
+            <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Mayte B Jewelry">
+          </a>
           <div class="footer-links">
             <a href="index.html" class="footer-link">Home</a>
             <a href="jewelry/index.html" class="footer-link">Jewelry</a>
@@ -868,7 +975,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-copy">&copy; 2025 Free With Purpose. All Rights Reserved.</p>
+          <p class="footer-copy">&copy; 2025 Mayte B Jewelry. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
