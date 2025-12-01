@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artists & Artisans — Free With Purpose</title>
+    <meta name="description" content="Ancestral Wisdom. Cultural Preservation. Human Connection. Where Artistry and Ancestry Meet." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amethysta&display=swap" rel="stylesheet">
+    <style>
+      /* Hide Shopify header group, newsletter and footer */
+      #header-group,
+      #newsletter,
+      .footer {
+        display: none !important;
+      }
+
+      /* Remove Shopify body padding */
+      body {
+        padding-top: 0 !important;
+      }
+
+      :root {
+        --primary-terracotta: #C46B47;
+        --primary-clay: #D89A73;
+        --primary-sand: #D8C9A9;
+        --primary-earth: #8B5A3C;
+        --primary-cream: #FDF8F3;
+        --primary-espresso: #2B1E1A;
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+        --font-accent: "Cormorant Garamond", serif;
+        --font-label: "Bellefair", serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Navigation - Minimal Floating */
+      .navbar {
+        position: fixed;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        background: rgba(253, 248, 243, 0.95);
+        backdrop-filter: blur(15px);
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 30px rgba(196, 107, 71, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        width: auto;
+        min-width: fit-content;
+      }
+
+      .brand-logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .brand-logo img {
+        height: 35px;
+        width: auto;
+        min-width: 100px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      .nav-link {
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-clay);
+      }
+
+      .nav-cta {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.6rem 1.5rem;
+        background: var(--primary-terracotta);
+        color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-cta:hover {
+        background: var(--primary-clay);
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--primary-terracotta);
+        transition: all 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      /* Mobile Menu */
+      @media (max-width: 768px) {
+        .navbar {
+          overflow: visible;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          margin-top: 1rem;
+          background: rgba(253, 248, 243, 0.98);
+          backdrop-filter: blur(15px);
+          border-radius: 20px;
+          padding: 1.5rem;
+          flex-direction: column;
+          gap: 1rem;
+          box-shadow: 0 4px 30px rgba(196, 107, 71, 0.1);
+          overflow: visible;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-link {
+          font-size: 0.85rem;
+          padding: 0.5rem 0;
+        }
+
+        .nav-cta {
+          margin-top: 0.5rem;
+          text-align: center;
+        }
+      }
+
+      /* Hero - Split Screen */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-image {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, transparent 60%, var(--primary-cream) 100%);
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8rem 6rem 6rem 4rem;
+        background: var(--primary-cream);
+      }
+
+      .hero-label {
+        font-family: var(--font-label);
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--primary-clay);
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero-label::before {
+        content: '';
+        width: 40px;
+        height: 1px;
+        background: var(--primary-clay);
+      }
+
+      .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-bottom: 2rem;
+        line-height: 1.05;
+      }
+
+      .hero-subtitle {
+        font-family: var(--font-accent);
+        font-size: clamp(1.3rem, 2vw, 1.6rem);
+        font-style: italic;
+        color: var(--primary-clay);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        max-width: 450px;
+      }
+
+      .hero-tagline {
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-top: 1rem;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        transition: all 0.3s ease;
+        margin-top: 2rem;
+      }
+
+      .hero-cta::after {
+        content: '';
+        width: 50px;
+        height: 1px;
+        background: var(--primary-terracotta);
+        transition: width 0.3s ease;
+      }
+
+      .hero-cta:hover {
+        color: var(--primary-clay);
+      }
+
+      .hero-cta:hover::after {
+        width: 80px;
+        background: var(--primary-clay);
+      }
+
+      /* Intro Statement - Full Width */
+      .intro-statement {
+        padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 8vw, 8rem);
+        background: var(--primary-terracotta);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .intro-text {
+        font-family: var(--font-accent);
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        font-style: italic;
+        color: #fff;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .intro-text span {
+        color: var(--primary-sand);
+      }
+
+      /* Content Blocks - Alternating */
+      .content-block {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        min-height: auto;
+      }
+
+      .content-block.reverse {
+        direction: rtl;
+      }
+
+      .content-block.reverse > * {
+        direction: ltr;
+      }
+
+      .content-block-image {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+      }
+
+      .content-block-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .content-block-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(3rem, 6vw, 6rem);
+        background: var(--primary-cream);
+      }
+
+      .block-number {
+        font-family: var(--font-heading);
+        font-size: 5rem;
+        color: rgba(196, 107, 71, 0.15);
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+
+      .block-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .block-text {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 2;
+        color: #5a4a45;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+      }
+
+      .block-highlight {
+        font-family: var(--font-accent);
+        font-size: 1.25rem;
+        font-style: italic;
+        color: var(--primary-clay);
+        line-height: 1.7;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--primary-sand);
+      }
+
+      /* Manifest Section - Vertical Scroll */
+      .manifest-section {
+        background: var(--primary-terracotta);
+        padding: clamp(5rem, 10vw, 8rem) 0;
+      }
+
+      .manifest-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 clamp(2rem, 5vw, 4rem);
+        text-align: center;
+      }
+
+      .manifest-main {
+        font-family: var(--font-accent);
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        color: #fff;
+        line-height: 1.8;
+        font-style: italic;
+      }
+
+      .manifest-main strong {
+        color: var(--primary-sand);
+        font-weight: 500;
+      }
+
+      /* Closing Section */
+      .closing-section {
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
+        background: var(--primary-cream);
+        text-align: center;
+      }
+
+      .closing-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .closing-text {
+        font-family: var(--font-accent);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-style: italic;
+        color: var(--primary-terracotta);
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .closing-taglines {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem 0;
+        flex-wrap: wrap;
+      }
+
+      .closing-taglines span {
+        font-family: var(--font-accent);
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--primary-clay);
+      }
+
+      .closing-final {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .closing-taglines {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+      }
+
+      /* Footer - Clean */
+      .portal-footer {
+        background: var(--primary-espresso);
+        padding: 5rem 0 3rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 clamp(2rem, 5vw, 4rem);
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 3rem;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+      }
+
+      .footer-brand img {
+        height: 40px;
+        width: auto;
+        filter: brightness(0) invert(1);
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 3rem;
+      }
+
+      .footer-link {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--primary-sand);
+      }
+
+      .footer-bottom {
+        text-align: center;
+      }
+
+      .footer-copy {
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
+        letter-spacing: 0.05em;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .navbar {
+          padding: 0.75rem 1.5rem;
+          gap: 2rem;
+        }
+
+        .nav-links {
+          gap: 1.5rem;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .hero-image {
+          height: 50vh;
+        }
+
+        .hero-image::after {
+          background: linear-gradient(to top, var(--primary-cream) 0%, transparent 50%);
+        }
+
+        .hero-content {
+          padding: 4rem 2rem 6rem;
+        }
+
+        .content-block {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .content-block.reverse {
+          direction: ltr;
+        }
+
+        .content-block-image {
+          aspect-ratio: 4/3;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          top: 1rem;
+          padding: 0.6rem 1.25rem;
+          gap: 1rem;
+        }
+
+        .brand-logo img {
+          height: 28px;
+        }
+
+        .hero-content {
+          padding: 3rem 1.5rem 5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .intro-statement {
+          padding: 3rem 1.5rem;
+          gap: 1.5rem;
+        }
+
+        .content-block-text {
+          padding: 3rem 1.5rem;
+        }
+
+        .footer-top {
+          flex-direction: column;
+          gap: 2rem;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar {
+          width: calc(100% - 2rem);
+          justify-content: space-between;
+        }
+
+        .hero-title {
+          font-size: 2.2rem;
+        }
+
+        .intro-text {
+          font-size: 1.2rem;
+        }
+
+        .block-number {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation - Floating Pill -->
+    <nav class="navbar">
+      <a href="#hero" class="brand-logo">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/MayteBJewelry_Horizontal.png?v=1764342557" alt="Free With Purpose">
+      </a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#wisdom" class="nav-link">Wisdom</a>
+        <a href="#culture" class="nav-link">Culture</a>
+        <a href="#artistry" class="nav-link">Artistry</a>
+        <a href="https://freewithpurpose.com/pages/coming-soon" class="nav-cta">Shop Now</a>
+      </div>
+    </nav>
+
+    <!-- Hero - Split Screen -->
+    <section id="hero" class="hero">
+      <div class="hero-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/Learning_from_more_artisans_textiles.jpg?v=1764622900" alt="Learning from artisans textiles">
+      </div>
+      <div class="hero-content">
+        <span class="hero-label">The Third Portal</span>
+        <h1 class="hero-title">Artists &<br>Artisans</h1>
+        <p class="hero-subtitle">Ancestral Wisdom. Cultural Preservation. Human Connection.</p>
+        <p class="hero-tagline">Where Artistry and Ancestry Meet</p>
+      </div>
+    </section>
+
+    <!-- Intro Statement - Terracotta -->
+    <section class="intro-statement">
+      <p class="intro-text">
+        "Through art, craft, and tradition, we remember and nurture those parts of ourselves that <span>transcend technology and material success</span>. The soulful, emotional, and relational aspects of being."
+      </p>
+    </section>
+
+    <!-- Content Block 1 - Image Left -->
+    <section id="wisdom" class="content-block">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9525.jpg?v=1764622901" alt="Ancestral wisdom through craft">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">01</span>
+        <h2 class="block-title">Ancestral Wisdom</h2>
+        <p class="block-text">
+          The Artists & Artisans Portal celebrates those who carry forward ancestral wisdom through craft, ritual, and creation.
+        </p>
+        <p class="block-highlight">
+          Honoring the hands that shape tradition into living art.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Block 2 - Image Right -->
+    <section id="culture" class="content-block reverse">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_0219.jpg?v=1764622901" alt="Cultural diversity and connection">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">02</span>
+        <h2 class="block-title">Cultural Connection</h2>
+        <p class="block-text">
+          This portal invites us to honor cultural diversity with integrity and respect, and to nurture meaningful relationships between creators and communities across the world.
+        </p>
+        <p class="block-highlight">
+          Building bridges across cultures and generations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Block 3 - Image Left -->
+    <section id="artistry" class="content-block">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9829.jpg?v=1764622901" alt="Artistry as memory and meaning">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">03</span>
+        <h2 class="block-title">Living Artistry</h2>
+        <p class="block-text">
+          Here, artistry is honored as a vessel of memory and meaning.
+        </p>
+        <p class="block-highlight">
+          Connecting the ancient and the contemporary, the local and the global, the sacred and the everyday.
+        </p>
+      </div>
+    </section>
+
+    <!-- Manifest Section - Terracotta -->
+    <section class="manifest-section">
+      <div class="manifest-container">
+        <p class="manifest-main">
+          "A reminder that when we support <strong>artists & artisans</strong>, we keep the spirit of creation, culture, and connection alive."
+        </p>
+      </div>
+    </section>
+
+    <!-- Closing Section - Cream -->
+    <section class="closing-section">
+      <div class="closing-container">
+        <p class="closing-text">
+          "Building bridges of beauty, respect, and meaningful impact across cultures and generations."
+        </p>
+        <div class="closing-taglines">
+          <span>Artistry as remembrance</span>
+          <span>Craft as ritual</span>
+          <span>Tradition as freedom</span>
+        </div>
+        <p class="closing-final">The art of cultural preservation.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <a href="index.html" class="footer-brand">
+            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/MayteBJewelry_Horizontal.png?v=1764342557" alt="Free With Purpose">
+          </a>
+          <div class="footer-links">
+            <a href="#hero" class="footer-link">Home</a>
+            <a href="https://freewithpurpose.com/pages/coming-soon" class="footer-link">Jewelry</a>
+            <a href="https://freewithpurpose.com/pages/coming-soon" class="footer-link">About</a>
+            <a href="https://freewithpurpose.com/pages/coming-soon" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; 2025 Free With Purpose. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    </script>
+  </body>
+</html>

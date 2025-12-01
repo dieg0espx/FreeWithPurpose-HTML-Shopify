@@ -13,15 +13,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amethysta&display=swap" rel="stylesheet">
     <style>
+      /* Hide Shopify header group, newsletter and footer */
+      #header-group,
+      #newsletter,
+      .footer {
+        display: none !important;
+      }
+
+      /* Remove Shopify body padding */
+      body {
+        padding-top: 0 !important;
+      }
+
       :root {
-        /* Your specified colors */
-        --primary-sage: #4A7C59;      /* Sage Green - darkest, used for headings & dark sections */
-        --primary-olive: #7A8F76;     /* Olive Mist - medium accent */
-        --primary-sand: #6B8A73;      /* Earth Sand - secondary accent */
-        --primary-moss: #D8C9A6;      /* Moss Green - highlights, CTAs, gold tones */
-        /* Neutral tones */
-        --primary-cream: #F5F3EE;     /* Light background */
-        --primary-espresso: #2B1E1A;  /* Footer dark */
+        --primary-sage: #4A7C59;
+        --primary-olive: #7A8F76;
+        --primary-sand: #6B8A73;
+        --primary-moss: #D8C9A6;
+        --primary-cream: #F5F3EE;
+        --primary-espresso: #2B1E1A;
         --font-heading: "Belleza", sans-serif;
         --font-body: "Raleway", sans-serif;
         --font-accent: "Cormorant Garamond", serif;
@@ -71,23 +81,28 @@
         box-shadow: 0 4px 30px rgba(74, 124, 89, 0.1);
         display: flex;
         align-items: center;
-        gap: 3rem;
+        gap: 2rem;
+        width: auto;
+        min-width: fit-content;
       }
 
       .brand-logo {
         display: flex;
         align-items: center;
+        flex-shrink: 0;
       }
 
       .brand-logo img {
         height: 35px;
         width: auto;
+        min-width: 100px;
       }
 
       .nav-links {
         display: flex;
-        gap: 2rem;
+        gap: 1.5rem;
         align-items: center;
+        white-space: nowrap;
       }
 
       .nav-link {
@@ -121,510 +136,770 @@
         background: var(--primary-olive);
       }
 
-      /* Hero Section */
-      .hero {
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
         justify-content: center;
-        background: var(--primary-olive);
+        gap: 5px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--primary-sage);
+        transition: all 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      /* Mobile Menu */
+      @media (max-width: 768px) {
+        .navbar {
+          overflow: visible;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          margin-top: 1rem;
+          background: rgba(245, 243, 238, 0.98);
+          backdrop-filter: blur(15px);
+          border-radius: 20px;
+          padding: 1.5rem;
+          flex-direction: column;
+          gap: 1rem;
+          box-shadow: 0 4px 30px rgba(74, 124, 89, 0.1);
+          overflow: visible;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-link {
+          font-size: 0.85rem;
+          padding: 0.5rem 0;
+        }
+
+        .nav-cta {
+          margin-top: 0.5rem;
+          text-align: center;
+        }
+      }
+
+      /* Hero - Split Screen */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-image {
+        position: relative;
         overflow: hidden;
       }
 
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, transparent 60%, var(--primary-cream) 100%);
+      }
+
       .hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 900px;
-        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8rem 6rem 6rem 4rem;
+        background: var(--primary-cream);
       }
 
       .hero-label {
         font-family: var(--font-label);
-        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-        letter-spacing: 0.2em;
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--primary-moss);
-        margin-bottom: 1.5rem;
-        opacity: 0.9;
+        color: var(--primary-olive);
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero-label::before {
+        content: '';
+        width: 40px;
+        height: 1px;
+        background: var(--primary-olive);
       }
 
       .hero-title {
         font-family: var(--font-heading);
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
-        letter-spacing: 0.08em;
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        letter-spacing: 0.04em;
         text-transform: uppercase;
-        color: #fff;
+        color: var(--primary-sage);
         margin-bottom: 2rem;
-        line-height: 1.1;
+        line-height: 1.05;
       }
 
       .hero-subtitle {
         font-family: var(--font-accent);
-        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+        font-size: clamp(1.3rem, 2vw, 1.6rem);
         font-style: italic;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.6;
-        max-width: 700px;
-        margin: 0 auto 3rem;
+        color: var(--primary-olive);
+        line-height: 1.7;
+        margin-bottom: 3rem;
+        max-width: 450px;
       }
 
       .hero-cta {
         display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
-        padding: 1rem 2.5rem;
-        background: var(--primary-moss);
-        color: var(--primary-sage);
+        gap: 1rem;
         font-family: var(--font-body);
         font-size: 0.75rem;
         font-weight: 500;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        border-radius: 2px;
+        color: var(--primary-sage);
         transition: all 0.3s ease;
       }
 
+      .hero-cta::after {
+        content: '';
+        width: 50px;
+        height: 1px;
+        background: var(--primary-sage);
+        transition: width 0.3s ease;
+      }
+
       .hero-cta:hover {
-        background: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        color: var(--primary-olive);
       }
 
-      /* Main Content Section */
-      .content-section {
-        padding: clamp(4rem, 10vw, 8rem) 0;
-        background: var(--primary-cream);
+      .hero-cta:hover::after {
+        width: 80px;
+        background: var(--primary-olive);
       }
 
-      .container {
-        max-width: 1200px;
+      /* Intro Statement - Full Width */
+      .intro-statement {
+        padding: clamp(3rem, 8vw, 5rem) clamp(2rem, 8vw, 8rem);
+        background: var(--primary-sage);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .intro-text {
+        font-family: var(--font-accent);
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        font-style: italic;
+        color: #fff;
+        line-height: 1.8;
+        max-width: 900px;
         margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
       }
 
-      .content-grid {
+      .intro-text span {
+        color: var(--primary-moss);
+      }
+
+      /* Content Blocks - Alternating */
+      .content-block {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: stretch;
+        grid-template-columns: 50% 50%;
+        min-height: auto;
       }
 
-      .content-image {
+      .content-block.reverse {
+        direction: rtl;
+      }
+
+      .content-block.reverse > * {
+        direction: ltr;
+      }
+
+      .content-block-image {
         position: relative;
-        border-radius: 4px;
         overflow: hidden;
-        box-shadow: 0 20px 60px rgba(45, 74, 53, 0.15);
+        aspect-ratio: 1 / 1;
       }
 
-      .content-image img {
+      .content-block-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        display: block;
       }
 
-      .content-image::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border: 1px solid rgba(74, 124, 89, 0.2);
-        pointer-events: none;
+      .content-block-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(3rem, 6vw, 6rem);
+        background: var(--primary-cream);
       }
 
-      .content-text {
-        padding-top: 0;
-      }
-
-      .section-label {
-        font-family: var(--font-label);
-        font-size: 1rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--primary-sage);
-        margin-bottom: 1.25rem;
-      }
-
-      .section-title {
+      .block-number {
         font-family: var(--font-heading);
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-size: 5rem;
+        color: rgba(74, 124, 89, 0.15);
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+
+      .block-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
         letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--primary-sage);
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         line-height: 1.2;
       }
 
-      .content-paragraph {
+      .block-text {
         font-family: var(--font-body);
         font-size: 1rem;
-        line-height: 1.9;
+        line-height: 2;
         color: #4A5A4D;
-        margin-bottom: 1.75rem;
         font-weight: 300;
+        margin-bottom: 1.5rem;
       }
 
-      .content-paragraph em {
+      .block-highlight {
         font-family: var(--font-accent);
+        font-size: 1.25rem;
         font-style: italic;
-        font-size: 1.05em;
-        color: var(--primary-sage);
-      }
-
-      .content-highlight {
-        font-family: var(--font-accent);
-        font-size: 1.15rem;
-        font-style: italic;
-        color: var(--primary-sage);
+        color: var(--primary-olive);
         line-height: 1.7;
-        padding: 1.5rem 0;
-        border-top: 1px solid rgba(74, 124, 89, 0.2);
-        border-bottom: 1px solid rgba(74, 124, 89, 0.2);
-        margin: 2rem 0;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--primary-moss);
       }
 
-      /* Manifest Section */
+      /* Manifest Section - Vertical Scroll */
       .manifest-section {
-        padding: clamp(5rem, 12vw, 10rem) 0;
-        background: var(--primary-olive);
-        position: relative;
-        overflow: hidden;
+        background: var(--primary-sage);
+        padding: clamp(6rem, 12vw, 10rem) 0;
       }
 
       .manifest-container {
-        max-width: 900px;
+        max-width: 800px;
         margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
-        position: relative;
-        z-index: 2;
+        padding: 0 clamp(2rem, 5vw, 4rem);
       }
 
       .manifest-header {
         text-align: center;
-        margin-bottom: 4rem;
-      }
-
-      .manifest-label {
-        font-family: var(--font-label);
-        font-size: 1rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--primary-moss);
-        margin-bottom: 1rem;
+        margin-bottom: 5rem;
       }
 
       .manifest-title {
         font-family: var(--font-heading);
-        font-size: clamp(2rem, 5vw, 3rem);
+        font-size: clamp(2rem, 4vw, 3rem);
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: #fff;
-        line-height: 1.2;
+        margin-bottom: 1rem;
       }
 
-      .manifest-list {
-        list-style: none;
+      .manifest-subtitle {
+        font-family: var(--font-accent);
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--primary-moss);
       }
 
       .manifest-item {
-        padding: 2rem 0;
-        border-bottom: 1px solid rgba(216, 201, 166, 0.15);
+        text-align: center;
+        padding: 3rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .manifest-item:last-child {
         border-bottom: none;
       }
 
-      .manifest-text {
+      .manifest-main {
         font-family: var(--font-accent);
-        font-size: clamp(1.1rem, 2vw, 1.35rem);
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 400;
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        color: #fff;
+        line-height: 1.7;
+        margin-bottom: 0.75rem;
       }
 
-      .manifest-text strong {
+      .manifest-main strong {
         color: var(--primary-moss);
         font-weight: 500;
       }
 
-      .manifest-subtext {
+      .manifest-sub {
         font-family: var(--font-body);
-        font-size: 0.95rem;
-        line-height: 1.8;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
-        margin-top: 0.75rem;
-        padding-left: 1.5rem;
         font-weight: 300;
+        letter-spacing: 0.03em;
       }
 
-      /* Gallery Section */
-      .gallery-section {
-        padding: clamp(5rem, 12vw, 8rem) 0;
+      /* Crafted Section */
+      .crafted-section {
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
         background: var(--primary-cream);
       }
 
-      .gallery-container {
-        max-width: 1200px;
+      .crafted-container {
+        max-width: 1000px;
         margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
+        text-align: center;
       }
 
-      .gallery-header {
+      .crafted-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 1rem;
+      }
+
+      .crafted-highlight {
+        font-family: var(--font-accent);
+        font-size: 1.4rem;
+        font-style: italic;
+        color: var(--primary-olive);
+        margin-bottom: 3rem;
+      }
+
+      .crafted-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+      }
+
+      .crafted-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(74, 124, 89, 0.06);
+        border: 1px solid rgba(74, 124, 89, 0.1);
+      }
+
+      .crafted-card p {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #4A5A4D;
+        font-weight: 300;
+        margin: 0;
+      }
+
+      .crafted-message {
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        padding: 2rem;
+        background: var(--primary-sage);
+        border-radius: 4px;
+      }
+
+      .crafted-message p {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+        font-weight: 300;
+      }
+
+      .message-greeting {
+        font-family: var(--font-accent);
+        font-size: 1.15rem !important;
+        font-style: italic;
+        color: #fff !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      .crafted-symbols-intro {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .crafted-symbols-intro p {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.9;
+        color: #4A5A4D;
+        margin-bottom: 1rem;
+        font-weight: 300;
+      }
+
+      .crafted-symbols-intro strong {
+        color: var(--primary-sage);
+      }
+
+      .intro-highlight {
+        font-family: var(--font-accent);
+        font-size: 1.2rem !important;
+        font-style: italic;
+        color: var(--primary-olive) !important;
+        margin: 1.5rem 0 !important;
+      }
+
+      /* Symbolism Section */
+      .symbolism-section {
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
+        background: #fff;
+      }
+
+      .symbolism-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .symbolism-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .symbols-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .symbol-card {
+        background: var(--primary-cream);
+        padding: 2rem;
+        border-radius: 4px;
+        border-left: 3px solid var(--primary-olive);
+      }
+
+      .symbol-name {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 0.25rem;
+      }
+
+      .symbol-subtitle {
+        font-family: var(--font-accent);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--primary-olive);
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .symbol-description {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #4A5A4D;
+        font-weight: 300;
+      }
+
+      .symbol-closing {
+        text-align: center;
+        padding: 4rem 2rem;
+        margin-top: 4rem;
+        background: var(--primary-sage);
+        border-radius: 4px;
+      }
+
+      .symbol-closing p {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.75rem;
+        font-weight: 300;
+      }
+
+      .closing-taglines {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .closing-taglines span {
+        font-family: var(--font-accent);
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--primary-moss);
+      }
+
+      .closing-final {
+        font-family: var(--font-heading);
+        font-size: 1.3rem !important;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #fff !important;
+        margin-top: 1.5rem !important;
+      }
+
+      @media (max-width: 768px) {
+        .crafted-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .symbols-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .closing-taglines {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+      }
+
+      /* Clean Beauty Section */
+      .clean-beauty-section {
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
+        background: #fff;
+      }
+
+      .clean-beauty-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .clean-beauty-header {
         text-align: center;
         margin-bottom: 3rem;
       }
 
-      .gallery-label {
-        font-family: var(--font-label);
-        font-size: 1rem;
-        letter-spacing: 0.2em;
+      .clean-beauty-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--primary-sage);
         margin-bottom: 1rem;
-        display: block;
       }
 
-      .gallery-title {
-        font-family: var(--font-heading);
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--primary-sage);
-        line-height: 1.2;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 1.5rem;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      .gallery-item {
-        position: relative;
-        border-radius: 4px;
-        overflow: hidden;
-        box-shadow: 0 8px 30px rgba(45, 74, 53, 0.1);
-      }
-
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-      }
-
-      .gallery-item:hover img {
-        transform: scale(1.05);
-      }
-
-      .gallery-item::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border: 1px solid rgba(74, 124, 89, 0.15);
-        pointer-events: none;
-      }
-
-      .gallery-item:first-child {
-        grid-column: span 2;
-        aspect-ratio: 21/9;
-      }
-
-      .gallery-item:not(:first-child) {
-        aspect-ratio: 4/3;
-      }
-
-      @media (max-width: 768px) {
-        .gallery-grid {
-          grid-template-columns: 1fr;
-          gap: 1.25rem;
-        }
-
-        .gallery-item:first-child {
-          grid-column: auto;
-          aspect-ratio: 16/9;
-        }
-
-        .gallery-item:not(:first-child) {
-          aspect-ratio: 4/3;
-        }
-      }
-
-      /* Impact Section */
-      .impact-section {
-        padding: clamp(5rem, 12vw, 10rem) 0;
-        background: var(--primary-cream);
-      }
-
-      .impact-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
-      }
-
-      .impact-header {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 4rem;
-      }
-
-      .impact-title {
-        font-family: var(--font-heading);
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--primary-sage);
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-      }
-
-      .impact-intro {
+      .clean-beauty-subtitle {
         font-family: var(--font-accent);
         font-size: 1.2rem;
         font-style: italic;
-        color: var(--primary-sage);
+        color: var(--primary-olive);
+        max-width: 700px;
+        margin: 0 auto 2rem;
         line-height: 1.7;
       }
 
-      .impact-grid {
+      .coming-soon-badge {
+        display: inline-block;
+        font-family: var(--font-body);
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.5rem 1rem;
+        background: var(--primary-sage);
+        color: #fff;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+      }
+
+      /* Warning Box */
+      .warning-box {
+        background: var(--primary-cream);
+        border-left: 4px solid var(--primary-olive);
+        padding: 2rem;
+        margin-bottom: 3rem;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .warning-box h3 {
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 1.5rem;
+      }
+
+      .warning-list {
+        list-style: none;
+      }
+
+      .warning-list li {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: #4A5A4D;
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        font-weight: 300;
+      }
+
+      .warning-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        width: 6px;
+        height: 6px;
+        background: var(--primary-olive);
+        border-radius: 50%;
+      }
+
+      .warning-list li strong {
+        color: var(--primary-sage);
+        font-weight: 500;
+      }
+
+      /* Category Cards */
+      .category-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
       }
 
-      .impact-card {
-        background: #fff;
-        padding: 3rem;
+      .category-card {
+        background: var(--primary-cream);
+        padding: 2rem;
         border-radius: 4px;
-        box-shadow: 0 8px 30px rgba(45, 74, 53, 0.08);
-        transition: all 0.4s ease;
-        border: 1px solid rgba(74, 124, 89, 0.1);
+        border-top: 3px solid var(--primary-olive);
       }
 
-      .impact-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 16px 50px rgba(45, 74, 53, 0.12);
-      }
-
-      .impact-icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1.5rem;
-        color: var(--primary-sage);
-      }
-
-      .impact-card-title {
+      .category-card h4 {
         font-family: var(--font-heading);
-        font-size: 1.3rem;
+        font-size: 1rem;
         letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--primary-sage);
         margin-bottom: 1rem;
       }
 
-      .impact-card-text {
+      .category-card p {
         font-family: var(--font-body);
-        font-size: 0.95rem;
-        line-height: 1.8;
-        color: #5A6A5D;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: #4A5A4D;
         font-weight: 300;
       }
 
-      /* CTA Section */
-      .cta-section {
-        padding: clamp(5rem, 12vw, 8rem) 0;
-        background: var(--primary-sage);
+      @media (max-width: 768px) {
+        .category-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Alphabetical Guide */
+      .alpha-guide {
+        margin-top: 4rem;
+      }
+
+      .alpha-guide-header {
         text-align: center;
-        position: relative;
-        overflow: hidden;
+        margin-bottom: 3rem;
       }
 
-      .cta-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 clamp(1.5rem, 4vw, 3rem);
-        position: relative;
-        z-index: 2;
-      }
-
-      .cta-title {
+      .alpha-guide-header h3 {
         font-family: var(--font-heading);
-        font-size: clamp(2rem, 5vw, 3rem);
+        font-size: clamp(1.5rem, 3vw, 2rem);
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: #fff;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-      }
-
-      .cta-subtitle {
-        font-family: var(--font-accent);
-        font-size: clamp(1.1rem, 2vw, 1.4rem);
-        font-style: italic;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 3rem;
-        line-height: 1.6;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 1rem 2.5rem;
-        background: var(--primary-moss);
         color: var(--primary-sage);
-        font-family: var(--font-body);
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        border-radius: 2px;
+        margin-bottom: 0.5rem;
+      }
+
+      .alpha-guide-header p {
+        font-family: var(--font-accent);
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--primary-olive);
+      }
+
+      .brand-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+
+      .brand-item {
+        padding: 1.5rem;
+        background: var(--primary-cream);
+        border-radius: 4px;
+        border-left: 3px solid var(--primary-olive);
         transition: all 0.3s ease;
       }
 
-      .btn-primary:hover {
-        background: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      .brand-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(74, 124, 89, 0.1);
       }
 
-      .btn-secondary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 1rem 2.5rem;
-        background: transparent;
-        color: #fff;
+      .brand-item h5 {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.04em;
+        color: var(--primary-sage);
+        margin-bottom: 0.5rem;
+      }
+
+      .brand-item p {
         font-family: var(--font-body);
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 2px;
-        transition: all 0.3s ease;
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: #4A5A4D;
+        font-weight: 300;
+        margin: 0;
       }
 
-      .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #fff;
-        transform: translateY(-2px);
+      @media (max-width: 768px) {
+        .brand-list {
+          grid-template-columns: 1fr;
+        }
       }
 
-      /* Footer */
-      .footer {
+      /* Footer - Clean */
+      .portal-footer {
         background: var(--primary-espresso);
         padding: 5rem 0 3rem;
       }
@@ -695,14 +970,34 @@
           gap: 1.5rem;
         }
 
-        .content-grid {
+        .hero {
           grid-template-columns: 1fr;
-          gap: 3rem;
+          min-height: auto;
         }
 
-        .impact-grid {
+        .hero-image {
+          height: 50vh;
+        }
+
+        .hero-image::after {
+          background: linear-gradient(to top, var(--primary-cream) 0%, transparent 50%);
+        }
+
+        .hero-content {
+          padding: 4rem 2rem 6rem;
+        }
+
+        .content-block {
           grid-template-columns: 1fr;
-          gap: 2rem;
+          min-height: auto;
+        }
+
+        .content-block.reverse {
+          direction: ltr;
+        }
+
+        .content-block-image {
+          aspect-ratio: 4/3;
         }
       }
 
@@ -713,33 +1008,25 @@
           gap: 1rem;
         }
 
-        .nav-links {
-          display: none;
-        }
-
         .brand-logo img {
           height: 28px;
         }
 
-        .hero {
-          min-height: 90vh;
-        }
-
         .hero-content {
+          padding: 3rem 1.5rem 5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .intro-statement {
           padding: 3rem 1.5rem;
+          gap: 1.5rem;
         }
 
-        .manifest-item {
-          padding: 1.5rem 0;
-        }
-
-        .impact-card {
-          padding: 2rem;
-        }
-
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
+        .content-block-text {
+          padding: 3rem 1.5rem;
         }
 
         .footer-top {
@@ -763,17 +1050,15 @@
         }
 
         .hero-title {
-          font-size: 2rem;
+          font-size: 2.2rem;
         }
 
-        .manifest-text {
-          font-size: 1rem;
+        .intro-text {
+          font-size: 1.2rem;
         }
 
-        .btn-primary,
-        .btn-secondary {
-          width: 100%;
-          justify-content: center;
+        .block-number {
+          font-size: 3.5rem;
         }
       }
     </style>
@@ -781,195 +1066,323 @@
   <body>
     <!-- Navigation - Floating Pill -->
     <nav class="navbar">
-      <a href="index.html" class="brand-logo">
-        <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Free With Purpose">
+      <a href="#hero" class="brand-logo">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/MayteBJewelry_Horizontal.png?v=1764342557" alt="Free With Purpose">
       </a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="portal1.html" class="nav-link">Jewelry</a>
-        <a href="portal2.html" class="nav-link">Sustainability</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="jewelry/index.html" class="nav-cta">Shop Now</a>
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#conscious" class="nav-link">Conscious</a>
+        <a href="#manifest" class="nav-link">Manifest</a>
+        <a href="#nourishment" class="nav-link">Nourishment</a>
+        <a href="#pillars" class="nav-link">Pillars</a>
+        <a href="https://freewithpurpose.com/pages/coming-soon" class="nav-cta">Shop Now</a>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero - Split Screen -->
+    <section id="hero" class="hero">
+      <div class="hero-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_0485.heic?v=1764337300" alt="Nature and wellness">
+      </div>
       <div class="hero-content">
         <span class="hero-label">The Second Portal</span>
-        <h1 class="hero-title">Sustainability & Well-Being</h1>
-        <p class="hero-subtitle">A way of living that honors the balance between inner and outer worlds, caring for both the planet and the self, allowing life to flourish.</p>
-        <a href="#conscious-living" class="hero-cta">
-          Begin the Journey
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
+        <h1 class="hero-title">Sustainability<br>& Well-Being</h1>
+        <p class="hero-subtitle">A way of living that honors the balance between inner and outer worlds.</p>
+        <p class="hero-subtitle">Caring for both the planet and the self, allowing life to flourish.</p>
       </div>
     </section>
 
-    <!-- Content Section: Conscious Living -->
-    <section id="conscious-living" class="content-section">
-      <div class="container">
-        <div class="content-grid">
-          <div class="content-image">
-            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_0485.heic?v=1764337300" alt="Nature and wellness">
-          </div>
-          <div class="content-text">
-            <span class="section-label">Conscious Living</span>
-            <h2 class="section-title">A Life Guided by Awareness</h2>
-            <p class="content-paragraph">
-              <em>To live consciously is to live awake.</em> Aware of how each action, purchase, and word shapes the world around us.
-            </p>
-            <p class="content-paragraph">
-              To no longer move through life on autopilot. To notice the beauty and interconnectedness in all things. To respond rather than react.
-            </p>
-            <p class="content-highlight">
-              To consume with care and create with purpose. To honor both the seen and unseen—the visible act and the invisible intention behind it.
-            </p>
-            <p class="content-paragraph">
-              A life guided by awareness, presence, and purpose invites us into deeper relationship with ourselves, each other, and the Earth we call home.
-            </p>
-          </div>
-        </div>
+    <!-- Intro Statement -->
+    <section class="intro-statement">
+      <p class="intro-text">
+        "<span>To live consciously</span> is to live awake. Aware of how each action, purchase, and word shapes the world around us."
+      </p>
+      <p class="intro-text">
+        "A life guided by awareness, presence, and purpose."
+      </p>
+    </section>
+
+    <!-- Content Block 1 -->
+    <section id="conscious" class="content-block">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9739.jpg?v=1764337298" alt="Conscious living">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">01</span>
+        <h2 class="block-title">Conscious Living</h2>
+        <p class="block-text">
+          To no longer move through life on autopilot. To notice the beauty and interconnectedness in all things.
+        </p>
+        <p class="block-highlight">
+          To respond rather than react. To consume with care and create with purpose.
+        </p>
       </div>
     </section>
 
-    <!-- Manifest Section: The Practice -->
-    <section class="manifest-section">
+    <!-- Content Block 2 -->
+    <section class="content-block reverse">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9702.jpg?v=1764337298" alt="Mindful choices">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">02</span>
+        <h2 class="block-title">Mindful Choices</h2>
+        <p class="block-text">
+          What we choose to wear, how we nourish, how we spend, and what we support creates ripple effects.
+        </p>
+        <p class="block-highlight">
+          Choosing from alignment, not habit. Living in reciprocity with the Earth.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Block 3 -->
+    <section class="content-block">
+      <div class="content-block-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/image000000.jpg?v=1764337298" alt="Inner harmony">
+      </div>
+      <div class="content-block-text">
+        <span class="block-number">03</span>
+        <h2 class="block-title">Inner Harmony</h2>
+        <p class="block-text">
+          Body, mind, heart, and spirit aligned. A remembrance that true well-being is wholeness.
+        </p>
+        <p class="block-highlight">
+          Everything we seek already lives within, waiting to be remembered.
+        </p>
+      </div>
+    </section>
+
+    <!-- Manifest Section -->
+    <section id="manifest" class="manifest-section">
       <div class="manifest-container">
         <div class="manifest-header">
-          <span class="manifest-label">Mindful Choices</span>
           <h2 class="manifest-title">The Art of Pausing</h2>
+          <p class="manifest-subtitle">Mindful choices for a conscious life</p>
         </div>
-        <ul class="manifest-list">
-          <li class="manifest-item">
-            <p class="manifest-text">
-              <strong>Choosing from alignment,</strong> not habit.
-            </p>
-            <p class="manifest-subtext">What we choose to wear, how we nourish, how we spend, and what we support creates ripple effects that reach far beyond us.</p>
-          </li>
-          <li class="manifest-item">
-            <p class="manifest-text">
-              <strong>Living in reciprocity,</strong> creating, consuming, and resting in ways that nurture rather than deplete.
-            </p>
-            <p class="manifest-subtext">Well-being becomes a sacred practice of returning to harmony.</p>
-          </li>
-          <li class="manifest-item">
-            <p class="manifest-text">
-              <strong>Body, mind, heart, and spirit</strong> aligned.
-            </p>
-            <p class="manifest-subtext">A remembrance that true well-being is wholeness.</p>
-          </li>
-          <li class="manifest-item">
-            <p class="manifest-text">
-              <strong>Everything we seek</strong> already lives within.
-            </p>
-            <p class="manifest-subtext">A return to the wisdom that has always been there, waiting to be remembered.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-      <div class="gallery-container">
-        <div class="gallery-header">
-          <span class="gallery-label">Visual Journey</span>
-          <h2 class="gallery-title">Living in Harmony</h2>
+        <div class="manifest-item">
+          <p class="manifest-main">Creating, consuming, and resting in ways that <strong>nurture rather than deplete</strong>.</p>
         </div>
-        <div class="gallery-grid">
-          <div class="gallery-item gallery-item-large">
-            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9739.jpg?v=1764337298" alt="Sustainability and nature">
-          </div>
-          <div class="gallery-item">
-            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9702.jpg?v=1764337298" alt="Conscious living">
-          </div>
-          <div class="gallery-item">
-            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/image000000.jpg?v=1764337298" alt="Well-being and balance">
-          </div>
+        <div class="manifest-item">
+          <p class="manifest-main">Well-being becomes a <strong>sacred practice</strong> of returning to harmony.</p>
+        </div>
+        <div class="manifest-item">
+          <p class="manifest-main">A return to the <strong>wisdom that has always been there</strong>, waiting to be remembered.</p>
         </div>
       </div>
     </section>
 
-    <!-- Impact Section: Holistic Nourishment -->
-    <section class="impact-section">
-      <div class="impact-container">
-        <div class="impact-header">
-          <h2 class="impact-title">Holistic Nourishment</h2>
-          <p class="impact-intro">True nourishment feeds more than the body. It replenishes the soul, the senses, and the Earth.</p>
+    <!-- Crafted Section -->
+    <section id="nourishment" class="crafted-section">
+      <div class="crafted-container">
+        <h2 class="crafted-title">Holistic Nourishment</h2>
+        <p class="crafted-highlight">True nourishment feeds more than the body.</p>
+
+        <div class="crafted-grid">
+          <div class="crafted-card">
+            <p>Reconnecting with the cycles of nature, honoring our rhythms, emotions, and seasons as sacred.</p>
+          </div>
+          <div class="crafted-card">
+            <p>Understanding that rest is not a reward but a necessity. Honoring the pause and the stillness.</p>
+          </div>
+          <div class="crafted-card">
+            <p>How we care for ourselves mirrors how we care for the Earth. Inner and outer worlds reflecting one another.</p>
+          </div>
         </div>
-        <div class="impact-grid">
-          <div class="impact-card">
-            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9Z"/>
-              <path d="M12 22c-4.97 0-9-4.03-9-9 4.97 0 9 4.03 9 9Z"/>
-              <path d="M12 22V12"/>
-              <path d="M12 12c0-4.42 3.58-8 8-8"/>
-              <path d="M12 12c0-4.42-3.58-8-8-8"/>
-            </svg>
-            <h3 class="impact-card-title">Tending to Nature's Rhythms</h3>
-            <p class="impact-card-text">Reconnecting with the cycles of nature, honoring our rhythms, emotions, and seasons as sacred. Living in alignment with the Earth's natural pulse.</p>
-          </div>
-          <div class="impact-card">
-            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-            <h3 class="impact-card-title">Sacred Rest</h3>
-            <p class="impact-card-text">Understanding that rest is not a reward but a necessity. Honoring the pause, the stillness, and the quiet spaces where restoration happens.</p>
-          </div>
-          <div class="impact-card">
-            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
-            </svg>
-            <h3 class="impact-card-title">Inner & Outer Harmony</h3>
-            <p class="impact-card-text">How we care for ourselves mirrors how we care for the Earth. A way of being where the inner and outer worlds reflect one another.</p>
-          </div>
-          <div class="impact-card">
-            <svg class="impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5Z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
-            <h3 class="impact-card-title">Grounded & Connected</h3>
-            <p class="impact-card-text">To live this way is to move through life in harmony. Grounded, balanced, and connected to the web of life that sustains us all.</p>
-          </div>
+
+        <div class="crafted-message">
+          <p class="message-greeting">It replenishes the soul, the senses, and the Earth.</p>
+          <p>Living in alignment with the Earth's natural pulse.</p>
+        </div>
+
+        <div class="crafted-symbols-intro">
+          <p>This way of living invites us into <strong>deeper relationship</strong> with ourselves, each other, and the Earth we call home.</p>
+          <p>To honor both the seen and unseen, the visible act and the invisible intention behind it.</p>
+          <p class="intro-highlight">A life guided by awareness, presence, and purpose.</p>
+          <p>Moving through life in harmony. Grounded, balanced, and connected to the web of life that sustains us all.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="cta-container">
-        <h2 class="cta-title">Return to Wholeness</h2>
-        <p class="cta-subtitle">We remember that everything we seek already lives within. Join us in creating a more conscious, sustainable way of being.</p>
-        <div class="cta-buttons">
-          <a href="index.html" class="btn-primary">
-            Explore All Portals
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="contact.html" class="btn-secondary">
-            Connect With Us
-          </a>
+    <!-- Clean Beauty Section -->
+    <section id="pillars" class="clean-beauty-section">
+      <div class="clean-beauty-container">
+        <div class="clean-beauty-header">
+          <span class="coming-soon-badge">More Coming Soon!</span>
+          <h2 class="clean-beauty-title">Clean & Conscious Beauty</h2>
+          <p class="clean-beauty-subtitle">
+            Some of the cleanest and "mostly clean" makeup & skincare products. Avoiding parabens, phthalates, heavy metals, endocrine-disruptors, etc. while still enjoying effective makeup and near-fully natural, organic and minimal synthetic.
+          </p>
+        </div>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+          <h3>What to Watch Out For (Because "Clean" Isn't Regulated)</h3>
+          <ul class="warning-list">
+            <li><strong>No universal regulation:</strong> "Clean beauty" has no official regulatory definition that ensures what a brand calls "clean" meets the same standards globally.</li>
+            <li><strong>Transparency varies:</strong> Some brands are very transparent, others less so. Even among "clean" brands you often need to read individual product ingredient lists, not just the general brand "story."</li>
+            <li><strong>Natural ≠ harmless:</strong> "Natural" or "botanical" ingredients can still cause irritation, allergies, or photosensitivity in some people. Clean beauty aims to avoid toxins but natural extracts come with their own risks.</li>
+            <li><strong>Sustainability & ethics often unclear / partial:</strong> A brand may avoid certain chemicals, but that doesn't necessarily mean sustainable packaging, ethical sourcing, low-waste manufacturing—these require separate commitments.</li>
+          </ul>
+        </div>
+
+        <!-- Category Cards -->
+        <div class="category-grid">
+          <div class="category-card">
+            <h4>1. Clean Beauty Curators & Ethical Marketplaces</h4>
+            <p>Credo Beauty, The Detox Market, Beauty Heroes, Pretty Well Beauty, Love Goodly, Wren & Wild</p>
+          </div>
+          <div class="category-card">
+            <h4>2. Skin Health</h4>
+            <p>OSEA Malibu, Tata Harper, Maya Chia, Juice Beauty, Living Earth Beauty, Beautycounter</p>
+          </div>
+          <div class="category-card">
+            <h4>3. Clean Makeup</h4>
+            <p>ILIA Beauty, Kosas, Saie, RMS Beauty, Kjaer Weis, Axiology, Tower 28, Lawless Beauty, Honest Beauty, INIKA Organic, 100% Pure, W3LL People</p>
+          </div>
+          <div class="category-card">
+            <h4>4. Hybrid Brands (Makeup + Skincare)</h4>
+            <p>ILIA, Kosas, Saie, RMS Beauty, INIKA Organic, 100% Pure, W3LL People</p>
+          </div>
+        </div>
+
+        <!-- Alphabetical Guide -->
+        <div class="alpha-guide">
+          <div class="alpha-guide-header">
+            <h3>Clean & Conscious Beauty</h3>
+            <p>Alphabetical Guide</p>
+          </div>
+
+          <div class="brand-list">
+            <div class="brand-item">
+              <h5>100% Pure</h5>
+              <p>Fruit-pigmented, plant-based beauty that's biodegradable, cruelty-free, and full of natural vitality.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Axiology Beauty</h5>
+              <p>Minimal-ingredient, zero-waste vegan color redefining beauty with simplicity, sustainability, and conscience.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Beautycounter</h5>
+              <p>Advocacy-driven clean beauty brand banning 2,800+ harmful ingredients and leading transparency and legislative reform.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Beauty Heroes</h5>
+              <p>Conscious-beauty platform curating non-toxic, wellness-first products that honor body and Earth.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Credo Beauty</h5>
+              <p>Industry leader defining the clean-beauty standard through safety, ethical sourcing, and full transparency.</p>
+            </div>
+            <div class="brand-item">
+              <h5>The Detox Market</h5>
+              <p>Curated home for premium, organic, vegan beauty and wellness products chosen with uncompromising integrity.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Honest Beauty</h5>
+              <p>Accessible, clean essentials for everyday use. Family-safe, cruelty-free, and transparently formulated.</p>
+            </div>
+            <div class="brand-item">
+              <h5>ILIA Beauty</h5>
+              <p>Skin-centric clean beauty merging makeup and skincare with safe, sustainable, and high-performance formulas.</p>
+            </div>
+            <div class="brand-item">
+              <h5>INIKA Organic</h5>
+              <p>Certified organic, vegan, cruelty-free makeup blending purity, performance, and sustainability.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Juice Beauty</h5>
+              <p>Organic innovation for skin health powered by plant-based science and sustainable practices.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Kjaer Weis</h5>
+              <p>Sustainable luxury makeup with refillable metal compacts and certified organic ingredients.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Kosas</h5>
+              <p>Makeup for skincare lovers. Active ingredients, clean formulations, and minimalist design.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Lawless Beauty</h5>
+              <p>High-performance, toxin-free glamour proving clean can be bold and luxurious.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Living Earth Beauty</h5>
+              <p>Holistic, artisan self-care offering small-batch, plant-based wellness rooted in nature.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Love Goodly</h5>
+              <p>Vegan, cruelty-free, and ethically-made beauty and self-care guided by compassion and consciousness.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Maya Chia</h5>
+              <p>Superfood skincare alchemy harnessing chia's potency for radiant, nourishing, clean beauty.</p>
+            </div>
+            <div class="brand-item">
+              <h5>OSEA Malibu</h5>
+              <p>Sea-sourced, vegan skincare powered by ocean wisdom and deep respect for nature's rhythms.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Pretty Well Beauty</h5>
+              <p>Boutique curator of clean, effective beauty brands rooted in wellness and integrity.</p>
+            </div>
+            <div class="brand-item">
+              <h5>RMS Beauty</h5>
+              <p>Living, organic color cosmetics made with raw, food-grade ingredients for luminous skin.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Saie</h5>
+              <p>Conscious, modern makeup that's clean, sustainable, and designed to support real skin.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Tata Harper</h5>
+              <p>Farm-to-face, 100% natural skincare merging luxury and sustainability with uncompromising purity.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Tower 28 Beauty</h5>
+              <p>Fun, inclusive, dermatologist-tested clean makeup for sensitive skin and joyful expression.</p>
+            </div>
+            <div class="brand-item">
+              <h5>W3LL People</h5>
+              <p>Effortless, breathable clean makeup with EWG-verified ingredients and minimalist beauty ethos.</p>
+            </div>
+            <div class="brand-item">
+              <h5>Wren & Wild</h5>
+              <p>Modern boutique merging clean-beauty luxury with conscious formulation and curated elegance.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="symbol-closing">
+          <p>Choosing clean beauty is an act of self-love and Earth care.</p>
+          <p>Every product we choose reflects our values and shapes our world.</p>
+          <div class="closing-taglines">
+            <span>Beauty as wellness</span>
+            <span>Beauty as consciousness</span>
+            <span>Beauty as care</span>
+          </div>
+          <p class="closing-final">The art of conscious beauty.</p>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="portal-footer">
       <div class="footer-container">
         <div class="footer-top">
           <a href="index.html" class="footer-brand">
-            <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Free With Purpose">
+            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/MayteBJewelry_Horizontal.png?v=1764342557" alt="Free With Purpose">
           </a>
           <div class="footer-links">
-            <a href="index.html" class="footer-link">Home</a>
-            <a href="portal1.html" class="footer-link">Jewelry</a>
-            <a href="portal2.html" class="footer-link">Sustainability</a>
-            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="#hero" class="footer-link">Home</a>
+            <a href="https://freewithpurpose.com/pages/coming-soon" class="footer-link">Jewelry</a>
+            <a href="https://freewithpurpose.com/pages/coming-soon" class="footer-link">About</a>
+            <a href="https://freewithpurpose.com/pages/coming-soon" class="footer-link">Contact</a>
           </div>
         </div>
         <div class="footer-bottom">
@@ -977,5 +1390,23 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    </script>
   </body>
 </html>
