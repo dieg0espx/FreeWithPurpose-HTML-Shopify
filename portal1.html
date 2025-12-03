@@ -13,6 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amethysta&display=swap" rel="stylesheet">
     <style>
+      /* Hide Shopify header group, newsletter and footer */
+      #header-group,
+      #newsletter,
+      .footer {
+        display: none !important;
+      }
+
+      /* Remove Shopify body padding */
+      body {
+        padding-top: 0 !important;
+      }
+
       :root {
         --primary-rose: #B76E79;
         --primary-plum: #5A2A41;
@@ -69,23 +81,28 @@
         box-shadow: 0 4px 30px rgba(90, 42, 65, 0.1);
         display: flex;
         align-items: center;
-        gap: 3rem;
+        gap: 2rem;
+        width: auto;
+        min-width: fit-content;
       }
 
       .brand-logo {
         display: flex;
         align-items: center;
+        flex-shrink: 0;
       }
 
       .brand-logo img {
         height: 35px;
         width: auto;
+        min-width: 100px;
       }
 
       .nav-links {
         display: flex;
-        gap: 2rem;
+        gap: 1.5rem;
         align-items: center;
+        white-space: nowrap;
       }
 
       .nav-link {
@@ -117,6 +134,82 @@
 
       .nav-cta:hover {
         background: var(--primary-rose);
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--primary-plum);
+        transition: all 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      /* Mobile Menu */
+      @media (max-width: 768px) {
+        .navbar {
+          overflow: visible;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          margin-top: 1rem;
+          background: rgba(255, 252, 235, 0.98);
+          backdrop-filter: blur(15px);
+          border-radius: 20px;
+          padding: 1.5rem;
+          flex-direction: column;
+          gap: 1rem;
+          box-shadow: 0 4px 30px rgba(90, 42, 65, 0.1);
+          overflow: visible;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-link {
+          font-size: 0.85rem;
+          padding: 0.5rem 0;
+        }
+
+        .nav-cta {
+          margin-top: 0.5rem;
+          text-align: center;
+        }
       }
 
       /* Hero - Split Screen */
@@ -191,6 +284,11 @@
         max-width: 450px;
       }
 
+      .hero-subtitle-secondary {
+        color: #0D4D4F;
+        font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+      }
+
       .hero-cta {
         display: inline-flex;
         align-items: center;
@@ -241,8 +339,9 @@
         margin: 0 auto;
       }
 
-      .intro-text span {
-        color: var(--primary-gold);
+      .intro-text span,
+      .text-highlight {
+        color: #D8C9A9;
       }
 
       /* Content Blocks - Alternating */
@@ -488,7 +587,7 @@
       /* Symbolism Section */
       .symbolism-section {
         padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
-        background: #fff;
+        background: var(--primary-cream);
       }
 
       .symbolism-container {
@@ -513,7 +612,7 @@
       }
 
       .symbol-card {
-        background: var(--primary-cream);
+        background: #fff;
         padding: 2rem;
         border-radius: 4px;
         border-left: 3px solid var(--primary-rose);
@@ -602,7 +701,7 @@
       }
 
       /* Footer - Clean */
-      .footer {
+      .portal-footer {
         background: var(--primary-espresso);
         padding: 5rem 0 3rem;
       }
@@ -711,10 +810,6 @@
           gap: 1rem;
         }
 
-        .nav-links {
-          display: none;
-        }
-
         .brand-logo img {
           height: 28px;
         }
@@ -773,43 +868,49 @@
   <body>
     <!-- Navigation - Floating Pill -->
     <nav class="navbar">
-      <a href="index.html" class="brand-logo">
-        <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Mayte B Jewelry">
+      <a href="#hero" class="brand-logo">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/MayteBJewelry_Horizontal_2.png?v=1764806132" alt="Mayte B Jewelry">
       </a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="jewelry/index.html" class="nav-link">Jewelry</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="jewelry/index.html" class="nav-cta">Shop Now</a>
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#sacred" class="nav-link">Sacred</a>
+        <a href="#manifest" class="nav-link">Manifest</a>
+        <a href="#crafted" class="nav-link">Crafted</a>
+        <a href="#symbolism" class="nav-link">Symbolism</a>
+        <a href="https://freewithpurpose.com/pages/coming-soon" class="nav-cta">Shop Now</a>
       </div>
     </nav>
 
     <!-- Hero - Split Screen -->
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="hero-image">
         <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_9242.jpg?v=1764338411" alt="Sacred jewelry">
       </div>
       <div class="hero-content">
         <span class="hero-label">The First Portal</span>
-        <h1 class="hero-title">Jewelry as an<br>Invitation</h1>
-        <p class="hero-subtitle">A call to freedom, self-expression, expansion, purpose & liberation.</p>
-        <p class="hero-subtitle">Jewelry that honors the Sacred, the Shakti, Divine Source & the Universe.</p>
+        <h1 class="hero-title">Mayte B Jewerly</h1>
+        <p class="hero-subtitle">The art of meaningful adornment. Ethically produced.</p>
+        <p class="hero-subtitle hero-subtitle-secondary">A call to freedom, self-expression, expansion, purpose & liberation.</p>
+        <p class="hero-subtitle hero-subtitle-secondary">Jewelry that honors the Sacred, the Shakti, Divine Source & the Universe.</p>
       </div>
     </section>
 
     <!-- Intro Statement -->
     <section class="intro-statement">
       <p class="intro-text">
-        "<span>The awakener</span> of the disruptor, the visionary, the alchemist, the catalyst. A spark of love, hope, and inspired action."
-      </p>
-      <p class="intro-text">
+        "<span class="text-highlight">The awakener</span> of the disruptor, the visionary, the alchemist,<br>
+        the catalyst. A spark of love, hope, and inspired action."<br>
         "A carrier of ancient wisdom, mystery & magnetism."
       </p>
     </section>
 
     <!-- Content Block 1 -->
-    <section class="content-block">
+    <section id="sacred" class="content-block">
       <div class="content-block-image">
         <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-5.jpg?v=1763739729" alt="Sacred adornment">
       </div>
@@ -845,7 +946,7 @@
     <!-- Content Block 3 -->
     <section class="content-block">
       <div class="content-block-image">
-        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-4.jpg?v=1763739724" alt="Living art">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/Photo_Dec_02_2025_2_23_35_PM.jpg?v=1764805993" alt="Living art">
       </div>
       <div class="content-block-text">
         <span class="block-number">03</span>
@@ -860,39 +961,46 @@
     </section>
 
     <!-- Manifest Section -->
-    <section class="manifest-section">
+    <section id="manifest" class="manifest-section">
       <div class="manifest-container">
-        <div class="manifest-header">
-          <h2 class="manifest-title">What Jewelry Can Be</h2>
-          <p class="manifest-subtitle">An invitation to remember</p>
+        <div class="manifest-item">
+          <p class="manifest-main">An invitation to presence, curiosity & connection.<br>
+          To remember, to presence ...</p>
         </div>
         <div class="manifest-item">
-          <p class="manifest-main">An invitation to presence, curiosity & connection.</p>
+          <p class="manifest-main">A pathway into a collective movement to co-create<br>
+          profound impact.</p>
         </div>
         <div class="manifest-item">
-          <p class="manifest-main">A pathway into a collective movement to co-create profound impact.</p>
-        </div>
-        <div class="manifest-item">
-          <p class="manifest-main">Every piece contributes to supporting artists & artisans who preserve ancient traditions & initiatives that protect our shared home, Mother Earth.</p>
+          <p class="manifest-main">Every piece contributes to supporting artists & artisans<br>
+          who preserve ancient traditions & initiatives that protect<br>
+          our shared home, Mother Earth.</p>
         </div>
       </div>
     </section>
 
     <!-- Crafted Section -->
-    <section class="crafted-section">
+    <section id="crafted" class="crafted-section">
       <div class="crafted-container">
         <h2 class="crafted-title">Crafted with Love & Intention</h2>
         <p class="crafted-highlight">It's a whisper of remembrance.</p>
 
         <div class="crafted-grid">
           <div class="crafted-card">
-            <p>Crafted with love, care, and intentionality, this centerpiece is made of sustainable, ethically sourced materials.</p>
+            <p>Crafted with love, care, and<br>
+            intentionality, this centerpiece is<br>
+            made of sustainable, ethically<br>
+            sourced materials.</p>
           </div>
           <div class="crafted-card">
-            <p>Rests on a velvet strap dyed and produced using methods safer for both people and the planet.</p>
+            <p>Rests on a velvet strap dyed and<br>
+            produced using methods safer for<br>
+            both people and the planet.</p>
           </div>
           <div class="crafted-card">
-            <p>An invitation to embrace a more conscious, soulful, and sustainable way of living, creating, and relating.</p>
+            <p>An invitation to embrace a more<br>
+            conscious, soulful, and sustainable<br>
+            way of living, creating, and relating.</p>
           </div>
         </div>
 
@@ -905,13 +1013,14 @@
           <p>This piece carries <strong>sacred symbols</strong>, timeless languages of the subconscious.</p>
           <p>The subconscious doesn't speak in words, but in images, sensations, and emotion.</p>
           <p class="intro-highlight">A single symbol can awaken truth, memory, or deep recognition.</p>
-          <p>Each symbol woven into this piece holds personal meaning in my heart.<br>I invite you to explore what they may awaken in yours.</p>
+          <p>Each symbol woven into this piece holds personal meaning in my heart.</p>
+          <p>I invite you to explore what they may awaken in yours.</p>
         </div>
       </div>
     </section>
 
     <!-- Symbolism Section -->
-    <section class="symbolism-section">
+    <section id="symbolism" class="symbolism-section">
       <div class="symbolism-container">
         <h2 class="symbolism-title">Symbolism</h2>
 
@@ -919,49 +1028,68 @@
           <div class="symbol-card">
             <h3 class="symbol-name">Vishuddha</h3>
             <span class="symbol-subtitle">Throat Chakra: Purification & Truth</span>
-            <p class="symbol-description">The center of expression, resonance, and integrity. It reminds us to speak what the soul feels. To express truth through voice, art, and creation. When open and balanced, the voice becomes magnetic, clear, and free.</p>
+            <p class="symbol-description">The center of expression, resonance, and integrity. It reminds us to<br>
+            speak what the soul feels. To express truth through voice, art, and<br>
+            creation. When open and balanced, the voice becomes magnetic,<br>
+            clear, and free.</p>
           </div>
 
           <div class="symbol-card">
             <h3 class="symbol-name">Velvet</h3>
             <span class="symbol-subtitle">Soft Power & Divine Feminine</span>
-            <p class="symbol-description">More than luxurious fabric, velvet carries sacred resonance, softness with strength, sensuality with sovereignty. It invites us into the body, grounding us in presence. Velvet whispers: "Power doesn't need to shout; it emanates."</p>
+            <p class="symbol-description">More than luxurious fabric, velvet carries sacred resonance,<br>
+            softness with strength, sensuality with sovereignty. It invites us into<br>
+            the body, grounding us in presence. Velvet whispers: "Power<br>
+            doesn't need to shout; it emanates."</p>
           </div>
 
           <div class="symbol-card">
             <h3 class="symbol-name">The Sacred Womb Portal</h3>
             <span class="symbol-subtitle">Creation & Harmony</span>
-            <p class="symbol-description">The union of the velvet and Vishuddha symbol represents the portal to the Womb of Creation. A bridge between voice, heart, and mind. A remembrance of the womb as sacred space, as the source of creation itself.</p>
+            <p class="symbol-description">The union of the velvet and Vishuddha symbol represents the<br>
+            portal to the Womb of Creation. A bridge between voice, heart, and<br>
+            mind. A remembrance of the womb as sacred space, as the source<br>
+            of creation itself.</p>
           </div>
 
           <div class="symbol-card">
             <h3 class="symbol-name">Snake</h3>
             <span class="symbol-subtitle">Transformation & Awakening</span>
-            <p class="symbol-description">An ancient emblem of rebirth and sacred feminine energy. It embodies release, renewal, and the rising of inner fire. The awakening of our creative life force and sensual power.</p>
+            <p class="symbol-description">An ancient emblem of rebirth and sacred feminine energy. It<br>
+            embodies release, renewal, and the rising of inner fire. The<br>
+            awakening of our creative life force and sensual power.</p>
           </div>
 
           <div class="symbol-card">
             <h3 class="symbol-name">Open Wings</h3>
             <span class="symbol-subtitle">Freedom & Ascension</span>
-            <p class="symbol-description">Across cultures, wings symbolize transformation, protection, and divine guardianship, from Isis to the angels. They remind us that we can be both human and divine, grounded and soaring.</p>
+            <p class="symbol-description">Across cultures, wings symbolize transformation, protection, and<br>
+            divine guardianship, from Isis to the angels. They remind us that we<br>
+            can be both human and divine, grounded and soaring.</p>
           </div>
 
           <div class="symbol-card">
             <h3 class="symbol-name">Sun</h3>
             <span class="symbol-subtitle">Illumination & Life Force</span>
-            <p class="symbol-description">A radiant reminder of the light within and around us, the eternal rhythm of warmth, creation, and divine order. The heart of the cosmos, and of every sunrise and sunset that moves us.</p>
+            <p class="symbol-description">A radiant reminder of the light within and around us, the eternal<br>
+            rhythm of warmth, creation, and divine order. The heart of the<br>
+            cosmos, and of every sunrise and sunset that moves us.</p>
           </div>
 
           <div class="symbol-card">
             <h3 class="symbol-name">Yin & Yang</h3>
             <span class="symbol-subtitle">Harmony & Wholeness</span>
-            <p class="symbol-description">The eternal dance of complementary forces. Light and shadow, movement and stillness, creating balance, flow, and unity.</p>
+            <p class="symbol-description">The eternal dance of complementary forces. Light and shadow,<br>
+            movement and stillness, creating balance, flow, and unity.</p>
           </div>
 
           <div class="symbol-card">
             <h3 class="symbol-name">Bronze</h3>
             <span class="symbol-subtitle">Ancient Strength & Alchemy</span>
-            <p class="symbol-description">Forged from recycled materials, bronze unites copper and tin, the masculine and feminine, into enduring beauty. Used in ancient altars and sacred tools, it embodies resilience, grounding, and wisdom.</p>
+            <p class="symbol-description">Forged from recycled materials, bronze unites copper and tin, the<br>
+            masculine and feminine, into enduring beauty. Used in ancient<br>
+            altars and sacred tools, it embodies resilience, grounding, and<br>
+            wisdom.</p>
           </div>
         </div>
 
@@ -971,32 +1099,32 @@
           <p>A symbol of voice, heart, mind, and womb in harmony.</p>
           <div class="closing-taglines">
             <span>Jewelry as remembrance</span>
-            <span>Jewelry as ritual</span>
             <span>Jewelry as freedom</span>
+            <span>Jewelry with purpose</span>
           </div>
           <p class="closing-final">The art of meaningful adornment.</p>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-top">
-          <a href="index.html" class="footer-brand">
-            <img src="imagesPortal1/MayteBJewelry_Horizontal.png" alt="Mayte B Jewelry">
-          </a>
-          <div class="footer-links">
-            <a href="index.html" class="footer-link">Home</a>
-            <a href="jewelry/index.html" class="footer-link">Jewelry</a>
-            <a href="about.html" class="footer-link">About</a>
-            <a href="contact.html" class="footer-link">Contact</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p class="footer-copy">&copy; 2025 Mayte B Jewelry. All Rights Reserved.</p>
-        </div>
-      </div>
-    </footer>
+   
+
+   <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    </script>
   </body>
 </html>
