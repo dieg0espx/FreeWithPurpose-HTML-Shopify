@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoga & Wellness — Free With Purpose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      #header-group, #newsletter, .footer { display: none !important; }
+      body { padding-top: 0 !important; }
+
+      :root {
+        --primary-sage: #7A8F76;
+        --primary-olive: #7A8F76;
+        --primary-cream: #F5F3EE;
+        --primary-espresso: #2B1E1A;
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      .resources-section {
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+        background: #fff;
+      }
+      .resources-container { max-width: 1000px; margin: 0 auto; }
+
+      .accordion-item { border-bottom: 1px solid rgba(122, 143, 118, 0.2); }
+      .accordion-header {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.3s ease;
+      }
+      .accordion-header:hover { background: rgba(122, 143, 118, 0.05); }
+      .accordion-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+      }
+      .accordion-icon {
+        font-size: 1.5rem;
+        color: var(--primary-sage);
+        transition: transform 0.3s ease;
+        font-weight: 300;
+      }
+      .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 1rem;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 5000px;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .resource-list { display: grid; gap: 1.5rem; }
+      .resource-item {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.1);
+      }
+      .resource-item:last-child { border-bottom: none; }
+      .resource-name {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        color: var(--primary-sage);
+        margin-bottom: 0.3rem;
+      }
+      .resource-name a {
+        color: var(--primary-sage);
+        transition: color 0.3s ease;
+      }
+      .resource-name a:hover {
+        color: var(--primary-olive);
+        text-decoration: underline;
+      }
+      .resource-description {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--primary-espresso);
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      @media (max-width: 768px) {
+        .accordion-header { padding: 1.2rem 0.5rem; }
+        .accordion-title { font-size: 0.95rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="resources-section">
+      <div class="resources-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="accordion-title">Yoga, Wellness & Movement</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://beanproducts.com/" target="_blank">Bean Products</a></p>
+                <p class="resource-description">Eco-friendly yoga bolsters, meditation cushions, and props handcrafted in the U.S. from sustainable materials.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://correcttoes.com/shop.html" target="_blank">Correct Toes</a></p>
+                <p class="resource-description">Alignment-restoring toe spacers encouraging natural posture and mindful movement.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.injinji.com/" target="_blank">Injinji</a></p>
+                <p class="resource-description">Performance toe socks designed to support natural foot alignment and body awareness.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://liforme.com/" target="_blank">Liforme</a></p>
+                <p class="resource-description">Premium yoga mats with alignment guides and planet-friendly, non-toxic materials.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.vivobarefoot.com/us/" target="_blank">Vivobarefoot</a></p>
+                <p class="resource-description">Minimalist footwear reconnecting your body to Earth through natural movement.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.xeroshoes.com/" target="_blank">Xero Shoes</a></p>
+                <p class="resource-description">Lightweight barefoot-style shoes promoting freedom, balance, and mindful motion.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://yogadesignlab.com/collections/all" target="_blank">Yoga Design Lab</a></p>
+                <p class="resource-description">Eco-friendly cork yoga mats, blocks, and accessories in beautiful, functional designs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

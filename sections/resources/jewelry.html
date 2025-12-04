@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethical Jewelry — Free With Purpose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      #header-group, #newsletter, .footer { display: none !important; }
+      body { padding-top: 0 !important; }
+
+      :root {
+        --primary-sage: #7A8F76;
+        --primary-olive: #7A8F76;
+        --primary-cream: #F5F3EE;
+        --primary-espresso: #2B1E1A;
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      .resources-section {
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+        background: #fff;
+      }
+      .resources-container { max-width: 1000px; margin: 0 auto; }
+
+      .accordion-item { border-bottom: 1px solid rgba(122, 143, 118, 0.2); }
+      .accordion-header {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.3s ease;
+      }
+      .accordion-header:hover { background: rgba(122, 143, 118, 0.05); }
+      .accordion-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+      }
+      .accordion-icon {
+        font-size: 1.5rem;
+        color: var(--primary-sage);
+        transition: transform 0.3s ease;
+        font-weight: 300;
+      }
+      .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 1rem;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 5000px;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .resource-list { display: grid; gap: 1.5rem; }
+      .resource-item {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.1);
+      }
+      .resource-item:last-child { border-bottom: none; }
+      .resource-name {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        color: var(--primary-sage);
+        margin-bottom: 0.3rem;
+      }
+      .resource-name a {
+        color: var(--primary-sage);
+        transition: color 0.3s ease;
+      }
+      .resource-name a:hover {
+        color: var(--primary-olive);
+        text-decoration: underline;
+      }
+      .resource-description {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--primary-espresso);
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      @media (max-width: 768px) {
+        .accordion-header { padding: 1.2rem 0.5rem; }
+        .accordion-title { font-size: 0.95rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="resources-section">
+      <div class="resources-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="accordion-title">Ethical Jewelry & Adornment</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://anandasoul.com" target="_blank">Ananda Soul</a></p>
+                <p class="resource-description">Ethically handcrafted jewelry from Bali carrying sacred symbols and intentions.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.lebrusanstudio.com" target="_blank">Arabel Lebrusan – Lebrusan Studio</a></p>
+                <p class="resource-description">Spanish-born, London-based jeweler merging sustainability, fine craftsmanship, and cultural beauty.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://bahgsujewels.com" target="_blank">Bahgsu Jewels</a></p>
+                <p class="resource-description">Crystal-infused adornments handcrafted in Bali, honoring Earth's raw elements and ancient symbolism.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.brilliantearth.com" target="_blank">Brilliant Earth</a></p>
+                <p class="resource-description">Global leader in ethically sourced fine jewelry and lab-grown diamonds.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://fossandharper.com" target="_blank">Foss & Harper</a></p>
+                <p class="resource-description">Earthy, elegant, and sustainable fine jewelry handcrafted with recycled gold and conflict-free stones.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.linjer.co/en-us/pages/our-story" target="_blank">Linjer</a></p>
+                <p class="resource-description">Minimalist, elegant jewelry made with 100% recycled gold and ethically sourced gemstones.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.automicgold.com/pages/about-our-founder" target="_blank">Melissa Joy Manning</a></p>
+                <p class="resource-description">Artisan fine jewelry handcrafted with recycled metals and green-certified practices.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.monicavinader.com" target="_blank">Monica Vinader</a></p>
+                <p class="resource-description">B-Corp certified, sustainable fine jewelry blending timeless elegance and modern craftsmanship.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://shopsoko.com/collections/bracelets" target="_blank">SOKO</a></p>
+                <p class="resource-description">Kenyan women-led B-Corp connecting artisans to global markets through ethical jewelry.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.satyajewelry.com" target="_blank">Satya Jewelry</a></p>
+                <p class="resource-description">Mission-driven symbolic jewelry designed to inspire mindfulness and purpose.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.reflectivejewelry.com" target="_blank">Reflective Jewelry</a></p>
+                <p class="resource-description">An artisan jeweler offering ethically-sourced, Fairtrade-gold pieces and custom-made jewelry; known for handmade, thoughtfully crafted designs that prioritize transparency, sustainability, and social justice.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://taranoelle.com/pages/ethos" target="_blank">Tara Noelle</a></p>
+                <p class="resource-description">Spiritually infused fine jewelry designed as talismans of intention and empowerment.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.thegoodcollective.com/" target="_blank">The Good Collective</a></p>
+                <p class="resource-description">Small-batch artisan jewelry and accessories made with soul and sustainability.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.wolfandbadger.com/us/pages/about/" target="_blank">Wolf & Badger</a></p>
+                <p class="resource-description">Curated platform for independent, ethical jewelry and artful design.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

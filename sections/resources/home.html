@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conscious Home — Free With Purpose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      #header-group, #newsletter, .footer { display: none !important; }
+      body { padding-top: 0 !important; }
+
+      :root {
+        --primary-sage: #7A8F76;
+        --primary-olive: #7A8F76;
+        --primary-cream: #F5F3EE;
+        --primary-espresso: #2B1E1A;
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      .resources-section {
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+        background: #fff;
+      }
+      .resources-container { max-width: 1000px; margin: 0 auto; }
+
+      .accordion-item { border-bottom: 1px solid rgba(122, 143, 118, 0.2); }
+      .accordion-header {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.3s ease;
+      }
+      .accordion-header:hover { background: rgba(122, 143, 118, 0.05); }
+      .accordion-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+      }
+      .accordion-icon {
+        font-size: 1.5rem;
+        color: var(--primary-sage);
+        transition: transform 0.3s ease;
+        font-weight: 300;
+      }
+      .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 1rem;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 5000px;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .resource-list { display: grid; gap: 1.5rem; }
+      .resource-item {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.1);
+      }
+      .resource-item:last-child { border-bottom: none; }
+      .resource-name {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        color: var(--primary-sage);
+        margin-bottom: 0.3rem;
+      }
+      .resource-name a {
+        color: var(--primary-sage);
+        transition: color 0.3s ease;
+      }
+      .resource-name a:hover {
+        color: var(--primary-olive);
+        text-decoration: underline;
+      }
+      .resource-description {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--primary-espresso);
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      @media (max-width: 768px) {
+        .accordion-header { padding: 1.2rem 0.5rem; }
+        .accordion-title { font-size: 0.95rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="resources-section">
+      <div class="resources-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="accordion-title">Conscious Home & Living</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.avocadogreenmattress.com/collections/furniture" target="_blank">Avocado Green</a></p>
+                <p class="resource-description">Certified organic mattresses and furniture crafted for wellness and sustainability.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://adobebyjessvargas.com" target="_blank">ADOBE by Jess Vargas</a></p>
+                <p class="resource-description">Curated lifestyle and home-goods brand offering consciously sourced décor, artisan pieces, and globally inspired objects reflecting natural textures, travel, and Southern-California sensibility.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.bobbibeck.com/" target="_blank">Bobbi Beck</a></p>
+                <p class="resource-description">Eco-conscious wallpaper brand printing on sustainable papers.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://casaamarosa.com/pages/our-story" target="_blank">Casa Amarosa</a></p>
+                <p class="resource-description">Handcrafted global home goods celebrating artisan traditions.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://cozyearth.com/pages/about-us" target="_blank">Cozy Earth</a></p>
+                <p class="resource-description">Bamboo-based bedding known for comfort, breathability, and sustainability.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.coyuchi.com/pages/our-impact" target="_blank">Coyuchi</a></p>
+                <p class="resource-description">Organic pioneer offering regenerative cotton bedding, towels, and home textiles.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://ekobo.co/collections/outdoor" target="_blank">Ekobo</a></p>
+                <p class="resource-description">Bamboo-fiber kitchen and bath collections merging beauty and function.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.foresthomesstore.com/" target="_blank">Forest Homes</a></p>
+                <p class="resource-description">A home-decoration brand focused on biophilic design: natural materials, sustainable & eco-conscious products designed to reconnect indoor spaces with nature.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://fourvisions.com/" target="_blank">Four Visions Market</a></p>
+                <p class="resource-description">Indigenous-owned spiritual marketplace offering sacred tools and ceremonial home goods.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.greenpan.us/" target="_blank">GreenPan</a></p>
+                <p class="resource-description">Non-toxic ceramic cookware designed for conscious cooking.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.healthierhomes.com/kitchen" target="_blank">Healthier Homes</a></p>
+                <p class="resource-description">Holistic home design focused on non-toxic materials and mindful living.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.templecopal.com/" target="_blank">Matter & Home / Temple Copal</a></p>
+                <p class="resource-description">Sacred scents and ritual-inspired home décor.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.novica.com/our-mission/" target="_blank">Novica</a></p>
+                <p class="resource-description">Global artisan marketplace connecting makers and conscious consumers worldwide.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.quince.com" target="_blank">Quince</a></p>
+                <p class="resource-description">Affordable luxury brand providing sustainably made clothing, home goods, and accessories using ethical production and premium natural materials.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://ruggable.com/" target="_blank">Ruggable</a></p>
+                <p class="resource-description">Washable, practical rugs that support sustainable lifestyles.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://simplyorganicbamboo.com/pages/our-values" target="_blank">Simply Organic Bamboo</a></p>
+                <p class="resource-description">Luxurious, eco-friendly bedding and bath textiles made from organic bamboo.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://underthecanopy.com/pages/our-story" target="_blank">Under the Canopy</a></p>
+                <p class="resource-description">Organic home textiles designed for comfort, quality, and planetary care.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://wallism.com/" target="_blank">Wallism</a></p>
+                <p class="resource-description">Custom, eco-friendly wallpapers blending artistry and sustainability.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.westelm.com/shop/collaborations/sustainably-sourced/" target="_blank">West Elm – Sustainably Sourced</a></p>
+                <p class="resource-description">Modern design brand sourcing materials responsibly for the conscious home.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://us.whogivesacrap.org/pages/our-impact" target="_blank">Who Gives A Crap</a></p>
+                <p class="resource-description">Recycled and bamboo paper goods funding global sanitation projects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

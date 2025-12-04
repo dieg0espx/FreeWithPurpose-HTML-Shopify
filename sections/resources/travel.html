@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conscious Travel — Free With Purpose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      #header-group, #newsletter, .footer { display: none !important; }
+      body { padding-top: 0 !important; }
+
+      :root {
+        --primary-sage: #7A8F76;
+        --primary-olive: #7A8F76;
+        --primary-cream: #F5F3EE;
+        --primary-espresso: #2B1E1A;
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      .resources-section {
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+        background: #fff;
+      }
+      .resources-container { max-width: 1000px; margin: 0 auto; }
+
+      .accordion-item { border-bottom: 1px solid rgba(122, 143, 118, 0.2); }
+      .accordion-header {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.3s ease;
+      }
+      .accordion-header:hover { background: rgba(122, 143, 118, 0.05); }
+      .accordion-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+      }
+      .accordion-icon {
+        font-size: 1.5rem;
+        color: var(--primary-sage);
+        transition: transform 0.3s ease;
+        font-weight: 300;
+      }
+      .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 1rem;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 5000px;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .resource-list { display: grid; gap: 1.5rem; }
+      .resource-item {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.1);
+      }
+      .resource-item:last-child { border-bottom: none; }
+      .resource-name {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        color: var(--primary-sage);
+        margin-bottom: 0.3rem;
+      }
+      .resource-name a {
+        color: var(--primary-sage);
+        transition: color 0.3s ease;
+      }
+      .resource-name a:hover {
+        color: var(--primary-olive);
+        text-decoration: underline;
+      }
+      .resource-description {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--primary-espresso);
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      @media (max-width: 768px) {
+        .accordion-header { padding: 1.2rem 0.5rem; }
+        .accordion-title { font-size: 0.95rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="resources-section">
+      <div class="resources-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="accordion-title">Conscious & Sustainable Travel</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://aarucollective.com" target="_blank">A'ARU Collective</a></p>
+                <p class="resource-description">European luxury travel designer focused on sustainable, mindful, and cultural journeys across Europe.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.aboutasiatravel.com" target="_blank">ABOUTAsia Travel</a></p>
+                <p class="resource-description">Cambodia-based operator funding local education through responsible, tailor-made trips.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.africa-untamed.com" target="_blank">Africa Untamed Safaris</a></p>
+                <p class="resource-description">Boutique safari company curating ethical, conservation-focused travel across Africa, supporting local guides and preserving wildlife heritage.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.andbeyond.com" target="_blank">&Beyond</a></p>
+                <p class="resource-description">Luxury safari and lodge company guided by "Care of the Land, Wildlife & People."</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://staybeyondgreen.com/hotels" target="_blank">Beyond Green / Stay Beyond Green</a></p>
+                <p class="resource-description">Global portfolio of eco-luxury hotels and lodges meeting 100+ sustainability indicators aligned with the UN SDGs.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.byway.travel" target="_blank">Byway Travel</a></p>
+                <p class="resource-description">B Corp offering slow, flight-free travel across Europe via scenic rail and ferry routes.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://elevatedestinations.com" target="_blank">Elevate Destinations</a></p>
+                <p class="resource-description">Eco-luxury travel company combining adventure, philanthropy, and bespoke purpose-led itineraries.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.explora.com" target="_blank">Explora Hotels</a></p>
+                <p class="resource-description">Award-winning expedition lodges in South America dedicated to deep nature exploration and conservation.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.gadventures.com" target="_blank">G Adventures</a></p>
+                <p class="resource-description">Community-driven small-group adventures measured by local economic impact.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.inkaterra.com" target="_blank">Inkaterra</a></p>
+                <p class="resource-description">Peru-based pioneer of science-based ecotourism and conservation for over 50 years.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.intrepidtravel.com" target="_blank">Intrepid Travel</a></p>
+                <p class="resource-description">B Corp leader in small-group adventure travel, carbon-labeled itineraries, and local partnerships.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name">Journeys With Purpose</p>
+                <p class="resource-description">B Corp connecting travelers with conservation leaders and transformative nature experiences.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.luxurygold.com" target="_blank">Luxury Gold</a></p>
+                <p class="resource-description">Conscious luxury tours integrating sustainability via the "MAKE TRAVEL MATTER®" initiative.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.nathab.com" target="_blank">Natural Habitat Adventures</a></p>
+                <p class="resource-description">WWF's official travel partner, creating conservation-first nature journeys worldwide.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.pugdundeesafaris.com" target="_blank">Pugdundee Safaris</a></p>
+                <p class="resource-description">India's leading eco-lodge and responsible safari operator using vernacular green design.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.quarkexpeditions.com" target="_blank">Quark Expeditions</a></p>
+                <p class="resource-description">Polar adventure company with a comprehensive "Polar Promise" sustainability strategy.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.responsibletravel.com" target="_blank">Responsible Travel</a></p>
+                <p class="resource-description">Pioneering online agency curating ethical trips that benefit local people and nature.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name">Singita</p>
+                <p class="resource-description">African eco-lodges funding a 100-year conservation vision through community partnerships.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.thelongrun.org" target="_blank">The Long Run</a></p>
+                <p class="resource-description">Global network protecting 23 million+ acres through its 4Cs framework: Conservation, Community, Culture, Commerce.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://tricolage.com" target="_blank">Tricolage</a></p>
+                <p class="resource-description">Japanese boutique agency curating sustainable luxury travel that honors artisans and community culture.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.wildernessdestinations.com" target="_blank">Wilderness Safaris</a></p>
+                <p class="resource-description">Low-volume, high-impact safaris pioneering conservation-led tourism in Africa.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://wildbushluxury.com" target="_blank">Wild Bush Luxury</a></p>
+                <p class="resource-description">Australian eco-safari operator connecting guests deeply with the land through conservation stays.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

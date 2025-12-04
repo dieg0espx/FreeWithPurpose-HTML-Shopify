@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>North San Diego Community — Free With Purpose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      #header-group, #newsletter, .footer { display: none !important; }
+      body { padding-top: 0 !important; }
+
+      :root {
+        --primary-sage: #7A8F76;
+        --primary-olive: #7A8F76;
+        --primary-cream: #F5F3EE;
+        --primary-espresso: #2B1E1A;
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      .resources-section {
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+        background: #fff;
+      }
+      .resources-container { max-width: 1000px; margin: 0 auto; }
+
+      .accordion-item { border-bottom: 1px solid rgba(122, 143, 118, 0.2); }
+      .accordion-header {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.3s ease;
+      }
+      .accordion-header:hover { background: rgba(122, 143, 118, 0.05); }
+      .accordion-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+      }
+      .accordion-icon {
+        font-size: 1.5rem;
+        color: var(--primary-sage);
+        transition: transform 0.3s ease;
+        font-weight: 300;
+      }
+      .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 1rem;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 5000px;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .resource-list { display: grid; gap: 1.5rem; }
+      .resource-item {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.1);
+      }
+      .resource-item:last-child { border-bottom: none; }
+      .resource-name {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        color: var(--primary-sage);
+        margin-bottom: 0.3rem;
+      }
+      .resource-name a {
+        color: var(--primary-sage);
+        transition: color 0.3s ease;
+      }
+      .resource-name a:hover {
+        color: var(--primary-olive);
+        text-decoration: underline;
+      }
+      .resource-description {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--primary-espresso);
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      .subcategory-title {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--primary-olive);
+        margin: 2rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.15);
+      }
+      .subcategory-title:first-child { margin-top: 0; }
+
+      @media (max-width: 768px) {
+        .accordion-header { padding: 1.2rem 0.5rem; }
+        .accordion-title { font-size: 0.95rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="resources-section">
+      <div class="resources-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="accordion-title">North San Diego Conscious Community</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <h4 class="subcategory-title">Wellness & Holistic Healing</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://feelboundless.com/" target="_blank">BOUNDLESS Regenerative Medicine – Encinitas</a></p>
+                <p class="resource-description">A regenerative, non-surgical medicine practice specializing in cellular therapy, PRP, prolotherapy, and holistic approaches to musculoskeletal, spine, sports, and chronic-injury healing.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.juliemaido.com/about-dr-mai/" target="_blank">Dr. Julie Mai, DO – Encinitas Osteopathy & Cranial Medicine</a></p>
+                <p class="resource-description">Holistic osteopathic physician integrating traditional osteopathy, cranial medicine, homeopathy, and Bach Flower Essences. Works with all ages to harmonize body–mind–spirit.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://drkoichi.com/" target="_blank">Dr. Koichi</a></p>
+                <p class="resource-description">Holistic chiropractor and certified practitioner of Network Spinal Analysis (NSA), based in Encinitas. His work emphasizes gentle spinal/energetic care, breath-based somatic integration.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://drmattk.com" target="_blank">Dr. Matt K</a></p>
+                <p class="resource-description">Chiropractor and holistic-healing practitioner who offers NEO + personal growth / transformational coaching.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.nikayakipp.com" target="_blank">Nikaya Kipp</a></p>
+                <p class="resource-description">Holistic Health Practitioner and Integrative Nutrition Coach offering intuitive bodywork, herbal medicine, detox, sound healing, and somatic practices. Over 27 years helping people awaken vibrant health.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.somahealingcollective.com" target="_blank">SOMA Healing Collective – Dr. Somer Nicole</a></p>
+                <p class="resource-description">Somatic-therapy and nervous-system healing combining craniosacral therapy, Reiki, yoga, and trauma release through Somatic Reparenting™ for full mind-body-soul restoration.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.structurechiropractic.com" target="_blank">Structure Chiropractic – Carlsbad</a></p>
+                <p class="resource-description">Holistic chiropractic clinic offering spinal adjustments, physiotherapy, and soft-tissue work for alignment, mobility, and full-body well-being.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.synergybodyalignment.com/" target="_blank">Synergy Body Alignment</a></p>
+                <p class="resource-description">Integrative body-alignment and corrective therapy focused on posture, chronic pain release, and somatic balance through personalized rehabilitation.</p>
+              </div>
+
+              <h4 class="subcategory-title">Conscious Beauty & Artistry</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://empowerartistryandwellness.com" target="_blank">Empower Artistry & Wellness</a></p>
+                <p class="resource-description">Marilyn offers an integrative approach to lash and brow artistry infused with energy healing and intuitive support, creating beauty rooted in clarity and ease.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://fourmoonsspa.com" target="_blank">Four Moons Spa – Encinitas</a></p>
+                <p class="resource-description">Holistic spa offering organic facials, acupuncture, color readings, and energy-infused bodywork in a serene sanctuary for ritual-style self-care.</p>
+              </div>
+
+              <h4 class="subcategory-title">Organic Cafés & Nourishing Eateries</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://choicejuicery.com" target="_blank">Choice Juicery</a></p>
+                <p class="resource-description">100% organic, plant-based juice bar and café serving cold-pressed juices, smoothies, bowls, and elixirs. All vegan, gluten-free, and dairy-free.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.floranourishco.com/" target="_blank">Flora Nourish & Co.</a></p>
+                <p class="resource-description">Holistic personal-chef and nutrition coaching service offering customized, organic meal-prep and wellness-forward nutrition plans.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://goodonyaorganic.com" target="_blank">Goodonya Organic Café</a></p>
+                <p class="resource-description">Local organic café and marketplace focused on nourishment, sustainability, and integrity-driven ingredients.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://nectarinegrove.com" target="_blank">Nectarine Grove – Encinitas</a></p>
+                <p class="resource-description">100% gluten-free organic café + bakery serving paleo, vegan, and allergy-conscious meals, juices, and baked treats.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.trilogysanctuary.com" target="_blank">Trilogy Sanctuary – La Jolla</a></p>
+                <p class="resource-description">Rooftop vegan & organic café (100% plant-based, gluten- and soy-free) with yoga classes, holistic workshops, and a conscious community space.</p>
+              </div>
+
+              <h4 class="subcategory-title">Conscious Consignment & Sustainable Fashion</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.instagram.com/doubletakesb/" target="_blank">Double Take</a></p>
+                <p class="resource-description">Upscale consignment shop offering high-end, designer, and contemporary fashion. A sustainable alternative to fast fashion supporting reuse, circularity, and style with purpose.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.mysisterscloset.com" target="_blank">My Sister's Closet</a></p>
+                <p class="resource-description">Premier designer consignment store featuring luxury and eco-conscious secondhand fashion, accessories, and jewelry promoting sustainability through elegant reuse.</p>
+              </div>
+
+              <h4 class="subcategory-title">Conscious Shops & Creative Spaces</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://cedrosavenue.com" target="_blank">Cedros Design District – Solana Beach</a></p>
+                <p class="resource-description">Heart of Solana Beach's artisan culture with 85+ independent boutiques, galleries, and conscious design shops celebrating creativity and craftsmanship.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://shinenaturalmarket.com/" target="_blank">Shine Natural Market</a></p>
+                <p class="resource-description">A beloved local health food store and café in Encinitas offering organic groceries, supplements, smoothies, and wellness products.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.instagram.com/soulscapelife/" target="_blank">Soulscape Life</a></p>
+                <p class="resource-description">Metaphysical bookstore and sacred shop in Encinitas offering crystals, oracle decks, candles, and tools for awakening and healing.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.threadspun.co" target="_blank">Threadspun</a></p>
+                <p class="resource-description">Sustainable boutique in Encinitas featuring ethically made fashion, home goods, and gifts supporting artisans and social impact projects worldwide.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.totemtrilogy.com/" target="_blank">Totem Trilogy</a></p>
+                <p class="resource-description">Eco-conscious boutique within Trilogy Sanctuary offering yoga apparel, handmade jewelry, crystals, and symbolic lifestyle pieces.</p>
+              </div>
+
+              <h4 class="subcategory-title">Spiritual & Community Spaces</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://encinitastemple.org" target="_blank">Self-Realization Fellowship – Encinitas Temple & Gardens</a></p>
+                <p class="resource-description">Historic ashram and meditation gardens offering teachings by Paramahansa Yogananda, guided meditations, chanting, and sacred space for reflection.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.templeofwholeness.org/" target="_blank">Temple of Wholeness</a></p>
+                <p class="resource-description">A spiritual community co-led by Matt and Amber. Designed for people interested in spiritual principles, healing, consciousness work, transformation, and applying deeper values in personal and collective growth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conscious Clothing — Free With Purpose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      #header-group, #newsletter, .footer { display: none !important; }
+      body { padding-top: 0 !important; }
+
+      :root {
+        --primary-sage: #7A8F76;
+        --primary-olive: #7A8F76;
+        --primary-cream: #F5F3EE;
+        --primary-espresso: #2B1E1A;
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      .resources-section {
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+        background: #fff;
+      }
+      .resources-container { max-width: 1000px; margin: 0 auto; }
+
+      .accordion-item { border-bottom: 1px solid rgba(122, 143, 118, 0.2); }
+      .accordion-header {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.3s ease;
+      }
+      .accordion-header:hover { background: rgba(122, 143, 118, 0.05); }
+      .accordion-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+      }
+      .accordion-icon {
+        font-size: 1.5rem;
+        color: var(--primary-sage);
+        transition: transform 0.3s ease;
+        font-weight: 300;
+      }
+      .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 1rem;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 5000px;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .resource-list { display: grid; gap: 1.5rem; }
+      .resource-item {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.1);
+      }
+      .resource-item:last-child { border-bottom: none; }
+      .resource-name {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        color: var(--primary-sage);
+        margin-bottom: 0.3rem;
+      }
+      .resource-name a {
+        color: var(--primary-sage);
+        transition: color 0.3s ease;
+      }
+      .resource-name a:hover {
+        color: var(--primary-olive);
+        text-decoration: underline;
+      }
+      .resource-description {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--primary-espresso);
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      @media (max-width: 768px) {
+        .accordion-header { padding: 1.2rem 0.5rem; }
+        .accordion-title { font-size: 0.95rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="resources-section">
+      <div class="resources-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="accordion-title">Conscious Clothing, Textiles & Accessories</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.instagram.com/awaveawake" target="_blank">A Wave Awake</a></p>
+                <p class="resource-description">Naturally dyed silk garments to adorn the body temple with softness and ritual.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://chanceloves.com" target="_blank">Chanceloves</a></p>
+                <p class="resource-description">Conscious swimwear made from recycled fabrics for teens and young women.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://christydawn.com" target="_blank">Christy Dawn</a></p>
+                <p class="resource-description">Pioneer in regenerative fashion using farm-to-closet cotton, natural dyes, and poetic, timeless silhouettes.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.seekcollective.com/" target="_blank">Seek Collective</a></p>
+                <p class="resource-description">Slow-fashion brand partnering with Indian artisans to produce hand-woven, naturally dyed garments with transparency and cultural preservation.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.coyuchi.com" target="_blank">Coyuchi</a></p>
+                <p class="resource-description">Organic pioneer offering regenerative cotton textiles and sustainable home and clothing essentials crafted with circular design principles.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://dkoko.com/collections/surf-bikinis" target="_blank">DKOKO</a></p>
+                <p class="resource-description">Handcrafted surf-bikinis and swimwear designed for beach living.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.eileenfisher.com/a-sustainable-life/journal.html" target="_blank">Eileen Fisher</a></p>
+                <p class="resource-description">Circular design pioneer combining timeless style, regeneration, and ethical practice.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.everlane.com/sustainability" target="_blank">Everlane</a></p>
+                <p class="resource-description">Modern essentials with radical transparency in pricing and sourcing.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://girlfriend.com" target="_blank">Girlfriend Collective</a></p>
+                <p class="resource-description">Inclusive activewear made from recycled materials and full transparency.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.greenrow.com/pages/our-values/" target="_blank">Greenrow</a></p>
+                <p class="resource-description">Elevated eco-basics crafted for comfort, longevity, and environmental mindfulness.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://groceriesapparel.com/pages/explore" target="_blank">Groceries Apparel</a></p>
+                <p class="resource-description">Organic clothing dyed and sewn ethically in Los Angeles.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.lookoptic.com" target="_blank">LOOK Optic</a></p>
+                <p class="resource-description">A modern eyewear brand known for its lightweight, eco-conscious reading glasses, sunglasses, and blue-light blockers.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.magnoliapearltrade.com/home/howitwork" target="_blank">Magnolia Pearl</a></p>
+                <p class="resource-description">Wearable art blending vintage textiles, soulful stories, and individuality.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://matethelabel.com" target="_blank">Mate the Label</a></p>
+                <p class="resource-description">Clean, soft activewear made with non-toxic natural fibers for conscious practice.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://nomadsswimwear.com/pages/about" target="_blank">Nomads Swimwear</a></p>
+                <p class="resource-description">Ethically-made swimwear designed for conscious movement and ocean-love rituals.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://wearpact.com/sustainability" target="_blank">Pact</a></p>
+                <p class="resource-description">Fair-trade certified, organic cotton everyday basics.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.patagonia.com/activism/" target="_blank">Patagonia</a></p>
+                <p class="resource-description">Activist outdoor apparel brand reinvesting profits in planetary care.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.quince.com/about-us" target="_blank">Quince</a></p>
+                <p class="resource-description">Affordable luxury staples made with sustainable materials and ethical factories.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.thereformation.com/sustainability.html" target="_blank">Reformation</a></p>
+                <p class="resource-description">Feminine silhouettes with traceable supply chains and carbon-neutral operations.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://wearsubset.com/collections/underwear" target="_blank">Subset</a></p>
+                <p class="resource-description">Ethical underwear crafted from organic cotton with transparent sourcing.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://swedishstockings.com/pages/how-tights-are-made" target="_blank">Swedish Stockings</a></p>
+                <p class="resource-description">Innovative hosiery from recycled nylon using zero-waste production methods.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.threadspun.co" target="_blank">Thread Spun</a></p>
+                <p class="resource-description">Sustainable lifestyle boutique offering ethically made clothing, home goods, jewelry, gifts, and apothecary, centered on fair trade, social justice, and environmental consciousness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

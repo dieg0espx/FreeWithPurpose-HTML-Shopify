@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conscious Food — Free With Purpose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      #header-group, #newsletter, .footer { display: none !important; }
+      body { padding-top: 0 !important; }
+
+      :root {
+        --primary-sage: #7A8F76;
+        --primary-olive: #7A8F76;
+        --primary-cream: #F5F3EE;
+        --primary-espresso: #2B1E1A;
+        --font-heading: "Belleza", sans-serif;
+        --font-body: "Raleway", sans-serif;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: var(--font-body);
+        background: var(--primary-cream);
+        color: var(--primary-espresso);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      .resources-section {
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+        background: #fff;
+      }
+      .resources-container { max-width: 1000px; margin: 0 auto; }
+
+      .accordion-item { border-bottom: 1px solid rgba(122, 143, 118, 0.2); }
+      .accordion-header {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.3s ease;
+      }
+      .accordion-header:hover { background: rgba(122, 143, 118, 0.05); }
+      .accordion-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+      }
+      .accordion-icon {
+        font-size: 1.5rem;
+        color: var(--primary-sage);
+        transition: transform 0.3s ease;
+        font-weight: 300;
+      }
+      .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 1rem;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 5000px;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .resource-list { display: grid; gap: 1.5rem; }
+      .resource-item {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.1);
+      }
+      .resource-item:last-child { border-bottom: none; }
+      .resource-name {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        color: var(--primary-sage);
+        margin-bottom: 0.3rem;
+      }
+      .resource-name a {
+        color: var(--primary-sage);
+        transition: color 0.3s ease;
+      }
+      .resource-name a:hover {
+        color: var(--primary-olive);
+        text-decoration: underline;
+      }
+      .resource-description {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--primary-espresso);
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      @media (max-width: 768px) {
+        .accordion-header { padding: 1.2rem 0.5rem; }
+        .accordion-title { font-size: 0.95rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="resources-section">
+      <div class="resources-container">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+            <span class="accordion-title">Conscious Food & Ritual Nourishment</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://animamundiherbals.com" target="_blank">Anima Mundi Herbals</a></p>
+                <p class="resource-description">Herbal alchemy blending ancient plant wisdom with modern wellness rituals.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.bendsoap.com/" target="_blank">Bend Soap Company</a></p>
+                <p class="resource-description">Handcrafted, all-natural goat-milk soaps and skincare products focused on gentle, nourishing care for sensitive skin, babies, and people prone to eczema or dryness.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://shop.butcherbox.com/partners/nycyo-steaks-u" target="_blank">ButcherBox</a></p>
+                <p class="resource-description">Ethically raised, humanely sourced meats delivered to your door.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://chakrubs.com" target="_blank">Chakrubs</a></p>
+                <p class="resource-description">Hand-crafted crystal pleasure wands and healing tools made from natural gemstones, designed to support sensuality, self-love, energetic alignment, and sacred embodiment through intentional, ritual use.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.choicejuicery.com/" target="_blank">Choice Juicery</a></p>
+                <p class="resource-description">A plant-based juice bar and café serving cold-pressed juices, smoothies, smoothie bowls, elixirs, and healthy, vegan-friendly meals. Everything is organic, gluten-free, dairy-free, and 100% plant-based.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://consciouscoconut.com" target="_blank">Conscious Coconut</a></p>
+                <p class="resource-description">A wellness-and-self-care brand offering 100% organic, fair-trade, virgin coconut-oil products (cold-pressed in small batches) intended for skin, hair, body and holistic-wellness use.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://fourvisions.com" target="_blank">Four Visions</a></p>
+                <p class="resource-description">Sacred-medicine brand offering ethically sourced Amazonian plant-wisdom, ceremonial rituals, botanical medicines and ancestral art — bridging indigenous spiritual culture and conscious lifestyle.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://goodonyaorganic.com/pages/our-story" target="_blank">Goodonya Organic Café</a></p>
+                <p class="resource-description">Organic café and marketplace rooted in integrity, sustainability, and nourishment.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.katemcleod.com/" target="_blank">Kate McLeod</a></p>
+                <p class="resource-description">A clean, handmade skincare brand offering plastic-free "Body Stone" solid moisturizers and natural self-care products crafted from wholesome, skin-nourishing ingredients.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://mauinuivenison.com" target="_blank">Maui Nui Venison</a></p>
+                <p class="resource-description">Regenerative wild-harvested venison supporting Hawaiian ecosystems and communities.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://mountainroseherbs.com" target="_blank">Mountain Rose Herbs</a></p>
+                <p class="resource-description">Organic herbs, botanicals, and teas ethically sourced for wellness and ritual.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.oneworldcacao.com" target="_blank">One World Cacao</a></p>
+                <p class="resource-description">Ceremonial-cacao brand offering 100% single-origin, eco-forested cacao from Guatemala, grown with ancestral care and harvested to support sustainable agroforestry, community education, and fair-trade practices.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://radiantfarms.us" target="_blank">Radiant Farms</a></p>
+                <p class="resource-description">Regenerative agriculture and biodynamic produce honoring Earth's natural rhythms.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://ritualoils.co" target="_blank">Ritual Oils</a></p>
+                <p class="resource-description">Plant-based botanical oils and perfumes created for ceremony and self-care.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.ryzesuperfoods.com" target="_blank">RYZE Mushroom Coffee</a></p>
+                <p class="resource-description">Functional-mushroom based beverage mixing organic instant coffee with six adaptogenic mushrooms designed to deliver smoother energy, mental clarity, immune support and digestion benefits.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.templecopal.com" target="_blank">Temple Copal</a></p>
+                <p class="resource-description">Ceremonial-wellness brand offering 100% pure, wild-harvested "White Copal" resin incense sticks, handcrafted in Mexico and designed for sacred rituals, space-clearing, and spiritual connection.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
