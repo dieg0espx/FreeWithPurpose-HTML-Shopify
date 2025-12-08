@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine's Day · Free With Purpose</title>
+    <meta name="description" content="Celebrate love with sacred, handcrafted jewelry that carries meaning." />
+    <style>
+      @font-face {
+        font-family: 'Chetta Vissto';
+        src: url('fonts/FWP_LOGO_chetta_vissto_extracted/ChettaVissto.woff2') format('woff2'),
+             url('fonts/FWP_LOGO_chetta_vissto_extracted/ChettaVissto.woff') format('woff'),
+             url('fonts/FWP_LOGO_chetta_vissto_extracted/ChettaVissto.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Belleza';
+        src: url('fonts/Belleza_titles_extracted/Belleza-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Raleway';
+        src: url('fonts/Raleway_paragraphs_extracted/Raleway-VariableFont_wght.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Amethysta';
+        src: url('fonts/Amethysta_quotes_extracted/Amethysta-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --valentine-rose: #C4566A;
+        --valentine-blush: #F5E1E4;
+        --valentine-burgundy: #722F37;
+        --valentine-champagne: #F7E7CE;
+        --valentine-cream: #FFF9F5;
+        --valentine-deep-rose: #8B3A48;
+        --valentine-gold: #D4A574;
+        --valentine-soft-pink: #FADADD;
+
+        --font-logo: "Chetta Vissto", cursive;
+        --font-titles: "Belleza", sans-serif;
+        --font-paragraphs: "Raleway", sans-serif;
+        --font-quotes: "Amethysta", serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-paragraphs);
+        background: var(--valentine-cream);
+        color: var(--valentine-burgundy);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page-wrapper {
+        max-width: 1500px;
+        margin: 0 auto;
+        background: var(--valentine-cream);
+      }
+
+      .preorder-banner {
+        background: var(--valentine-burgundy);
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .preorder-banner p {
+        font-family: var(--font-paragraphs);
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--valentine-champagne);
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 2.5rem;
+        border-radius: 2px;
+        font-family: var(--font-paragraphs);
+        font-size: 0.7rem;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background: var(--valentine-burgundy);
+        color: var(--valentine-cream);
+        border-color: var(--valentine-burgundy);
+      }
+
+      .btn-primary:hover {
+        background: var(--valentine-rose);
+        border-color: var(--valentine-rose);
+      }
+
+      /* Hero Section */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: var(--valentine-cream);
+      }
+
+      .hero-image {
+        background: linear-gradient(135deg, var(--valentine-blush) 0%, var(--valentine-soft-pink) 100%);
+        overflow: hidden;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .hero:hover .hero-image img {
+        transform: scale(1.02);
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(3rem, 8vw, 6rem);
+      }
+
+      .hero-label {
+        font-family: var(--font-paragraphs);
+        font-size: 0.65rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--valentine-rose);
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+
+      .hero-title {
+        font-family: var(--font-logo);
+        font-size: clamp(3rem, 6vw, 5rem);
+        letter-spacing: 0.05em;
+        color: var(--valentine-burgundy);
+        margin-bottom: 2rem;
+        line-height: 0.95;
+      }
+
+      .hero-subtitle {
+        font-family: var(--font-quotes);
+        font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+        line-height: 1.7;
+        color: var(--valentine-deep-rose);
+        margin-bottom: 1.5rem;
+        max-width: 500px;
+        font-style: italic;
+      }
+
+      .hero-description {
+        font-family: var(--font-paragraphs);
+        font-size: clamp(1rem, 1.6vw, 1.1rem);
+        line-height: 1.75;
+        color: var(--valentine-burgundy);
+        margin-bottom: 2.5rem;
+        max-width: 480px;
+        opacity: 0.85;
+      }
+
+      /* Gift Guide Section */
+      .gift-guide {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: white;
+      }
+
+      .gift-guide-image {
+        overflow: hidden;
+        max-height: 600px;
+      }
+
+      .gift-guide-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gift-guide:hover .gift-guide-image img {
+        transform: scale(1.02);
+      }
+
+      .gift-guide-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(3rem, 8vw, 6rem);
+      }
+
+      .gift-guide-label {
+        font-family: var(--font-paragraphs);
+        font-size: 0.65rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--valentine-rose);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      .gift-guide-title {
+        font-family: var(--font-titles);
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--valentine-burgundy);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .gift-guide-content p {
+        font-family: var(--font-paragraphs);
+        font-size: clamp(1rem, 1.6vw, 1.1rem);
+        line-height: 1.9;
+        color: var(--valentine-burgundy);
+        margin-bottom: 2rem;
+        opacity: 0.85;
+      }
+
+      .gift-categories {
+        list-style: none;
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .gift-categories li {
+        font-family: var(--font-paragraphs);
+        font-size: clamp(1rem, 1.6vw, 1.1rem);
+        line-height: 2.2;
+        color: var(--valentine-deep-rose);
+        font-weight: 500;
+        position: relative;
+      }
+
+      .gift-categories li::before {
+        content: '';
+        position: absolute;
+        left: -1.5rem;
+        top: 1em;
+        width: 8px;
+        height: 8px;
+        background: var(--valentine-rose);
+        border-radius: 50%;
+      }
+
+      /* Symbols Section */
+      .symbols-section {
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
+        background: var(--valentine-blush);
+        text-align: center;
+      }
+
+      .symbols-title {
+        font-family: var(--font-titles);
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--valentine-burgundy);
+        margin-bottom: 1.5rem;
+      }
+
+      .symbols-intro {
+        font-family: var(--font-quotes);
+        font-size: clamp(1rem, 1.6vw, 1.15rem);
+        line-height: 1.8;
+        color: var(--valentine-deep-rose);
+        font-style: italic;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+      }
+
+      .symbols-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .symbol-card {
+        padding: 2rem;
+        background: white;
+        transition: all 0.3s ease;
+      }
+
+      .symbol-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(114, 47, 55, 0.1);
+      }
+
+      .symbol-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--valentine-rose);
+      }
+
+      .symbol-name {
+        font-family: var(--font-titles);
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--valentine-burgundy);
+        margin-bottom: 0.75rem;
+      }
+
+      .symbol-meaning {
+        font-family: var(--font-paragraphs);
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: var(--valentine-deep-rose);
+        opacity: 0.85;
+      }
+
+      /* Message Section */
+      .message-section {
+        background: white;
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
+      }
+
+      .message-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .message-title {
+        font-family: var(--font-titles);
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--valentine-burgundy);
+        margin-bottom: 2rem;
+      }
+
+      .message-text {
+        font-family: var(--font-paragraphs);
+        font-size: clamp(1rem, 1.6vw, 1.15rem);
+        line-height: 1.9;
+        color: var(--valentine-burgundy);
+        margin-bottom: 1.5rem;
+        opacity: 0.85;
+      }
+
+      .message-signature {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(196, 86, 106, 0.2);
+      }
+
+      .signature-name {
+        font-family: var(--font-logo);
+        font-size: 1.3rem;
+        letter-spacing: 0.05em;
+        color: var(--valentine-rose);
+        margin-bottom: 0.5rem;
+      }
+
+      .signature-role {
+        font-family: var(--font-paragraphs);
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--valentine-burgundy);
+        opacity: 0.6;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-image {
+          min-height: 350px;
+          order: -1;
+        }
+
+        .gift-guide {
+          grid-template-columns: 1fr;
+        }
+
+        .gift-guide-image {
+          min-height: 400px;
+        }
+
+        .symbols-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-content,
+        .gift-guide-content {
+          text-align: center;
+          padding: 3rem 1.5rem;
+        }
+
+        .hero-subtitle,
+        .hero-description {
+          max-width: 100%;
+        }
+
+        .gift-categories {
+          text-align: left;
+          display: inline-block;
+        }
+
+        .symbols-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .symbol-card {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .symbols-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+    <!-- Pre-order Banner -->
+    <div class="preorder-banner">
+      <p>Pre-Order Now · Ships by February 10th</p>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-label">Valentine's Day 2026</span>
+        <h1 class="hero-title">Love<br>With<br>Purpose</h1>
+        <p class="hero-subtitle">
+          "Give a gift that speaks the language of the heart."
+        </p>
+        <p class="hero-description">
+          Crafted with love and intention using sustainable, ethically sourced materials. Each piece invites you to live, create, and relate more soulfully—a portable altar for truth, voice, and freedom.
+        </p>
+        <a href="jewelry/index.html" class="btn btn-primary">Shop Now</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-4.jpg?v=1763739724" alt="Valentine's Day Jewelry">
+      </div>
+    </section>
+
+    <!-- Gift Guide Section -->
+    <section class="gift-guide">
+      <div class="gift-guide-image">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-7.jpg?v=1763739719" alt="Gift Guide">
+      </div>
+      <div class="gift-guide-content">
+        <span class="gift-guide-label">Crafted with Love & Intention</span>
+        <h2 class="gift-guide-title">A Portable Altar</h2>
+        <p>May this piece serve as a remembrance of your truth, your voice, your purpose, and your freedom. Each creation is made with sustainable, ethically sourced materials.</p>
+        <ul class="gift-categories">
+          <li>Sacred Necklaces</li>
+          <li>Intentional Bracelets</li>
+        </ul>
+        <a href="jewelry/index.html" class="btn btn-primary">Explore Collection</a>
+      </div>
+    </section>
+
+    <!-- Symbols Section -->
+    <section class="symbols-section">
+      <h2 class="symbols-title">Sacred Symbolism</h2>
+      <p class="symbols-intro">Each symbol speaks in the language of the subconscious—awakening truth, memory, and meaning. A whisper of remembrance.</p>
+      <div class="symbols-grid">
+        <div class="symbol-card">
+          <div class="symbol-icon">&#9788;</div>
+          <h3 class="symbol-name">Sun</h3>
+          <p class="symbol-meaning">Illumination, life force, and divine order. The light within and around us.</p>
+        </div>
+        <div class="symbol-card">
+          <div class="symbol-icon">&#9775;</div>
+          <h3 class="symbol-name">Yin & Yang</h3>
+          <p class="symbol-meaning">Harmony and flow. The eternal dance of duality in unity.</p>
+        </div>
+        <div class="symbol-card">
+          <div class="symbol-icon">&#10048;</div>
+          <h3 class="symbol-name">Open Wings</h3>
+          <p class="symbol-meaning">Freedom, protection, and ascension. The heart expands, truth shines.</p>
+        </div>
+        <div class="symbol-card">
+          <div class="symbol-icon">&#8734;</div>
+          <h3 class="symbol-name">Snake</h3>
+          <p class="symbol-meaning">Transformation and renewal. The rise of creative and sensual sacred power.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Note on Love -->
+    <section class="message-section">
+      <div class="message-content">
+        <h2 class="message-title">A Note on Love</h2>
+        <p class="message-text">
+          Love is not just a feeling—it's an intention. It's how we choose to show up for the people we cherish, how we honor their presence in our lives, and how we give meaning to ordinary moments.
+        </p>
+        <p class="message-text">
+          When I create each piece of jewelry, I think about the hands that will give it and the hearts that will receive it. I infuse every creation with prayers for love, protection, and joy.
+        </p>
+        <p class="message-text">
+          This Valentine's Day, may you give and receive love in its purest form—intentional, sacred, and free.
+        </p>
+        <div class="message-signature">
+          <div class="signature-name">Mayte Bluestein</div>
+          <div class="signature-role">Founder, Free With Purpose</div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </body>
+</html>
