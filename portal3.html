@@ -32,6 +32,8 @@
         --primary-earth: #8B5A3C;
         --primary-cream: #FDF8F3;
         --primary-espresso: #2B1E1A;
+        --primary-rose: #B76E79;
+        --primary-sage: #7A8F76;
         --font-heading: "Belleza", sans-serif;
         --font-body: "Raleway", sans-serif;
         --font-accent: "Cormorant Garamond", serif;
@@ -170,6 +172,9 @@
       /* Mobile Menu */
       @media (max-width: 768px) {
         .navbar {
+          min-width: auto;
+          width: auto;
+          padding: 0.8rem 1.2rem;
           overflow: visible;
         }
 
@@ -265,7 +270,6 @@
         font-family: var(--font-heading);
         font-size: clamp(3rem, 5vw, 4.5rem);
         letter-spacing: 0.04em;
-        text-transform: uppercase;
         color: var(--primary-terracotta);
         margin-bottom: 2rem;
         line-height: 1.05;
@@ -495,65 +499,336 @@
         }
       }
 
-      /* Footer - Clean */
+      /* Coming Soon Section */
+      .coming-soon-section {
+        padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
+        background: var(--primary-cream);
+      }
+
+      .coming-soon-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .coming-soon-label {
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .coming-soon-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        letter-spacing: 0.04em;
+        color: var(--primary-terracotta);
+        text-align: center;
+        margin-bottom: 2rem;
+        line-height: 1.1;
+      }
+
+      .coming-soon-subtitle {
+        font-family: var(--font-accent);
+        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+        font-style: italic;
+        color: var(--primary-clay);
+        text-align: center;
+        line-height: 1.6;
+        margin-bottom: 4rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+        margin-bottom: 4rem;
+      }
+
+      .content-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .text-block p {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.9;
+        color: #5a4a45;
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+
+      .text-block p:last-child {
+        margin-bottom: 0;
+      }
+
+      .text-highlight {
+        font-family: var(--font-accent);
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--primary-clay);
+        line-height: 1.7;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--primary-sand);
+        margin: 2rem 0;
+      }
+
+      .content-image {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(196, 107, 71, 0.1);
+        background: transparent;
+      }
+
+      .content-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/4;
+      }
+
+      /* Partner Section */
+      .partner-section {
+        background: var(--primary-terracotta);
+        padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+        margin-top: 0;
+      }
+
+      .partner-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .partner-label {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary-sand);
+        margin-bottom: 1.5rem;
+      }
+
+      .partner-name {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        letter-spacing: 0.06em;
+        color: #fff;
+        margin-bottom: 2rem;
+      }
+
+      .partner-name a {
+        color: #fff;
+        transition: color 0.3s ease;
+        text-decoration: underline;
+        text-decoration-color: var(--primary-sand);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px;
+      }
+
+      .partner-name a:hover {
+        color: var(--primary-sand);
+      }
+
+      .partner-description {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+      }
+
+      .partner-mission {
+        font-family: var(--font-accent);
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--primary-sand);
+        line-height: 1.7;
+        margin: 2rem auto;
+        max-width: 800px;
+      }
+
+      /* Closing Tagline */
+      .closing-tagline-section {
+        padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+        background: var(--primary-cream);
+        text-align: center;
+      }
+
+      .closing-tagline {
+        font-family: var(--font-heading);
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-terracotta);
+      }
+
+      /* Footer Styles */
       .portal-footer {
-        background: var(--primary-espresso);
-        padding: 5rem 0 3rem;
+        background: #0D4D4F;
+        color: #FDF8F3;
+        padding: clamp(3rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
       }
 
       .footer-container {
-        max-width: 1200px;
+        max-width: 900px;
         margin: 0 auto;
-        padding: 0 clamp(2rem, 5vw, 4rem);
       }
 
       .footer-top {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        margin-bottom: 3rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(253, 248, 243, 0.15);
       }
 
       .footer-brand {
         display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 1rem;
       }
 
-      .footer-brand img {
-        height: 40px;
+      .footer-logo {
+        height: 45px;
         width: auto;
-        filter: brightness(0) invert(1);
+        object-fit: contain;
       }
 
-      .footer-links {
-        display: flex;
-        gap: 3rem;
-      }
-
-      .footer-link {
+      .footer-tagline {
         font-family: var(--font-body);
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.6);
-        transition: color 0.3s ease;
+        font-size: 0.85rem;
+        font-weight: 300;
+        letter-spacing: 0.03em;
+        opacity: 0.7;
+        max-width: 320px;
+        line-height: 1.6;
       }
 
-      .footer-link:hover {
-        color: var(--primary-sand);
+      .footer-portals {
+        width: 100%;
       }
 
-      .footer-bottom {
-        text-align: center;
-      }
-
-      .footer-copy {
-        font-family: var(--font-body);
+      .portal-column-title {
+        font-family: var(--font-heading);
         font-size: 0.75rem;
-        color: rgba(255, 255, 255, 0.4);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        margin-bottom: 1.25rem;
+      }
+
+      .portal-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .portal-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.25rem;
+        background: rgba(253, 248, 243, 0.05);
+        border: 1px solid rgba(253, 248, 243, 0.1);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .portal-link:hover {
+        background: rgba(253, 248, 243, 0.1);
+        border-color: rgba(253, 248, 243, 0.2);
+      }
+
+      .portal-icon {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .portal-icon.rose { background: var(--primary-rose); }
+      .portal-icon.sage { background: var(--primary-sage); }
+      .portal-icon.terracotta { background: var(--primary-terracotta); }
+
+      .portal-link-name {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        opacity: 0.9;
+      }
+
+      .portal-link-description {
+        display: none;
+      }
+
+      /* Footer Bottom */
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copyright {
+        font-size: 0.75rem;
+        font-weight: 300;
+        opacity: 0.4;
+        letter-spacing: 0.02em;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      .social-link {
+        font-size: 0.75rem;
+        font-weight: 400;
         letter-spacing: 0.05em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+
+      .social-link:hover {
+        opacity: 1;
+      }
+
+      /* Footer Responsive */
+      @media (max-width: 600px) {
+        .portal-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        .portal-link {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
       }
 
       /* Responsive */
@@ -596,6 +871,19 @@
         .content-block-image {
           aspect-ratio: 4/3;
         }
+
+        .content-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .content-image {
+          order: -1;
+        }
+
+        .content-image img {
+          aspect-ratio: 16/9;
+        }
       }
 
       @media (max-width: 768px) {
@@ -626,17 +914,20 @@
           padding: 3rem 1.5rem;
         }
 
-        .footer-top {
-          flex-direction: column;
-          gap: 2rem;
-          align-items: center;
-          text-align: center;
+        .coming-soon-section {
+          padding: 4rem 1.5rem;
         }
 
-        .footer-links {
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 1.5rem;
+        .coming-soon-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .partner-section {
+          padding: 3rem 1.5rem;
+        }
+
+        .text-block p {
+          font-size: 0.95rem;
         }
       }
 
@@ -664,7 +955,7 @@
     <!-- Navigation - Floating Pill -->
     <nav class="navbar">
       <a href="#hero" class="brand-logo">
-        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/P._Sustainability_Horizontal.png?v=1764807253" alt="Artists & Artisans">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/P._Artists_Horizontal.png?v=1764861549" alt="Artists & Artisans">
       </a>
       <button class="hamburger" aria-label="Toggle menu">
         <span></span>
@@ -676,7 +967,7 @@
         <a href="#wisdom" class="nav-link">Wisdom</a>
         <a href="#culture" class="nav-link">Culture</a>
         <a href="#artistry" class="nav-link">Artistry</a>
-        <a href="https://freewithpurpose.com/pages/coming-soon" class="nav-cta">Shop Now</a>
+        <a href="https://freewithpurpose.com/collections/frontpage" class="nav-cta">Shop Now</a>
       </div>
     </nav>
 
@@ -688,7 +979,7 @@
       <div class="hero-content">
         <span class="hero-label">The Third Portal</span>
         <h1 class="hero-title">Artists &<br>Artisans</h1>
-        <p class="hero-subtitle">Ancestral Wisdom. Cultural Preservation. Human Connection.</p>
+        <p class="hero-subtitle">"Ancestral Wisdom. Cultural Preservation. Human Connection."</p>
         <p class="hero-tagline">Where Artistry and Ancestry Meet</p>
       </div>
     </section>
@@ -763,19 +1054,120 @@
     <!-- Closing Section - Cream -->
     <section class="closing-section">
       <div class="closing-container">
-        <!-- <p class="closing-text">
-          "Building bridges of beauty, respect, and meaningful impact across cultures and generations."
-        </p> -->
         <div class="closing-taglines">
           <span>Artistry as remembrance</span>
           <span>Freedom through Craft</span>
           <span>Tradition with Purpose</span>
         </div>
-        <p class="closing-final">Ancestral Wisdom. Cultural Preservation. Human Connection.</p>
+        <p class="closing-final">"Ancestral Wisdom. Cultural Preservation. Human Connection."</p>
       </div>
     </section>
 
-   
+    <!-- Coming Soon Section - Nashami Beadwork -->
+    <section class="coming-soon-section">
+      <div class="coming-soon-container">
+        <p class="coming-soon-label">Coming Soon</p>
+        <h1 class="coming-soon-title">Nashami Beadwork</h1>
+        <p class="coming-soon-subtitle">
+          Handcrafted empowerment. Modern African design.
+        </p>
+
+        <div class="content-grid">
+          <div class="content-text">
+            <div class="text-block">
+              <p>Nashami Beadwork represents a new generation of Samburu women: confident, creative, and economically independent.</p>
+              <p>In Isiolo, young women have come together to carry their ancient beading tradition into the modern world while courageously breaking away from outdated practices such as polygamy and early marriage.</p>
+            </div>
+
+            <p class="text-highlight">
+              Each piece tells a story of strength, freedom, and cultural pride.
+            </p>
+
+            <div class="text-block">
+              <p>Their elegant, contemporary designs set new standards: refined, precise, sophisticated—and unmistakably Samburu.</p>
+              <p>What began as a jewelry collection has grown into a brand for authentic African interior décor. From intricate wall art to modern signature pieces, the Nashami artisans create unique works that reinterpret tradition and give every space a distinctive character.</p>
+            </div>
+          </div>
+
+          <div class="content-image">
+            <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_1925_edited.avif?v=1764889935" alt="Nashami Beadwork">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Section -->
+    <section class="partner-section">
+      <div class="partner-container">
+        <p class="partner-label">Curated in Collaboration With</p>
+        <h2 class="partner-name">
+          <a href="https://www.africa-untamed.com/" target="_blank">Africa Untamed</a>
+        </h2>
+
+        <p class="partner-description">
+          Africa Untamed is a regenerative travel company based in Nairobi, dedicated to connecting conscious travelers with meaningful, landscape-anchored experiences across Africa.
+        </p>
+
+        <p class="partner-mission">
+          They craft bespoke safaris that immerse guests in the continent's extraordinary ecological and cultural diversity, while directly supporting the places and communities they visit.
+        </p>
+
+        <p class="partner-description">
+          Their mission is to champion biodiversity conservation and sustainable community development through travel. They partner with grassroots initiatives, conservancies, and community-led projects to ensure that every journey contributes to healthier ecosystems, strengthened livelihoods, and long-term resilience for both people and wildlife.
+        </p>
+      </div>
+    </section>
+
+    <!-- Closing Tagline -->
+    <section class="closing-tagline-section">
+      <p class="closing-tagline">Where Artistry and Ancestry Meet</p>
+    </section>
+
+    <!-- Portal Footer -->
+    <div class="portal-footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="https://freewithpurpose.com/">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/FWP_Horizontal_W.png?v=1765315743"
+                alt="Free With Purpose"
+                class="footer-logo"
+              />
+            </a>
+            <p class="footer-tagline">
+              Adornment with meaning. Living with intention. Freedom through purpose.
+            </p>
+          </div>
+
+          <div class="footer-portals">
+            <span class="portal-column-title">Portals</span>
+            <div class="portal-links">
+              <a href="https://freewithpurpose.com/pages/mayte-b-jewerly" class="portal-link">
+                <span class="portal-icon rose"></span>
+                <span class="portal-link-name">Jewelry as an Invitation</span>
+              </a>
+              <a href="https://freewithpurpose.com/pages/sustainability-well-being" class="portal-link">
+                <span class="portal-icon sage"></span>
+                <span class="portal-link-name">Sustainability & Well-Being</span>
+              </a>
+              <a href="https://freewithpurpose.com/pages/artists-artisans" class="portal-link">
+                <span class="portal-icon terracotta"></span>
+                <span class="portal-link-name">Artists & Artisans</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">&copy; 2025 Free With Purpose. All rights reserved.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/free_with_purpose/?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr#" target="_blank" class="social-link">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
       const hamburger = document.querySelector('.hamburger');
       const navLinks = document.querySelector('.nav-links');

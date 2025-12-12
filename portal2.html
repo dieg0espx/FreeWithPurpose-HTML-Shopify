@@ -16,9 +16,7 @@
       /* Hide Shopify header group, newsletter and footer */
       #header-group,
       #newsletter,
-      .footer {
-        display: none !important;
-      }
+
 
       /* Remove Shopify body padding */
       body {
@@ -268,7 +266,6 @@
         font-family: var(--font-heading);
         font-size: clamp(3rem, 5vw, 4.5rem);
         letter-spacing: 0.04em;
-        text-transform: uppercase;
         color: var(--primary-sage);
         margin-bottom: 2rem;
         line-height: 1.05;
@@ -1191,6 +1188,32 @@
         opacity: 0.85;
       }
 
+      .resource-intro {
+        background: rgba(122, 143, 118, 0.08);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        border-left: 3px solid var(--primary-sage);
+      }
+
+      .resource-intro p {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: var(--primary-espresso);
+        line-height: 1.7;
+        margin-bottom: 0.75rem;
+      }
+
+      .resource-intro p:last-child {
+        margin-bottom: 0;
+      }
+
+      .resource-note {
+        font-size: 0.85rem !important;
+        opacity: 0.85;
+        font-style: italic;
+      }
+
       .subcategory-title {
         font-family: var(--font-heading);
         font-size: 0.95rem;
@@ -1219,6 +1242,104 @@
           padding-bottom: 1.2rem;
         }
       }
+
+      /* Resources Note */
+      .resources-note {
+        text-align: center;
+        padding: 1.5rem 1rem 2.5rem;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        font-weight: 300;
+        font-style: italic;
+        color: var(--primary-sage);
+        letter-spacing: 0.02em;
+        opacity: 0.85;
+      }
+
+      /* Clean Beauty Intro Section */
+      .clean-beauty-intro {
+        padding: 2rem 1rem 2.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(122, 143, 118, 0.2);
+      }
+
+      .intro-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        text-align: center;
+        margin-bottom: 0.25rem;
+      }
+
+      .intro-subtitle {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        font-style: italic;
+        color: var(--primary-sage);
+        text-align: center;
+        opacity: 0.7;
+        margin-bottom: 1rem;
+      }
+
+      .intro-description {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: var(--primary-espresso);
+        text-align: center;
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        opacity: 0.85;
+      }
+
+      .intro-callout {
+        background: rgba(122, 143, 118, 0.06);
+        border-radius: 8px;
+        padding: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .callout-title {
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-sage);
+        margin-bottom: 1rem;
+      }
+
+      .callout-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .callout-list li {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        color: var(--primary-espresso);
+        line-height: 1.6;
+        opacity: 0.85;
+        padding-left: 1rem;
+        position: relative;
+      }
+
+      .callout-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary-sage);
+      }
+
+      .callout-list li strong {
+        color: var(--primary-sage);
+        font-weight: 500;
+      }
     </style>
   </head>
   <body>
@@ -1238,7 +1359,7 @@
         <a href="#manifest" class="nav-link">Manifest</a>
         <a href="#nourishment" class="nav-link">Nourishment</a>
         <a href="#resources" class="nav-link">Resources</a>
-        <a href="https://freewithpurpose.com/pages/coming-soon" class="nav-cta">Shop Now</a>
+        <a href="https://freewithpurpose.com/collections/frontpage" class="nav-cta">Shop Now</a>
       </div>
     </nav>
 
@@ -1367,21 +1488,230 @@
       </div>
     </section>
 
-    <!-- Conscious Resources Section -->
+    <!-- Resources Section -->
     <section id="resources" class="resources-section">
       <div class="resources-container">
-        <div class="resources-header">
-          <h2 class="resources-title">Conscious Living Resources</h2>
-          <p class="resources-intro">A curated collection of ethical brands, conscious businesses, and mindful resources to support your journey toward sustainable, purposeful living.</p>
+
+        <!-- Clean Makeup & Skincare Intro Section -->
+        <div class="clean-beauty-intro">
+          <h2 class="intro-title">Some of the Cleanest and "Mostly Clean" Makeup & Skincare Products</h2>
+          <p class="intro-subtitle">(More Coming Soon!)</p>
+          <p class="intro-description">
+            Avoiding parabens, phthalates, heavy metals, endocrine-disruptors, etc. while still enjoying effective makeup and near-fully natural, organic and minimal synthetic formulas.
+          </p>
+
+          <div class="intro-callout">
+            <h3 class="callout-title">What to Watch Out For (Because "Clean" Isn't Regulated)</h3>
+            <ul class="callout-list">
+              <li><strong>No universal regulation:</strong> "Clean beauty" has no official regulatory definition that ensures what a brand calls "clean" meets the same standards globally.</li>
+              <li><strong>Transparency varies:</strong> Some brands are very transparent, others less so. Even among "clean" brands you often need to read individual product ingredient lists, not just the general brand "story."</li>
+              <li><strong>Natural ≠ harmless:</strong> "Natural" or "botanical" ingredients can still cause irritation, allergies, or photosensitivity in some people. Clean beauty aims to avoid toxins — but natural extracts come with their own risks.</li>
+              <li><strong>Sustainability & ethics often unclear / partial:</strong> A brand may avoid certain chemicals, but that doesn't necessarily mean sustainable packaging, ethical sourcing, or low-waste manufacturing — these require separate commitments.</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- The Good Trade Intro -->
-        <div class="resource-item" style="text-align: center; padding: 2rem 0; border-bottom: 1px solid rgba(122, 143, 118, 0.2);">
-          <p class="resource-name" style="font-size: 1.1rem;"><a href="https://www.thegoodtrade.com/about/" target="_blank">The Good Trade</a></p>
-          <p class="resource-description">A leading ethical-living media platform sharing stories, guides and curated resources for conscious fashion, beauty, home, and lifestyle. A trusted compass for mindful living and conscious choices.</p>
+        <!-- 0. Clean & Conscious Beauty -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="accordion-title">Clean & Conscious Beauty</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-intro">
+                <p><strong>Some of the cleanest and "mostly clean" makeup & skincare products</strong> — avoiding parabens, phthalates, heavy metals, endocrine-disruptors, etc. while still enjoying effective makeup and near-fully natural, organic and minimal synthetic.</p>
+                <p class="resource-note"><strong>What to Watch Out For:</strong> "Clean beauty" has no universal regulation. Transparency varies between brands. Natural doesn't always mean harmless — botanical ingredients can still cause irritation or allergies. Sustainability and ethics require separate commitments beyond just avoiding certain chemicals.</p>
+              </div>
+
+              <h4 class="subcategory-title">Clean Beauty Curators & Ethical Marketplaces</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://credobeauty.com" target="_blank">Credo Beauty</a></p>
+                <p class="resource-description">Industry leader defining the clean-beauty standard through safety, ethical sourcing, and full transparency.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://thedetoxmarket.com" target="_blank">The Detox Market</a></p>
+                <p class="resource-description">Curated home for premium, organic, vegan beauty and wellness products chosen with uncompromising integrity.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://beauty-heroes.com" target="_blank">Beauty Heroes</a></p>
+                <p class="resource-description">Conscious-beauty platform curating non-toxic, wellness-first products that honor body and Earth.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://prettywellbeauty.com" target="_blank">Pretty Well Beauty</a></p>
+                <p class="resource-description">Boutique curator of clean, effective beauty brands rooted in wellness and integrity.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://lovegoodly.com" target="_blank">Love Goodly</a></p>
+                <p class="resource-description">Vegan, cruelty-free, and ethically-made beauty and self-care guided by compassion and consciousness.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://wrenandwild.com" target="_blank">Wren & Wild</a></p>
+                <p class="resource-description">Modern boutique merging clean-beauty luxury with conscious formulation and curated elegance.</p>
+              </div>
+
+              <h4 class="subcategory-title">Skin Health</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://oseamalibu.com" target="_blank">OSEA Malibu</a></p>
+                <p class="resource-description">Sea-sourced, vegan skincare powered by ocean wisdom and deep respect for nature's rhythms.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://tataharperskincare.com" target="_blank">Tata Harper</a></p>
+                <p class="resource-description">Farm-to-face, 100% natural skincare merging luxury and sustainability with uncompromising purity.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://mayachia.com" target="_blank">Maya Chia</a></p>
+                <p class="resource-description">Superfood skincare alchemy harnessing chia's potency for radiant, nourishing, clean beauty.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://juicebeauty.com" target="_blank">Juice Beauty</a></p>
+                <p class="resource-description">Organic innovation for skin health powered by plant-based science and sustainable practices.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://livingearthbeauty.com" target="_blank">Living Earth Beauty</a></p>
+                <p class="resource-description">Holistic, artisan self-care offering small-batch, plant-based wellness rooted in nature.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://beautycounter.com" target="_blank">Beautycounter</a></p>
+                <p class="resource-description">Advocacy-driven clean beauty brand banning 2,800+ harmful ingredients and leading transparency and legislative reform.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://beautyshamans.com" target="_blank">Beauty Shamans</a></p>
+                <p class="resource-description">Founded by Shelly Marshall, Beauty Shamans offers clean, seaweed-based skincare and mindful beauty rituals that merge science, nature, and spirituality. Through facial massage, lymphatic drainage, and guided face exercises, Shelly helps women reconnect with their innate radiance and heal from within.</p>
+              </div>
+
+              <h4 class="subcategory-title">Clean Makeup</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://iliabeauty.com" target="_blank">ILIA Beauty</a></p>
+                <p class="resource-description">Skin-centric clean beauty merging makeup and skincare with safe, sustainable, and high-performance formulas.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://kosas.com" target="_blank">Kosas</a></p>
+                <p class="resource-description">Makeup for skincare lovers. Active ingredients, clean formulations, and minimalist design.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://saiehello.com" target="_blank">Saie</a></p>
+                <p class="resource-description">Conscious, modern makeup that's clean, sustainable, and designed to support real skin.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://rmsbeauty.com" target="_blank">RMS Beauty</a></p>
+                <p class="resource-description">Living, organic color cosmetics made with raw, food-grade ingredients for luminous skin.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://kjaerweis.com" target="_blank">Kjaer Weis</a></p>
+                <p class="resource-description">Sustainable luxury makeup with refillable metal compacts and certified organic ingredients.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://axiologybeauty.com" target="_blank">Axiology</a></p>
+                <p class="resource-description">Minimal-ingredient, zero-waste vegan color redefining beauty with simplicity, sustainability, and conscience.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://tower28beauty.com" target="_blank">Tower 28</a></p>
+                <p class="resource-description">Fun, inclusive, dermatologist-tested clean makeup for sensitive skin and joyful expression.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://lawlessbeauty.com" target="_blank">Lawless Beauty</a></p>
+                <p class="resource-description">High-performance, toxin-free glamour proving clean can be bold and luxurious.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://honest.com/beauty" target="_blank">Honest Beauty</a></p>
+                <p class="resource-description">Accessible, clean essentials for everyday use. Family-safe, cruelty-free, and transparently formulated.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://inikaorganic.com" target="_blank">INIKA Organic</a></p>
+                <p class="resource-description">Certified organic, vegan, cruelty-free makeup blending purity, performance, and sustainability.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://100percentpure.com" target="_blank">100% Pure</a></p>
+                <p class="resource-description">Fruit-pigmented, plant-based beauty that's biodegradable, cruelty-free, and full of natural vitality.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://w3llpeople.com" target="_blank">W3LL People</a></p>
+                <p class="resource-description">Effortless, breathable clean makeup with EWG-verified ingredients and minimalist beauty ethos.</p>
+              </div>
+
+              <h4 class="subcategory-title">Hybrid Brands (Makeup + Skincare)</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://iliabeauty.com" target="_blank">ILIA</a></p>
+                <p class="resource-description">Skin-centric clean beauty merging makeup and skincare with safe, sustainable, and high-performance formulas.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://kosas.com" target="_blank">Kosas</a></p>
+                <p class="resource-description">Makeup for skincare lovers. Active ingredients, clean formulations, and minimalist design.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://saiehello.com" target="_blank">Saie</a></p>
+                <p class="resource-description">Conscious, modern makeup that's clean, sustainable, and designed to support real skin.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://rmsbeauty.com" target="_blank">RMS Beauty</a></p>
+                <p class="resource-description">Living, organic color cosmetics made with raw, food-grade ingredients for luminous skin.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://inikaorganic.com" target="_blank">INIKA Organic</a></p>
+                <p class="resource-description">Certified organic, vegan, cruelty-free makeup blending purity, performance, and sustainability.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://100percentpure.com" target="_blank">100% Pure</a></p>
+                <p class="resource-description">Fruit-pigmented, plant-based beauty that's biodegradable, cruelty-free, and full of natural vitality.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://w3llpeople.com" target="_blank">W3LL People</a></p>
+                <p class="resource-description">Effortless, breathable clean makeup with EWG-verified ingredients and minimalist beauty ethos.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://ogee.com" target="_blank">Ogee</a></p>
+                <p class="resource-description">Certified-organic luxury beauty uniting botanical skincare and high-performance color. "Beyond Clean" formulations that honor skin and Earth through purity, elegance, and efficacy.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Accordion 1: Conscious Clothing -->
+        <!-- 0b. Face Fitness & Natural Beauty -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="accordion-title">Face Fitness & Natural Beauty</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://beautyshamans.com" target="_blank">Shelly Marshall – Beauty Shamans</a></p>
+                <p class="resource-description">Holistic skin therapist and founder of Beauty Shamans, a clean-beauty brand rooted in ancient rituals and modern science. She advocates facial massage, breathwork, and conscious skincare to support radiant skin and inner balance.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://facelates.com" target="_blank">Trinh Georg – FACELATES®</a></p>
+                <p class="resource-description">Founder of FACELATES®, a holistic face-fitness method blending facial exercises, mindfulness, and self-care to tone, lift, and revitalize the face naturally. Her approach promotes radiant, age-positive beauty from within, grounded in consistency, self-love, and body awareness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1. Circular & Conscious Fashion Economy -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="accordion-title">Circular & Conscious Fashion Economy</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://poshmark.com" target="_blank">Poshmark</a></p>
+                <p class="resource-description">Peer-to-peer resale app for fashion. Anyone can sell or buy; great for circular economy but not focused on artisan or ethical sourcing.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.therealreal.com" target="_blank">The RealReal</a></p>
+                <p class="resource-description">High-end luxury consignment platform specializing in authenticated designer goods; advances reuse more than small-batch artistry.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.thredup.com" target="_blank">ThredUp</a></p>
+                <p class="resource-description">Large-scale thrift and resale marketplace making fashion recycling accessible and affordable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Conscious Clothing, Textiles & Accessories -->
         <div class="accordion-item">
           <button class="accordion-header">
             <span class="accordion-title">Conscious Clothing, Textiles & Accessories</span>
@@ -1400,10 +1730,6 @@
               <div class="resource-item">
                 <p class="resource-name"><a href="https://christydawn.com" target="_blank">Christy Dawn</a></p>
                 <p class="resource-description">Pioneer in regenerative fashion using farm-to-closet cotton, natural dyes, and poetic, timeless silhouettes.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.seekcollective.com/" target="_blank">Seek Collective</a></p>
-                <p class="resource-description">Slow-fashion brand partnering with Indian artisans to produce hand-woven, naturally dyed garments with transparency and cultural preservation.</p>
               </div>
               <div class="resource-item">
                 <p class="resource-name"><a href="https://www.coyuchi.com" target="_blank">Coyuchi</a></p>
@@ -1466,6 +1792,10 @@
                 <p class="resource-description">Feminine silhouettes with traceable supply chains and carbon-neutral operations.</p>
               </div>
               <div class="resource-item">
+                <p class="resource-name"><a href="https://www.seekcollective.com/" target="_blank">Seek Collective</a></p>
+                <p class="resource-description">Slow-fashion brand partnering with Indian artisans to produce hand-woven, naturally dyed garments with transparency and cultural preservation.</p>
+              </div>
+              <div class="resource-item">
                 <p class="resource-name"><a href="https://wearsubset.com/collections/underwear" target="_blank">Subset</a></p>
                 <p class="resource-description">Ethical underwear crafted from organic cotton with transparent sourcing.</p>
               </div>
@@ -1481,191 +1811,7 @@
           </div>
         </div>
 
-        <!-- Accordion 2: Circular Fashion -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span class="accordion-title">Circular & Conscious Fashion Economy</span>
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="resource-list">
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://poshmark.com" target="_blank">Poshmark</a></p>
-                <p class="resource-description">Peer-to-peer resale app for fashion. Anyone can sell or buy; great for circular economy but not focused on artisan or ethical sourcing.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.therealreal.com" target="_blank">The RealReal</a></p>
-                <p class="resource-description">High-end luxury consignment platform specializing in authenticated designer goods; advances reuse more than small-batch artistry.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.thredup.com" target="_blank">ThredUp</a></p>
-                <p class="resource-description">Large-scale thrift and resale marketplace making fashion recycling accessible and affordable.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Accordion 3: Ethical Jewelry -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span class="accordion-title">Ethical Jewelry & Adornment</span>
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="resource-list">
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://anandasoul.com" target="_blank">Ananda Soul</a></p>
-                <p class="resource-description">Ethically handcrafted jewelry from Bali carrying sacred symbols and intentions.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.lebrusanstudio.com" target="_blank">Arabel Lebrusan – Lebrusan Studio</a></p>
-                <p class="resource-description">Spanish-born, London-based jeweler merging sustainability, fine craftsmanship, and cultural beauty.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://bahgsujewels.com" target="_blank">Bahgsu Jewels</a></p>
-                <p class="resource-description">Crystal-infused adornments handcrafted in Bali, honoring Earth's raw elements and ancient symbolism.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.brilliantearth.com" target="_blank">Brilliant Earth</a></p>
-                <p class="resource-description">Global leader in ethically sourced fine jewelry and lab-grown diamonds.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://fossandharper.com" target="_blank">Foss & Harper</a></p>
-                <p class="resource-description">Earthy, elegant, and sustainable fine jewelry handcrafted with recycled gold and conflict-free stones.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.linjer.co/en-us/pages/our-story" target="_blank">Linjer</a></p>
-                <p class="resource-description">Minimalist, elegant jewelry made with 100% recycled gold and ethically sourced gemstones.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.automicgold.com/pages/about-our-founder" target="_blank">Melissa Joy Manning</a></p>
-                <p class="resource-description">Artisan fine jewelry handcrafted with recycled metals and green-certified practices.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.monicavinader.com" target="_blank">Monica Vinader</a></p>
-                <p class="resource-description">B-Corp certified, sustainable fine jewelry blending timeless elegance and modern craftsmanship.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://shopsoko.com/collections/bracelets" target="_blank">SOKO</a></p>
-                <p class="resource-description">Kenyan women-led B-Corp connecting artisans to global markets through ethical jewelry.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.satyajewelry.com" target="_blank">Satya Jewelry</a></p>
-                <p class="resource-description">Mission-driven symbolic jewelry designed to inspire mindfulness and purpose.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.reflectivejewelry.com" target="_blank">Reflective Jewelry</a></p>
-                <p class="resource-description">An artisan jeweler offering ethically-sourced, Fairtrade-gold pieces and custom-made jewelry; known for handmade, thoughtfully crafted designs that prioritize transparency, sustainability, and social justice.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://taranoelle.com/pages/ethos" target="_blank">Tara Noelle</a></p>
-                <p class="resource-description">Spiritually infused fine jewelry designed as talismans of intention and empowerment.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.thegoodcollective.com/" target="_blank">The Good Collective</a></p>
-                <p class="resource-description">Small-batch artisan jewelry and accessories made with soul and sustainability.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.wolfandbadger.com/us/pages/about/" target="_blank">Wolf & Badger</a></p>
-                <p class="resource-description">Curated platform for independent, ethical jewelry and artful design.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Accordion 4: Conscious Home -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span class="accordion-title">Conscious Home & Living</span>
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="resource-list">
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.avocadogreenmattress.com/collections/furniture" target="_blank">Avocado Green</a></p>
-                <p class="resource-description">Certified organic mattresses and furniture crafted for wellness and sustainability.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://adobebyjessvargas.com" target="_blank">ADOBE by Jess Vargas</a></p>
-                <p class="resource-description">Curated lifestyle and home-goods brand offering consciously sourced décor, artisan pieces, and globally inspired objects reflecting natural textures, travel, and Southern-California sensibility.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.bobbibeck.com/" target="_blank">Bobbi Beck</a></p>
-                <p class="resource-description">Eco-conscious wallpaper brand printing on sustainable papers.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://casaamarosa.com/pages/our-story" target="_blank">Casa Amarosa</a></p>
-                <p class="resource-description">Handcrafted global home goods celebrating artisan traditions.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://cozyearth.com/pages/about-us" target="_blank">Cozy Earth</a></p>
-                <p class="resource-description">Bamboo-based bedding known for comfort, breathability, and sustainability.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.coyuchi.com/pages/our-impact" target="_blank">Coyuchi</a></p>
-                <p class="resource-description">Organic pioneer offering regenerative cotton bedding, towels, and home textiles.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://ekobo.co/collections/outdoor" target="_blank">Ekobo</a></p>
-                <p class="resource-description">Bamboo-fiber kitchen and bath collections merging beauty and function.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.foresthomesstore.com/" target="_blank">Forest Homes</a></p>
-                <p class="resource-description">A home-decoration brand focused on biophilic design: natural materials, sustainable & eco-conscious products designed to reconnect indoor spaces with nature.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://fourvisions.com/" target="_blank">Four Visions Market</a></p>
-                <p class="resource-description">Indigenous-owned spiritual marketplace offering sacred tools and ceremonial home goods.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.greenpan.us/" target="_blank">GreenPan</a></p>
-                <p class="resource-description">Non-toxic ceramic cookware designed for conscious cooking.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.healthierhomes.com/kitchen" target="_blank">Healthier Homes</a></p>
-                <p class="resource-description">Holistic home design focused on non-toxic materials and mindful living.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.templecopal.com/" target="_blank">Matter & Home / Temple Copal</a></p>
-                <p class="resource-description">Sacred scents and ritual-inspired home décor.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.novica.com/our-mission/" target="_blank">Novica</a></p>
-                <p class="resource-description">Global artisan marketplace connecting makers and conscious consumers worldwide.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.quince.com" target="_blank">Quince</a></p>
-                <p class="resource-description">Affordable luxury brand providing sustainably made clothing, home goods, and accessories using ethical production and premium natural materials.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://ruggable.com/" target="_blank">Ruggable</a></p>
-                <p class="resource-description">Washable, practical rugs that support sustainable lifestyles.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://simplyorganicbamboo.com/pages/our-values" target="_blank">Simply Organic Bamboo</a></p>
-                <p class="resource-description">Luxurious, eco-friendly bedding and bath textiles made from organic bamboo.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://underthecanopy.com/pages/our-story" target="_blank">Under the Canopy</a></p>
-                <p class="resource-description">Organic home textiles designed for comfort, quality, and planetary care.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://wallism.com/" target="_blank">Wallism</a></p>
-                <p class="resource-description">Custom, eco-friendly wallpapers blending artistry and sustainability.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://www.westelm.com/shop/collaborations/sustainably-sourced/" target="_blank">West Elm – Sustainably Sourced</a></p>
-                <p class="resource-description">Modern design brand sourcing materials responsibly for the conscious home.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://us.whogivesacrap.org/pages/our-impact" target="_blank">Who Gives A Crap</a></p>
-                <p class="resource-description">Recycled and bamboo paper goods funding global sanitation projects.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Accordion 5: Conscious Food -->
+        <!-- 3. Conscious Food & Ritual Nourishment -->
         <div class="accordion-item">
           <button class="accordion-header">
             <span class="accordion-title">Conscious Food & Ritual Nourishment</span>
@@ -1682,7 +1828,7 @@
                 <p class="resource-description">Handcrafted, all-natural goat-milk soaps and skincare products focused on gentle, nourishing care for sensitive skin, babies, and people prone to eczema or dryness.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://shop.butcherbox.com/partners/nycyo-steaks-u" target="_blank">ButcherBox</a></p>
+                <p class="resource-name"><a href="https://butcherbox.com" target="_blank">ButcherBox</a></p>
                 <p class="resource-description">Ethically raised, humanely sourced meats delivered to your door.</p>
               </div>
               <div class="resource-item">
@@ -1741,147 +1887,171 @@
           </div>
         </div>
 
-        <!-- Accordion 6: Yoga & Wellness -->
+        <!-- 4. Ethical Jewelry & Adornment -->
         <div class="accordion-item">
           <button class="accordion-header">
-            <span class="accordion-title">Yoga, Wellness & Movement</span>
+            <span class="accordion-title">Ethical Jewelry & Adornment</span>
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
             <div class="resource-list">
               <div class="resource-item">
-                <p class="resource-name"><a href="https://beanproducts.com/" target="_blank">Bean Products</a></p>
-                <p class="resource-description">Eco-friendly yoga bolsters, meditation cushions, and props handcrafted in the U.S. from sustainable materials.</p>
+                <p class="resource-name"><a href="https://anandasoul.com" target="_blank">Ananda Soul</a></p>
+                <p class="resource-description">Ethically handcrafted jewelry from Bali carrying sacred symbols and intentions.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://correcttoes.com/shop.html" target="_blank">Correct Toes</a></p>
-                <p class="resource-description">Alignment-restoring toe spacers encouraging natural posture and mindful movement.</p>
+                <p class="resource-name"><a href="https://www.lebrusanstudio.com" target="_blank">Arabel Lebrusan – Lebrusan Studio</a></p>
+                <p class="resource-description">Spanish-born, London-based jeweler merging sustainability, fine craftsmanship, and cultural beauty.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.injinji.com/" target="_blank">Injinji</a></p>
-                <p class="resource-description">Performance toe socks designed to support natural foot alignment and body awareness.</p>
+                <p class="resource-name"><a href="https://bahgsujewels.com" target="_blank">Bahgsu Jewels</a></p>
+                <p class="resource-description">Crystal-infused adornments handcrafted in Bali, honoring Earth's raw elements and ancient symbolism.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://liforme.com/" target="_blank">Liforme</a></p>
-                <p class="resource-description">Premium yoga mats with alignment guides and planet-friendly, non-toxic materials.</p>
+                <p class="resource-name"><a href="https://www.brilliantearth.com" target="_blank">Brilliant Earth</a></p>
+                <p class="resource-description">Global leader in ethically sourced fine jewelry and lab-grown diamonds.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.vivobarefoot.com/us/" target="_blank">Vivobarefoot</a></p>
-                <p class="resource-description">Minimalist footwear reconnecting your body to Earth through natural movement.</p>
+                <p class="resource-name"><a href="https://fossandharper.com" target="_blank">Foss & Harper</a></p>
+                <p class="resource-description">Earthy, elegant, and sustainable fine jewelry handcrafted with recycled gold and conflict-free stones.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.xeroshoes.com/" target="_blank">Xero Shoes</a></p>
-                <p class="resource-description">Lightweight barefoot-style shoes promoting freedom, balance, and mindful motion.</p>
+                <p class="resource-name"><a href="https://www.linjer.co/en-us/pages/our-story" target="_blank">Linjer</a></p>
+                <p class="resource-description">Minimalist, elegant jewelry made with 100% recycled gold and ethically sourced gemstones.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://yogadesignlab.com/collections/all" target="_blank">Yoga Design Lab</a></p>
-                <p class="resource-description">Eco-friendly cork yoga mats, blocks, and accessories in beautiful, functional designs.</p>
+                <p class="resource-name"><a href="https://www.automicgold.com/pages/about-our-founder" target="_blank">Melissa Joy Manning</a></p>
+                <p class="resource-description">Artisan fine jewelry handcrafted with recycled metals and green-certified practices.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.monicavinader.com" target="_blank">Monica Vinader</a></p>
+                <p class="resource-description">B-Corp certified, sustainable fine jewelry blending timeless elegance and modern craftsmanship.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.reflectivejewelry.com" target="_blank">Reflective Jewelry</a></p>
+                <p class="resource-description">An artisan jeweler offering ethically-sourced, Fairtrade-gold pieces and custom-made jewelry; known for handmade, thoughtfully crafted designs that prioritize transparency, sustainability, and social justice.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.satyajewelry.com" target="_blank">Satya Jewelry</a></p>
+                <p class="resource-description">Mission-driven symbolic jewelry designed to inspire mindfulness and purpose.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://shopsoko.com/collections/bracelets" target="_blank">SOKO</a></p>
+                <p class="resource-description">Kenyan women-led B-Corp connecting artisans to global markets through ethical jewelry.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://taranoelle.com/pages/ethos" target="_blank">Tara Noelle</a></p>
+                <p class="resource-description">Spiritually infused fine jewelry designed as talismans of intention and empowerment.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.thegoodcollective.com/" target="_blank">The Good Collective</a></p>
+                <p class="resource-description">Small-batch artisan jewelry and accessories made with soul and sustainability.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.wolfandbadger.com/us/pages/about/" target="_blank">Wolf & Badger</a></p>
+                <p class="resource-description">Curated platform for independent, ethical jewelry and artful design.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Accordion 7: Conscious Travel -->
+        <!-- 5. Conscious Home & Living -->
         <div class="accordion-item">
           <button class="accordion-header">
-            <span class="accordion-title">Conscious & Sustainable Travel</span>
+            <span class="accordion-title">Conscious Home & Living</span>
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
             <div class="resource-list">
               <div class="resource-item">
-                <p class="resource-name"><a href="https://aarucollective.com" target="_blank">A'ARU Collective</a></p>
-                <p class="resource-description">European luxury travel designer focused on sustainable, mindful, and cultural journeys across Europe.</p>
+                <p class="resource-name"><a href="https://www.adobebyjessvargas.com" target="_blank">ADOBE by Jess Vargas</a></p>
+                <p class="resource-description">Curated lifestyle and home-goods brand offering consciously sourced décor, artisan pieces, and globally inspired objects reflecting natural textures, travel, and Southern-California sensibility.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.aboutasiatravel.com" target="_blank">ABOUTAsia Travel</a></p>
-                <p class="resource-description">Cambodia-based operator funding local education through responsible, tailor-made trips.</p>
+                <p class="resource-name"><a href="https://www.avocadogreenmattress.com" target="_blank">Avocado Green</a></p>
+                <p class="resource-description">Certified organic mattresses and furniture crafted for wellness and sustainability.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.africa-untamed.com" target="_blank">Africa Untamed Safaris</a></p>
-                <p class="resource-description">Boutique safari company curating ethical, conservation-focused travel across Africa, supporting local guides and preserving wildlife heritage.</p>
+                <p class="resource-name"><a href="https://bobbibeck.com" target="_blank">Bobbi Beck</a></p>
+                <p class="resource-description">Eco-conscious wallpaper brand printing on sustainable papers.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.andbeyond.com" target="_blank">&Beyond</a></p>
-                <p class="resource-description">Luxury safari and lodge company guided by "Care of the Land, Wildlife & People."</p>
+                <p class="resource-name"><a href="https://casaamarosa.com" target="_blank">Casa Amarosa</a></p>
+                <p class="resource-description">Handcrafted global home goods celebrating artisan traditions.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://staybeyondgreen.com/hotels" target="_blank">Beyond Green / Stay Beyond Green</a></p>
-                <p class="resource-description">Global portfolio of eco-luxury hotels and lodges meeting 100+ sustainability indicators aligned with the UN SDGs.</p>
+                <p class="resource-name"><a href="https://cozyearth.com" target="_blank">Cozy Earth</a></p>
+                <p class="resource-description">Bamboo-based bedding known for comfort, breathability, and sustainability.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.byway.travel" target="_blank">Byway Travel</a></p>
-                <p class="resource-description">B Corp offering slow, flight-free travel across Europe via scenic rail and ferry routes.</p>
+                <p class="resource-name"><a href="https://www.coyuchi.com" target="_blank">Coyuchi</a></p>
+                <p class="resource-description">Organic pioneer offering regenerative cotton bedding, towels, and home textiles.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://elevatedestinations.com" target="_blank">Elevate Destinations</a></p>
-                <p class="resource-description">Eco-luxury travel company combining adventure, philanthropy, and bespoke purpose-led itineraries.</p>
+                <p class="resource-name"><a href="https://ekobo.com" target="_blank">Ekobo</a></p>
+                <p class="resource-description">Bamboo-fiber kitchen and bath collections merging beauty and function.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.explora.com" target="_blank">Explora Hotels</a></p>
-                <p class="resource-description">Award-winning expedition lodges in South America dedicated to deep nature exploration and conservation.</p>
+                <p class="resource-name"><a href="https://www.foresthomesstore.com/" target="_blank">Forest Homes</a></p>
+                <p class="resource-description">A home-decoration brand focused on biophilic design: natural materials, sustainable & eco-conscious products designed to reconnect indoor spaces with nature.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.gadventures.com" target="_blank">G Adventures</a></p>
-                <p class="resource-description">Community-driven small-group adventures measured by local economic impact.</p>
+                <p class="resource-name"><a href="https://fourvisionsmarket.com" target="_blank">Four Visions Market</a></p>
+                <p class="resource-description">Indigenous-owned spiritual marketplace offering sacred tools and ceremonial home goods.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.inkaterra.com" target="_blank">Inkaterra</a></p>
-                <p class="resource-description">Peru-based pioneer of science-based ecotourism and conservation for over 50 years.</p>
+                <p class="resource-name"><a href="https://greenpan.com" target="_blank">GreenPan</a></p>
+                <p class="resource-description">Non-toxic ceramic cookware designed for conscious cooking.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.intrepidtravel.com" target="_blank">Intrepid Travel</a></p>
-                <p class="resource-description">B Corp leader in small-group adventure travel, carbon-labeled itineraries, and local partnerships.</p>
+                <p class="resource-name"><a href="https://healthierhomes.com" target="_blank">Healthier Homes</a></p>
+                <p class="resource-description">Holistic home design focused on non-toxic materials and mindful living.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name">Journeys With Purpose</p>
-                <p class="resource-description">B Corp connecting travelers with conservation leaders and transformative nature experiences.</p>
+                <p class="resource-name"><a href="https://www.templecopal.com" target="_blank">Matter & Home / Temple Copal</a></p>
+                <p class="resource-description">Sacred scents and ritual-inspired home décor.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.luxurygold.com" target="_blank">Luxury Gold</a></p>
-                <p class="resource-description">Conscious luxury tours integrating sustainability via the "MAKE TRAVEL MATTER®" initiative.</p>
+                <p class="resource-name"><a href="https://novica.com" target="_blank">Novica</a></p>
+                <p class="resource-description">Global artisan marketplace connecting makers and conscious consumers worldwide.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.nathab.com" target="_blank">Natural Habitat Adventures</a></p>
-                <p class="resource-description">WWF's official travel partner, creating conservation-first nature journeys worldwide.</p>
+                <p class="resource-name"><a href="https://www.quince.com" target="_blank">Quince</a></p>
+                <p class="resource-description">Affordable luxury brand providing sustainably made clothing, home goods, and accessories using ethical production and premium natural materials.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.pugdundeesafaris.com" target="_blank">Pugdundee Safaris</a></p>
-                <p class="resource-description">India's leading eco-lodge and responsible safari operator using vernacular green design.</p>
+                <p class="resource-name"><a href="https://ruggable.com" target="_blank">Ruggable</a></p>
+                <p class="resource-description">Washable, practical rugs that support sustainable lifestyles.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.quarkexpeditions.com" target="_blank">Quark Expeditions</a></p>
-                <p class="resource-description">Polar adventure company with a comprehensive "Polar Promise" sustainability strategy.</p>
+                <p class="resource-name"><a href="https://simplyorganicbamboo.com" target="_blank">Simply Organic Bamboo</a></p>
+                <p class="resource-description">Luxurious, eco-friendly bedding and bath textiles made from organic bamboo.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.responsibletravel.com" target="_blank">Responsible Travel</a></p>
-                <p class="resource-description">Pioneering online agency curating ethical trips that benefit local people and nature.</p>
+                <p class="resource-name"><a href="https://thegoodtrade.com" target="_blank">The Good Trade</a></p>
+                <p class="resource-description">A leading ethical-living media platform sharing stories, guides and curated resources for conscious fashion, beauty, home, and lifestyle. A trusted compass for mindful living and conscious choices.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name">Singita</p>
-                <p class="resource-description">African eco-lodges funding a 100-year conservation vision through community partnerships.</p>
+                <p class="resource-name"><a href="https://underthecanopy.com" target="_blank">Under the Canopy</a></p>
+                <p class="resource-description">Organic home textiles designed for comfort, quality, and planetary care.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.thelongrun.org" target="_blank">The Long Run</a></p>
-                <p class="resource-description">Global network protecting 23 million+ acres through its 4Cs framework: Conservation, Community, Culture, Commerce.</p>
+                <p class="resource-name"><a href="https://wallism.com" target="_blank">Wallism</a></p>
+                <p class="resource-description">Custom, eco-friendly wallpapers blending artistry and sustainability.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://tricolage.com" target="_blank">Tricolage</a></p>
-                <p class="resource-description">Japanese boutique agency curating sustainable luxury travel that honors artisans and community culture.</p>
+                <p class="resource-name"><a href="https://www.westelm.com/pages/about-west-elm/sustainability/" target="_blank">West Elm – Sustainably Sourced</a></p>
+                <p class="resource-description">Modern design brand sourcing materials responsibly for the conscious home.</p>
               </div>
               <div class="resource-item">
-                <p class="resource-name"><a href="https://www.wildernessdestinations.com" target="_blank">Wilderness Safaris</a></p>
-                <p class="resource-description">Low-volume, high-impact safaris pioneering conservation-led tourism in Africa.</p>
-              </div>
-              <div class="resource-item">
-                <p class="resource-name"><a href="https://wildbushluxury.com" target="_blank">Wild Bush Luxury</a></p>
-                <p class="resource-description">Australian eco-safari operator connecting guests deeply with the land through conservation stays.</p>
+                <p class="resource-name"><a href="https://whogivesacrap.org" target="_blank">Who Gives A Crap</a></p>
+                <p class="resource-description">Recycled and bamboo paper goods funding global sanitation projects.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Accordion 8: North San Diego Local -->
+        <!-- 6. North San Diego Conscious Community -->
         <div class="accordion-item">
           <button class="accordion-header">
             <span class="accordion-title">North San Diego Conscious Community</span>
@@ -1893,6 +2063,14 @@
               <div class="resource-item">
                 <p class="resource-name"><a href="https://feelboundless.com/" target="_blank">BOUNDLESS Regenerative Medicine – Encinitas</a></p>
                 <p class="resource-description">A regenerative, non-surgical medicine practice specializing in cellular therapy, PRP, prolotherapy, and holistic approaches to musculoskeletal, spine, sports, and chronic-injury healing.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.chefprem.com" target="_blank">Chef Prem</a></p>
+                <p class="resource-description">Chef Prem curates nourishing, elevated culinary experiences rooted in consciousness, creativity, and connection. His offerings celebrate the artistry of food as medicine, uniting flavor, intention, and vitality in every dish.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.cyndipulsinelli.com" target="_blank">Cyndi Pulsinelli, LMFT</a></p>
+                <p class="resource-description">Cyndi Pulsinelli, LMFT, offers a deeply attuned therapeutic space for women navigating trauma, life transitions, relational wounds, and patterns of self-abandonment. Her integrative approach rooted in somatic work, EMDR, and parts work guides women toward regulation, empowerment, and the embodiment of their inner sovereignty.</p>
               </div>
               <div class="resource-item">
                 <p class="resource-name"><a href="https://www.juliemaido.com/about-dr-mai/" target="_blank">Dr. Julie Mai, DO – Encinitas Osteopathy & Cranial Medicine</a></p>
@@ -1909,6 +2087,10 @@
               <div class="resource-item">
                 <p class="resource-name"><a href="https://www.nikayakipp.com" target="_blank">Nikaya Kipp</a></p>
                 <p class="resource-description">Holistic Health Practitioner and Integrative Nutrition Coach offering intuitive bodywork, herbal medicine, detox, sound healing, and somatic practices. Over 27 years helping people awaken vibrant health.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.premmaurelmusic.com" target="_blank">Prem Maurel</a></p>
+                <p class="resource-description">Prem Maurel creates music as a devotional bridge between the human and the divine — soundscapes that open the heart, soothe the nervous system, and awaken remembrance through sacred frequency and artistry.</p>
               </div>
               <div class="resource-item">
                 <p class="resource-name"><a href="https://www.somahealingcollective.com" target="_blank">SOMA Healing Collective – Dr. Somer Nicole</a></p>
@@ -1965,6 +2147,12 @@
                 <p class="resource-description">Premier designer consignment store featuring luxury and eco-conscious secondhand fashion, accessories, and jewelry promoting sustainability through elegant reuse.</p>
               </div>
 
+              <h4 class="subcategory-title">Conscious Movement & Functional Strength</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.kimbrutzman.com" target="_blank">Kim Brutzman – Solana Beach</a></p>
+                <p class="resource-description">Kim helps people get stronger, move better, and feel powerful in their bodies through conscious, functional training. Her approach blends mobility, stability, and strength work to build real, usable power that supports everyday life. With a background in rider biomechanics, Kim brings a deep understanding of alignment, balance, and body awareness.</p>
+              </div>
+
               <h4 class="subcategory-title">Conscious Shops & Creative Spaces</h4>
               <div class="resource-item">
                 <p class="resource-name"><a href="https://cedrosavenue.com" target="_blank">Cedros Design District – Solana Beach</a></p>
@@ -1987,6 +2175,16 @@
                 <p class="resource-description">Eco-conscious boutique within Trilogy Sanctuary offering yoga apparel, handmade jewelry, crystals, and symbolic lifestyle pieces.</p>
               </div>
 
+              <h4 class="subcategory-title">Music</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://soulridermusic.com" target="_blank">Ari Marsh – Soul Rider Music & Soul of Yoga Encinitas</a></p>
+                <p class="resource-description">A world-musician, chant-artist, surfer and founder of Soul Rider Music. Based in Encinitas, CA, he leads devotional music, chanting, and community "bhakti-yoga + sound healing" events, often held at Soul of Yoga.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.premmaurelmusic.com" target="_blank">Prem Maurel</a></p>
+                <p class="resource-description">Prem Maurel creates music as a devotional bridge between the human and the divine — soundscapes that open the heart, soothe the nervous system, and awaken remembrance through sacred frequency and artistry.</p>
+              </div>
+
               <h4 class="subcategory-title">Spiritual & Community Spaces</h4>
               <div class="resource-item">
                 <p class="resource-name"><a href="https://encinitastemple.org" target="_blank">Self-Realization Fellowship – Encinitas Temple & Gardens</a></p>
@@ -2000,25 +2198,199 @@
           </div>
         </div>
 
+        <!-- 6. Conscious & Sustainable Travel -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="accordion-title">Conscious & Sustainable Travel</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://andbeyond.com" target="_blank">&Beyond</a></p>
+                <p class="resource-description">Luxury safari and lodge company guided by "Care of the Land, Wildlife & People."</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://aarucollective.com" target="_blank">A'ARU Collective</a></p>
+                <p class="resource-description">European luxury travel designer focused on sustainable, mindful, and cultural journeys across Europe.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://aboutasiatravel.com" target="_blank">ABOUTAsia Travel</a></p>
+                <p class="resource-description">Cambodia-based operator funding local education through responsible, tailor-made trips.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://africauntamedsafaris.com" target="_blank">Africa Untamed Safaris</a></p>
+                <p class="resource-description">Boutique safari company curating ethical, conservation-focused travel across Africa, supporting local guides and preserving wildlife heritage.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://staybeyondgreen.com" target="_blank">Beyond Green / Stay Beyond Green</a></p>
+                <p class="resource-description">Global portfolio of eco-luxury hotels and lodges meeting 100+ sustainability indicators aligned with the UN SDGs.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://byway.travel" target="_blank">Byway Travel</a></p>
+                <p class="resource-description">B Corp offering slow, flight-free travel across Europe via scenic rail and ferry routes.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://elevatedestinations.com" target="_blank">Elevate Destinations</a></p>
+                <p class="resource-description">Eco-luxury travel company combining adventure, philanthropy, and bespoke purpose-led itineraries.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://explora.com" target="_blank">Explora Hotels</a></p>
+                <p class="resource-description">Award-winning expedition lodges in South America dedicated to deep nature exploration and conservation.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://gadventures.com" target="_blank">G Adventures</a></p>
+                <p class="resource-description">Community-driven small-group adventures measured by local economic impact.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://inkaterra.com" target="_blank">Inkaterra</a></p>
+                <p class="resource-description">Peru-based pioneer of science-based ecotourism and conservation for over 50 years.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://intrepidtravel.com" target="_blank">Intrepid Travel</a></p>
+                <p class="resource-description">B Corp leader in small-group adventure travel, carbon-labeled itineraries, and local partnerships.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://journeyswithpurpose.com" target="_blank">Journeys With Purpose</a></p>
+                <p class="resource-description">B Corp connecting travelers with conservation leaders and transformative nature experiences.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://luxurygold.com" target="_blank">Luxury Gold</a></p>
+                <p class="resource-description">Conscious luxury tours integrating sustainability via the "MAKE TRAVEL MATTER®" initiative.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://nathab.com" target="_blank">Natural Habitat Adventures</a></p>
+                <p class="resource-description">WWF's official travel partner, creating conservation-first nature journeys worldwide.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://pugdundeesafaris.com" target="_blank">Pugdundee Safaris</a></p>
+                <p class="resource-description">India's leading eco-lodge and responsible safari operator using vernacular green design.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://quarkexpeditions.com" target="_blank">Quark Expeditions</a></p>
+                <p class="resource-description">Polar adventure company with a comprehensive "Polar Promise" sustainability strategy.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://responsibletravel.com" target="_blank">Responsible Travel</a></p>
+                <p class="resource-description">Pioneering online agency curating ethical trips that benefit local people and nature.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://singita.com" target="_blank">Singita</a></p>
+                <p class="resource-description">African eco-lodges funding a 100-year conservation vision through community partnerships.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://thelongrun.org" target="_blank">The Long Run</a></p>
+                <p class="resource-description">Global network protecting 23 million+ acres through its 4Cs framework: Conservation, Community, Culture, Commerce.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://tricolage.co" target="_blank">Tricolage</a></p>
+                <p class="resource-description">Japanese boutique agency curating sustainable luxury travel that honors artisans and community culture.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://wildernesssafaris.com" target="_blank">Wilderness Safaris</a></p>
+                <p class="resource-description">Low-volume, high-impact safaris pioneering conservation-led tourism in Africa.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://wildbushluxury.com" target="_blank">Wild Bush Luxury</a></p>
+                <p class="resource-description">Australian eco-safari operator connecting guests deeply with the land through conservation stays.</p>
+              </div>
+
+              <h4 class="subcategory-title">Featured Properties & Retreats</h4>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://cavallopoint.com" target="_blank">Cavallo Point Lodge</a></p>
+                <p class="resource-description">Historic Fort Baker property blending heritage, nature, and wellness overlooking the Golden Gate.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://cempedak.com" target="_blank">Cempedak Private Island</a></p>
+                <p class="resource-description">Off-grid bamboo island resort championing low-impact design and marine protection.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://feynan.com" target="_blank">Feynan Ecolodge</a></p>
+                <p class="resource-description">Jordan's award-winning solar-powered desert retreat empowering Bedouin communities.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://grootbos.com" target="_blank">Grootbos Private Nature Reserve</a></p>
+                <p class="resource-description">Coastal sanctuary integrating floral-kingdom conservation with social upliftment.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://inkaterra.com/inkaterra-machu-picchu-pueblo-hotel" target="_blank">Inkaterra Machu Picchu Pueblo Hotel</a></p>
+                <p class="resource-description">Cloud-forest sanctuary combining science-based conservation with native reforestation.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://postranchinn.com" target="_blank">Post Ranch Inn</a></p>
+                <p class="resource-description">Iconic Big Sur sanctuary merging organic architecture, fine dining, and environmental stewardship.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://segera.com" target="_blank">Segera Retreat</a></p>
+                <p class="resource-description">Kenya's luxury wilderness estate combining art, conservation, and community empowerment.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://sixsenses.com/en/resorts/yao-noi" target="_blank">Six Senses Yao Noi</a></p>
+                <p class="resource-description">Thailand's eco-retreat emphasizing regenerative wellness and local community empowerment.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://thebrando.com" target="_blank">The Brando</a></p>
+                <p class="resource-description">Carbon-neutral Tahitian private island model of renewable luxury and biodiversity protection.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://tswalu.com" target="_blank">Tswalu Kalahari</a></p>
+                <p class="resource-description">South Africa's largest private reserve devoted to habitat restoration and scientific research.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Yoga, Wellness & Movement -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="accordion-title">Yoga, Wellness & Movement</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="resource-list">
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://beanproducts.com/" target="_blank">Bean Products</a></p>
+                <p class="resource-description">Eco-friendly yoga bolsters, meditation cushions, and props handcrafted in the U.S. from sustainable materials.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://correcttoes.com/shop.html" target="_blank">Correct Toes</a></p>
+                <p class="resource-description">Alignment-restoring toe spacers encouraging natural posture and mindful movement.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.injinji.com/" target="_blank">Injinji</a></p>
+                <p class="resource-description">Performance toe socks designed to support natural foot alignment and body awareness.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://liforme.com/" target="_blank">Liforme</a></p>
+                <p class="resource-description">Premium yoga mats with alignment guides and planet-friendly, non-toxic materials.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.vivobarefoot.com/us/" target="_blank">Vivobarefoot</a></p>
+                <p class="resource-description">Minimalist footwear reconnecting your body to Earth through natural movement.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://www.xeroshoes.com/" target="_blank">Xero Shoes</a></p>
+                <p class="resource-description">Lightweight barefoot-style shoes promoting freedom, balance, and mindful motion.</p>
+              </div>
+              <div class="resource-item">
+                <p class="resource-name"><a href="https://yogadesignlab.com/collections/all" target="_blank">Yoga Design Lab</a></p>
+                <p class="resource-description">Eco-friendly cork yoga mats, blocks, and accessories in beautiful, functional designs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="resources-note">This collection is ever-evolving — new resources will continue to be added as we grow together.</p>
+
       </div>
     </section>
 
     <script>
-      // Accordion functionality
+      // Single JavaScript for ALL accordions
       document.querySelectorAll('.accordion-header').forEach(button => {
         button.addEventListener('click', () => {
           const accordionItem = button.parentElement;
-          const isActive = accordionItem.classList.contains('active');
-
-          // Close all accordions
-          document.querySelectorAll('.accordion-item').forEach(item => {
-            item.classList.remove('active');
-          });
-
-          // Open clicked one if it wasn't active
-          if (!isActive) {
-            accordionItem.classList.add('active');
-          }
+          accordionItem.classList.toggle('active');
         });
       });
     </script>
@@ -2041,5 +2413,211 @@
         });
       });
     </script>
+
+    <!-- Portal Footer -->
+    <style>
+      /* Footer Styles */
+      .portal-footer {
+        background: #0D4D4F;
+        color: #FDF8F3;
+        padding: clamp(3rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .footer-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(253, 248, 243, 0.15);
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        height: 45px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .footer-tagline {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        font-weight: 300;
+        letter-spacing: 0.03em;
+        opacity: 0.7;
+        max-width: 320px;
+        line-height: 1.6;
+      }
+
+      .footer-portals {
+        width: 100%;
+      }
+
+      .portal-column-title {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        margin-bottom: 1.25rem;
+      }
+
+      .portal-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .portal-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.25rem;
+        background: rgba(253, 248, 243, 0.05);
+        border: 1px solid rgba(253, 248, 243, 0.1);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .portal-link:hover {
+        background: rgba(253, 248, 243, 0.1);
+        border-color: rgba(253, 248, 243, 0.2);
+      }
+
+      .portal-icon {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .portal-icon.rose { background: var(--primary-rose); }
+      .portal-icon.sage { background: var(--primary-sage); }
+      .portal-icon.terracotta { background: var(--primary-terracotta); }
+
+      .portal-link-name {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        opacity: 0.9;
+      }
+
+      .portal-link-description {
+        display: none;
+      }
+
+      /* Footer Bottom */
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copyright {
+        font-size: 0.75rem;
+        font-weight: 300;
+        opacity: 0.4;
+        letter-spacing: 0.02em;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      .social-link {
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+
+      .social-link:hover {
+        opacity: 1;
+      }
+
+      /* Footer Responsive */
+      @media (max-width: 600px) {
+        .portal-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        .portal-link {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+
+    <div class="portal-footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="https://freewithpurpose.com/">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/FWP_Horizontal_W.png?v=1765315743"
+                alt="Free With Purpose"
+                class="footer-logo"
+              />
+            </a>
+            <p class="footer-tagline">
+              Adornment with meaning. Living with intention. Freedom through purpose.
+            </p>
+          </div>
+
+          <div class="footer-portals">
+            <span class="portal-column-title">Portals</span>
+            <div class="portal-links">
+              <a href="https://freewithpurpose.com/pages/mayte-b-jewerly" class="portal-link">
+                <span class="portal-icon rose"></span>
+                <span class="portal-link-name">Jewelry as an Invitation</span>
+              </a>
+              <a href="https://freewithpurpose.com/pages/sustainability-well-being" class="portal-link">
+                <span class="portal-icon sage"></span>
+                <span class="portal-link-name">Sustainability & Well-Being</span>
+              </a>
+              <a href="https://freewithpurpose.com/pages/artists-artisans" class="portal-link">
+                <span class="portal-icon terracotta"></span>
+                <span class="portal-link-name">Artists & Artisans</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">&copy; 2025 Free With Purpose. All rights reserved.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/free_with_purpose/?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr#" target="_blank" class="social-link">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

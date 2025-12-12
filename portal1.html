@@ -32,6 +32,8 @@
         --primary-teal: #0D4D4F;
         --primary-gold: #D8C9A9;
         --primary-espresso: #2B1E1A;
+        --primary-sage: #7A8F76;
+        --primary-terracotta: #C46B47;
         --font-heading: "Belleza", sans-serif;
         --font-body: "Raleway", sans-serif;
         --font-accent: "Cormorant Garamond", serif;
@@ -76,33 +78,30 @@
         z-index: 1000;
         background: rgba(255, 252, 235, 0.95);
         backdrop-filter: blur(15px);
-        padding: 1rem 2.5rem;
+        padding: 0.8rem 1.5rem;
         border-radius: 50px;
         box-shadow: 0 4px 30px rgba(90, 42, 65, 0.1);
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 2rem;
-        width: auto;
-        min-width: fit-content;
+        min-width: 800px;
       }
 
       .brand-logo {
         display: flex;
         align-items: center;
-        flex-shrink: 0;
       }
 
       .brand-logo img {
         height: 35px;
         width: auto;
-        min-width: 100px;
       }
 
       .nav-links {
         display: flex;
         gap: 1.5rem;
         align-items: center;
-        white-space: nowrap;
       }
 
       .nav-link {
@@ -158,22 +157,12 @@
         transition: all 0.3s ease;
       }
 
-      .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-
-      .hamburger.active span:nth-child(2) {
-        opacity: 0;
-      }
-
-      .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
-
-      /* Mobile Menu */
-      @media (max-width: 768px) {
+      /* Tablet & Mobile Menu */
+      @media (max-width: 850px) {
         .navbar {
-          overflow: visible;
+          min-width: auto;
+          width: auto;
+          padding: 0.8rem 1.2rem;
         }
 
         .hamburger {
@@ -182,33 +171,6 @@
 
         .nav-links {
           display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          margin-top: 1rem;
-          background: rgba(255, 252, 235, 0.98);
-          backdrop-filter: blur(15px);
-          border-radius: 20px;
-          padding: 1.5rem;
-          flex-direction: column;
-          gap: 1rem;
-          box-shadow: 0 4px 30px rgba(90, 42, 65, 0.1);
-          overflow: visible;
-        }
-
-        .nav-links.active {
-          display: flex;
-        }
-
-        .nav-link {
-          font-size: 0.85rem;
-          padding: 0.5rem 0;
-        }
-
-        .nav-cta {
-          margin-top: 0.5rem;
-          text-align: center;
         }
       }
 
@@ -268,7 +230,6 @@
         font-family: var(--font-heading);
         font-size: clamp(3rem, 5vw, 4.5rem);
         letter-spacing: 0.04em;
-        text-transform: uppercase;
         color: var(--primary-plum);
         margin-bottom: 2rem;
         line-height: 1.05;
@@ -584,15 +545,17 @@
         margin: 1.5rem 0 !important;
       }
 
-      /* Symbolism Section */
+      /* Symbolism Section - CSS ONLY CAROUSEL */
       .symbolism-section {
         padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
         background: var(--primary-cream);
+        overflow-x: hidden;
       }
 
       .symbolism-container {
         max-width: 1100px;
         margin: 0 auto;
+        overflow: hidden;
       }
 
       .symbolism-title {
@@ -605,17 +568,49 @@
         margin-bottom: 4rem;
       }
 
-      .symbols-grid {
+      .carousel-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        grid-template-columns: 55% 45%;
+        gap: 2.5rem;
+        align-items: start;
+        position: relative;
+      }
+
+      /* Hide radio buttons */
+      .carousel-input {
+        display: none;
+      }
+
+      .carousel-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      /* Carousel wrapper */
+      .carousel-wrapper {
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(90, 42, 65, 0.06);
+        max-width: 100%;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
       }
 
       .symbol-card {
+        min-width: 100%;
         background: #fff;
         padding: 2rem;
-        border-radius: 4px;
         border-left: 3px solid var(--primary-rose);
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       .symbol-name {
@@ -644,121 +639,247 @@
         font-weight: 300;
       }
 
-      .symbol-closing {
-        text-align: center;
-        padding: 4rem 2rem;
-        margin-top: 4rem;
+      /* Carousel navigation with radio buttons */
+      #slide1:checked ~ .carousel-wrapper .carousel-track { transform: translateX(0%); }
+      #slide2:checked ~ .carousel-wrapper .carousel-track { transform: translateX(-100%); }
+      #slide3:checked ~ .carousel-wrapper .carousel-track { transform: translateX(-200%); }
+      #slide4:checked ~ .carousel-wrapper .carousel-track { transform: translateX(-300%); }
+      #slide5:checked ~ .carousel-wrapper .carousel-track { transform: translateX(-400%); }
+      #slide6:checked ~ .carousel-wrapper .carousel-track { transform: translateX(-500%); }
+      #slide7:checked ~ .carousel-wrapper .carousel-track { transform: translateX(-600%); }
+      #slide8:checked ~ .carousel-wrapper .carousel-track { transform: translateX(-700%); }
+
+      .carousel-dots {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+
+      .carousel-dots label {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(90, 42, 65, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: block;
+      }
+
+      #slide1:checked ~ .carousel-dots label[for="slide1"],
+      #slide2:checked ~ .carousel-dots label[for="slide2"],
+      #slide3:checked ~ .carousel-dots label[for="slide3"],
+      #slide4:checked ~ .carousel-dots label[for="slide4"],
+      #slide5:checked ~ .carousel-dots label[for="slide5"],
+      #slide6:checked ~ .carousel-dots label[for="slide6"],
+      #slide7:checked ~ .carousel-dots label[for="slide7"],
+      #slide8:checked ~ .carousel-dots label[for="slide8"] {
         background: var(--primary-plum);
+        width: 24px;
         border-radius: 4px;
       }
 
-      .symbol-closing p {
-        font-family: var(--font-body);
-        font-size: 1rem;
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 0.75rem;
-        font-weight: 300;
-      }
-
-      .closing-taglines {
+      /* Right Side - Image & CTA */
+      .carousel-image-side {
         display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: 2rem 0;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1.5rem;
       }
 
-      .closing-taglines span {
-        font-family: var(--font-accent);
-        font-size: 1.15rem;
-        font-style: italic;
-        color: var(--primary-gold);
+      .carousel-image {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(90, 42, 65, 0.06);
+        height: 380px;
       }
 
-      .closing-final {
-        font-family: var(--font-heading);
-        font-size: 1.3rem !important;
-        letter-spacing: 0.1em;
+      .carousel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .carousel-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .carousel-cta {
+        text-align: center;
+      }
+
+      .shop-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
-        color: #fff !important;
-        margin-top: 1.5rem !important;
+        padding: 1rem 2.5rem;
+        background: var(--primary-plum);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        text-decoration: none;
+        box-shadow: 0 4px 20px rgba(90, 42, 65, 0.2);
       }
 
-      @media (max-width: 768px) {
-        .crafted-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .symbols-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .closing-taglines {
-          flex-direction: column;
-          gap: 0.75rem;
-        }
+      .shop-btn:hover {
+        background: var(--primary-rose);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 30px rgba(183, 110, 121, 0.3);
       }
 
-      /* Footer - Clean */
+      .shop-btn::after {
+        content: '→';
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .shop-btn:hover::after {
+        transform: translateX(5px);
+      }
+
+      /* Footer Styles */
       .portal-footer {
-        background: var(--primary-espresso);
-        padding: 5rem 0 3rem;
+        background: var(--primary-teal);
+        color: #FDF8F3;
+        padding: clamp(3rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
       }
 
       .footer-container {
-        max-width: 1200px;
+        max-width: 900px;
         margin: 0 auto;
-        padding: 0 clamp(2rem, 5vw, 4rem);
       }
 
       .footer-top {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        margin-bottom: 3rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(253, 248, 243, 0.15);
       }
 
       .footer-brand {
         display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 1rem;
       }
 
-      .footer-brand img {
-        height: 40px;
+      .footer-logo {
+        height: 45px;
         width: auto;
-        filter: brightness(0) invert(1);
+        object-fit: contain;
       }
 
-      .footer-links {
-        display: flex;
-        gap: 3rem;
-      }
-
-      .footer-link {
+      .footer-tagline {
         font-family: var(--font-body);
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.6);
-        transition: color 0.3s ease;
+        font-size: 0.85rem;
+        font-weight: 300;
+        letter-spacing: 0.03em;
+        opacity: 0.7;
+        max-width: 320px;
+        line-height: 1.6;
       }
 
-      .footer-link:hover {
-        color: var(--primary-gold);
+      .footer-portals {
+        width: 100%;
       }
 
-      .footer-bottom {
-        text-align: center;
-      }
-
-      .footer-copy {
-        font-family: var(--font-body);
+      .portal-column-title {
+        font-family: var(--font-heading);
         font-size: 0.75rem;
-        color: rgba(255, 255, 255, 0.4);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        margin-bottom: 1.25rem;
+      }
+
+      .portal-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .portal-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.25rem;
+        background: rgba(253, 248, 243, 0.05);
+        border: 1px solid rgba(253, 248, 243, 0.1);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .portal-link:hover {
+        background: rgba(253, 248, 243, 0.1);
+        border-color: rgba(253, 248, 243, 0.2);
+      }
+
+      .portal-icon {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .portal-icon.rose { background: var(--primary-rose); }
+      .portal-icon.sage { background: var(--primary-sage); }
+      .portal-icon.terracotta { background: var(--primary-terracotta); }
+
+      .portal-link-name {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        opacity: 0.9;
+      }
+
+      .portal-link-description {
+        display: none;
+      }
+
+      /* Footer Bottom */
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copyright {
+        font-size: 0.75rem;
+        font-weight: 300;
+        opacity: 0.4;
+        letter-spacing: 0.02em;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      .social-link {
+        font-size: 0.75rem;
+        font-weight: 400;
         letter-spacing: 0.05em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+
+      .social-link:hover {
+        opacity: 1;
       }
 
       /* Responsive */
@@ -801,6 +922,58 @@
         .content-block-image {
           aspect-ratio: 4/3;
         }
+
+        .symbolism-section {
+          overflow-x: hidden;
+        }
+
+        .symbolism-container {
+          max-width: 100%;
+          width: 100%;
+          overflow: hidden;
+        }
+
+        .carousel-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
+
+        .carousel-left {
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
+
+        .carousel-wrapper {
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+
+        .carousel-image-side {
+          order: -1;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .carousel-image {
+          height: 300px;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .symbol-card {
+          min-height: 280px;
+          box-sizing: border-box;
+        }
+
+        .crafted-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 768px) {
@@ -831,6 +1004,83 @@
           padding: 3rem 1.5rem;
         }
 
+        .symbolism-section {
+          padding: 3rem 1.5rem;
+          overflow-x: hidden;
+        }
+
+        .symbolism-container {
+          max-width: 100%;
+          width: 100%;
+          padding: 0;
+          overflow: hidden;
+        }
+
+        .symbolism-title {
+          font-size: 1.6rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .carousel-container {
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
+
+        .carousel-left {
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
+
+        .carousel-wrapper {
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+
+        .carousel-image-side {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .carousel-image {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .symbol-card {
+          padding: 1.5rem;
+          min-height: 250px;
+          box-sizing: border-box;
+        }
+
+        .symbol-name {
+          font-size: 1.1rem;
+        }
+
+        .symbol-subtitle {
+          font-size: 0.95rem;
+        }
+
+        .symbol-description {
+          font-size: 0.9rem;
+        }
+
+        .carousel-image {
+          height: 250px;
+        }
+
+        .carousel-dots {
+          margin-top: 1rem;
+        }
+
+        .shop-btn {
+          width: 100%;
+          justify-content: center;
+        }
+
         .footer-top {
           flex-direction: column;
           gap: 2rem;
@@ -842,6 +1092,23 @@
           flex-wrap: wrap;
           justify-content: center;
           gap: 1.5rem;
+        }
+
+        .portal-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        .portal-link {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
         }
       }
 
@@ -861,6 +1128,10 @@
 
         .block-number {
           font-size: 3.5rem;
+        }
+
+        .carousel-controls {
+          gap: 0.75rem;
         }
       }
     </style>
@@ -882,7 +1153,7 @@
         <a href="#manifest" class="nav-link">Manifest</a>
         <a href="#crafted" class="nav-link">Crafted</a>
         <a href="#symbolism" class="nav-link">Symbolism</a>
-        <a href="https://freewithpurpose.com/pages/coming-soon" class="nav-cta">Shop Now</a>
+        <a href="https://freewithpurpose.com/collections/frontpage" class="nav-cta">Shop Now</a>
       </div>
     </nav>
 
@@ -894,7 +1165,7 @@
       <div class="hero-content">
         <span class="hero-label">The First Portal</span>
         <h1 class="hero-title">Mayte B Jewerly</h1>
-        <p class="hero-subtitle">The art of meaningful adornment. Ethically produced.</p>
+        <p class="hero-subtitle">"The art of meaningful adornment. Ethically produced."</p>
         <p class="hero-subtitle hero-subtitle-secondary">A call to freedom, self-expression, expansion, purpose & liberation.</p>
         <p class="hero-subtitle hero-subtitle-secondary">Jewelry that honors the Sacred, the Shakti, Divine Source & the Universe.</p>
       </div>
@@ -946,7 +1217,7 @@
     <!-- Content Block 3 -->
     <section class="content-block">
       <div class="content-block-image">
-        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/Photo_Dec_02_2025_2_23_35_PM.jpg?v=1764805993" alt="Living art">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-4.jpg?v=1763739724" alt="Living art">
       </div>
       <div class="content-block-text">
         <span class="block-number">03</span>
@@ -1019,112 +1290,148 @@
       </div>
     </section>
 
-    <!-- Symbolism Section -->
+    <!-- Symbolism Section - CSS ONLY CAROUSEL -->
     <section id="symbolism" class="symbolism-section">
       <div class="symbolism-container">
-        <h2 class="symbolism-title">Symbolism</h2>
+        <h2 class="symbolism-title">Symbolism About This Piece of Jewelry</h2>
 
-        <div class="symbols-grid">
-          <div class="symbol-card">
-            <h3 class="symbol-name">Vishuddha</h3>
-            <span class="symbol-subtitle">Throat Chakra: Purification & Truth</span>
-            <p class="symbol-description">The center of expression, resonance, and integrity. It reminds us to<br>
-            speak what the soul feels. To express truth through voice, art, and<br>
-            creation. When open and balanced, the voice becomes magnetic,<br>
-            clear, and free.</p>
+        <div class="carousel-container">
+          <!-- Left Side: CSS Carousel -->
+          <div class="carousel-left">
+            <!-- Hidden radio buttons -->
+            <input type="radio" name="carousel" id="slide1" class="carousel-input" checked>
+            <input type="radio" name="carousel" id="slide2" class="carousel-input">
+            <input type="radio" name="carousel" id="slide3" class="carousel-input">
+            <input type="radio" name="carousel" id="slide4" class="carousel-input">
+            <input type="radio" name="carousel" id="slide5" class="carousel-input">
+            <input type="radio" name="carousel" id="slide6" class="carousel-input">
+            <input type="radio" name="carousel" id="slide7" class="carousel-input">
+            <input type="radio" name="carousel" id="slide8" class="carousel-input">
+
+            <div class="carousel-wrapper">
+              <div class="carousel-track">
+
+                <div class="symbol-card">
+                  <h3 class="symbol-name">Vishuddha</h3>
+                  <span class="symbol-subtitle">Throat Chakra: Purification & Truth</span>
+                  <p class="symbol-description">The center of expression, resonance, and integrity. It reminds us to speak what the soul feels. To express truth through voice, art, and creation. When open and balanced, the voice becomes magnetic, clear, and free.</p>
+                </div>
+
+                <div class="symbol-card">
+                  <h3 class="symbol-name">Velvet</h3>
+                  <span class="symbol-subtitle">Soft Power & Divine Feminine</span>
+                  <p class="symbol-description">More than luxurious fabric, velvet carries sacred resonance, softness with strength, sensuality with sovereignty. It invites us into the body, grounding us in presence. Velvet whispers: "Power doesn't need to shout; it emanates."</p>
+                </div>
+
+                <div class="symbol-card">
+                  <h3 class="symbol-name">The Sacred Womb Portal</h3>
+                  <span class="symbol-subtitle">Creation & Harmony</span>
+                  <p class="symbol-description">The union of the velvet and Vishuddha symbol represents the portal to the Womb of Creation. A bridge between voice, heart, and mind. A remembrance of the womb as sacred space, as the source of creation itself.</p>
+                </div>
+
+                <div class="symbol-card">
+                  <h3 class="symbol-name">Snake</h3>
+                  <span class="symbol-subtitle">Transformation & Awakening</span>
+                  <p class="symbol-description">An ancient emblem of rebirth and sacred feminine energy. It embodies release, renewal, and the rising of inner fire. The awakening of our creative life force and sensual power.</p>
+                </div>
+
+                <div class="symbol-card">
+                  <h3 class="symbol-name">Open Wings</h3>
+                  <span class="symbol-subtitle">Freedom & Ascension</span>
+                  <p class="symbol-description">Across cultures, wings symbolize transformation, protection, and divine guardianship, from Isis to the angels. They remind us that we can be both human and divine, grounded and soaring.</p>
+                </div>
+
+                <div class="symbol-card">
+                  <h3 class="symbol-name">Sun</h3>
+                  <span class="symbol-subtitle">Illumination & Life Force</span>
+                  <p class="symbol-description">A radiant reminder of the light within and around us, the eternal rhythm of warmth, creation, and divine order. The heart of the cosmos, and of every sunrise and sunset that moves us.</p>
+                </div>
+
+                <div class="symbol-card">
+                  <h3 class="symbol-name">Yin & Yang</h3>
+                  <span class="symbol-subtitle">Harmony & Wholeness</span>
+                  <p class="symbol-description">The eternal dance of complementary forces. Light and shadow, movement and stillness, creating balance, flow, and unity.</p>
+                </div>
+
+                <div class="symbol-card">
+                  <h3 class="symbol-name">Bronze</h3>
+                  <span class="symbol-subtitle">Ancient Strength & Alchemy</span>
+                  <p class="symbol-description">Forged from recycled materials, bronze unites copper and tin, the masculine and feminine, into enduring beauty. Used in ancient altars and sacred tools, it embodies resilience, grounding, and wisdom.</p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Navigation dots -->
+            <div class="carousel-dots">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
+              <label for="slide5"></label>
+              <label for="slide6"></label>
+              <label for="slide7"></label>
+              <label for="slide8"></label>
+            </div>
           </div>
 
-          <div class="symbol-card">
-            <h3 class="symbol-name">Velvet</h3>
-            <span class="symbol-subtitle">Soft Power & Divine Feminine</span>
-            <p class="symbol-description">More than luxurious fabric, velvet carries sacred resonance,<br>
-            softness with strength, sensuality with sovereignty. It invites us into<br>
-            the body, grounding us in presence. Velvet whispers: "Power<br>
-            doesn't need to shout; it emanates."</p>
+          <!-- Right Side: Image & CTA -->
+          <div class="carousel-image-side">
+            <div class="carousel-image">
+              <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_0373.jpg?v=1764867661" alt="Mayte B Jewelry - Sacred Symbolism">
+            </div>
+            <div class="carousel-cta">
+              <a href="https://freewithpurpose.com/collections/frontpage" class="shop-btn">Our Products</a>
+            </div>
           </div>
-
-          <div class="symbol-card">
-            <h3 class="symbol-name">The Sacred Womb Portal</h3>
-            <span class="symbol-subtitle">Creation & Harmony</span>
-            <p class="symbol-description">The union of the velvet and Vishuddha symbol represents the<br>
-            portal to the Womb of Creation. A bridge between voice, heart, and<br>
-            mind. A remembrance of the womb as sacred space, as the source<br>
-            of creation itself.</p>
-          </div>
-
-          <div class="symbol-card">
-            <h3 class="symbol-name">Snake</h3>
-            <span class="symbol-subtitle">Transformation & Awakening</span>
-            <p class="symbol-description">An ancient emblem of rebirth and sacred feminine energy. It<br>
-            embodies release, renewal, and the rising of inner fire. The<br>
-            awakening of our creative life force and sensual power.</p>
-          </div>
-
-          <div class="symbol-card">
-            <h3 class="symbol-name">Open Wings</h3>
-            <span class="symbol-subtitle">Freedom & Ascension</span>
-            <p class="symbol-description">Across cultures, wings symbolize transformation, protection, and<br>
-            divine guardianship, from Isis to the angels. They remind us that we<br>
-            can be both human and divine, grounded and soaring.</p>
-          </div>
-
-          <div class="symbol-card">
-            <h3 class="symbol-name">Sun</h3>
-            <span class="symbol-subtitle">Illumination & Life Force</span>
-            <p class="symbol-description">A radiant reminder of the light within and around us, the eternal<br>
-            rhythm of warmth, creation, and divine order. The heart of the<br>
-            cosmos, and of every sunrise and sunset that moves us.</p>
-          </div>
-
-          <div class="symbol-card">
-            <h3 class="symbol-name">Yin & Yang</h3>
-            <span class="symbol-subtitle">Harmony & Wholeness</span>
-            <p class="symbol-description">The eternal dance of complementary forces. Light and shadow,<br>
-            movement and stillness, creating balance, flow, and unity.</p>
-          </div>
-
-          <div class="symbol-card">
-            <h3 class="symbol-name">Bronze</h3>
-            <span class="symbol-subtitle">Ancient Strength & Alchemy</span>
-            <p class="symbol-description">Forged from recycled materials, bronze unites copper and tin, the<br>
-            masculine and feminine, into enduring beauty. Used in ancient<br>
-            altars and sacred tools, it embodies resilience, grounding, and<br>
-            wisdom.</p>
-          </div>
-        </div>
-
-        <div class="symbol-closing">
-          <p>This piece becomes your own prayer and symbolic altar.</p>
-          <p>A wearable reminder of your inner truth, self-expression, and sacred creative fire.</p>
-          <p>A symbol of voice, heart, mind, and womb in harmony.</p>
-          <div class="closing-taglines">
-            <span>Jewelry as remembrance</span>
-            <span>Jewelry as freedom</span>
-            <span>Jewelry with purpose</span>
-          </div>
-          <p class="closing-final">The art of meaningful adornment.</p>
         </div>
       </div>
     </section>
 
-   
+    <!-- Footer -->
+    <div class="portal-footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="https://freewithpurpose.com/">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/FWP_Horizontal_W.png?v=1765315743"
+                alt="Free With Purpose"
+                class="footer-logo"
+              />
+            </a>
+            <p class="footer-tagline">
+              Adornment with meaning. Living with intention. Freedom through purpose.
+            </p>
+          </div>
 
-   <script>
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
+          <div class="footer-portals">
+            <span class="portal-column-title">Portals</span>
+            <div class="portal-links">
+              <a href="https://freewithpurpose.com/pages/mayte-b-jewerly" class="portal-link">
+                <span class="portal-icon rose"></span>
+                <span class="portal-link-name">Jewelry as an Invitation</span>
+              </a>
+              <a href="https://freewithpurpose.com/pages/sustainability-well-being" class="portal-link">
+                <span class="portal-icon sage"></span>
+                <span class="portal-link-name">Sustainability & Well-Being</span>
+              </a>
+              <a href="https://freewithpurpose.com/pages/artists-artisans" class="portal-link">
+                <span class="portal-icon terracotta"></span>
+                <span class="portal-link-name">Artists & Artisans</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-      });
+        <div class="footer-bottom">
+          <p class="footer-copyright">&copy; 2025 Free With Purpose. All rights reserved.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/free_with_purpose/?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr#" target="_blank" class="social-link">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      // Close menu when clicking a link
-      document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          navLinks.classList.remove('active');
-        });
-      });
-    </script>
   </body>
 </html>
