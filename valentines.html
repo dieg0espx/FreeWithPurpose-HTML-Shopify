@@ -299,6 +299,7 @@
         padding: 2rem;
         background: white;
         transition: all 0.3s ease;
+        text-align: center;
       }
 
       .symbol-card:hover {
@@ -309,7 +310,23 @@
       .symbol-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        color: var(--valentine-rose);
+        color: var(--valentine-gold);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .symbol-icon svg {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: currentColor;
+      }
+
+      .symbol-icon img {
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(71%) sepia(14%) saturate(1043%) hue-rotate(343deg) brightness(92%) contrast(87%);
       }
 
       .symbol-name {
@@ -466,7 +483,7 @@
           "Give a gift that speaks the language of the heart."
         </p>
         <p class="hero-description">
-          Crafted with love and intention using sustainable, ethically sourced materials. Each piece invites you to live, create, and relate more soulfully—a portable altar for truth, voice, and freedom.
+          Crafted with love and intention using sustainable, ethically sourced materials. Each piece invites you to live, create, and relate more soulfully. A portable altar for truth, voice, and freedom.
         </p>
         <a href="jewelry/index.html" class="btn btn-primary">Shop Now</a>
       </div>
@@ -478,7 +495,7 @@
     <!-- Gift Guide Section -->
     <section class="gift-guide">
       <div class="gift-guide-image">
-        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-7.jpg?v=1763739719" alt="Gift Guide">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/closeup.jpg?v=1765046487" alt="Gift Guide">
       </div>
       <div class="gift-guide-content">
         <span class="gift-guide-label">Crafted with Love & Intention</span>
@@ -495,25 +512,38 @@
     <!-- Symbols Section -->
     <section class="symbols-section">
       <h2 class="symbols-title">Sacred Symbolism</h2>
-      <p class="symbols-intro">Each symbol speaks in the language of the subconscious—awakening truth, memory, and meaning. A whisper of remembrance.</p>
+      <p class="symbols-intro">Each symbol speaks in the language of the subconscious awakening truth, memory, and meaning. A whisper of remembrance.</p>
       <div class="symbols-grid">
         <div class="symbol-card">
-          <div class="symbol-icon">&#9788;</div>
+          <div class="symbol-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+            </svg>
+          </div>
           <h3 class="symbol-name">Sun</h3>
           <p class="symbol-meaning">Illumination, life force, and divine order. The light within and around us.</p>
         </div>
         <div class="symbol-card">
-          <div class="symbol-icon">&#9775;</div>
+          <div class="symbol-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-yin-yang" viewBox="0 0 16 16">
+              <path d="M9.167 4.5a1.167 1.167 0 1 1-2.334 0 1.167 1.167 0 0 1 2.334 0"/>
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M1 8a7 7 0 0 1 7-7 3.5 3.5 0 1 1 0 7 3.5 3.5 0 1 0 0 7 7 7 0 0 1-7-7m7 4.667a1.167 1.167 0 1 1 0-2.334 1.167 1.167 0 0 1 0 2.334"/>
+            </svg>
+          </div>
           <h3 class="symbol-name">Yin & Yang</h3>
           <p class="symbol-meaning">Harmony and flow. The eternal dance of duality in unity.</p>
         </div>
         <div class="symbol-card">
-          <div class="symbol-icon">&#10048;</div>
+          <div class="symbol-icon">
+            <img src="https://res.cloudinary.com/dku1gnuat/image/upload/v1765562585/wings_xjef4d.png" alt="Wings Symbol">
+          </div>
           <h3 class="symbol-name">Open Wings</h3>
           <p class="symbol-meaning">Freedom, protection, and ascension. The heart expands, truth shines.</p>
         </div>
         <div class="symbol-card">
-          <div class="symbol-icon">&#8734;</div>
+          <div class="symbol-icon">
+            <img src="https://res.cloudinary.com/dku1gnuat/image/upload/v1765562712/snake_zs5qyd.png" alt="Snake Symbol">
+          </div>
           <h3 class="symbol-name">Snake</h3>
           <p class="symbol-meaning">Transformation and renewal. The rise of creative and sensual sacred power.</p>
         </div>
@@ -525,16 +555,25 @@
       <div class="message-content">
         <h2 class="message-title">A Note on Love</h2>
         <p class="message-text">
-          Love is not just a feeling—it's an intention. It's how we choose to show up for the people we cherish, how we honor their presence in our lives, and how we give meaning to ordinary moments.
+          What is love for you?
         </p>
         <p class="message-text">
-          When I create each piece of jewelry, I think about the hands that will give it and the hearts that will receive it. I infuse every creation with prayers for love, protection, and joy.
+          How do you choose to show up for the people you cherish?
         </p>
         <p class="message-text">
-          This Valentine's Day, may you give and receive love in its purest form—intentional, sacred, and free.
+          How do you honor their presence in your life?
+        </p>
+        <p class="message-text">
+          How do you give meaning to ordinary moments?
+        </p>
+        <p class="message-text">
+          Each piece is infused with love.
+        </p>
+        <p class="message-text">
+          This Valentine's Day, may you give and receive love in its purest form.
         </p>
         <div class="message-signature">
-          <div class="signature-name">Mayte Bluestein</div>
+          <div class="signature-name">Mayte B.</div>
           <div class="signature-role">Founder, Free With Purpose</div>
         </div>
       </div>

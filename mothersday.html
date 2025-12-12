@@ -117,6 +117,7 @@
       .hero-image {
         background: linear-gradient(135deg, var(--mother-blush) 0%, var(--mother-soft-lilac) 100%);
         overflow: hidden;
+        max-height: 800px;
       }
 
       .hero-image img {
@@ -185,7 +186,7 @@
 
       .gift-guide-image {
         overflow: hidden;
-        max-height: 600px;
+        max-height: 800px;
       }
 
       .gift-guide-image img {
@@ -310,6 +311,23 @@
         font-size: 2.5rem;
         margin-bottom: 1rem;
         color: var(--mother-lavender);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.5rem;
+      }
+
+      .symbol-icon svg {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: currentColor;
+      }
+
+      .symbol-icon img {
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(56%) sepia(21%) saturate(1027%) hue-rotate(236deg) brightness(91%) contrast(87%);
       }
 
       .symbol-name {
@@ -462,23 +480,20 @@
       <div class="hero-content">
         <span class="hero-label">Mother's Day 2026</span>
         <h1 class="hero-title">Honor<br>Her<br>Light</h1>
-        <p class="hero-subtitle">
-          "A gift for the woman who gave you everything."
-        </p>
         <p class="hero-description">
           Celebrate the mothers, grandmothers, and nurturers in your life with sacred jewelry crafted with love and intention. Each piece honors the divine feminine—a wearable blessing of gratitude and grace.
         </p>
         <a href="jewelry/index.html" class="btn btn-primary">Shop Now</a>
       </div>
       <div class="hero-image">
-        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-4.jpg?v=1763739724" alt="Mother's Day Jewelry">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/multi-dark.jpg?v=1765046487" alt="Mother's Day Jewelry">
       </div>
     </section>
 
     <!-- Gift Guide Section -->
     <section class="gift-guide">
       <div class="gift-guide-image">
-        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/landing-7.jpg?v=1763739719" alt="Gift Guide">
+        <img src="https://cdn.shopify.com/s/files/1/0756/5121/9492/files/IMG_0804.jpg?v=1765559549" alt="Gift Guide">
       </div>
       <div class="gift-guide-content">
         <span class="gift-guide-label">Crafted with Love & Intention</span>
@@ -503,7 +518,9 @@
           <p class="symbol-meaning">Warmth, life-giving energy, and the radiant love that mothers share unconditionally.</p>
         </div>
         <div class="symbol-card">
-          <div class="symbol-icon">&#10048;</div>
+          <div class="symbol-icon">
+            <img src="https://res.cloudinary.com/dku1gnuat/image/upload/v1765562585/wings_xjef4d.png" alt="Wings Symbol">
+          </div>
           <h3 class="symbol-name">Open Wings</h3>
           <p class="symbol-meaning">Protection and guidance. The sheltering embrace that helps us soar.</p>
         </div>
