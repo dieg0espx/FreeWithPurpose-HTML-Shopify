@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources Part 1B - Free With Purpose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-sage: #7A8F76;
+      --primary-olive: #7A8F76;
+      --primary-cream: #F5F3EE;
+      --primary-espresso: #2B1E1A;
+      --font-heading: "Belleza", sans-serif;
+      --font-body: "Raleway", sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--primary-cream);
+      color: var(--primary-espresso);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .resources-section {
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      padding-bottom: 0 !important;
+      background: #fff;
+    }
+
+    .resources-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* CSS-Only Accordion */
+    .accordion-item {
+      border-bottom: 1px solid rgba(122, 143, 118, 0.2);
+      margin-bottom: 0;
+    }
+
+    .accordion-toggle {
+      display: none;
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 1.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: rgba(122, 143, 118, 0.05);
+    }
+
+    .accordion-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--primary-sage);
+    }
+
+    .accordion-icon {
+      font-size: 1.5rem;
+      color: var(--primary-sage);
+      transition: transform 0.3s ease;
+      font-weight: 300;
+    }
+
+    .accordion-toggle:checked + .accordion-header .accordion-icon {
+      transform: rotate(45deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 1rem;
+    }
+
+    .accordion-toggle:checked ~ .accordion-content {
+      max-height: 15000px;
+      padding: 1rem 1rem 2rem;
+    }
+
+    .resource-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .resource-item {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(122, 143, 118, 0.1);
+    }
+
+    .resource-item:last-child {
+      border-bottom: none;
+    }
+
+    .resource-name {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+      color: var(--primary-sage);
+      margin-bottom: 0.3rem;
+    }
+
+    .resource-name a {
+      color: var(--primary-sage);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .resource-name a:hover {
+      color: var(--primary-olive);
+      text-decoration: underline;
+    }
+
+    .resource-description {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--primary-espresso);
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    .subcategory-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--primary-olive);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(122, 143, 118, 0.15);
+    }
+
+    .subcategory-title:first-child {
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .accordion-header {
+        padding: 1.2rem 0.5rem;
+      }
+      .accordion-title {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section id="resources" class="resources-section">
+    <div class="resources-container">
+
+      <!-- CONSCIOUS NOURISHMENT & RITUAL -->
+      <div class="accordion-item">
+        <input type="checkbox" id="acc1b1" class="accordion-toggle">
+        <label for="acc1b1" class="accordion-header">
+          <span class="accordion-title">CONSCIOUS NOURISHMENT & RITUAL</span>
+          <span class="accordion-icon">+</span>
+        </label>
+        <div class="accordion-content">
+          <div class="resource-list">
+
+            <h4 class="subcategory-title">Coffee, Tea & Conscious Beverages</h4>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://choicejuicery.com/" target="_blank">Choice Juicery</a></p>
+              <p class="resource-description">Plant-based juice bar and cafe offering organic, gluten-free, dairy-free smoothies, juices, and elixirs made with 100% plant-based ingredients.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://counterculturecoffee.com/" target="_blank">Counter Culture Coffee</a></p>
+              <p class="resource-description">Transparency-driven coffee roaster dedicated to direct trade, sustainability, and education in the craft of coffee.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.equatorcoffees.com/" target="_blank">Equator Coffees</a></p>
+              <p class="resource-description">B Corp-certified roaster offering Fair Trade, organic, and sustainably sourced coffees with a commitment to gender equity and environmental stewardship.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://goodonyaorganic.com" target="_blank">Goodonya Organic Cafe</a></p>
+              <p class="resource-description">Organic cafe and marketplace in Encinitas, California, rooted in sustainability, nourishment, and integrity - serving clean food and conscious energy.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.rishi-tea.com/pages/about" target="_blank">Rishi Tea & Botanicals</a></p>
+              <p class="resource-description">Direct-trade teas and botanicals grown organically and sourced sustainably from small farms around the world.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.ryzesuperfoods.com" target="_blank">RYZE Mushroom Coffee</a></p>
+              <p class="resource-description">Functional mushroom-based coffee combining organic instant coffee with adaptogenic mushrooms for sustained energy, focus, and clarity.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.vervecoffee.com/" target="_blank">Verve Coffee Roasters</a></p>
+              <p class="resource-description">Santa Cruz-born specialty coffee company committed to ethical sourcing, sustainability, and craft excellence.</p>
+            </div>
+
+            <h4 class="subcategory-title">Clean Snacks & Conscious Indulgence</h4>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://hukitchen.com/" target="_blank">Hu Kitchen</a></p>
+              <p class="resource-description">Paleo-friendly chocolate and snacks made with simple, clean, junk-free ingredients.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.lesserevil.com/pages/our-story" target="_blank">LesserEvil Snacks</a></p>
+              <p class="resource-description">Organic, Non-GMO popcorn and snacks made with clean, purposeful ingredients.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://sietefoods.com/about/our-story/" target="_blank">Siete Foods</a></p>
+              <p class="resource-description">Grain-free, heritage-inspired chips, tortillas, and salsas rooted in Mexican family tradition and modern wellness.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://unrealsnacks.com/pages/about-us" target="_blank">Unreal Snacks</a></p>
+              <p class="resource-description">Better-for-you chocolate and candy made without corn syrup, artificial colors, or GMOs.</p>
+            </div>
+
+            <h4 class="subcategory-title">Conscious Self-Care & Ritual</h4>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://animamundiherbals.com/pages/about-us" target="_blank">Anima Mundi Herbals</a></p>
+              <p class="resource-description">Herbal alchemy blending ancient plant wisdom with modern wellness rituals to nourish body, mind, and spirit.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.bendsoap.com/" target="_blank">Bend Soap Company</a></p>
+              <p class="resource-description">Handcrafted, all-natural goat-milk soaps and skincare created for gentle, nourishing care of sensitive skin, babies, and those prone to dryness or eczema.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://chakrubs.com" target="_blank">Chakrubs</a></p>
+              <p class="resource-description">Hand-crafted crystal pleasure wands and healing tools made from natural gemstones, designed to support sensuality, self-love, and energetic alignment through intentional ritual use.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://consciouscoconut.com" target="_blank">Conscious Coconut</a></p>
+              <p class="resource-description">Wellness and self-care brand offering 100% organic, fair-trade, virgin coconut-oil products - cold-pressed in small batches for skin, hair, and holistic well-being.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://fourvisionsmarket.com" target="_blank">Four Visions Market</a></p>
+              <p class="resource-description">Sacred-medicine brand offering ethically sourced Amazonian plant wisdom, ceremonial rituals, botanical medicines, and ancestral art - bridging indigenous spiritual culture and conscious lifestyle.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.katemcleod.com/" target="_blank">Kate McLeod</a></p>
+              <p class="resource-description">Clean, handmade skincare brand founded by a former pastry chef, offering plastic-free Body Stone solid moisturizers and natural self-care products crafted from nourishing, wholesome ingredients.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://mountainroseherbs.com" target="_blank">Mountain Rose Herbs</a></p>
+              <p class="resource-description">Organic herbs, botanicals, and teas ethically sourced for wellness, ritual, and earth-honoring living.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.oneworldcacao.com" target="_blank">One World Cacao</a></p>
+              <p class="resource-description">Ceremonial-cacao brand offering 100% single-origin, eco-forested cacao from Guatemala, grown with ancestral care to support sustainable agroforestry and fair-trade communities.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://radiantfarms.us" target="_blank">Radiant Farms</a></p>
+              <p class="resource-description">Regenerative-agriculture collective producing biodynamic foods and botanicals that honor Earth natural rhythms and cycles.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://ritualoils.co" target="_blank">Ritual Oils</a></p>
+              <p class="resource-description">Plant-based botanical oils and perfumes created with intention for ceremony, self-care, and energetic balance.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.templecopal.com" target="_blank">Temple Copal</a></p>
+              <p class="resource-description">Ceremonial-wellness brand offering 100% pure, wild-harvested White Copal resin incense sticks handcrafted in Mexico for sacred rituals, space-clearing, and spiritual connection.</p>
+            </div>
+
+            <h4 class="subcategory-title">Plant Based Milks, Oils & Everyday Essentials</h4>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://artisanamarket.com/pages/about-us" target="_blank">Artisana Organics</a></p>
+              <p class="resource-description">Raw, organic nut butters and coconut products made with care, purity, and intention.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.graza.co/pages/about-us" target="_blank">Graza</a></p>
+              <p class="resource-description">High-quality, single-origin Spanish olive oil in signature squeezable bottles for fresh, conscious cooking.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.kasandrinos.com/pages/our-story" target="_blank">Kasandrinos</a></p>
+              <p class="resource-description">Family-sourced organic Greek olive oil, cold-pressed and purity-tested for exceptional quality and taste.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://malkorganics.com/pages/about" target="_blank">MALK Organics</a></p>
+              <p class="resource-description">Plant-based, organic nut milks made with minimal ingredients, no gums, and no fillers.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.milkadamia.com/pages/origins" target="_blank">Milkadamia</a></p>
+              <p class="resource-description">Regeneratively farmed macadamia milk and dairy alternatives made with respect for Earth and its ecosystems.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.newbarnorganics.com/" target="_blank">New Barn Organics</a></p>
+              <p class="resource-description">Regenerative-focused organic foods and dairy-free essentials, including organic almond and coconut milks made with minimal, clean ingredients and pasture-raised, Regenerative Organic Certified eggs - all thoughtfully sourced to nourish people and the planet.</p>
+            </div>
+
+            <h4 class="subcategory-title">Regenerative Farms & Ethical Meats</h4>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.butcherbox.com/" target="_blank">ButcherBox</a></p>
+              <p class="resource-description">Ethically raised, humanely sourced meats delivered directly to your door.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.crowdcow.com/" target="_blank">Crowd Cow</a></p>
+              <p class="resource-description">Craft meat marketplace connecting conscious consumers with independent farms and fisheries.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://forceofnature.com/pages/its-just-better" target="_blank">Force of Nature</a></p>
+              <p class="resource-description">Regenerative meats including bison, venison, and wild boar raised through land-healing, ecosystem-restoring practices.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://mauinuivenison.com/pages/mission" target="_blank">Maui Nui Venison</a></p>
+              <p class="resource-description">Regenerative, wild-harvested venison supporting Hawaiian ecosystems and communities through ethical stewardship.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://primalpastures.com/pages/who-we-are" target="_blank">Primal Pastures</a></p>
+              <p class="resource-description">Family-run regenerative farm in Southern California offering truly pasture-raised meats raised without antibiotics or soy, honoring land, animals, and human health.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://whiteoakpastures.com/" target="_blank">White Oak Pastures</a></p>
+              <p class="resource-description">Multi-generational regenerative farm producing grass-fed, pasture-raised meats through holistic, land-healing agriculture.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://radiantfarms.us/pages/about" target="_blank">Radiant Farms</a></p>
+              <p class="resource-description">Regenerative agriculture and biodynamic produce honoring Earth natural rhythms and seasonal abundance.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://sitkaseafoodmarket.com/pages/about" target="_blank">Sitka Seafood Market</a></p>
+              <p class="resource-description">Community-supported fishery delivering wild, traceable Alaskan seafood directly from fisher to table.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.vitalchoice.com/v/about-us" target="_blank">Vital Choice</a></p>
+              <p class="resource-description">Wild-caught, sustainable seafood and omega-rich pantry staples sourced with care for people and planet.</p>
+            </div>
+
+            <h4 class="subcategory-title">Superfoods, Functional Foods & Ritual Nourishment</h4>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://animamundiherbals.com/" target="_blank">Anima Mundi Herbals</a></p>
+              <p class="resource-description">Herbal alchemy blending ancient plant wisdom with modern wellness rituals for body, mind, and spirit.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://us.foursigmatic.com/pages/product-quality" target="_blank">Four Sigmatic</a></p>
+              <p class="resource-description">Functional mushroom-infused coffee, cacao, and wellness products crafted for focus, balance, and vitality.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.malamamushrooms.com/" target="_blank">Malama Mushrooms</a></p>
+              <p class="resource-description">Hawaiian-grown functional-mushroom brand crafting superfood powders, elixirs, and coffee blends that honor Malama Aina: the Hawaiian principle of caring for the land, nourishing body, mind, and spirit.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://mountainroseherbs.com/" target="_blank">Mountain Rose Herbs</a></p>
+              <p class="resource-description">Organic herbs, botanicals, and teas ethically sourced for wellness, ritual, and natural living.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://navitasorganics.com/pages/superfoods-with-purpose" target="_blank">Navitas Organics</a></p>
+              <p class="resource-description">Organic superfoods and plant-based nutrition essentials created with purpose and planetary care.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.oneworldcacao.com" target="_blank">One World Cacao</a></p>
+              <p class="resource-description">Ceremonial cacao sourced from Guatemalan forests, crafted with ancestral care and sustainable agroforestry to empower local communities.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://fourvisionsmarket.com/" target="_blank">Four Visions</a></p>
+              <p class="resource-description">Sacred-medicine brand offering ethically sourced Amazonian plant wisdom, ceremonial rituals, botanical medicines, and ancestral art bridging indigenous culture and modern consciousness.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.templecopal.com/" target="_blank">Temple Copal</a></p>
+              <p class="resource-description">Ceremonial-wellness brand offering 100% pure, wild-harvested White Copal resin incense sticks handcrafted in Mexico for sacred rituals, space-clearing, and spiritual connection.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://consciouscoconut.com/" target="_blank">Conscious Coconut</a></p>
+              <p class="resource-description">Wellness and self-care brand offering 100% organic, fair-trade, virgin coconut-oil products, cold-pressed in small batches for skin, hair, and holistic use.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://ritualoils.co" target="_blank">Ritual Oils</a></p>
+              <p class="resource-description">Plant-based botanical oils and perfumes created for ceremony and self-care.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.bendsoap.com/" target="_blank">Bend Soap Company</a></p>
+              <p class="resource-description">Handcrafted, all-natural goat-milk soaps and skincare products offering gentle nourishment for sensitive skin and holistic care.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://chakrubs.com" target="_blank">Chakrubs</a></p>
+              <p class="resource-description">Hand-crafted crystal pleasure wands and healing tools made from natural gemstones to support sensuality, self-love, energetic alignment, and sacred embodiment.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.katemcleod.com/" target="_blank">Kate McLeod</a></p>
+              <p class="resource-description">Clean, handmade skincare crafted from wholesome, skin-nourishing ingredients - featuring plastic-free Body Stone solid moisturizers for everyday ritual and care.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ETHICAL JEWELRY & ADORNMENT -->
+      <div class="accordion-item">
+        <input type="checkbox" id="acc1b2" class="accordion-toggle">
+        <label for="acc1b2" class="accordion-header">
+          <span class="accordion-title">ETHICAL JEWELRY & ADORNMENT</span>
+          <span class="accordion-icon">+</span>
+        </label>
+        <div class="accordion-content">
+          <div class="resource-list">
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://anandasoul.com/pages/about-us" target="_blank">Ananda Soul</a></p>
+              <p class="resource-description">Ethically handcrafted jewelry from Bali carrying sacred symbols, blessings, and intentions of love, compassion, and empowerment.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.lebrusanstudio.com" target="_blank">Arabel Lebrusan - Lebrusan Studio</a></p>
+              <p class="resource-description">Spanish-born, London-based jeweler merging sustainability, fine craftsmanship, and cultural artistry through Fairtrade materials and ethical design.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://bahgsujewels.com" target="_blank">Bahgsu Jewels</a></p>
+              <p class="resource-description">Crystal-infused adornments handcrafted in Bali, honoring Earth raw elements, sacred geometry, and ancient symbolism.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.brilliantearth.com" target="_blank">Brilliant Earth</a></p>
+              <p class="resource-description">Global leader in ethically sourced fine jewelry and lab-grown diamonds committed to transparency and sustainability.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://fossandharper.com/pages/about" target="_blank">Foss & Harper</a></p>
+              <p class="resource-description">Earthy, elegant, and sustainable fine jewelry handcrafted with recycled gold and conflict-free stones for conscious beauty.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.linjer.co/en-us/pages/our-story" target="_blank">Linjer</a></p>
+              <p class="resource-description">Minimalist, elegant jewelry made with 100% recycled gold and ethically sourced gemstones for timeless, everyday wear.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.automicgold.com/pages/about-our-founder" target="_blank">Melissa Joy Manning</a></p>
+              <p class="resource-description">Artisan fine jewelry handcrafted in California with recycled metals, green-certified studios, and a deep commitment to sustainability.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.monicavinader.com/us/sustainability" target="_blank">Monica Vinader</a></p>
+              <p class="resource-description">B-Corp certified brand crafting sustainable fine jewelry that blends timeless elegance with modern craftsmanship.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.reflectivejewelry.com" target="_blank">Reflective Jewelry</a></p>
+              <p class="resource-description">Artisan jeweler offering ethically sourced, Fairtrade-gold pieces and custom designs - handmade with transparency, sustainability, and social purpose.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.satyajewelry.com" target="_blank">Satya Jewelry</a></p>
+              <p class="resource-description">Mission-driven symbolic jewelry designed to inspire mindfulness, personal growth, and spiritual connection.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://shopsoko.com/collections/bracelets" target="_blank">SOKO</a></p>
+              <p class="resource-description">Kenyan women-led B-Corp connecting artisans to global markets through modern, ethical jewelry rooted in community and impact.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://taranoelle.com/pages/ethos" target="_blank">Tara Noelle</a></p>
+              <p class="resource-description">Spiritually infused fine jewelry designed as talismans of intention, empowerment, and inner light.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.thegoodcollective.com/" target="_blank">The Good Collective</a></p>
+              <p class="resource-description">Small-batch artisan jewelry and accessories made with soul, sustainability, and conscious craftsmanship.</p>
+            </div>
+            <div class="resource-item">
+              <p class="resource-name"><a href="https://www.wolfandbadger.com/us/pages/about/" target="_blank">Wolf & Badger</a></p>
+              <p class="resource-description">Curated global platform for independent, ethical jewelry and artful design celebrating creativity and integrity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
