@@ -30,7 +30,8 @@
       "Bash(xxd:*)",
       "Bash(for f in Screenshot*2025-11-28*)",
       "Bash(do cp \"$f\" /tmp/colors.png)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []
