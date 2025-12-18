@@ -172,6 +172,82 @@
         font-size: 0.95rem;
       }
     }
+
+    /* Featured GER Section */
+    .featured-ger-section {
+      background: linear-gradient(135deg, rgba(122, 143, 118, 0.08) 0%, rgba(122, 143, 118, 0.03) 100%);
+      border: 1px solid rgba(122, 143, 118, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .featured-ger-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(122, 143, 118, 0.15);
+    }
+
+    .featured-ger-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--primary-sage);
+      margin-bottom: 0.5rem;
+    }
+
+    .featured-ger-subtitle {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--primary-espresso);
+      opacity: 0.7;
+    }
+
+    .featured-ger-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .featured-ger-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.25rem;
+      border: 1px solid rgba(122, 143, 118, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .featured-ger-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(122, 143, 118, 0.15);
+    }
+
+    .featured-ger-item .resource-name {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .featured-ger-item .resource-description {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .featured-ger-section {
+        padding: 1.25rem 1rem;
+      }
+
+      .featured-ger-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-ger-item {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -322,28 +398,33 @@
             </div>
 
             <!-- Featured Global Ecosphere Retreats -->
-            <div class="resource-item section-label">
-              <p class="resource-name">Featured Global Ecosphere Retreats (GER)</p>
-            </div>
-            <div class="resource-item">
-              <p class="resource-name"><a href="https://www.cempedak.com/" target="_blank">Cempedak Private Island</a></p>
-              <p class="resource-description">Off-grid, bamboo-built eco-retreat championing marine protection.</p>
-            </div>
-            <div class="resource-item">
-              <p class="resource-name"><a href="https://ecohotels.me/Feynan" target="_blank">Feynan Ecolodge</a></p>
-              <p class="resource-description">Jordan's solar-powered desert sanctuary uplifting Bedouin communities.</p>
-            </div>
-            <div class="resource-item">
-              <p class="resource-name"><a href="https://www.grootbos.com/" target="_blank">https://www.grootbos.com/</a></p>
-              <p class="resource-description">South Africa's coastal sanctuary integrating floral-kingdom conservation with social upliftment.</p>
-            </div>
-            <div class="resource-item">
-              <p class="resource-name"><a href="https://www.segera.com/" target="_blank">Segera Retreat</a></p>
-              <p class="resource-description">Kenya's luxury wilderness estate blending art, conservation, and community empowerment.</p>
-            </div>
-            <div class="resource-item">
-              <p class="resource-name"><a href="https://tswalu.com/" target="_blank">Tswalu Kalahari</a></p>
-              <p class="resource-description">South Africa's largest private reserve devoted to habitat restoration and scientific research.</p>
+            <div class="featured-ger-section">
+              <div class="featured-ger-header">
+                <h3 class="featured-ger-title">Featured Global Ecosphere Retreats® (GER)</h3>
+                <p class="featured-ger-subtitle">Sanctuaries where luxury meets conservation and community</p>
+              </div>
+              <div class="featured-ger-grid">
+                <div class="featured-ger-item">
+                  <p class="resource-name"><a href="https://www.cempedak.com/" target="_blank">Cempedak Private Island</a></p>
+                  <p class="resource-description">Off-grid, bamboo-built eco-retreat championing marine protection.</p>
+                </div>
+                <div class="featured-ger-item">
+                  <p class="resource-name"><a href="https://ecohotels.me/Feynan" target="_blank">Feynan Ecolodge</a></p>
+                  <p class="resource-description">Jordan's solar-powered desert sanctuary uplifting Bedouin communities.</p>
+                </div>
+                <div class="featured-ger-item">
+                  <p class="resource-name"><a href="https://www.grootbos.com/" target="_blank">Grootbos Private Nature Reserve</a></p>
+                  <p class="resource-description">South Africa's coastal sanctuary integrating floral-kingdom conservation with social upliftment.</p>
+                </div>
+                <div class="featured-ger-item">
+                  <p class="resource-name"><a href="https://www.segera.com/" target="_blank">Segera Retreat</a></p>
+                  <p class="resource-description">Kenya's luxury wilderness estate blending art, conservation, and community empowerment.</p>
+                </div>
+                <div class="featured-ger-item">
+                  <p class="resource-name"><a href="https://tswalu.com/" target="_blank">Tswalu Kalahari</a></p>
+                  <p class="resource-description">South Africa's largest private reserve devoted to habitat restoration and scientific research.</p>
+                </div>
+              </div>
             </div>
 
             <!-- Additional Conscious Travel -->
