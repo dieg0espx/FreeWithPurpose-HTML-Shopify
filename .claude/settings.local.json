@@ -31,7 +31,8 @@
       "Bash(for f in Screenshot*2025-11-28*)",
       "Bash(do cp \"$f\" /tmp/colors.png)",
       "Bash(done)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd styled intro sections and general title to resources pages\n\n- Add Clean Beauty intro section with callout box in part1a\n- Add Featured Global Ecosphere Retreats styled card grid in part2\n- Add general \"Conscious Living Resources\" title header\n- Enhanced styling with gradient backgrounds and visual hierarchy\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ],
     "deny": [],
     "ask": []
