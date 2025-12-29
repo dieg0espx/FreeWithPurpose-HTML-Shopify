@@ -1,0 +1,377 @@
+{% comment %}
+  ============================================
+  GIFT WRAPPING OPTION - WHOLE ORDER
+  ============================================
+
+  HOW TO USE:
+  1. Add this code to your cart page as a Custom Liquid block
+     OR add it to sections/main-cart.liquid
+
+  2. The personalization data will be saved as CART ATTRIBUTES
+     and will appear in:
+     - Checkout page
+     - Order confirmation emails
+     - Admin order details
+
+  3. Cart attributes apply to the ENTIRE ORDER, not individual items
+{% endcomment %}
+
+<style>
+  /* Gift Wrapping Section Styles - Matching Free With Purpose Brand */
+  .gift-wrapping-section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(122, 143, 118, 0.08) 0%, rgba(122, 143, 118, 0.02) 100%);
+    border: 1px solid rgba(122, 143, 118, 0.2);
+    border-radius: 12px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .gift-wrapping-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+  }
+
+  .gift-wrapping-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #7A8F76;
+    cursor: pointer;
+  }
+
+  .gift-wrapping-label {
+    font-family: "Belleza", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #7A8F76;
+    cursor: pointer;
+  }
+
+  .gift-wrapping-fields {
+    display: none;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(122, 143, 118, 0.15);
+  }
+
+  .gift-wrapping-fields.active {
+    display: block;
+  }
+
+  .gift-field-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .gift-field-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .gift-field-label {
+    display: block;
+    font-family: "Belleza", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #7A8F76;
+    margin-bottom: 0.5rem;
+  }
+
+  .gift-field-label .required {
+    color: #c75050;
+    margin-left: 2px;
+  }
+
+  .gift-field-input,
+  .gift-field-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.9rem;
+    color: #2B1E1A;
+    background: #fff;
+    border: 1px solid rgba(122, 143, 118, 0.3);
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .gift-field-input:focus,
+  .gift-field-textarea:focus {
+    outline: none;
+    border-color: #7A8F76;
+    box-shadow: 0 0 0 3px rgba(122, 143, 118, 0.15);
+  }
+
+  .gift-field-input::placeholder,
+  .gift-field-textarea::placeholder {
+    color: #2B1E1A;
+    opacity: 0.4;
+  }
+
+  .gift-field-textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .gift-char-count {
+    font-size: 0.75rem;
+    color: #2B1E1A;
+    opacity: 0.6;
+    text-align: right;
+    margin-top: 0.25rem;
+  }
+
+  .gift-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .gift-field-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .gift-wrap-option-label {
+    font-size: 0.85rem;
+    color: #2B1E1A;
+  }
+
+  .gift-note {
+    font-size: 0.8rem;
+    color: #2B1E1A;
+    opacity: 0.7;
+    font-style: italic;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(122, 143, 118, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid #7A8F76;
+  }
+
+  .gift-update-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: #7A8F76;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: "Belleza", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .gift-update-btn:hover {
+    background: #5d6e5a;
+  }
+
+  .gift-saved-message {
+    display: none;
+    color: #7A8F76;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  .gift-saved-message.show {
+    display: block;
+  }
+</style>
+
+<form action="/cart" method="post" id="gift-wrapping-form" class="gift-wrapping-section">
+  <div class="gift-wrapping-header" onclick="toggleGiftFields()">
+    <input
+      type="checkbox"
+      id="gift-wrapping-toggle"
+      class="gift-wrapping-checkbox"
+      name="attributes[Gift Wrapped]"
+      value="Yes"
+      {% if cart.attributes['Gift Wrapped'] == 'Yes' %}checked{% endif %}
+      onchange="handleGiftToggle(this)"
+    >
+    <label for="gift-wrapping-toggle" class="gift-wrapping-label">
+      Add Gift Wrapping to Order
+    </label>
+  </div>
+
+  <div class="gift-wrapping-fields {% if cart.attributes['Gift Wrapped'] == 'Yes' %}active{% endif %}" id="gift-wrapping-fields">
+
+    <div class="gift-field-row">
+      <div class="gift-field-group">
+        <label for="gift-recipient-name" class="gift-field-label">
+          Recipient's Name <span class="required">*</span>
+        </label>
+        <input
+          type="text"
+          id="gift-recipient-name"
+          name="attributes[Recipient Name]"
+          class="gift-field-input"
+          placeholder="Who is this gift for?"
+          maxlength="50"
+          value="{{ cart.attributes['Recipient Name'] }}"
+        >
+      </div>
+      <div class="gift-field-group">
+        <label for="gift-sender-name" class="gift-field-label">
+          From (Your Name)
+        </label>
+        <input
+          type="text"
+          id="gift-sender-name"
+          name="attributes[Gift From]"
+          class="gift-field-input"
+          placeholder="Your name for the gift tag"
+          maxlength="50"
+          value="{{ cart.attributes['Gift From'] }}"
+        >
+      </div>
+    </div>
+
+    <div class="gift-field-group">
+      <label for="gift-message" class="gift-field-label">
+        Personal Gift Message
+      </label>
+      <textarea
+        id="gift-message"
+        name="attributes[Gift Message]"
+        class="gift-field-textarea"
+        placeholder="Write a heartfelt message to include with your gift..."
+        maxlength="250"
+        oninput="updateCharCount(this, 250)"
+      >{{ cart.attributes['Gift Message'] }}</textarea>
+      <div class="gift-char-count">
+        <span id="gift-message-count">{{ cart.attributes['Gift Message'] | size | default: 0 }}</span>/250 characters
+      </div>
+    </div>
+
+    <div class="gift-field-group">
+      <label class="gift-wrapping-header" style="padding: 0;">
+        <input
+          type="checkbox"
+          id="hide-price-toggle"
+          class="gift-wrapping-checkbox"
+          name="attributes[Hide Price]"
+          value="Yes"
+          {% if cart.attributes['Hide Price'] == 'Yes' %}checked{% endif %}
+        >
+        <span class="gift-wrap-option-label">Remove price from packing slip (gift receipt)</span>
+      </label>
+    </div>
+
+    <p class="gift-note">
+      Your gift will be beautifully wrapped with care and love. The personalized message will be handwritten on an elegant gift card included with your package.
+    </p>
+
+    <button type="submit" class="gift-update-btn" id="gift-save-btn">Save Gift Options</button>
+    <p class="gift-saved-message" id="gift-saved-message">✓ Gift options saved!</p>
+  </div>
+
+  {% comment %} Clear attributes if unchecked {% endcomment %}
+  <input type="hidden" name="attributes[_gift_form_submitted]" value="true">
+</form>
+
+<script>
+  function toggleGiftFields() {
+    const checkbox = document.getElementById('gift-wrapping-toggle');
+    const fields = document.getElementById('gift-wrapping-fields');
+
+    // Only toggle if not clicking directly on checkbox
+    if (event.target !== checkbox) {
+      checkbox.checked = !checkbox.checked;
+      handleGiftToggle(checkbox);
+    }
+  }
+
+  function handleGiftToggle(checkbox) {
+    const fields = document.getElementById('gift-wrapping-fields');
+
+    if (checkbox.checked) {
+      fields.classList.add('active');
+    } else {
+      fields.classList.remove('active');
+      // Clear fields when unchecked
+      clearGiftFields();
+      // Auto-save when unchecking to clear attributes
+      saveGiftOptions();
+    }
+  }
+
+  function clearGiftFields() {
+    document.getElementById('gift-recipient-name').value = '';
+    document.getElementById('gift-sender-name').value = '';
+    document.getElementById('gift-message').value = '';
+    document.getElementById('hide-price-toggle').checked = false;
+    document.getElementById('gift-message-count').textContent = '0';
+  }
+
+  function updateCharCount(textarea, maxLength) {
+    const countSpan = document.getElementById('gift-message-count');
+    countSpan.textContent = textarea.value.length;
+  }
+
+  // AJAX save gift options
+  function saveGiftOptions() {
+    const form = document.getElementById('gift-wrapping-form');
+    const formData = new FormData(form);
+
+    // Convert to object for cart update
+    const attributes = {};
+
+    const giftWrapped = document.getElementById('gift-wrapping-toggle').checked;
+    attributes['Gift Wrapped'] = giftWrapped ? 'Yes' : '';
+    attributes['Recipient Name'] = giftWrapped ? document.getElementById('gift-recipient-name').value : '';
+    attributes['Gift From'] = giftWrapped ? document.getElementById('gift-sender-name').value : '';
+    attributes['Gift Message'] = giftWrapped ? document.getElementById('gift-message').value : '';
+    attributes['Hide Price'] = (giftWrapped && document.getElementById('hide-price-toggle').checked) ? 'Yes' : '';
+
+    fetch('/cart/update.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ attributes: attributes })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Show saved message
+      const msg = document.getElementById('gift-saved-message');
+      msg.classList.add('show');
+      setTimeout(() => msg.classList.remove('show'), 2000);
+    })
+    .catch(error => {
+      console.error('Error saving gift options:', error);
+    });
+  }
+
+  // Handle form submit with AJAX instead of page reload
+  document.getElementById('gift-wrapping-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const giftWrapped = document.getElementById('gift-wrapping-toggle').checked;
+
+    if (giftWrapped) {
+      const recipientName = document.getElementById('gift-recipient-name').value.trim();
+      if (!recipientName) {
+        alert('Please enter the recipient\'s name for gift wrapping.');
+        document.getElementById('gift-recipient-name').focus();
+        return;
+      }
+    }
+
+    saveGiftOptions();
+  });
+
+  // Initialize character count on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById('gift-message');
+    if (textarea) {
+      document.getElementById('gift-message-count').textContent = textarea.value.length;
+    }
+  });
+</script>

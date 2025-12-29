@@ -59,6 +59,8 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
+
+
       a {
         text-decoration: none;
         color: inherit;
@@ -157,6 +159,98 @@
         transition: all 0.3s ease;
       }
 
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      /* Mobile Menu - Dropdown Style */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        inset: auto;
+        top: 5.5rem;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translateX(-50%);
+        width: calc(100vw - 2rem);
+        max-width: 350px;
+        height: auto !important;
+        min-height: 0;
+        background: rgba(255, 252, 235, 0.98);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        z-index: 99999;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        padding: 1.5rem;
+        gap: 0.5rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(90, 42, 65, 0.12);
+      }
+
+      .mobile-menu.active {
+        display: flex;
+      }
+
+      .mobile-menu-close {
+        display: none;
+      }
+
+      .mobile-menu a {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-plum);
+        padding: 0.6rem 0;
+        transition: color 0.3s ease;
+        text-align: center;
+      }
+
+      .mobile-menu a:hover {
+        color: var(--primary-rose);
+      }
+
+      .mobile-menu .mobile-cta {
+        font-family: var(--font-body);
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        padding: 0.8rem 1.5rem;
+        background: var(--primary-plum);
+        color: #fff;
+        border-radius: 50px;
+        margin-top: 0.5rem;
+        text-align: center;
+      }
+
+      .mobile-menu .mobile-cta:hover {
+        background: var(--primary-rose);
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu {
+          top: 4.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .mobile-menu {
+          top: 4rem;
+        }
+      }
+
       /* Tablet & Mobile Menu */
       @media (max-width: 850px) {
         .navbar {
@@ -170,7 +264,7 @@
         }
 
         .nav-links {
-          display: none;
+          display: none !important;
         }
       }
 
@@ -1183,6 +1277,16 @@
       </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero" class="mobile-link">Home</a>
+      <a href="#sacred" class="mobile-link">Sacred</a>
+      <a href="#manifest" class="mobile-link">Manifest</a>
+      <a href="#crafted" class="mobile-link">Crafted</a>
+      <a href="#symbolism" class="mobile-link">Symbolism</a>
+      <a href="https://freewithpurpose.com/collections/frontpage" class="mobile-cta">Shop Now</a>
+    </div>
+
     <!-- Hero - Split Screen -->
     <section id="hero" class="hero">
       <div class="hero-image">
@@ -1460,5 +1564,41 @@
       </div>
     </div>
 
+    <!-- Mobile Menu JavaScript -->
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+      // Toggle menu
+      hamburger.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('active');
+          hamburger.classList.remove('active');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.remove('active');
+          hamburger.classList.remove('active');
+        }
+      });
+
+      // Close menu on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          mobileMenu.classList.remove('active');
+          hamburger.classList.remove('active');
+        }
+      });
+    </script>
   </body>
 </html>
